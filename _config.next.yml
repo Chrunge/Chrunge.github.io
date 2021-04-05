@@ -440,20 +440,20 @@ font:
   # Global font settings used for all elements inside <body>.
   global:
     external: true
-    family: Lato
-    size: 1.125
+    family: EB Garamond, Noto Serif SC
+    size:
 
   # Font settings for site title (.site-title).
   title:
     external: true
-    family: Roboto Slab, Noto Serif SC
-    size:
+    family: Long Cang
+    size: 2
 
   # Font settings for headlines (<h1> to <h6>).
   headings:
     external: true
     family: Amita
-    size:
+    size: 1.48
 
   # Font settings for posts (.post-body).
   posts:
