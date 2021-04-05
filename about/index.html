@@ -24,12 +24,12 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.3.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="教育经历 电子神技大学本科 机械电子工程2014&#x2F;09 - 2018&#x2F;07 西南财经大学 研究生 经济学从前 - 现在   联系方式 电子邮箱&amp;#100;&amp;#x71;&amp;#x69;&amp;#117;&amp;#x63;&amp;#104;&amp;#x65;&amp;#110;&amp;#x67;&amp;#x40;&amp;#103;&amp;#x6d;&amp;#97;&amp;#105;&amp;#x6c;&amp;#x2e;&amp;#99;&amp;#111;&amp;#x6d; 地址天府之国,熊猫之乡">
+<meta name="description" content="教育经历 电子神技大学本科 机械电子工程2014&#x2F;09 - 2018&#x2F;07 西南财经大学 研究生 经济学从前 - 现在   联系方式 电子邮箱&amp;#x64;&amp;#x71;&amp;#105;&amp;#117;&amp;#x63;&amp;#x68;&amp;#x65;&amp;#110;&amp;#x67;&amp;#64;&amp;#x67;&amp;#x6d;&amp;#x61;&amp;#x69;&amp;#x6c;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#109; 地址天府之国,熊猫之乡">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
 <meta property="og:url" content="http://example.com/about/index.html">
 <meta property="og:site_name" content="Chrunge&#39;s Wonderland">
-<meta property="og:description" content="教育经历 电子神技大学本科 机械电子工程2014&#x2F;09 - 2018&#x2F;07 西南财经大学 研究生 经济学从前 - 现在   联系方式 电子邮箱&amp;#100;&amp;#x71;&amp;#x69;&amp;#117;&amp;#x63;&amp;#104;&amp;#x65;&amp;#110;&amp;#x67;&amp;#x40;&amp;#103;&amp;#x6d;&amp;#97;&amp;#105;&amp;#x6c;&amp;#x2e;&amp;#99;&amp;#111;&amp;#x6d; 地址天府之国,熊猫之乡">
+<meta property="og:description" content="教育经历 电子神技大学本科 机械电子工程2014&#x2F;09 - 2018&#x2F;07 西南财经大学 研究生 经济学从前 - 现在   联系方式 电子邮箱&amp;#x64;&amp;#x71;&amp;#105;&amp;#117;&amp;#x63;&amp;#x68;&amp;#x65;&amp;#110;&amp;#x67;&amp;#64;&amp;#x67;&amp;#x6d;&amp;#x61;&amp;#x69;&amp;#x6c;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#109; 地址天府之国,熊猫之乡">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/medias/medias/banner">
 <meta property="article:published_time" content="2019-07-19T16:41:10.000Z">
@@ -55,6 +55,93 @@
     isPost : false,
     lang   : 'en'
   };
+</script>
+
+
+<link rel="preconnect" href="https://website-1256060851.file.myqcloud.com" crossorigin>
+<link rel="preconnect" href="https://sdn.geekzu.org" crossorigin>
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiangsudian/CaoMei/style.min.css">
+
+
+
+
+
+<script type="text/javascript">
+// Live2d
+// 注意：live2d_path 参数应使用绝对路径
+const live2d_path = "https://cdn.jsdelivr.net/gh/lei2rock/live2d-widget/";
+
+// 封装异步加载资源的方法
+function loadExternalResource(url, type) {
+	return new Promise((resolve, reject) => {
+		let tag;
+
+		if (type === "css") {
+			tag = document.createElement("link");
+			tag.rel = "stylesheet";
+			tag.href = url;
+		}
+		else if (type === "js") {
+			tag = document.createElement("script");
+			tag.src = url;
+		}
+		if (tag) {
+			tag.onload = () => resolve(url);
+			tag.onerror = () => reject(url);
+			document.head.appendChild(tag);
+		}
+	});
+}
+
+// 加载 waifu.css live2d.min.js waifu-tips.js
+if (screen.width >= 768) {
+	Promise.all([
+		loadExternalResource(live2d_path + "waifu.min.css", "css"),
+		loadExternalResource(live2d_path + "live2d.min.js", "js"),
+		loadExternalResource(live2d_path + "waifu-tips.min.js", "js")
+	]).then(() => {
+		initWidget({
+			waifuPath: live2d_path + "waifu-tips.json",
+			apiPath: "https://api.dlzhang.com/live2d/", // https://live2d.fghrsh.net/api/
+			//cdnPath: "https://cdn.jsdelivr.net/gh/fghrsh/live2d_api/"
+		});
+	});
+}
+// initWidget 第一个参数为 waifu-tips.json 的路径，第二个参数为 API 地址
+// API 后端可自行搭建，参考 https://github.com/fghrsh/live2d_api
+// 初始化看板娘会自动加载指定目录下的 waifu-tips.json
+
+console.log(`
+  く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+`);
+// End Live2d Code
+
+window.addEventListener('load', () => {
+	console.log(`\n%c醉里挑灯赏猫%c班班 @lei2rock%c\n`, 'padding: 8px; background: #3f5973; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #649ab6; font-size: large; color: #eee;','');
+	console.log(`页面加载完毕消耗了${Math.round(performance.now() * 100) / 100}ms`);
+});
+
 </script>
 <title>about | Chrunge's Wonderland
 </title>
@@ -273,7 +360,7 @@
 <li><b>西南财经大学 </b><br>研究生 经济学<br>从前 - 现在 </li>
 </ul>
 <h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
-<li><b>电子邮箱</b><br><a href="mailto:&#100;&#x71;&#x69;&#117;&#x63;&#104;&#x65;&#110;&#x67;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#100;&#x71;&#x69;&#117;&#x63;&#104;&#x65;&#110;&#x67;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;</a></li>
+<li><b>电子邮箱</b><br><a href="mailto:&#x64;&#x71;&#105;&#117;&#x63;&#x68;&#x65;&#110;&#x67;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#x64;&#x71;&#105;&#117;&#x63;&#x68;&#x65;&#110;&#x67;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;</a></li>
 <li><b>地址</b><br>天府之国,熊猫之乡</li>
 </ul>
 <p><img src="/medias/medias/banner"></p>
@@ -341,6 +428,86 @@
 
 
   
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+if(window.location.hash){
+    var checkExist = setInterval(function() {
+        if ($(window.location.hash).length) {
+            $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+            clearInterval(checkExist);
+        }
+    }, 100);
+}
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+/* @license Minigrid v3.1.1 – https://cdn.jsdelivr.net/npm/minigrid@3.1.1/dist/minigrid.min.js */
+!function(t, e) {
+	"function" == typeof define && define.amd ? define(e) : "object" == typeof exports ? module.exports = e() : t.Minigrid = e()
+}(this, function(t) {
+	"use strict";
+	function e(t, e) {
+		for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+		return t
+	}
+	var i = function(t) {
+			var i = t.container instanceof Node ? t.container : document.querySelector(t.container),
+				r = t.item instanceof NodeList ? t.item : i.querySelectorAll(t.item);
+			this.props = e(t, {
+				container: i,
+				nodeList: r
+			})
+		};
+	return i.prototype.mount = function() {
+		if (!this.props.container) return !1;
+		if (!this.props.nodeList || 0 === this.props.nodeList.length) return !1;
+		var t = "number" == typeof this.props.gutter && isFinite(this.props.gutter) && Math.floor(this.props.gutter) === this.props.gutter ? this.props.gutter : 0,
+			e = this.props.done,
+			i = this.props.container,
+			r = this.props.nodeList;
+		i.style.width = "";
+		var n = Array.prototype.forEach,
+			o = i.getBoundingClientRect().width,
+			s = r[0].getBoundingClientRect().width + t,
+			p = Math.max(Math.floor((o - t) / s), 1),
+			a = 0;
+		o = s * p + t + "px", i.style.width = o, i.style.position = "relative";
+		for (var c = [], u = [], l = 0; l < p; ++l) u.push(l * s + t), c.push(t);
+		this.props.rtl && u.reverse(), n.call(r, function(e) {
+			var i = c.slice(0).sort(function(t, e) {
+				return t - e
+			}).shift();
+			i = c.indexOf(i);
+			var r = parseInt(u[i]),
+				n = parseInt(c[i]);
+			e.style.position = "absolute", e.style.webkitBackfaceVisibility = e.style.backfaceVisibility = "hidden", e.style.transformStyle = "preserve-3d", e.style.transform = "translate3D(" + r + "px," + n + "px, 0)", c[i] += e.getBoundingClientRect().height + t, a += 1
+		}), i.style.display = "";
+		var f = c.slice(0).sort(function(t, e) {
+			return t - e
+		}).pop();
+		i.style.height = f + "px", "function" == typeof e && e(r)
+	}, i
+});
+</script>
+
+
+
+
+
+
+
 
 
 
