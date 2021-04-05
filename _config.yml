@@ -104,7 +104,9 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repository: git@github.com:Chrunge/Chrunge.github.io.git
+  branch: master
 
 # Activate symbols_count_time plugin
 # symbols_count_time:
