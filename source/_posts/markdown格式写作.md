@@ -9,7 +9,6 @@ password:
 description: Markdown写作格式介绍，以及该博客的模板
 tags:
 - markdown 
-- blog
 categories:
 - 工具
 ---
