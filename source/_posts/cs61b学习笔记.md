@@ -7,12 +7,8 @@ mathjax: true
 date: 2020-10-22 18:24:22
 password: 
 description: CS61B课程笔记
-tags:
-   - JAVA
-   - 数据结构
-   - 算法
-categories:
-   - 计算机科学
+tags: [Java, Data Structure, Algorithm]
+categories: 计算机科学
 ---
 
 ## **24 Compression, Complexity and N = NP ?**

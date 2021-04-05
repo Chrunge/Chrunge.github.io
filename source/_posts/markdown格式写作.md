@@ -160,7 +160,7 @@ tags:
 链接:[文本内容](链接的地址):control + shift + L
 ```
 
-![猫猫](https://chrunge.github.io/medias/featureimages/16.jpg )
+![猫猫](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Mystica_from_British_Empire_Cattery.jpg/300px-Mystica_from_British_Empire_Cattery.jpg )
 
 [该教程参考这里](https://www.jianshu.com/p/191d1e21f7ed)
 

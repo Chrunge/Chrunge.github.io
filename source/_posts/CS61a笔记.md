@@ -7,12 +7,9 @@ mathjax: true
 date: 2020-09-27 18:44:16
 password:
 description: Berkeley大学的SICP课程学习笔记
-tags:
-- Python
-- SICP
-- Scheme
-- 递归
-categories:
+tags: [Python, Scheme, SICP]
+
+categories: 
 - 计算机科学
 ---
 
