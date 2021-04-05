@@ -3,4 +3,4 @@ hexo g
 hexo d
 git add -A
 git commit -m "A push"
-git push origin master
+git push origin other
