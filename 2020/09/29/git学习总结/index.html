@@ -24,15 +24,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.3.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="learnGit1. 介绍:Git是最先进的分布式版本控制系统,用来记录每次文件的改动.集中式管理系统:拥有一个中央服务器,每次下载和上传改动都需要联网分布式管理系统:没有中央服务器,每台电脑上都有一个完整的版本库,但通常也有一台充当”中央服务器”的电脑,以方便大家交换. 比喻:每次add则提交一次局部的风景图，commit则是把全部风景图整合起来形成全景图，最后放入保险箱中。 2. 创建版本库">
+<meta name="description" content="Git学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git笔记">
 <meta property="og:url" content="http://example.com/2020/09/29/git%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="learnGit1. 介绍:Git是最先进的分布式版本控制系统,用来记录每次文件的改动.集中式管理系统:拥有一个中央服务器,每次下载和上传改动都需要联网分布式管理系统:没有中央服务器,每台电脑上都有一个完整的版本库,但通常也有一台充当”中央服务器”的电脑,以方便大家交换. 比喻:每次add则提交一次局部的风景图，commit则是把全部风景图整合起来形成全景图，最后放入保险箱中。 2. 创建版本库">
+<meta property="og:description" content="Git学习笔记">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-28T18:44:16.000Z">
-<meta property="article:modified_time" content="2021-04-02T03:12:32.566Z">
+<meta property="article:modified_time" content="2021-04-05T13:52:27.696Z">
 <meta property="article:author" content="Chrunge">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
@@ -130,7 +130,7 @@
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">14</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">4</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">9</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">8</span></a></li>
         
             
   <li class="menu-item menu-item-docs"><a href="/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
@@ -181,7 +181,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -278,7 +278,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-02 03:12:32" itemprop="dateModified" datetime="2021-04-02T03:12:32Z">2021-04-02</time>
+        <time title="Modified: 2021-04-05 13:52:27" itemprop="dateModified" datetime="2021-04-05T13:52:27Z">2021-04-05</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -293,6 +293,7 @@
   
 </div>
 
+            <div class="post-description">Git学习笔记</div>
         </div>
       </header>
 
