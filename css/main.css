@@ -213,8 +213,8 @@ body {
 body {
   background: var(--body-bg-color);
   color: var(--text-color);
-  font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-size: 1.125em;
+  font-family: EB Garamond, Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 1em;
   line-height: 2;
   min-height: 100%;
   position: relative;
@@ -226,28 +226,28 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Amita, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Amita, EB Garamond, Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-weight: bold;
   line-height: 1.5;
   margin: 20px 0 15px;
 }
 h1 {
-  font-size: 1.5em;
+  font-size: 1.355em;
 }
 h2 {
-  font-size: 1.375em;
+  font-size: 1.23em;
 }
 h3 {
-  font-size: 1.25em;
+  font-size: 1.105em;
 }
 h4 {
-  font-size: 1.125em;
+  font-size: 0.98em;
 }
 h5 {
-  font-size: 1em;
+  font-size: 0.855em;
 }
 h6 {
-  font-size: 0.875em;
+  font-size: 0.73em;
 }
 p {
   margin: 0 0 20px;
@@ -1307,8 +1307,8 @@ pre code {
   color: var(--brand-hover-color);
 }
 .site-title {
-  font-family: Roboto Slab, Noto Serif SC, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-size: 1.375em;
+  font-family: Long Cang, EB Garamond, Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 2em;
   font-weight: normal;
   margin: 0;
 }
@@ -2119,7 +2119,7 @@ pre code {
   width: 4px;
 }
 .post-body {
-  font-family: Montserrat, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Montserrat, EB Garamond, Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   overflow-wrap: break-word;
 }
 @media (min-width: 1200px) {
@@ -2313,7 +2313,7 @@ pre code {
 }
 .posts-expand .post-meta-container {
   color: #999;
-  font-family: Montserrat, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Montserrat, EB Garamond, Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 0.75em;
   margin-top: 3px;
 }
