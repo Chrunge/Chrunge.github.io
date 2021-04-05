@@ -6,7 +6,7 @@ toc: true
 mathjax: true
 date: 2020-09-27 18:44:16
 password:
-summary: Berkeley大学的SICP课程学习笔记
+description: Berkeley大学的SICP课程学习笔记
 tags:
 - Python
 - SICP

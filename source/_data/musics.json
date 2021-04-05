@@ -1,0 +1,23 @@
+[
+	{
+		"name": "FastLove",
+		"artist": "斋藤千和-三木真一郎",
+		"url": "/medias/music/fastlove.flac",
+		"cover": "/medias/music/avatars/zhanchangyuan.jpg"
+	},{
+		"name": "白金disco",
+		"artist": "井口裕香",
+		"url": "/medias/music/disco.flac",
+		"cover": "/medias/music/avatars/jingkouyuxiang.jpg"
+	},{
+		"name": "恋爱循环",
+		"artist": "花泽香菜",
+		"url": "/medias/music/lianaixunhuan.mp3",
+		"cover": "/medias/music/avatars/huazexiangcai.jpg"
+	},{
+		"name": "妄想特快",
+		"artist": "花泽香菜",
+		"url": "/medias/music/wangxiangtekuai.flac",
+		"cover": "/medias/music/avatars/huazexiangcai.jpg"
+	}
+]

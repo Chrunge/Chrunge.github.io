@@ -6,7 +6,7 @@ toc: true
 mathjax: true
 date: 2020-09-25 18:13:08
 password:
-summary: Markdown写作格式介绍，以及该博客的模板
+description: Markdown写作格式介绍，以及该博客的模板
 tags:
 - markdown 
 - blog
