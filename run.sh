@@ -1,6 +1,5 @@
 hexo clean
-hexo g
-hexo d
+hexo -g d
 git add -A
 git commit -m "A push"
 git push 
