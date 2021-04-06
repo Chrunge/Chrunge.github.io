@@ -1,6 +1,6 @@
 ---
 title: cs61b-20fall
-top: false
+top: true
 cover: false
 toc: true
 mathjax: true

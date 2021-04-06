@@ -1,6 +1,6 @@
 ---
 title: CS61A:Stucture and Interpretion of Computer Science
-top: True
+top: true
 cover: false
 toc: true
 mathjax: true
