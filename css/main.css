@@ -226,7 +226,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Amita, EB Garamond, Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: EB Garamond, Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-weight: bold;
   line-height: 1.5;
   margin: 20px 0 15px;
@@ -2119,7 +2119,7 @@ pre code {
   width: 4px;
 }
 .post-body {
-  font-family: Montserrat, EB Garamond, Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: EB Garamond, Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   overflow-wrap: break-word;
 }
 @media (min-width: 1200px) {
@@ -2313,7 +2313,7 @@ pre code {
 }
 .posts-expand .post-meta-container {
   color: #999;
-  font-family: Montserrat, EB Garamond, Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: EB Garamond, Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 0.75em;
   margin-top: 3px;
 }
