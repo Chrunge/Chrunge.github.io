@@ -21,12 +21,12 @@ minify: true
 custom_file_path:
   head: source/_data/head.njk
   #header: source/_data/header.njk
-  #sidebar: source/_data/sidebar.njk
+  sidebar: source/_data/sidebar.njk
   #postMeta: source/_data/post-meta.njk
   #postBodyEnd: source/_data/post-body-end.njk
   #footer: source/_data/footer.njk
-  bodyEnd: source/_data/body-end.njk
-  variable: source/_data/variables.styl
+  #bodyEnd: source/_data/body-end.njk
+  #variable: source/_data/variables.styl
   #mixin: source/_data/mixins.styl
   #style: source/_data/styles.styl
 
@@ -151,6 +151,8 @@ site_state: true
 social:
   GitHub: https://github.com/Chrunge || fab fa-github
   E-Mail: dqiucheng@gmail.com || fa fa-envelope
+  Bilibili: https://space.bilibili.com/39574700/ || fab fa-bilibili
+
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Google: https://plus.google.com/yourname || fab fa-google
   #Twitter: https://twitter.com/yourname || fab fa-twitter
