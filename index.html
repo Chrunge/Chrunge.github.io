@@ -359,10 +359,16 @@ window.addEventListener('load', () => {
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-04-06 20:59:58 / Modified: 13:01:25" itemprop="dateCreated datePublished" datetime="2021-04-06T20:59:58Z">2021-04-06</time>
+      <time title="Created: 2021-04-06 20:59:58" itemprop="dateCreated datePublished" datetime="2021-04-06T20:59:58Z">2021-04-06</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-04-12 15:34:57" itemprop="dateModified" datetime="2021-04-12T15:34:57Z">2021-04-12</time>
+      </span>
 
   
 </div>
@@ -374,7 +380,121 @@ window.addEventListener('load', () => {
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="First-Day-04-08-2021"><a href="#First-Day-04-08-2021" class="headerlink" title="First Day: 04/08/2021"></a>First Day: 04/08/2021</h2>
+          <h2 id="Lec01-6-Great-Ideas-in-Computer-Architecture"><a href="#Lec01-6-Great-Ideas-in-Computer-Architecture" class="headerlink" title="Lec01: 6 Great Ideas in Computer Architecture"></a>Lec01: 6 Great Ideas in Computer Architecture</h2><ol>
+<li>Abstraction(Layers of Representation/Intepretation)</li>
+<li>Moore’s Law</li>
+<li>Principle of Locality or Memory Hierarchy</li>
+<li>Parallelism</li>
+<li>Performance Measurement &amp; Improvement</li>
+<li>Dependability via redundancy</li>
+</ol>
+<h2 id="Lec02-Number-Representation"><a href="#Lec02-Number-Representation" class="headerlink" title="Lec02: Number Representation"></a>Lec02: Number Representation</h2><ol>
+<li><p>Real world is analog! To import analog information, we must do <strong>sample and Quantize</strong>.</p>
+</li>
+<li><p>Big idea: bits can represent everything, including color, address, commands and etc…</p>
+</li>
+<li><p>Several base:Binary, Octal, Decimal, Hexadecimal and they will be interconverted.</p>
+</li>
+<li><p><strong>Numerals</strong>(not number) have infinite number of digits in theory. But in real world, if result of add (or -, *, / ) cannot be represented by these rightmost HW bits, we say <strong>overflow</strong> occurred.</p>
+</li>
+<li><p>Number Representation:</p>
+<ol>
+<li>Unsigned Numbers</li>
+<li>Sign and Magnitude(原码): define leftmost bit to be sign, 0(-) and 1(+).<ol>
+<li>Shortcomings:Wrong direction. when go right, sometimes increases values and sometimes decreases values.</li>
+<li>two zeros, increase circuit complexity.</li>
+</ol>
+</li>
+<li>One’s complement(反码): two zeros.</li>
+<li>Two’s complement(补码): Based one’s complement, shift the<br>negative mappings left by one.<ul>
+<li>Two ways to compute negative numbers.<ul>
+<li><img src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Number%20Representation/negative%20compute.png" alt="negative compute"></li>
+<li><img src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Number%20Representation/negative%20compute2.png" alt="negative compute2"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bias Encoding = unsigned + bias(-2<sup>n-1</sup>-1).</li>
+</ol>
+</li>
+</ol>
+<h2 id="Lecture03-Introduction-into-the-C-programming-language"><a href="#Lecture03-Introduction-into-the-C-programming-language" class="headerlink" title="Lecture03: Introduction into the C programming language"></a>Lecture03: Introduction into the C programming language</h2><ol>
+<li>Why C:<ul>
+<li>Allow us to exploit underlying features of the architecture: <strong>memory management, special instructions, parallelism</strong></li>
+</ul>
+</li>
+<li>Key C concepts: Pointers, Arrays, Implications for Memory management </li>
+</ol>
+<h3 id="Compile-vs-Interpret"><a href="#Compile-vs-Interpret" class="headerlink" title="Compile vs Interpret"></a>Compile vs Interpret</h3><ol>
+<li>Compilation: C compilers map C programs directly into <strong>architecture-specific</strong> machine code (string of 1s and 0s)<ul>
+<li>Unlike Java, which converts to <strong>architecture-independent bytecode</strong> that may then be compiled by a just-in-time compiler(JIT)</li>
+<li>Unlike Python environments, which converts to a byte code at runtime<ul>
+<li>These differ mainly in exactly <strong>when</strong> your program is converted to low-level machine instructions (“levels of interpretation”)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>C Advantages and Disadvantages:<ul>
+<li>Advantages:<ul>
+<li>Reasonable compilation time: only modified files to be recompiled and can compile in parallel: <code>make -j</code></li>
+<li>Excellent run-time performance</li>
+</ul>
+</li>
+<li>Disadvantages:<ul>
+<li>Compiled files, including the executable, are architecture-specific, depending on processor type (e.g., MIPS vs. x86 vs. RISC-V) and the operating system</li>
+<li>Executable must be rebuilt on each new system</li>
+<li>“Change → Compile → Run [repeat]” iteration cycle can be slow during development</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>C Pre-Process:<ul>
+<li><img src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/C%20Pre-Processor.png" alt="C pre-process"></li>
+</ul>
+</li>
+</ol>
+<h3 id="C-vs-Java"><a href="#C-vs-Java" class="headerlink" title="C vs Java"></a>C vs Java</h3><ul>
+<li><img src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/C%20vs%20Java%201.png" alt="C vs Java1"></li>
+<li><img src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/C%20vs%20Java%202.png" alt="C vs Java2"></li>
+<li><img src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/C%20vs%20Java%203.png" alt="C vs Java3"></li>
+</ul>
+<h3 id="C-syntax"><a href="#C-syntax" class="headerlink" title="C syntax"></a>C syntax</h3><ol>
+<li>main: <code>int mani(int argc,char *argv[])</code></li>
+<li>True or False:<ul>
+<li>False: 0, null, Boolean types provided by C99’s <em>stdbool.h</em></li>
+<li>Everythind else is True</li>
+</ul>
+</li>
+<li>Typed Variables in C: <ul>
+<li><img src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Typed%20Variables%20in%20C.png" alt="Typed Variables in C"></li>
+<li><img src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Integer%20Python%20vs%20Java%20vs%20C.png" alt="Integer VS"></li>
+</ul>
+</li>
+<li>Consts and Enums in C:<ul>
+<li><img src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Consts%20and%20Enums%20in%20C.png" alt="Consts and Enums in C"></li>
+</ul>
+</li>
+<li>Structs in C:<ul>
+<li><img src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Structs%20in%20C.png" alt="Structs in C">  </li>
+</ul>
+</li>
+<li>Control Flow:<ul>
+<li><img src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Control%20Flow.png" alt="Control Flow"></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Degression:<ul>
+<li>In 1949, first general stored-program computer war invented.<ul>
+<li>This is the revolution: It isn’t just programmable, but the program is just the same type of data that the computer computes on</li>
+<li>Bits are not just the numbers being manipulated, but the instructions on how to manipulate the numbers!</li>
+<li><img src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Abstraction.png" alt="Abstraction"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
 
@@ -433,7 +553,7 @@ window.addEventListener('load', () => {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-06 01:18:45" itemprop="dateModified" datetime="2021-04-06T01:18:45Z">2021-04-06</time>
+        <time title="Modified: 2021-04-12 15:45:27" itemprop="dateModified" datetime="2021-04-12T15:45:27Z">2021-04-12</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
