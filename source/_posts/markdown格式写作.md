@@ -13,7 +13,8 @@ categories:
 - 工具
 ---
 
-## **博客写作模板介绍**
+
+## 博客写作模板介绍
 
 ```null
 - title: 写作主题
@@ -32,7 +33,7 @@ categories:
 ```
 
 
-## **博客写作模板举例**
+## 博客写作模板举例
 
 ```null
 title: typora-vue-theme主题介绍
@@ -52,9 +53,14 @@ tags:
   - Markdown
 ```
 
-## **Markdown写作说明**
+## Markdown写作说明
+
+根据标题生成目录: [TOC]
+[TOC]
 
 ### 1. 标题
+
+
 
 ```null
 # 一级标题
@@ -205,15 +211,23 @@ tags:
 关羽|打|二哥
 张飞|骂|三弟
 
-### 8. 缩进
+### 8. 缩进与空行
 
 - 首行缩进，在段首使用&ensp
 - 输入一个空格,使用&emsp
+- 空行:&nbsp 或者`<br/>`
+
+### 9. 上下标
+
+30^2^ = `30^2^`
+30~2~ = `30~2~`
+
+
 
 ### **最后:参考链接**
 
-[韦神的博客](https://godweiyang.com/2018/04/13/hexo-blog/)
-
 [hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery)
 
+[Markdown基本语法](https://www.cnblogs.com/shawWey/p/8931697.html)
 [Markdown基本语法](https://www.jianshu.com/p/191d1e21f7ed)
+
