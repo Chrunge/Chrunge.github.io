@@ -23,13 +23,30 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.3.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Chrunge&#39;s Wonderland">
-<meta property="og:url" content="http://example.com/index.html">
+<meta name="description" content="Lecture7-10: RISC-V Assembly language  Basic job of a CPU: execute lots of instructions, and instruction set is represented by the Assembly language.  Operations(verbs): Instruction Set, which is spec">
+<meta property="og:type" content="article">
+<meta property="og:title" content="61C: register and instruction">
+<meta property="og:url" content="http://example.com/2021/04/30/61C%20register-and-instruction/index.html">
 <meta property="og:site_name" content="Chrunge&#39;s Wonderland">
-<meta property="og:description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+<meta property="og:description" content="Lecture7-10: RISC-V Assembly language  Basic job of a CPU: execute lots of instructions, and instruction set is represented by the Assembly language.  Operations(verbs): Instruction Set, which is spec">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Instruction/Abstraction.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Instruction/RegistersInsideProcessor.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Instruction/RVInstructionSet.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Instruction/PricipleOfLocality.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Instruction/SymbolicRegisterNames.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Instruction/MemoryAllocation.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/InstructionFormat/RFormat.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/InstructionFormat/IFormat.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/InstructionFormat/Sformat.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/InstructionFormat/Bformat.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/InstructionFormat/UFormat.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/InstructionFormat/JFormat.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/InstructionFormat/JrFormat.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/InstructionFormat/SummaryFormat.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/InstructionFormat/CRunSteps.png">
+<meta property="article:published_time" content="2021-04-29T17:16:50.000Z">
+<meta property="article:modified_time" content="2021-05-02T15:46:45.064Z">
 <meta property="article:author" content="Chrunge">
 <meta property="article:tag" content="Blog">
 <meta property="article:tag" content="Chrunge">
@@ -37,17 +54,18 @@
 <meta property="article:tag" content="Notebook">
 <meta property="article:tag" content="Computer Science">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Instruction/Abstraction.png">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/04/30/61C%20register-and-instruction/">
 
 
 <script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script><script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
@@ -140,7 +158,7 @@ window.addEventListener('load', () => {
 });
 
 </script>
-<title>Chrunge's Wonderland</title>
+<title>61C: register and instruction | Chrunge's Wonderland</title>
   
 
 
@@ -238,7 +256,7 @@ window.addEventListener('load', () => {
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -251,6 +269,7 @@ window.addEventListener('load', () => {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture7-10-RISC-V-Assembly-language"><span class="nav-number">1.</span> <span class="nav-text">Lecture7-10: RISC-V Assembly language</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RISC-V-instruction-set"><span class="nav-number">1.1.</span> <span class="nav-text">RISC-V instruction set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RISC-V-Function-Call"><span class="nav-number">1.2.</span> <span class="nav-text">RISC-V Function Call</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture11-12-Instruction-Format"><span class="nav-number">2.</span> <span class="nav-text">Lecture11-12: Instruction Format</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Instructions-Format"><span class="nav-number">2.1.</span> <span class="nav-text">Instructions Format</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture13-Compilation-Assembly-Linking-Loading"><span class="nav-number">3.</span> <span class="nav-text">Lecture13: Compilation, Assembly, Linking, Loading</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -326,16 +345,17 @@ window.addEventListener('load', () => {
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/30/61C%20register-and-instruction/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -348,9 +368,9 @@ window.addEventListener('load', () => {
       <meta itemprop="name" content="Chrunge's Wonderland">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/04/30/61C%20register-and-instruction/" class="post-title-link" itemprop="url">61C: register and instruction</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          61C: register and instruction
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -380,7 +400,7 @@ window.addEventListener('load', () => {
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="Lecture7-10-RISC-V-Assembly-language"><a href="#Lecture7-10-RISC-V-Assembly-language" class="headerlink" title="Lecture7-10: RISC-V Assembly language"></a>Lecture7-10: RISC-V Assembly language</h2><p><img src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Instruction/Abstraction.png" alt="Abstruction"></p>
+        <h2 id="Lecture7-10-RISC-V-Assembly-language"><a href="#Lecture7-10-RISC-V-Assembly-language" class="headerlink" title="Lecture7-10: RISC-V Assembly language"></a>Lecture7-10: RISC-V Assembly language</h2><p><img src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Instruction/Abstraction.png" alt="Abstruction"></p>
 <ol>
 <li><p>Basic job of a CPU: execute lots of <em>instructions</em>, and instruction set is represented by the Assembly language.</p>
 </li>
@@ -610,7 +630,6 @@ window.addEventListener('load', () => {
     - Output: (program is run)
 </code></pre>
 
-      
     </div>
 
     
@@ -620,260 +639,35 @@ window.addEventListener('load', () => {
 
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Chrunge
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="http://example.com/2021/04/30/61C%20register-and-instruction/" title="61C: register and instruction">http://example.com/2021/04/30/61C register-and-instruction/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
 </div>
 
 
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/14/61C%20syntax/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chrunge">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chrunge's Wonderland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/04/14/61C%20syntax/" class="post-title-link" itemprop="url">C commands</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-04-14 08:33:48 / Modified: 00:58:27" itemprop="dateCreated datePublished" datetime="2021-04-14T08:33:48Z">2021-04-14</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>C的常用命令行</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/14/61C%20syntax/">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/07/61C%20Number,%20C%20syntax%20and%20Floating%20Point/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chrunge">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chrunge's Wonderland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/04/07/61C%20Number,%20C%20syntax%20and%20Floating%20Point/" class="post-title-link" itemprop="url">61C: Number, C syntax and Floating Point</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-04-06 20:59:58" itemprop="dateCreated datePublished" datetime="2021-04-06T20:59:58Z">2021-04-06</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-29 09:06:55" itemprop="dateModified" datetime="2021-04-29T09:06:55Z">2021-04-29</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>This a the notebook of CS61C——Great Ideas in Computer Architecture (Machine Structures)</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/04/07/61C%20Number,%20C%20syntax%20and%20Floating%20Point/">
-                Read more &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/04/14/61C%20syntax/" rel="prev" title="C commands">
+                  <i class="fa fa-chevron-left"></i> C commands
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/01/%E9%9A%8F%E8%AE%B0%E7%81%B5%E6%84%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chrunge">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chrunge's Wonderland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/01/01/%E9%9A%8F%E8%AE%B0%E7%81%B5%E6%84%9F/" class="post-title-link" itemprop="url">随记灵感</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-01-01 00:00:00" itemprop="dateCreated datePublished" datetime="2021-01-01T00:00:00Z">2021-01-01</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-12 15:45:27" itemprop="dateModified" datetime="2021-04-12T15:45:27Z">2021-04-12</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>每日生活吐槽</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/01/01/%E9%9A%8F%E8%AE%B0%E7%81%B5%E6%84%9F/">
-                Read more &raquo;
-              </a>
+            <div class="post-nav-item">
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          </div>
     </footer>
   </article>
 </div>
@@ -881,543 +675,7 @@ window.addEventListener('load', () => {
 
 
 
-    
 
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/10/%E4%B8%AD%E7%BA%A7%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chrunge">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chrunge's Wonderland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/11/10/%E4%B8%AD%E7%BA%A7%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" class="post-title-link" itemprop="url">中级微观经济学</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-11-09 20:01:16" itemprop="dateCreated datePublished" datetime="2020-11-09T20:01:16Z">2020-11-09</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-05 15:22:59" itemprop="dateModified" datetime="2021-04-05T15:22:59Z">2021-04-05</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">经济学</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>课程笔记</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/10/%E4%B8%AD%E7%BA%A7%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/27/CS61%E8%AF%BE%E7%A8%8B%E8%BF%9B%E5%BA%A6%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chrunge">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chrunge's Wonderland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/10/27/CS61%E8%AF%BE%E7%A8%8B%E8%BF%9B%E5%BA%A6%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">CS61课程进度记录</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-10-27 10:32:07" itemprop="dateCreated datePublished" datetime="2020-10-27T10:32:07Z">2020-10-27</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-06 13:06:17" itemprop="dateModified" datetime="2021-04-06T13:06:17Z">2021-04-06</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">计算机科学</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>CS61课程进度与安排</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/10/27/CS61%E8%AF%BE%E7%A8%8B%E8%BF%9B%E5%BA%A6%E8%AE%B0%E5%BD%95/">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/23/cs61b%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chrunge">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chrunge's Wonderland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/10/23/cs61b%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">cs61b-20fall</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-10-22 18:24:22" itemprop="dateCreated datePublished" datetime="2020-10-22T18:24:22Z">2020-10-22</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-06 01:19:15" itemprop="dateModified" datetime="2021-04-06T01:19:15Z">2021-04-06</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">计算机科学</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>CS61B课程笔记</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/10/23/cs61b%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/01/%E5%AD%A6%E4%B9%A0%E4%BD%93%E4%BC%9A/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chrunge">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chrunge's Wonderland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/10/01/%E5%AD%A6%E4%B9%A0%E4%BD%93%E4%BC%9A/" class="post-title-link" itemprop="url">学习心得</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-09-30 23:02:49" itemprop="dateCreated datePublished" datetime="2020-09-30T23:02:49Z">2020-09-30</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-06 13:15:00" itemprop="dateModified" datetime="2021-04-06T13:15:00Z">2021-04-06</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>学习过程中的一些体会</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/10/01/%E5%AD%A6%E4%B9%A0%E4%BD%93%E4%BC%9A/">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/29/git%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chrunge">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chrunge's Wonderland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/09/29/git%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">Git笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-09-28 18:44:16" itemprop="dateCreated datePublished" datetime="2020-09-28T18:44:16Z">2020-09-28</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-18 04:23:03" itemprop="dateModified" datetime="2021-04-18T04:23:03Z">2021-04-18</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">编程语言</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Git学习笔记</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/09/29/git%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/28/CS61a%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chrunge">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chrunge's Wonderland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/09/28/CS61a%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">CS61A:Stucture and Interpretion of Computer Science</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-09-27 18:44:16" itemprop="dateCreated datePublished" datetime="2020-09-27T18:44:16Z">2020-09-27</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-29 06:59:52" itemprop="dateModified" datetime="2021-04-29T06:59:52Z">2021-04-29</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">计算机科学</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Berkeley大学的SICP课程学习笔记</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/09/28/CS61a%E7%AC%94%E8%AE%B0/">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
 
 
 <script>
