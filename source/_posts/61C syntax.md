@@ -16,3 +16,22 @@ categories:
 3. Debug: ` gcc -g -o hello hello.c` and `gdb hello`
    - Compiling `hello.c` with `-g` flag will store information in the executable program for `gdb` to make sense of it.
    - two kinds of bugs: *bohrbugs* and *heisenbugs*
+
+4. C运算符优先级
+   ```
+   初等运算符有：()、[]、->、.  (后两者均为结构体成员运算符)；
+   单目运算符有：！、~、++、--、sizeof、&、*；
+   算术运算符有：*、/、+、-、<<、>>;
+   关系运算符有：<、<=、>、>=、==、!=、&、^、|；(此栏排列仍有优先级顺序哦);
+   逻辑运算符有：&&、||；
+   条件运算符有：?:（即三目运算符）;
+   赋值运算符有：=、+=、-=、*=、/=、%=、>>=、<<=；等
+   ```
+   另外，单目运算符的优先级都高于双目运算符。
+
+## 其他
+
+[fscanf用法详解](https://web.archive.org/web/20210509052850/https://zhuanlan.zhihu.com/p/69038922)
+[C运算符优先级](https://www.runoob.com/cprogramming/c-operators.html)
+[#define与const区别](https://www.runoob.com/cprogramming/c-constants.html)
+[printf格式详解](https://zhuanlan.zhihu.com/p/358190927)
