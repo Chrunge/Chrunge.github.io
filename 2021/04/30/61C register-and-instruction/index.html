@@ -46,7 +46,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/InstructionFormat/SummaryFormat.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/InstructionFormat/CRunSteps.png">
 <meta property="article:published_time" content="2021-04-29T17:16:50.000Z">
-<meta property="article:modified_time" content="2021-05-02T15:46:45.064Z">
+<meta property="article:modified_time" content="2021-05-11T08:13:36.479Z">
 <meta property="article:author" content="Chrunge">
 <meta property="article:tag" content="Blog">
 <meta property="article:tag" content="Chrunge">
@@ -387,7 +387,7 @@ window.addEventListener('load', () => {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-02 15:46:45" itemprop="dateModified" datetime="2021-05-02T15:46:45Z">2021-05-02</time>
+        <time title="Modified: 2021-05-11 08:13:36" itemprop="dateModified" datetime="2021-05-11T08:13:36Z">2021-05-11</time>
       </span>
 
   
@@ -418,11 +418,12 @@ window.addEventListener('load', () => {
 <ul>
 <li>Notes:<ul>
 <li>each line of assembly code contains at most 1 instruction</li>
-<li>Hash (#) is used for RISC-V comments, and only one line.</li>
+<li>Hash (#) is used for RISC-V comments, and only one line.<span id="more"></span>
+<h3 id="RISC-V-instruction-set"><a href="#RISC-V-instruction-set" class="headerlink" title="RISC-V instruction set"></a>RISC-V instruction set</h3></li>
 </ul>
 </li>
 </ul>
-<h3 id="RISC-V-instruction-set"><a href="#RISC-V-instruction-set" class="headerlink" title="RISC-V instruction set"></a>RISC-V instruction set</h3><ol>
+<ol>
 <li><p><img src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Instruction/RVInstructionSet.png" alt="RVInstructionSet"></p>
 </li>
 <li><p><code>rd = register destination</code>,<br><code>rs = register source</code>,<br><code>imm =immediate</code>, it has sign extended and is a constant encoded as a part of an instruction.<br><code>u = unsign</code> and has no sign bit extended,<br><code>lw = load word: lw x10, 12(x15)</code>, and offset 12 bytes(not words), below is same.<br><code>sw = store word: sw x10, 12(x15)</code>,<br><code>lb = load byte: lb x10, 12(x15)</code>,<br><code>sb = store byte</code>,<br><code>beq = branch equal to</code>,equal then go to label.<br><code>bne = branch not equal</code>,<br><code>bge = branch greater and equal</code>,<br><code>blt = branch less than</code>,<br><code>jal rd, Label</code>: jump and link<br><code>jalr rd, rs, imm</code>: jump and link register</p>
