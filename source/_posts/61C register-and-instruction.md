@@ -28,7 +28,7 @@ categories:
 - Notes:
   - each line of assembly code contains at most 1 instruction
   - Hash (#) is used for RISC-V comments, and only one line.
-
+<!-- more -->
 ### RISC-V instruction set
 
 1. ![RVInstructionSet](https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Instruction/RVInstructionSet.png)

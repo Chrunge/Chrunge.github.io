@@ -228,6 +228,6 @@ tags:
 
 [hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery)
 
-[Markdown基本语法](https://www.cnblogs.com/shawWey/p/8931697.html)
+[Markdown基本语法](https://web.archive.org/web/20210510115803/https://www.cnblogs.com/shawWey/p/8931697.html)
 [Markdown基本语法](https://www.jianshu.com/p/191d1e21f7ed)
 
