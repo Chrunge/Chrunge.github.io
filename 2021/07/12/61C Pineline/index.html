@@ -23,13 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.3.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Chrunge&#39;s Wonderland">
-<meta property="og:url" content="http://example.com/tags/%E4%B8%AD%E7%BA%A7%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/index.html">
+<meta name="description" content="介绍流水线的运作原理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pipeline and Superscalar Processors">
+<meta property="og:url" content="http://example.com/2021/07/12/61C%20Pineline/index.html">
 <meta property="og:site_name" content="Chrunge&#39;s Wonderland">
-<meta property="og:description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+<meta property="og:description" content="介绍流水线的运作原理">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-07-12T13:39:32.000Z">
+<meta property="article:modified_time" content="2021-07-12T06:36:35.773Z">
 <meta property="article:author" content="Chrunge">
 <meta property="article:tag" content="Blog">
 <meta property="article:tag" content="Chrunge">
@@ -39,7 +41,7 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/tags/%E4%B8%AD%E7%BA%A7%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/">
+<link rel="canonical" href="http://example.com/2021/07/12/61C%20Pineline/">
 
 
 <script class="page-configurations">
@@ -47,7 +49,7 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script><script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
@@ -140,7 +142,7 @@ window.addEventListener('load', () => {
 });
 
 </script>
-<title>Tag: 中级微观经济学 | Chrunge's Wonderland</title>
+<title>Pipeline and Superscalar Processors | Chrunge's Wonderland</title>
   
 
 
@@ -238,7 +240,7 @@ window.addEventListener('load', () => {
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -251,6 +253,7 @@ window.addEventListener('load', () => {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pipeline"><span class="nav-number">1.</span> <span class="nav-text">Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Why"><span class="nav-number">1.1.</span> <span class="nav-text">Why</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What"><span class="nav-number">1.2.</span> <span class="nav-text">What</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How"><span class="nav-number">1.3.</span> <span class="nav-text">How</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Superscalar-Processors"><span class="nav-number">2.</span> <span class="nav-text">Superscalar Processors</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -326,50 +329,161 @@ window.addEventListener('load', () => {
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">中级微观经济学
-          <small>Tag</small>
-        </h2>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/12/61C%20Pineline/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chrunge">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chrunge's Wonderland">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Pipeline and Superscalar Processors
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+
+      <time title="Created: 2021-07-12 13:39:32 / Modified: 06:36:35" itemprop="dateCreated datePublished" datetime="2021-07-12T13:39:32Z">2021-07-12</time>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">介绍流水线的运作原理</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="Pipeline"><a href="#Pipeline" class="headerlink" title="Pipeline"></a>Pipeline</h2><h3 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h3><ol>
+<li>程序运行时间 = 程序的指令数量 × 每个指令的周期 × 每个周期所用的时间<ol>
+<li>程序的指令数量的决定：任务量，算法，编程语言，编译器，指令集架构(Instruction Set Architecture)</li>
+<li>每个指令的时间周期的决定：ISA，处理器的实现：单周期RISC-V设计，复杂指令集，超标量处理器</li>
+<li>每周期的时间的决定：处理器微架构，工艺，电压</li>
+</ol>
+</li>
+<li>Pipeline的作用：提高Cpu频率，增加单位时间内的指令吞库量</li>
+</ol>
+<h3 id="What"><a href="#What" class="headerlink" title="What"></a>What</h3><ol>
+<li>让不同的指令同时使用不同的资源（确保硬件不闲置），缩短周期Cpu频率，以提高整个工作流的吞吐量，但并不会提高一个指令运行的时间。</li>
+<li>Potential speedup: Number of pine stages</li>
+<li>但是在刚开始和结束时，会有一个”fill” pipeline 和 “drain” pipeline的过程， 这会降低运行速度。</li>
+</ol>
+<h3 id="How"><a href="#How" class="headerlink" title="How"></a>How</h3><ol>
+<li>为保存上个stage的数据，以供下个stages使用，在stage中面都添加了一些registers保存数据。</li>
+<li>Pipeline’s Hazards：<ol>
+<li><strong>Structure hazard</strong>： 不同指令同时访问一个资源<ol>
+<li>Solution 1: 等待以轮流使用资源</li>
+<li>Solution 2: 添加更多的硬件（比如在register file中添加更多的独立端口；将Data与Instruction在内存中分开存储）</li>
+</ol>
+</li>
+<li><strong>Data hazard</strong>：指令集间的数据依赖，下一个指令需要上一个指令的数据结果<ol>
+<li>exploit high speed of register file: write使用该周期的前100ns，read使用该周期的后100ns</li>
+<li>Solution 1: Stall，在指令集之间产生bubbles，以等待结果完成（损失性能）</li>
+<li>Solution 2: Compare destination of older instructions in pipeline with sources of new instruction in decode stage; then grab operand from pipeline stage, rather than register file.</li>
+<li>lw Data Hazard:<ul>
+<li>Slot after a load is called a <strong>load delay slot</strong><ul>
+<li>If that instruction uses the result of the load, then the hardware will stall for one cycle.</li>
+</ul>
+</li>
+<li>Solution: Put unrelated instruction into load delay slot(complier should do it) </li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>Control hazard</strong>：下一个指令的运行依赖与上一个指令的判断结果<ol>
+<li>Solution 1: 继续执行接下来的指令，若判断错误，则flush incorrect instructions from pipeline by converting to NOPs.</li>
+<li>Solution 2: 使用branch prediction to guess.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="Superscalar-Processors"><a href="#Superscalar-Processors" class="headerlink" title="Superscalar Processors"></a>Superscalar Processors</h2><ol>
+<li><p>增加处理器的性能：</p>
+<ol>
+<li>提高时钟频率，但受技术和功率的限制</li>
+<li>pipelining</li>
+<li>multi-issue “superscalar” processor</li>
+</ol>
+</li>
+<li><p>Replicate pipeline stages =&gt; multiple pipelines.(同时有多条流水线).</p>
+</li>
+</ol>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-11-09T20:01:16Z"
-              content="2020-11-09">
-          11-09
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/11/10/%E4%B8%AD%E7%BA%A7%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" itemprop="url">
-            <span itemprop="name">中级微观经济学</span>
-          </a>
-      </div>
-
+    
+    
+    
       
-    </header>
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Chrunge
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="http://example.com/2021/07/12/61C%20Pineline/" title="Pipeline and Superscalar Processors">http://example.com/2021/07/12/61C Pineline/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/07/12/61C%20Cache/" rel="prev" title="Cache">
+                  <i class="fa fa-chevron-left"></i> Cache
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/07/12/61C-Virtual-Memory/" rel="next" title="61C Operating System and Virtual Memory">
+                  61C Operating System and Virtual Memory <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
+
 
 
 <script>
