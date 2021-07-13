@@ -216,4 +216,8 @@ master分支非常稳定,用来发布版本;
     git pull --rebase origin master:The changes from the server will be applied onto your working copy and your commit will be stacked on top.(拉取远程仓库,更新本地仓库,然后你的commit再覆盖它)
 
 ## **12:其他**
+
 1. [其他参考](https://zhuanlan.zhihu.com/p/143135645)
+2. [将子模块重新合并到父模块中](https://x3ro.de/integrating-a-submodule-into-the-parent-repository/)
+3. [Git Fork指南](https://segmentfault.com/a/1190000021711920)
+4. [Gitignore配置运维总结](https://www.cnblogs.com/kevingrace/p/5690241.html)

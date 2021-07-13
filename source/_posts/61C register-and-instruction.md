@@ -18,7 +18,7 @@ categories:
 1. Basic job of a CPU: execute lots of *instructions*, and instruction set is represented by the Assembly language.
 
 2. Operations(verbs): Instruction Set, which is specified by Instruction Set Architecture, there is RISC-V architecture.
-
+<!-- more -->
 3. Assembly operands are 32 **registers**.
    1. Registers are numbered x0 to x31, every register is 32 bits wide.
    2. x0 always hold value 0.
@@ -28,7 +28,7 @@ categories:
 - Notes:
   - each line of assembly code contains at most 1 instruction
   - Hash (#) is used for RISC-V comments, and only one line.
-<!-- more -->
+
 ### RISC-V instruction set
 
 1. ![RVInstructionSet](https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Instruction/RVInstructionSet.png)
