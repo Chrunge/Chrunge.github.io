@@ -31,7 +31,7 @@
 <meta property="og:description" content="计算机体系结构中的缓存">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-07-12T13:38:13.000Z">
-<meta property="article:modified_time" content="2021-07-12T07:41:42.028Z">
+<meta property="article:modified_time" content="2021-07-15T04:40:18.689Z">
 <meta property="article:author" content="Chrunge">
 <meta property="article:tag" content="Blog">
 <meta property="article:tag" content="Chrunge">
@@ -222,7 +222,7 @@ window.addEventListener('load', () => {
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">15</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">6</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">16</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">18</span></a></li>
   </ul>
 </nav>
 
@@ -267,7 +267,7 @@ window.addEventListener('load', () => {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -363,10 +363,16 @@ window.addEventListener('load', () => {
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-07-12 13:38:13 / Modified: 07:41:42" itemprop="dateCreated datePublished" datetime="2021-07-12T13:38:13Z">2021-07-12</time>
+      <time title="Created: 2021-07-12 13:38:13" itemprop="dateCreated datePublished" datetime="2021-07-12T13:38:13Z">2021-07-12</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-07-15 04:40:18" itemprop="dateModified" datetime="2021-07-15T04:40:18Z">2021-07-15</time>
+      </span>
 
   
 </div>
@@ -398,24 +404,29 @@ window.addEventListener('load', () => {
 </li>
 </ol>
 <h3 id="Direct-Mapped-Caches"><a href="#Direct-Mapped-Caches" class="headerlink" title="Direct Mapped Caches"></a>Direct Mapped Caches</h3><ol>
-<li>In a direct mapped cache, each memeory address is associated with one possible block within the cache.(多对一)</li>
-<li>A 32 bit address:<ol>
+<li><p>In a direct mapped cache, each memeory address is associated with one possible block within the cache.(多对一)</p>
+</li>
+<li><p>A 32 bit address:</p>
+<ol>
 <li><strong>Tag</strong>: to check if have correct block</li>
 <li><strong>index</strong>: to select block</li>
 <li><strong>offset</strong>: byte offset within block.</li>
 </ol>
 </li>
-<li>Caching terminology:<ol>
+<li><p>Caching terminology:</p>
+<ol>
 <li>cache hit, cache miss</li>
 <li>cold, warming, warm, hot</li>
 <li>Hit rate, Miss rate, Miss penalty, Hit time</li>
 </ol>
 </li>
-<li>The steps of reading data：<ol>
+<li><p>The steps of reading data：</p>
+<ol>
 <li>find index =&gt; 验证valid bit和tag =&gt; 若匹配，根据offset读取数据；若不匹配，则从内存中载入所需的block。</li>
 </ol>
 </li>
-<li>What to do on a write hit:<ol>
+<li><p>What to do on a write hit:</p>
+<ol>
 <li>write through: update both cache and memory</li>
 <li>write back: <ol>
 <li>update word in cache block</li>
@@ -430,12 +441,20 @@ window.addEventListener('load', () => {
 </li>
 </ol>
 </li>
-<li>Block Size Tradeoff<ol>
+<li><p>What to do on a write miss:</p>
+<ol>
+<li>Fetch right block from memory to cache.</li>
+<li>Overwrite the right place of the block in cache.</li>
+</ol>
+</li>
+<li><p>Block Size Tradeoff</p>
+<ol>
 <li>优点：增加spatial locality</li>
 <li>缺点：larger miss penalty; miss rate goes up.</li>
 </ol>
 </li>
-<li>Types of Cache Misses:<ol>
+<li><p>Types of Cache Misses:</p>
+<ol>
 <li><strong>Compulsory Misses</strong>: 发生在第一次载入Cache之前</li>
 <li><strong>Conflict Misses</strong>: two distinct memory addresses map to the same cache location.<ol>
 <li>Solution: make the cache size bigger</li>

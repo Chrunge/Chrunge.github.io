@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.3.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="ParallelismWhy Reference Problem: Matrix Multiplication  What Software vs Hardware  Hardware: serial, Parallel Software: sequential, concurrent   Flynn’s Taxonomy: SISD, SIMD, MISD, MIMD(Multiple Inst">
+<meta name="description" content="Parallelism SIMDWhy Reference Problem: Matrix Multiplication  What Software vs Hardware  Hardware: serial, Parallel Software: sequential, concurrent   Flynn’s Taxonomy: SISD, SIMD, MISD, MIMD(Multiple">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Parallelism">
 <meta property="og:url" content="http://example.com/2021/07/13/61C%20Parallelism/index.html">
 <meta property="og:site_name" content="Chrunge&#39;s Wonderland">
-<meta property="og:description" content="ParallelismWhy Reference Problem: Matrix Multiplication  What Software vs Hardware  Hardware: serial, Parallel Software: sequential, concurrent   Flynn’s Taxonomy: SISD, SIMD, MISD, MIMD(Multiple Inst">
+<meta property="og:description" content="Parallelism SIMDWhy Reference Problem: Matrix Multiplication  What Software vs Hardware  Hardware: serial, Parallel Software: sequential, concurrent   Flynn’s Taxonomy: SISD, SIMD, MISD, MIMD(Multiple">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-07-13T11:52:02.000Z">
-<meta property="article:modified_time" content="2021-07-13T04:27:53.917Z">
+<meta property="article:modified_time" content="2021-07-15T05:25:23.461Z">
 <meta property="article:author" content="Chrunge">
 <meta property="article:tag" content="Blog">
 <meta property="article:tag" content="Chrunge">
@@ -222,7 +222,7 @@ window.addEventListener('load', () => {
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">15</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">6</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">16</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">18</span></a></li>
   </ul>
 </nav>
 
@@ -253,7 +253,7 @@ window.addEventListener('load', () => {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Parallelism"><span class="nav-number">1.</span> <span class="nav-text">Parallelism</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Why"><span class="nav-number">1.1.</span> <span class="nav-text">Why</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What"><span class="nav-number">1.2.</span> <span class="nav-text">What</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How"><span class="nav-number">1.3.</span> <span class="nav-text">How</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Parallelism-SIMD"><span class="nav-number">1.</span> <span class="nav-text">Parallelism SIMD</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Why"><span class="nav-number">1.1.</span> <span class="nav-text">Why</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What"><span class="nav-number">1.2.</span> <span class="nav-text">What</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How"><span class="nav-number">1.3.</span> <span class="nav-text">How</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thread-Level-Parallelism"><span class="nav-number">2.</span> <span class="nav-text">Thread-Level Parallelism</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Parallel-Compuer-Architectures"><span class="nav-number">2.1.</span> <span class="nav-text">Parallel Compuer Architectures:</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -267,7 +267,7 @@ window.addEventListener('load', () => {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -363,10 +363,16 @@ window.addEventListener('load', () => {
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-07-13 11:52:02 / Modified: 04:27:53" itemprop="dateCreated datePublished" datetime="2021-07-13T11:52:02Z">2021-07-13</time>
+      <time title="Created: 2021-07-13 11:52:02" itemprop="dateCreated datePublished" datetime="2021-07-13T11:52:02Z">2021-07-13</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-07-15 05:25:23" itemprop="dateModified" datetime="2021-07-15T05:25:23Z">2021-07-15</time>
+      </span>
 
   
 </div>
@@ -378,7 +384,7 @@ window.addEventListener('load', () => {
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="Parallelism"><a href="#Parallelism" class="headerlink" title="Parallelism"></a>Parallelism</h2><h3 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h3><ol>
+        <h2 id="Parallelism-SIMD"><a href="#Parallelism-SIMD" class="headerlink" title="Parallelism SIMD"></a>Parallelism SIMD</h2><h3 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h3><ol>
 <li>Reference Problem: <strong>Matrix Multiplication</strong></li>
 </ol>
 <h3 id="What"><a href="#What" class="headerlink" title="What"></a>What</h3><ol>
@@ -430,6 +436,95 @@ window.addEventListener('load', () => {
 </ol>
 </li>
 </ol>
+<h2 id="Thread-Level-Parallelism"><a href="#Thread-Level-Parallelism" class="headerlink" title="Thread-Level Parallelism"></a>Thread-Level Parallelism</h2><h3 id="Parallel-Compuer-Architectures"><a href="#Parallel-Compuer-Architectures" class="headerlink" title="Parallel Compuer Architectures:"></a>Parallel Compuer Architectures:</h3><ol>
+<li><p>Improving Performance</p>
+<ol>
+<li>Increase clock rate: pipeline and technology</li>
+<li>Lower CPI: SIMD, instruction level parallelism</li>
+<li><strong>Perform multiple tasks simultaneously</strong></li>
+</ol>
+</li>
+<li><p>Multiprocessor Execution Model</p>
+<ol>
+<li><p><em>Separate</em> resources:</p>
+<ul>
+<li>Datapath (PC, register, ALU)</li>
+<li>Highest level caches(L1、L2) </li>
+</ul>
+</li>
+<li><p><em>Shared</em> resources:</p>
+<ul>
+<li>Memory(DRAM): Special hardware keeps caches consistent.</li>
+<li>L3 Cache</li>
+</ul>
+</li>
+<li><p>Two ways to use a multiprocessor:</p>
+<ol>
+<li>Job-Level parallelism</li>
+<li>Partition work of single task between several cores.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Thread: Sequential flow of instructions that performs some task.</p>
+<ol>
+<li>A program/process can split into separate threads, which can(in theory) execute simultaneously.</li>
+<li>With a single core, a single CPU can execute many threads by <strong>Time Sharing</strong><ul>
+<li>Each Thread has:<ul>
+<li>Dedicated PC</li>
+<li>Separate registers</li>
+<li>Accesses the shared memory</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Hardware threads</strong>: Each physical core provides one, which is executing instructions actively.</li>
+<li><strong>Software threads</strong>: Operating system multiplexes multiple.</li>
+</ol>
+</li>
+<li><p>Multithreading: Two copies of PC and Registers inside processor hardware.</p>
+<ol>
+<li>若只有一个hardware thread，则当一个线程中断时，CPU保存当前线程的状态，转化到另一个线程。此过程有些耗时。</li>
+<li>So use two PC and registers, when one thread blocks, the other thread continue to run without saving status.</li>
+</ol>
+</li>
+<li><p>OpenMP: Parallel extension to C, treads level programming with parallel for pragma.</p>
+<ol>
+<li>Runtime library routines <code>#include &lt;omp.h&gt;</code>, Compiler Directives <code>#pragma</code> and <code>#pragma omp parallel for</code> for C loop</li>
+<li>How it works: Breaks for loop into chunks, and allocate each to a separate thread.</li>
+<li><img src="" alt="OpenMP"></li>
+</ol>
+</li>
+<li><p><strong>Synchronization</strong></p>
+<ol>
+<li>Problem: When each processor read same intermediate variable, it will cause <strong>a race</strong> and result is non-deterministic.</li>
+<li>解决方案的基本思想: limit access to shared resource to 1 processor at a time.</li>
+<li>工具: <code>int lock</code>, 0 for unlocked and 1 for locked.</li>
+<li>具体方案: Atomic read/write which is read &amp; write in single instruction.(only on assembly level to fix, not C.)</li>
+<li><img src="" alt="AMOs"></li>
+<li><img src="" alt="AMOs1"></li>
+<li>DeadLock: a system state in which no process is possible.</li>
+</ol>
+</li>
+<li><p>Shared Memory and Caches:</p>
+<ol>
+<li>Problem: Each core has a local private cache which is not coherency.</li>
+<li>基本解决思想: When any processor has cache <strong>miss or wirtes</strong>, notify other processors via interconnection network. For instance, when <strong>write</strong> transactions from one processor, <strong>snoop</strong> and invalidate any copies of same address modified in other cache.</li>
+<li>具体实施(MOESI protocol): Each cache tracks state of each block in cache:<ol>
+<li><strong>Shared</strong>: up-to-date data, other caches may have a copy.</li>
+<li><strong>Modified</strong>: up-to-date data, changed <strong>dirty</strong>, no other cache has a copy, Ok to write, memory out-of-date.</li>
+<li><strong>Exclusive</strong>: up-to-date, no other cache has a copy, Ok to write, memory up-to-date.</li>
+<li><strong>Owner</strong>: up-to-date data, other caches may have a copy(they must be in Shared state)<ul>
+<li>own the exclusive right to make changes to it.</li>
+<li>own态是共享的modified态，此时memory out-of-data</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/55917869">false sharing</a>: when two processor write to two different variables on same block at the same time, it will cause <strong>Coherence Misses, the forth Cache Misses</strong>.</li>
+</ol>
+</li>
+</ol>
 
     </div>
 
@@ -467,6 +562,9 @@ window.addEventListener('load', () => {
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2021/07/14/61C-IO/" rel="next" title="61C I/O">
+                  61C I/O <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>

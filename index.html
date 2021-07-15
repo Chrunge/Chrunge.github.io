@@ -220,7 +220,7 @@ window.addEventListener('load', () => {
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">15</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">6</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">16</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">18</span></a></li>
   </ul>
 </nav>
 
@@ -264,7 +264,7 @@ window.addEventListener('load', () => {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -336,6 +336,207 @@ window.addEventListener('load', () => {
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/15/%E5%A6%84%E6%83%B3%E6%97%A5%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chrunge">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chrunge's Wonderland">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/07/15/%E5%A6%84%E6%83%B3%E6%97%A5%E8%AE%B0/" class="post-title-link" itemprop="url">妄想日记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-07-15 09:32:10 / Modified: 01:32:25" itemprop="dateCreated datePublished" datetime="2021-07-15T09:32:10Z">2021-07-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
+      
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/14/61C-IO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chrunge">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chrunge's Wonderland">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/07/14/61C-IO/" class="post-title-link" itemprop="url">61C I/O</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-07-14 15:07:56 / Modified: 07:51:37" itemprop="dateCreated datePublished" datetime="2021-07-14T15:07:56Z">2021-07-14</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><ol>
+<li>程序和设备交互</li>
+</ol>
+<h2 id="How"><a href="#How" class="headerlink" title="How"></a>How</h2><ol>
+<li><p>Instruction Set Architecture for I/O</p>
+<ol>
+<li>Processor：<ol>
+<li>Input: Read a sequence of bytes</li>
+<li>Output: Write a sequence of bytes</li>
+</ol>
+</li>
+<li>Interface options:<ol>
+<li>Memory mapped I/O<ol>
+<li>I/O专用地址，0x00000000 - 0x7FFFFFFF，用于保存I/O寄存器</li>
+<li>I/O设备的寄存器</li>
+<li>正常的指令集</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>I/O设备与处理器速度不匹配</p>
+<ol>
+<li><p>I/O polling: Processor Checks Status, Then Acts</p>
+<ol>
+<li>设备寄存器通常有两个作用：<ol>
+<li>Control Register, says it’s OK to read/write.</li>
+<li>Data Register, contains data.</li>
+</ol>
+</li>
+<li>Processor reads from Control Register in <strong>loop</strong>, then loads from or writes to data register.</li>
+<li>局限：只能用于低数据传输设备，如鼠标键盘</li>
+</ol>
+</li>
+<li><p>I/O Interrupts</p>
+<ol>
+<li>优缺点：<ol>
+<li>No I/O activity: Nothing to do</li>
+<li>Lots of I/O: <strong>Expensive</strong> - thrashing caches, VM, saving/restoring state</li>
+<li>可用于低数据传输设备，高数据传输设备</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>可编程I/O：</p>
+<ol>
+<li>缺点：Cpu执行所有的数据交换，速度不匹配，有点浪费通用Cpu的性能，然后有了DMA Hardware来辅助执行</li>
+</ol>
+</li>
+<li><p>DMA(Direct Memory Access):</p>
+<ol>
+<li>Allows I/O devices to directly read/write main memory</li>
+<li>New hardware:<strong>The DMA Engine</strong></li>
+<li>DMA engine contains registers written by CPU:<ol>
+<li>所需的内存地址</li>
+<li>字节数</li>
+<li>所需的I/O设备，传输的方向</li>
+<li>传输数据的单位</li>
+</ol>
+</li>
+<li>？？？ Problem: 放在哪里，L1 Cache和CPU之间还是Last Cache与Main Memory之间。</li>
+</ol>
+</li>
+<li><p>Network：</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/13/61C%20Parallelism/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -359,10 +560,16 @@ window.addEventListener('load', () => {
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-07-13 11:52:02 / Modified: 04:27:53" itemprop="dateCreated datePublished" datetime="2021-07-13T11:52:02Z">2021-07-13</time>
+      <time title="Created: 2021-07-13 11:52:02" itemprop="dateCreated datePublished" datetime="2021-07-13T11:52:02Z">2021-07-13</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-07-15 05:25:23" itemprop="dateModified" datetime="2021-07-15T05:25:23Z">2021-07-15</time>
+      </span>
 
   
 </div>
@@ -374,7 +581,7 @@ window.addEventListener('load', () => {
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="Parallelism"><a href="#Parallelism" class="headerlink" title="Parallelism"></a>Parallelism</h2><h3 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h3><ol>
+          <h2 id="Parallelism-SIMD"><a href="#Parallelism-SIMD" class="headerlink" title="Parallelism SIMD"></a>Parallelism SIMD</h2><h3 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h3><ol>
 <li>Reference Problem: <strong>Matrix Multiplication</strong></li>
 </ol>
 <h3 id="What"><a href="#What" class="headerlink" title="What"></a>What</h3><ol>
@@ -423,6 +630,95 @@ window.addEventListener('load', () => {
 <li>power and energy is less.</li>
 </ol>
 </li>
+</ol>
+</li>
+</ol>
+<h2 id="Thread-Level-Parallelism"><a href="#Thread-Level-Parallelism" class="headerlink" title="Thread-Level Parallelism"></a>Thread-Level Parallelism</h2><h3 id="Parallel-Compuer-Architectures"><a href="#Parallel-Compuer-Architectures" class="headerlink" title="Parallel Compuer Architectures:"></a>Parallel Compuer Architectures:</h3><ol>
+<li><p>Improving Performance</p>
+<ol>
+<li>Increase clock rate: pipeline and technology</li>
+<li>Lower CPI: SIMD, instruction level parallelism</li>
+<li><strong>Perform multiple tasks simultaneously</strong></li>
+</ol>
+</li>
+<li><p>Multiprocessor Execution Model</p>
+<ol>
+<li><p><em>Separate</em> resources:</p>
+<ul>
+<li>Datapath (PC, register, ALU)</li>
+<li>Highest level caches(L1、L2) </li>
+</ul>
+</li>
+<li><p><em>Shared</em> resources:</p>
+<ul>
+<li>Memory(DRAM): Special hardware keeps caches consistent.</li>
+<li>L3 Cache</li>
+</ul>
+</li>
+<li><p>Two ways to use a multiprocessor:</p>
+<ol>
+<li>Job-Level parallelism</li>
+<li>Partition work of single task between several cores.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Thread: Sequential flow of instructions that performs some task.</p>
+<ol>
+<li>A program/process can split into separate threads, which can(in theory) execute simultaneously.</li>
+<li>With a single core, a single CPU can execute many threads by <strong>Time Sharing</strong><ul>
+<li>Each Thread has:<ul>
+<li>Dedicated PC</li>
+<li>Separate registers</li>
+<li>Accesses the shared memory</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Hardware threads</strong>: Each physical core provides one, which is executing instructions actively.</li>
+<li><strong>Software threads</strong>: Operating system multiplexes multiple.</li>
+</ol>
+</li>
+<li><p>Multithreading: Two copies of PC and Registers inside processor hardware.</p>
+<ol>
+<li>若只有一个hardware thread，则当一个线程中断时，CPU保存当前线程的状态，转化到另一个线程。此过程有些耗时。</li>
+<li>So use two PC and registers, when one thread blocks, the other thread continue to run without saving status.</li>
+</ol>
+</li>
+<li><p>OpenMP: Parallel extension to C, treads level programming with parallel for pragma.</p>
+<ol>
+<li>Runtime library routines <code>#include &lt;omp.h&gt;</code>, Compiler Directives <code>#pragma</code> and <code>#pragma omp parallel for</code> for C loop</li>
+<li>How it works: Breaks for loop into chunks, and allocate each to a separate thread.</li>
+<li><img src="" alt="OpenMP"></li>
+</ol>
+</li>
+<li><p><strong>Synchronization</strong></p>
+<ol>
+<li>Problem: When each processor read same intermediate variable, it will cause <strong>a race</strong> and result is non-deterministic.</li>
+<li>解决方案的基本思想: limit access to shared resource to 1 processor at a time.</li>
+<li>工具: <code>int lock</code>, 0 for unlocked and 1 for locked.</li>
+<li>具体方案: Atomic read/write which is read &amp; write in single instruction.(only on assembly level to fix, not C.)</li>
+<li><img src="" alt="AMOs"></li>
+<li><img src="" alt="AMOs1"></li>
+<li>DeadLock: a system state in which no process is possible.</li>
+</ol>
+</li>
+<li><p>Shared Memory and Caches:</p>
+<ol>
+<li>Problem: Each core has a local private cache which is not coherency.</li>
+<li>基本解决思想: When any processor has cache <strong>miss or wirtes</strong>, notify other processors via interconnection network. For instance, when <strong>write</strong> transactions from one processor, <strong>snoop</strong> and invalidate any copies of same address modified in other cache.</li>
+<li>具体实施(MOESI protocol): Each cache tracks state of each block in cache:<ol>
+<li><strong>Shared</strong>: up-to-date data, other caches may have a copy.</li>
+<li><strong>Modified</strong>: up-to-date data, changed <strong>dirty</strong>, no other cache has a copy, Ok to write, memory out-of-date.</li>
+<li><strong>Exclusive</strong>: up-to-date, no other cache has a copy, Ok to write, memory up-to-date.</li>
+<li><strong>Owner</strong>: up-to-date data, other caches may have a copy(they must be in Shared state)<ul>
+<li>own the exclusive right to make changes to it.</li>
+<li>own态是共享的modified态，此时memory out-of-data</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/55917869">false sharing</a>: when two processor write to two different variables on same block at the same time, it will cause <strong>Coherence Misses, the forth Cache Misses</strong>.</li>
 </ol>
 </li>
 </ol>
@@ -744,10 +1040,16 @@ window.addEventListener('load', () => {
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-07-12 13:38:13 / Modified: 07:41:42" itemprop="dateCreated datePublished" datetime="2021-07-12T13:38:13Z">2021-07-12</time>
+      <time title="Created: 2021-07-12 13:38:13" itemprop="dateCreated datePublished" datetime="2021-07-12T13:38:13Z">2021-07-12</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-07-15 04:40:18" itemprop="dateModified" datetime="2021-07-15T04:40:18Z">2021-07-15</time>
+      </span>
 
   
 </div>
@@ -1061,7 +1363,7 @@ window.addEventListener('load', () => {
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/01/01/%E9%9A%8F%E8%AE%B0%E7%81%B5%E6%84%9F/" class="post-title-link" itemprop="url">随记灵感</a>
+          <a href="/2021/01/01/%E9%9A%8F%E8%AE%B0%E7%81%B5%E6%84%9F/" class="post-title-link" itemprop="url">情绪记录与日常生活</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1079,7 +1381,7 @@ window.addEventListener('load', () => {
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-05-15 14:30:23" itemprop="dateModified" datetime="2021-05-15T14:30:23Z">2021-05-15</time>
+        <time title="Modified: 2021-07-15 05:29:54" itemprop="dateModified" datetime="2021-07-15T05:29:54Z">2021-07-15</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1105,184 +1407,6 @@ window.addEventListener('load', () => {
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/01/01/%E9%9A%8F%E8%AE%B0%E7%81%B5%E6%84%9F/">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/10/%E4%B8%AD%E7%BA%A7%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chrunge">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chrunge's Wonderland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/11/10/%E4%B8%AD%E7%BA%A7%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/" class="post-title-link" itemprop="url">中级微观经济学</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-11-09 20:01:16" itemprop="dateCreated datePublished" datetime="2020-11-09T20:01:16Z">2020-11-09</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-05 15:22:59" itemprop="dateModified" datetime="2021-04-05T15:22:59Z">2021-04-05</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">经济学</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>课程笔记</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/10/%E4%B8%AD%E7%BA%A7%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/27/CS61%E8%AF%BE%E7%A8%8B%E8%BF%9B%E5%BA%A6%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chrunge">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chrunge's Wonderland">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/10/27/CS61%E8%AF%BE%E7%A8%8B%E8%BF%9B%E5%BA%A6%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">CS61课程进度记录</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-10-27 10:32:07" itemprop="dateCreated datePublished" datetime="2020-10-27T10:32:07Z">2020-10-27</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-06 13:06:17" itemprop="dateModified" datetime="2021-04-06T13:06:17Z">2021-04-06</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">计算机科学</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>CS61课程进度与安排</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/10/27/CS61%E8%AF%BE%E7%A8%8B%E8%BF%9B%E5%BA%A6%E8%AE%B0%E5%BD%95/">
                 Read more &raquo;
               </a>
             </div>
