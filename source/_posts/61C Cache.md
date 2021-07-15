@@ -53,6 +53,10 @@ Binary Prefix: kissing me gives ten percent extra zeal&youth.
          1. memory & Cache inconsistent
          2. needs to be updated when block is replaced.
       4. OS flushed cache before I/O
+
+6. What to do on a write miss:
+   1. Fetch right block from memory to cache.
+   2. Overwrite the right place of the block in cache.
 6. Block Size Tradeoff
    1. 优点：增加spatial locality
    2. 缺点：larger miss penalty; miss rate goes up.
