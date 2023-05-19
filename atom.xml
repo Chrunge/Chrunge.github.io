@@ -121,34 +121,6 @@
   </entry>
   
   <entry>
-    <title>Unit8-Security</title>
-    <link href="https://chrunge.github.io/2022/02/27/CS144/Unit8-Security/"/>
-    <id>https://chrunge.github.io/2022/02/27/CS144/Unit8-Security/</id>
-    <published>2022-02-26T16:25:35.000Z</published>
-    <updated>2022-06-17T09:30:30.000Z</updated>
-    
-    
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;Network Security Classes:&lt;ol&gt;
-&lt;li&gt;Eavesdrop&lt;/li&gt;
-&lt;li&gt;Modify, delete, insert: &lt;/li&gt;
-&lt;li&gt;Prevent communication: DDos&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</summary>
-    
-    
-    
-    <category term="Computer Network" scheme="https://chrunge.github.io/categories/Computer-Network/"/>
-    
-    
-    <category term="CS144" scheme="https://chrunge.github.io/tags/CS144/"/>
-    
-    <category term="Security" scheme="https://chrunge.github.io/tags/Security/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Unit7-Lower-Layer</title>
     <link href="https://chrunge.github.io/2022/02/27/CS144/Unit7-Lower-Layer/"/>
     <id>https://chrunge.github.io/2022/02/27/CS144/Unit7-Lower-Layer/</id>
@@ -176,6 +148,34 @@
     <category term="CS144" scheme="https://chrunge.github.io/tags/CS144/"/>
     
     <category term="Lower_layer" scheme="https://chrunge.github.io/tags/Lower-layer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Unit8-Security</title>
+    <link href="https://chrunge.github.io/2022/02/27/CS144/Unit8-Security/"/>
+    <id>https://chrunge.github.io/2022/02/27/CS144/Unit8-Security/</id>
+    <published>2022-02-26T16:25:35.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;Network Security Classes:&lt;ol&gt;
+&lt;li&gt;Eavesdrop&lt;/li&gt;
+&lt;li&gt;Modify, delete, insert: &lt;/li&gt;
+&lt;li&gt;Prevent communication: DDos&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="Computer Network" scheme="https://chrunge.github.io/categories/Computer-Network/"/>
+    
+    
+    <category term="CS144" scheme="https://chrunge.github.io/tags/CS144/"/>
+    
+    <category term="Security" scheme="https://chrunge.github.io/tags/Security/"/>
     
   </entry>
   
@@ -245,6 +245,27 @@
   </entry>
   
   <entry>
+    <title>Unit4-Congestion-Control</title>
+    <link href="https://chrunge.github.io/2022/01/12/CS144/Unit4-Congestion-Contorl/"/>
+    <id>https://chrunge.github.io/2022/01/12/CS144/Unit4-Congestion-Contorl/</id>
+    <published>2022-01-12T13:03:42.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">CS144 notes for unit 4</summary>
+    
+    
+    
+    <category term="Computer Network" scheme="https://chrunge.github.io/categories/Computer-Network/"/>
+    
+    
+    <category term="CS144" scheme="https://chrunge.github.io/tags/CS144/"/>
+    
+    <category term="Congestion_Control" scheme="https://chrunge.github.io/tags/Congestion-Control/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Unit6-Routing</title>
     <link href="https://chrunge.github.io/2022/01/12/CS144/Unit6-Routing/"/>
     <id>https://chrunge.github.io/2022/01/12/CS144/Unit6-Routing/</id>
@@ -287,27 +308,6 @@
   </entry>
   
   <entry>
-    <title>Unit4-Congestion-Control</title>
-    <link href="https://chrunge.github.io/2022/01/12/CS144/Unit4-Congestion-Contorl/"/>
-    <id>https://chrunge.github.io/2022/01/12/CS144/Unit4-Congestion-Contorl/</id>
-    <published>2022-01-12T13:03:42.000Z</published>
-    <updated>2022-06-17T09:30:30.000Z</updated>
-    
-    
-    <summary type="html">CS144 notes for unit 4</summary>
-    
-    
-    
-    <category term="Computer Network" scheme="https://chrunge.github.io/categories/Computer-Network/"/>
-    
-    
-    <category term="CS144" scheme="https://chrunge.github.io/tags/CS144/"/>
-    
-    <category term="Congestion_Control" scheme="https://chrunge.github.io/tags/Congestion-Control/"/>
-    
-  </entry>
-  
-  <entry>
     <title>SQL</title>
     <link href="https://chrunge.github.io/2021/11/09/15-445/Sqlite3/"/>
     <id>https://chrunge.github.io/2021/11/09/15-445/Sqlite3/</id>
@@ -331,6 +331,25 @@
     <category term="Sqlite" scheme="https://chrunge.github.io/tags/Sqlite/"/>
     
     <category term="CS15-445" scheme="https://chrunge.github.io/tags/CS15-445/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++</title>
+    <link href="https://chrunge.github.io/2021/11/09/Language/C++%20/"/>
+    <id>https://chrunge.github.io/2021/11/09/Language/C++%20/</id>
+    <published>2021-11-08T20:36:28.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">different syntax in C++ compared to C</summary>
+    
+    
+    
+    <category term="Language" scheme="https://chrunge.github.io/categories/Language/"/>
+    
+    
+    <category term="C++" scheme="https://chrunge.github.io/tags/C/"/>
     
   </entry>
   
@@ -359,25 +378,6 @@
     
     
     <category term="GDB" scheme="https://chrunge.github.io/tags/GDB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++</title>
-    <link href="https://chrunge.github.io/2021/11/09/Language/C++%20/"/>
-    <id>https://chrunge.github.io/2021/11/09/Language/C++%20/</id>
-    <published>2021-11-08T20:36:28.000Z</published>
-    <updated>2022-06-17T09:30:30.000Z</updated>
-    
-    
-    <summary type="html">different syntax in C++ compared to C</summary>
-    
-    
-    
-    <category term="Language" scheme="https://chrunge.github.io/categories/Language/"/>
-    
-    
-    <category term="C++" scheme="https://chrunge.github.io/tags/C/"/>
     
   </entry>
   
