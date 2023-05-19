@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Chrunge&#39;s Wonderland</title>
+  <icon>https://chrunge.github.io/icon.png</icon>
+  
+  <link href="https://chrunge.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://chrunge.github.io/"/>
+  <updated>2022-06-17T09:30:30.000Z</updated>
+  <id>https://chrunge.github.io/</id>
+  
+  <author>
+    <name>Chrunge</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>笔记流程</title>
+    <link href="https://chrunge.github.io/2023/05/19/Tools/Obsidian/%E7%AC%94%E8%AE%B0%E5%8A%9F%E8%83%BD%20+%20%E6%B5%81%E7%A8%8B/"/>
+    <id>https://chrunge.github.io/2023/05/19/Tools/Obsidian/%E7%AC%94%E8%AE%B0%E5%8A%9F%E8%83%BD%20+%20%E6%B5%81%E7%A8%8B/</id>
+    <published>2023-05-19T02:34:03.990Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">&lt;h4 id=&quot;视频笔记&quot;&gt;&lt;a href=&quot;#视频笔记&quot; class=&quot;headerlink&quot; title=&quot;视频笔记&quot;&gt;&lt;/a&gt;视频笔记&lt;/h4&gt;&lt;p&gt;Obsidian + Media extended + Media extended bilibili plugin。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;bilibili视频：文字笔记 + 带有时间戳的URL链接(阅读模式下)&lt;ul&gt;
+&lt;li&gt;缺点：视频容易下架&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;本地视频：&lt;ul&gt;
+&lt;li&gt;有时间戳 + 笔记&lt;ul&gt;
+&lt;li&gt;绝对路径(文件位置容易移动)&lt;/li&gt;
+&lt;li&gt;相对路径(视频文件可能过大)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;无时间戳：笔记 + potplayer书签功能（书签应本地保存）</summary>
+    
+    
+    
+    <category term="Tools" scheme="https://chrunge.github.io/categories/Tools/"/>
+    
+    
+    <category term="Obsidian" scheme="https://chrunge.github.io/tags/Obsidian/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Obsidian语法</title>
+    <link href="https://chrunge.github.io/2023/05/19/Tools/Obsidian/obsidian%E8%AF%AD%E6%B3%95/"/>
+    <id>https://chrunge.github.io/2023/05/19/Tools/Obsidian/obsidian%E8%AF%AD%E6%B3%95/</id>
+    <published>2023-05-19T02:34:03.988Z</published>
+    <updated>2023-05-19T03:44:50.513Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;标题一&quot;&gt;&lt;a href=&quot;#标题一&quot; class=&quot;headerlink&quot; title=&quot;标题一&quot;&gt;&lt;/a&gt;标题一&lt;/h2&gt;&lt;h4 id=&quot;标题二&quot;&gt;&lt;a href=&quot;#标题二&quot; class=&quot;headerlink&quot; title=&quot;标题二&quot;&gt;&lt;/a&gt;标题二&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;obsidian%E8%AF%AD%E6%B3%95.md&quot;&gt;链接到文件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;随便输入一些东西&lt;br&gt;^reference&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%A0%87%E9%A2%98%E4%B8%80&quot;&gt;连接到标题&lt;/a&gt;&lt;br&gt;5.&lt;a href=&quot;#%E6%A0%87%E9%A2%98%E4%B8%80&quot;&gt;连接到标题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;../../Computer%20Science/Algorithm/Algorithm.md#Arrays&quot;&gt;连接到其他地方的标题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%5Ereference&quot;&gt;链接到块&lt;/a&gt;</summary>
+    
+    
+    
+    <category term="Tools" scheme="https://chrunge.github.io/categories/Tools/"/>
+    
+    
+    <category term="Obsidian" scheme="https://chrunge.github.io/tags/Obsidian/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown语法</title>
+    <link href="https://chrunge.github.io/2023/05/19/Tools/Obsidian/Markdown%E8%AF%AD%E6%B3%95/"/>
+    <id>https://chrunge.github.io/2023/05/19/Tools/Obsidian/Markdown%E8%AF%AD%E6%B3%95/</id>
+    <published>2023-05-19T02:34:03.986Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;Markdown-语法&quot;&gt;&lt;a href=&quot;#Markdown-语法&quot; class=&quot;headerlink&quot; title=&quot;Markdown 语法&quot;&gt;&lt;/a&gt;Markdown 语法&lt;/h1&gt;&lt;h2 id=&quot;1-标题-amp-目录&quot;&gt;&lt;a href=&quot;#1-标题-amp-目录&quot; class=&quot;headerlink&quot; title=&quot;1. 标题&amp;amp;目录&quot;&gt;&lt;/a&gt;1. 标题&amp;amp;目录&lt;/h2&gt;&lt;h3 id=&quot;1-1-标题&quot;&gt;&lt;a href=&quot;#1-1-标题&quot; class=&quot;headerlink&quot; title=&quot;1.1 标题&quot;&gt;&lt;/a&gt;1.1 标题&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Markdown标题共有 &lt;strong&gt;六级&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;标题 的格式：&lt;/strong&gt;   &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;kbd&gt;#&lt;/kbd&gt;&lt;/strong&gt; × 标题级数  + &lt;strong&gt;&lt;kbd&gt;空格&lt;/kbd&gt;&lt;/strong&gt; + 文本内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight md&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;这是一段普通的文本&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;# 这是一级标题&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;## 这是二级标题&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;### 这是三级标题&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;#### 这是四级标题&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;##### 这是五级标题&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;###### 这是六级标题 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="Tools" scheme="https://chrunge.github.io/categories/Tools/"/>
+    
+    
+    <category term="Obsidian" scheme="https://chrunge.github.io/tags/Obsidian/"/>
+    
+    <category term="Markdown" scheme="https://chrunge.github.io/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Algorithm</title>
+    <link href="https://chrunge.github.io/2022/03/30/Algorithm/Algorithm/"/>
+    <id>https://chrunge.github.io/2022/03/30/Algorithm/Algorithm/</id>
+    <published>2022-03-30T00:00:00.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">算法的一些常见解法</summary>
+    
+    
+    
+    <category term="Computer Science" scheme="https://chrunge.github.io/categories/Computer-Science/"/>
+    
+    
+    <category term="Algorithm" scheme="https://chrunge.github.io/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Unit8-Security</title>
+    <link href="https://chrunge.github.io/2022/02/27/CS144/Unit8-Security/"/>
+    <id>https://chrunge.github.io/2022/02/27/CS144/Unit8-Security/</id>
+    <published>2022-02-26T16:25:35.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;Network Security Classes:&lt;ol&gt;
+&lt;li&gt;Eavesdrop&lt;/li&gt;
+&lt;li&gt;Modify, delete, insert: &lt;/li&gt;
+&lt;li&gt;Prevent communication: DDos&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="Computer Network" scheme="https://chrunge.github.io/categories/Computer-Network/"/>
+    
+    
+    <category term="CS144" scheme="https://chrunge.github.io/tags/CS144/"/>
+    
+    <category term="Security" scheme="https://chrunge.github.io/tags/Security/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Unit7-Lower-Layer</title>
+    <link href="https://chrunge.github.io/2022/02/27/CS144/Unit7-Lower-Layer/"/>
+    <id>https://chrunge.github.io/2022/02/27/CS144/Unit7-Lower-Layer/</id>
+    <published>2022-02-26T16:25:35.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Capacity-and-Modulation&quot;&gt;&lt;a href=&quot;#Capacity-and-Modulation&quot; class=&quot;headerlink&quot; title=&quot;Capacity and Modulation&quot;&gt;&lt;/a&gt;Capacity and Modulation&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Shannon Limit: Channel Capacity &amp;#x3D; B*log&lt;sub&gt;2&lt;/sub&gt;(1+S&amp;#x2F;N)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;B is Bandwidth, S is Signal strength, N is Noise.&lt;/br&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Amplitude Shift Keying(ASK): Represent number by different amplitude&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;It works well in wired networks because signal strength does not decrease much with distance.&lt;/li&gt;
+&lt;li&gt;PAM-5: five level pulse amplitude modulation, used in 100BASE-T and 1000BASE-T Ethernet&lt;/li&gt;
+&lt;li&gt;PAM-16: used 10GBASE-T Ethernet</summary>
+    
+    
+    
+    <category term="Computer Network" scheme="https://chrunge.github.io/categories/Computer-Network/"/>
+    
+    
+    <category term="CS144" scheme="https://chrunge.github.io/tags/CS144/"/>
+    
+    <category term="Lower_layer" scheme="https://chrunge.github.io/tags/Lower-layer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Unit2-Transport</title>
+    <link href="https://chrunge.github.io/2022/01/13/CS144/Unit2-Transport/"/>
+    <id>https://chrunge.github.io/2022/01/13/CS144/Unit2-Transport/</id>
+    <published>2022-01-13T12:37:48.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">Unit2-Transport</summary>
+    
+    
+    
+    <category term="Computer Network" scheme="https://chrunge.github.io/categories/Computer-Network/"/>
+    
+    
+    <category term="CS144" scheme="https://chrunge.github.io/tags/CS144/"/>
+    
+    <category term="Transport" scheme="https://chrunge.github.io/tags/Transport/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Unit3-UDP and TCP</title>
+    <link href="https://chrunge.github.io/2022/01/13/CS144/Unit3-UDP%20and%20TCP/"/>
+    <id>https://chrunge.github.io/2022/01/13/CS144/Unit3-UDP%20and%20TCP/</id>
+    <published>2022-01-13T12:37:48.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">Unit3-UDP and TCP</summary>
+    
+    
+    
+    <category term="Computer Network" scheme="https://chrunge.github.io/categories/Computer-Network/"/>
+    
+    
+    <category term="CS144" scheme="https://chrunge.github.io/tags/CS144/"/>
+    
+    <category term="UDP" scheme="https://chrunge.github.io/tags/UDP/"/>
+    
+    <category term="TCP" scheme="https://chrunge.github.io/tags/TCP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Unit1-Internet-and-IP</title>
+    <link href="https://chrunge.github.io/2022/01/12/CS144/Unit1-Internet-and-IP/"/>
+    <id>https://chrunge.github.io/2022/01/12/CS144/Unit1-Internet-and-IP/</id>
+    <published>2022-01-12T13:03:42.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">CS144 notes for unit 1</summary>
+    
+    
+    
+    <category term="Computer Network" scheme="https://chrunge.github.io/categories/Computer-Network/"/>
+    
+    
+    <category term="CS144" scheme="https://chrunge.github.io/tags/CS144/"/>
+    
+    <category term="IP" scheme="https://chrunge.github.io/tags/IP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Unit6-Routing</title>
+    <link href="https://chrunge.github.io/2022/01/12/CS144/Unit6-Routing/"/>
+    <id>https://chrunge.github.io/2022/01/12/CS144/Unit6-Routing/</id>
+    <published>2022-01-12T13:03:42.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">CS144 notes for unit 6, Routing</summary>
+    
+    
+    
+    <category term="Computer Network" scheme="https://chrunge.github.io/categories/Computer-Network/"/>
+    
+    
+    <category term="CS144" scheme="https://chrunge.github.io/tags/CS144/"/>
+    
+    <category term="Routing" scheme="https://chrunge.github.io/tags/Routing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Unit5-Application-and-NATs</title>
+    <link href="https://chrunge.github.io/2022/01/12/CS144/Unit5-Application-and-NATs/"/>
+    <id>https://chrunge.github.io/2022/01/12/CS144/Unit5-Application-and-NATs/</id>
+    <published>2022-01-12T13:03:42.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">CS144 notes for unit 5</summary>
+    
+    
+    
+    <category term="Computer Network" scheme="https://chrunge.github.io/categories/Computer-Network/"/>
+    
+    
+    <category term="CS144" scheme="https://chrunge.github.io/tags/CS144/"/>
+    
+    <category term="NATs" scheme="https://chrunge.github.io/tags/NATs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Unit4-Congestion-Control</title>
+    <link href="https://chrunge.github.io/2022/01/12/CS144/Unit4-Congestion-Contorl/"/>
+    <id>https://chrunge.github.io/2022/01/12/CS144/Unit4-Congestion-Contorl/</id>
+    <published>2022-01-12T13:03:42.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">CS144 notes for unit 4</summary>
+    
+    
+    
+    <category term="Computer Network" scheme="https://chrunge.github.io/categories/Computer-Network/"/>
+    
+    
+    <category term="CS144" scheme="https://chrunge.github.io/tags/CS144/"/>
+    
+    <category term="Congestion_Control" scheme="https://chrunge.github.io/tags/Congestion-Control/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQL</title>
+    <link href="https://chrunge.github.io/2021/11/09/15-445/Sqlite3/"/>
+    <id>https://chrunge.github.io/2021/11/09/15-445/Sqlite3/</id>
+    <published>2021-11-08T20:36:28.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Sqlite3&quot;&gt;&lt;a href=&quot;#Sqlite3&quot; class=&quot;headerlink&quot; title=&quot;Sqlite3&quot;&gt;&lt;/a&gt;Sqlite3&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;连接数据库: sqlite3 database_name.db&lt;/li&gt;
+&lt;li&gt;查看所有的tables: .tables&lt;/li&gt;
+&lt;li&gt;查看Schema: .schema table_name&lt;/li&gt;
+&lt;li&gt;退出: .quit</summary>
+    
+    
+    
+    <category term="Database" scheme="https://chrunge.github.io/categories/Database/"/>
+    
+    
+    <category term="C++" scheme="https://chrunge.github.io/tags/C/"/>
+    
+    <category term="Sqlite" scheme="https://chrunge.github.io/tags/Sqlite/"/>
+    
+    <category term="CS15-445" scheme="https://chrunge.github.io/tags/CS15-445/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GDB</title>
+    <link href="https://chrunge.github.io/2021/11/09/Tools/GDB/"/>
+    <id>https://chrunge.github.io/2021/11/09/Tools/GDB/</id>
+    <published>2021-11-08T20:36:28.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Pintos-GDB&quot;&gt;&lt;a href=&quot;#Pintos-GDB&quot; class=&quot;headerlink&quot; title=&quot;Pintos GDB&quot;&gt;&lt;/a&gt;Pintos GDB&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;三种中断点:&lt;ul&gt;
+&lt;li&gt;b function&lt;/li&gt;
+&lt;li&gt;b file:line&lt;/li&gt;
+&lt;li&gt;b *address(use a 0x prefix to specify an address in hex)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;l *address&lt;/code&gt;: 列出地址附近的code&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p/a address&lt;/code&gt;: 打印出该地址的函数名或者变量名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;debugpintos&lt;/code&gt;: Attach debugger to a waiting Pintos process on the same machine. Shorthand for target remote localhost:1234.</summary>
+    
+    
+    
+    <category term="Tools" scheme="https://chrunge.github.io/categories/Tools/"/>
+    
+    
+    <category term="GDB" scheme="https://chrunge.github.io/tags/GDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++</title>
+    <link href="https://chrunge.github.io/2021/11/09/Language/C++%20/"/>
+    <id>https://chrunge.github.io/2021/11/09/Language/C++%20/</id>
+    <published>2021-11-08T20:36:28.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">different syntax in C++ compared to C</summary>
+    
+    
+    
+    <category term="Language" scheme="https://chrunge.github.io/categories/Language/"/>
+    
+    
+    <category term="C++" scheme="https://chrunge.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java</title>
+    <link href="https://chrunge.github.io/2021/11/07/Language/Java/"/>
+    <id>https://chrunge.github.io/2021/11/07/Language/Java/</id>
+    <published>2021-11-07T12:48:53.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">Java Notes</summary>
+    
+    
+    
+    <category term="Language" scheme="https://chrunge.github.io/categories/Language/"/>
+    
+    
+    <category term="Java" scheme="https://chrunge.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>编程语言入门资料</title>
+    <link href="https://chrunge.github.io/2021/11/07/Language/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8%E8%B5%84%E6%96%99/"/>
+    <id>https://chrunge.github.io/2021/11/07/Language/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8%E8%B5%84%E6%96%99/</id>
+    <published>2021-11-07T12:48:53.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">上名校课程中，老师推荐的资料，包括C，C++，Java，Python，GDB等，方便自己复习，只推荐英文书籍（中文版怀疑自己智商，花的时间还比英文书籍多）</summary>
+    
+    
+    
+    <category term="Language" scheme="https://chrunge.github.io/categories/Language/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>lecture 10-14: Scheduling</title>
+    <link href="https://chrunge.github.io/2021/10/16/CS162/lecture-10-14-Scheduling/"/>
+    <id>https://chrunge.github.io/2021/10/16/CS162/lecture-10-14-Scheduling/</id>
+    <published>2021-10-16T12:27:44.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Scheduling-I-Concepts-and-Classic-Policies&quot;&gt;&lt;a href=&quot;#Scheduling-I-Concepts-and-Classic-Policies&quot; class=&quot;headerlink&quot; title=&quot;Scheduling I: Concepts and Classic Policies&quot;&gt;&lt;/a&gt;Scheduling I: Concepts and Classic Policies&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Recall: Thread State in the kernel&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于进程中的每一个线程, 系统都维护着：&lt;ul&gt;
+&lt;li&gt;当前线程的TCB&lt;/li&gt;
+&lt;li&gt;用于syscalls&amp;#x2F;interrupts&amp;#x2F;traps的内核栈&lt;ul&gt;
+&lt;li&gt;这个内核状态有时候被称为”内核线程”&lt;/li&gt;
+&lt;li&gt;当该线程正在用户空间中运行时, 该”内核线程”是suspended状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;除此之外, 内核中也有内核线程&lt;ul&gt;
+&lt;li&gt;拥有TCB和kernel stack&lt;/li&gt;
+&lt;li&gt;但并不属于任何进程, 也不在用户空间中运行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;![kernel structure](Lecture10, 第19页)</summary>
+    
+    
+    
+    <category term="Operating System" scheme="https://chrunge.github.io/categories/Operating-System/"/>
+    
+    
+    <category term="CS162" scheme="https://chrunge.github.io/tags/CS162/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Synchronization I and II: Concurrency, Lock Implementation</title>
+    <link href="https://chrunge.github.io/2021/09/18/CS162/Lecture-7-8-Semaphore%20and%20Monitor/"/>
+    <id>https://chrunge.github.io/2021/09/18/CS162/Lecture-7-8-Semaphore%20and%20Monitor/</id>
+    <published>2021-09-18T12:54:45.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;Locks&quot;&gt;&lt;a href=&quot;#Locks&quot; class=&quot;headerlink&quot; title=&quot;Locks&quot;&gt;&lt;/a&gt;Locks&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;img src=&quot;/&quot; alt=&quot;第29页, Definitions: Synchronization, Mutual Exclusion, Critical Section&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Atomic Operation: 一种不能在半路暂停的操作, 要么不干, 要干就得干到底&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不可分割性: 不能在中间停下, 也不能在中途被其他人修改&lt;/li&gt;
+&lt;li&gt;基本的构件块: 如果没有atomic operation, 也就没有线程之间的相互合作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Locks: 阻止某人做某事&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在进入关键区和获取共享数据之前, 需要&lt;code&gt;acquire(&amp;amp;lock)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在离开之后, 需要&lt;code&gt;release(&amp;amp;lock)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Wait&lt;/code&gt; if locked&lt;ul&gt;
+&lt;li&gt;Important idea: all synchronization involves waiting.</summary>
+    
+    
+    
+    <category term="Operating System" scheme="https://chrunge.github.io/categories/Operating-System/"/>
+    
+    
+    <category term="CS162" scheme="https://chrunge.github.io/tags/CS162/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lecture 6: Synchronization I - Concurrency</title>
+    <link href="https://chrunge.github.io/2021/09/15/CS162/Lecture-6-Synchronization-I-Concurrency/"/>
+    <id>https://chrunge.github.io/2021/09/15/CS162/Lecture-6-Synchronization-I-Concurrency/</id>
+    <published>2021-09-15T09:35:31.000Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">Synchronization - Locks and Semaphores</summary>
+    
+    
+    
+    <category term="Operating System" scheme="https://chrunge.github.io/categories/Operating-System/"/>
+    
+    
+    <category term="CS162" scheme="https://chrunge.github.io/tags/CS162/"/>
+    
+  </entry>
+  
+</feed>
