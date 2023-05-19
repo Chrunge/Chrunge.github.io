@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="CS144 notes for unit 5">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Unit5-Application-and-NATs">
+<meta property="og:url" content="http://example.com/2022/01/12/CS144/Unit5-Application-and-NATs/index.html">
+<meta property="og:site_name" content="Chrunge&#39;s Wonderland">
+<meta property="og:description" content="CS144 notes for unit 5">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/5/HTTP%20Request%20Format.PNG?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/5/HTTP%20Response%20Format.PNG?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/5/HTTP_1.1.PNG?raw=true">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/5/Torrent%20File.PNG?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/5/Whom%20to%20talk%20to.PNG?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/5/BitTyrant.PNG?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/5/DNS%20Name%20Architecture.PNG?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/5/Resource%20Records.PNG?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/5/Mx%20Records.PNG?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/5/DNS%20Header%20Structure.PNG?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/5/DNS%20Name%20Compression.PNG?raw=true">
+<meta property="article:published_time" content="2022-01-12T13:03:42.000Z">
+<meta property="article:modified_time" content="2022-06-17T09:30:30.000Z">
+<meta property="article:author" content="Chrunge">
+<meta property="article:tag" content="CS144">
+<meta property="article:tag" content="NATs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/5/HTTP%20Request%20Format.PNG?raw=true">
+
+
+<link rel="canonical" href="http://example.com/2022/01/12/CS144/Unit5-Application-and-NATs/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/01/12/CS144/Unit5-Application-and-NATs/","path":"2022/01/12/CS144/Unit5-Application-and-NATs/","title":"Unit5-Application-and-NATs"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Unit5-Application-and-NATs | Chrunge's Wonderland</title>
+  
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+
+
+
+<link rel="preconnect" href="https://website-1256060851.file.myqcloud.com" crossorigin>
+<link rel="preconnect" href="https://sdn.geekzu.org" crossorigin>
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiangsudian/CaoMei/style.min.css">
+
+
+
+
+
+<script type="text/javascript">
+// Live2d
+// 注意：live2d_path 参数应使用绝对路径
+const live2d_path = "https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
+
+// 封装异步加载资源的方法
+function loadExternalResource(url, type) {
+	return new Promise((resolve, reject) => {
+		let tag;
+
+		if (type === "css") {
+			tag = document.createElement("link");
+			tag.rel = "stylesheet";
+			tag.href = url;
+		}
+		else if (type === "js") {
+			tag = document.createElement("script");
+			tag.src = url;
+		}
+		if (tag) {
+			tag.onload = () => resolve(url);
+			tag.onerror = () => reject(url);
+			document.head.appendChild(tag);
+		}
+	});
+}
+
+// 加载 waifu.css live2d.min.js waifu-tips.js
+if (screen.width >= 768) {
+	Promise.all([
+		loadExternalResource(live2d_path + "waifu.min.css", "css"),
+		loadExternalResource(live2d_path + "live2d.min.js", "js"),
+		loadExternalResource(live2d_path + "waifu-tips.min.js", "js")
+	]).then(() => {
+		initWidget({
+			waifuPath: live2d_path + "waifu-tips.json",
+			apiPath: "https://api.dlzhang.com/live2d/", // https://live2d.fghrsh.net/api/
+			//cdnPath: "https://cdn.jsdelivr.net/gh/fghrsh/live2d_api/"
+		});
+	});
+}
+// initWidget 第一个参数为 waifu-tips.json 的路径，第二个参数为 API 地址
+// API 后端可自行搭建，参考 https://github.com/fghrsh/live2d_api
+// 初始化看板娘会自动加载指定目录下的 waifu-tips.json
+
+console.log(`
+  く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+`);
+// End Live2d Code
+
+window.addEventListener('load', () => {
+	console.log(`\n%c醉里挑灯赏猫%c班班 @lei2rock%c\n`, 'padding: 8px; background: #3f5973; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #649ab6; font-size: large; color: #eee;','');
+	console.log(`页面加载完毕消耗了${Math.round(performance.now() * 100) / 100}ms`);
+});
+
+</script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Chrunge's Wonderland</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Bio Bio</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">46</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">48</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-Hypertext-Transfer-Protocol"><span class="nav-number">1.</span> <span class="nav-text">HTTP,Hypertext Transfer Protocol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BitTorrent"><span class="nav-number">2.</span> <span class="nav-text">BitTorrent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-Address-translator-NAT"><span class="nav-number">3.</span> <span class="nav-text">Network Address translator(NAT)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Domain-Name-System-DNS"><span class="nav-number">4.</span> <span class="nav-text">Domain Name System(DNS)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Resource-Records"><span class="nav-number">4.1.</span> <span class="nav-text">Resource Records</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dynamic-Host-Configuration-Protocol-DHCP"><span class="nav-number">5.</span> <span class="nav-text">Dynamic Host Configuration Protocol(DHCP)</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chrunge</p>
+  <div class="site-description" itemprop="description">Courage is not simply one of the virtues but the form of every virtue at the testing point.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+<div class="cc-license animated" itemprop="sponsor">
+  <a href="https://www.netlify.com" class="cc-opacity" title="Deploy with Netlify → https://www.netlify.com" target="_blank"><img width="80" src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Netlify"></a>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/12/CS144/Unit5-Application-and-NATs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chrunge's Wonderland">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Unit5-Application-and-NATs | Chrunge's Wonderland">
+      <meta itemprop="description" content="CS144 notes for unit 5">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Unit5-Application-and-NATs
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-01-12 13:03:42" itemprop="dateCreated datePublished" datetime="2022-01-12T13:03:42Z">2022-01-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-17 09:30:30" itemprop="dateModified" datetime="2022-06-17T09:30:30Z">2022-06-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Network/" itemprop="url" rel="index"><span itemprop="name">Computer Network</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">CS144 notes for unit 5</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="HTTP-Hypertext-Transfer-Protocol"><a href="#HTTP-Hypertext-Transfer-Protocol" class="headerlink" title="HTTP,Hypertext Transfer Protocol"></a>HTTP,Hypertext Transfer Protocol</h2><ol>
+<li>HyperText is a document format that lets you include formatting and content information in a document.</li>
+<li>HyperText is all ASCII text, it’s human readable. And with hypertext, you can embed documents, or files, inside other files.<span id="more"></span></li>
+<li>In HTTP, a client opens a TCP connection to a server and sends commands to it.</li>
+<li>Command: <code>GET, PUT, POST, DELETE, INFO......</code></li>
+<li>Response: <code>200 OK, 400 Bad Request, 404 Not Found......</code></li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/5/HTTP%20Request%20Format.PNG?raw=true" alt="HTTP Request Format"></li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/5/HTTP%20Response%20Format.PNG?raw=true" alt="HTTP Response Format"></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTTP">More information about request and response</a></li>
+<li>HTTP1.0<ul>
+<li>Open connection</li>
+<li>Issue GET</li>
+<li>Server closes connection after response</li>
+</ul>
+</li>
+<li>HTTP1.1,Keep Alive header</li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/5/HTTP_1.1.PNG?raw=true" alt="HTTP/1.1"></li>
+<li>SPDY<ol>
+<li>If would be nice if the server could <strong>respond in a different order</strong>, and say start sending the static resources while the page is being generated.</li>
+</ol>
+</li>
+</ol>
+<h2 id="BitTorrent"><a href="#BitTorrent" class="headerlink" title="BitTorrent"></a>BitTorrent</h2><ol>
+<li><img src="/" alt="Torrent File"></li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/5/Torrent%20File.PNG?raw=true" alt="Torrent Files"></li>
+<li><ol>
+<li>Peers periodically exchange metadata on which pieces they have.</li>
+<li>Download rarest pieces: <strong>rarest first policy</strong></li>
+<li>When down to the last few pieces, ask for them form multiple peers.</li>
+</ol>
+</li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/5/Whom%20to%20talk%20to.PNG?raw=true" alt="Whom to talk to"></li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/5/BitTyrant.PNG?raw=true" alt="BitTyrant"></li>
+</ol>
+<h2 id="Network-Address-translator-NAT"><a href="#Network-Address-translator-NAT" class="headerlink" title="Network Address translator(NAT)"></a>Network Address translator(NAT)</h2><ol>
+<li><p>NAT has a public ip address and gives each hosts a private ip address.</p>
+</li>
+<li><p>NAT has internal interface and external interface. When a request from internal host, NAT will substitute the private source ip and port, send it, <strong>create a mapping about internal ip&#x2F;port pair and external ip&#x2F;port pair in it</strong>. When packets from external host, NAT will find correct mapping to translate it. If success, translate the destination ip&#x2F;port to correct private ip&#x2F;port and port; if not, drop the packet. </p>
+</li>
+<li><p>Four Types NATs:</p>
+<ol>
+<li>Full Cone NAT(least restrictive): translate packet only has the correct destination ip&#x2F;port.</li>
+<li>Restricted Cone NAT: translate packet that has the same source ip puls correct destination ip&#x2F;port.</li>
+<li>Port Restricted NAT: translate packet that has the same source ip&#x2F;port plus correct destination ip&#x2F;port.</li>
+<li>Symmetric NAT: First, it is Port Restricted NAT. And second, for packets from the same internal ip&#x2F;port to different destinations, NAT will substitute different port for these packets. <ul>
+<li>Problem: when server S tell the host A to connect server S’, A will use a new port to connect server S’, which cause the connection break.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Hairpinning: packet from internal address to external address translated properly(internal mapped to external)(two internal hosts communicate with each other, if one use the external ip&#x2F;port to establish connection, then the other should also through NAT to communicate, like a hairpin)</p>
+</li>
+<li><p>When A host behind NAT, B want to establish a connection to A. Need a rendezvous for connection reversal.</p>
+</li>
+<li><p>When A and B both behind NAT, need a relay to communication.</p>
+<ol>
+<li>NAT Hole-Punching: If you need a direct connection from A to B, server tell A about A and B external ip&#x2F;port and A’s NAT set the mapping, so B’s NAT does. Then, A and B can establish connection to each other. But Symmetric NAT can not do this.</li>
+</ol>
+</li>
+<li><p>Reference: <a target="_blank" rel="noopener" href="https://datatracker.ietf.org/doc/html/rfc1631">NAT RFC1631</a>, <a target="_blank" rel="noopener" href="https://datatracker.ietf.org/doc/html/rfc3489">NAT terminoloy&#x2F;classification in RFC3489</a>, <a target="_blank" rel="noopener" href="https://datatracker.ietf.org/doc/html/rfc5382">TCP recommendations in RFC5382</a>, <a target="_blank" rel="noopener" href="https://datatracker.ietf.org/doc/html/rfc4787">UDP recommendations in RFC4787</a></p>
+</li>
+</ol>
+<h2 id="Domain-Name-System-DNS"><a href="#Domain-Name-System-DNS" class="headerlink" title="Domain Name System(DNS)"></a>Domain Name System(DNS)</h2><ol>
+<li>Map names to addresses(more generally, values)</li>
+<li>Two properties about design: Read-only or read-mostly database, loose consistency<ol>
+<li>Resolver can cache it and answer other query.</li>
+</ol>
+</li>
+<li>DNS servers: 13 root servers, highly replicated<ol>
+<li><code>root -&gt; edu -&gt; stanford -&gt; cs</code></li>
+<li>Each zone can be separately administered</li>
+<li>Each zone served from several replicated servers</li>
+</ol>
+</li>
+<li>A DNS query: Recursive and non-recursive query<ol>
+<li>use UDP 53 or TCP 53 port</li>
+</ol>
+</li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/5/DNS%20Name%20Architecture.PNG?raw=true" alt="DNS Name Architecture"></li>
+</ol>
+<h3 id="Resource-Records"><a href="#Resource-Records" class="headerlink" title="Resource Records"></a>Resource Records</h3><ol>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/5/Resource%20Records.PNG?raw=true" alt="Resource Records"></li>
+<li>RR types:<ol>
+<li><p>A: IPv4 address</p>
+</li>
+<li><p>NS: the hostname of a server</p>
+</li>
+<li><p>CNAME: the canonical-name of alias-name</p>
+<ul>
+<li>MX records cause A record processing for mail-server-name</li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/5/Mx%20Records.PNG?raw=true" alt="MX records"></li>
+</ul>
+</li>
+<li><p>SOA(Start of Authority), TXT, PTR(map address to name), AAAA(IPv6)</p>
+</li>
+</ol>
+</li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/5/DNS%20Header%20Structure.PNG?raw=true" alt="DNS Header Structure"></li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/5/DNS%20Name%20Compression.PNG?raw=true" alt="DNS Name Compression"></li>
+<li>Glue records:<ol>
+<li>The .edu name servers have NS records for stanford.edu</li>
+<li>The .edu name servers also have A records for argus.stanford.edu</li>
+</ol>
+</li>
+</ol>
+<h2 id="Dynamic-Host-Configuration-Protocol-DHCP"><a href="#Dynamic-Host-Configuration-Protocol-DHCP" class="headerlink" title="Dynamic Host Configuration Protocol(DHCP)"></a>Dynamic Host Configuration Protocol(DHCP)</h2><ol>
+<li><p>Need four things:</p>
+<ol>
+<li>IP address</li>
+<li>subnet network</li>
+<li>Gateway router</li>
+<li>A DNS server IP address is also useful</li>
+</ol>
+</li>
+<li><p>A machine can request configuration from a DHCP server:</p>
+<ol>
+<li>Discover(broadcast): UDP packet, client port 68, server port 67, broadcast IP address: 255.255.255.255</li>
+<li>offer</li>
+<li>request</li>
+<li>ack</li>
+<li>release or re-request before expire</li>
+</ol>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+
+<span style="margin-top:30px; color:var(--blockquote-color); font-size:0.85em">
+        <br>
+        <span class="post-end-item" title="copyright"">
+            <span class="post-end-item-icon" style="margin-right: 3px">
+                <i class="fab fa-fw fa-creative-commons"></i>
+            </span>
+            <span class="post-end-item-text">采用署名-非商业性使用-相同方式共享 4.0（CC BY-NC-SA 4.0）许可协议</span>
+        </span>
+</span>
+
+
+
+
+
+<div class="donations">
+    <div class="donation-label">喜欢这篇文章？为什么不考虑赞赏一下作者呢？</div>
+    <a class="afdian-button" href="https://afdian.net/@lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fas fa-fw fa-bolt"></i>爱发电
+    </a>
+    <a class="paypal-button" href="https://paypal.me/lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fab fa-fw fa-paypal"></i>Paypal
+    </a>
+</div>
+          <div class="post-tags">
+              <a href="/tags/CS144/" rel="tag"># CS144</a>
+              <a href="/tags/NATs/" rel="tag"># NATs</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/12/CS144/Unit4-Congestion-Contorl/" rel="prev" title="Unit4-Congestion-Control">
+                  <i class="fa fa-chevron-left"></i> Unit4-Congestion-Control
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/01/12/CS144/Unit1-Internet-and-IP/" rel="next" title="Unit1-Internet-and-IP">
+                  Unit1-Internet-and-IP <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chrunge</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+if(window.location.hash){
+    var checkExist = setInterval(function() {
+        if ($(window.location.hash).length) {
+            $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+            clearInterval(checkExist);
+        }
+    }, 100);
+}
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+/* @license Minigrid v3.1.1 – https://cdn.jsdelivr.net/npm/minigrid@3.1.1/dist/minigrid.min.js */
+!function(t, e) {
+	"function" == typeof define && define.amd ? define(e) : "object" == typeof exports ? module.exports = e() : t.Minigrid = e()
+}(this, function(t) {
+	"use strict";
+	function e(t, e) {
+		for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+		return t
+	}
+	var i = function(t) {
+			var i = t.container instanceof Node ? t.container : document.querySelector(t.container),
+				r = t.item instanceof NodeList ? t.item : i.querySelectorAll(t.item);
+			this.props = e(t, {
+				container: i,
+				nodeList: r
+			})
+		};
+	return i.prototype.mount = function() {
+		if (!this.props.container) return !1;
+		if (!this.props.nodeList || 0 === this.props.nodeList.length) return !1;
+		var t = "number" == typeof this.props.gutter && isFinite(this.props.gutter) && Math.floor(this.props.gutter) === this.props.gutter ? this.props.gutter : 0,
+			e = this.props.done,
+			i = this.props.container,
+			r = this.props.nodeList;
+		i.style.width = "";
+		var n = Array.prototype.forEach,
+			o = i.getBoundingClientRect().width,
+			s = r[0].getBoundingClientRect().width + t,
+			p = Math.max(Math.floor((o - t) / s), 1),
+			a = 0;
+		o = s * p + t + "px", i.style.width = o, i.style.position = "relative";
+		for (var c = [], u = [], l = 0; l < p; ++l) u.push(l * s + t), c.push(t);
+		this.props.rtl && u.reverse(), n.call(r, function(e) {
+			var i = c.slice(0).sort(function(t, e) {
+				return t - e
+			}).shift();
+			i = c.indexOf(i);
+			var r = parseInt(u[i]),
+				n = parseInt(c[i]);
+			e.style.position = "absolute", e.style.webkitBackfaceVisibility = e.style.backfaceVisibility = "hidden", e.style.transformStyle = "preserve-3d", e.style.transform = "translate3D(" + r + "px," + n + "px, 0)", c[i] += e.getBoundingClientRect().height + t, a += 1
+		}), i.style.display = "";
+		var f = c.slice(0).sort(function(t, e) {
+			return t - e
+		}).pop();
+		i.style.height = f + "px", "function" == typeof e && e(r)
+	}, i
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Unit2-Transport">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Unit2-Transport">
+<meta property="og:url" content="http://example.com/2022/01/13/CS144/Unit2-Transport/index.html">
+<meta property="og:site_name" content="Chrunge&#39;s Wonderland">
+<meta property="og:description" content="Unit2-Transport">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/TCP.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/The%20TCP%20service%20mod.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/The%20TCP%20segment%20Format.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/TCP%20Sliding%20Window.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/UDP%20Datagram%20Format.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/UDP.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/Making%20the%20Network%20Layer%20Work.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/The%20ICMP%20Service%20Model.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/CMP%20Message%20Types.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/How%20ping%20uses%20ICMP.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/How%20traceroute%20uses%20ICMP.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/Summary.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/Three%20Error%20Detection%20Scheme.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/IP%20Checksum.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/CRC.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/Deversion%20CRC%20Mathematical%20Basis.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/MAC.png?raw=true">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/a/a2/Tcp_state_diagram_fixed.svg">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/Stop%20and%20wait.PNG?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/Sliding%20window%20sender.PNG?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/sliding%20window%20receiver.PNG?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/RWS,SWS,%20and%20Sequence%20Space.PNG?raw=true">
+<meta property="og:image" content="http://example.com/">
+<meta property="article:published_time" content="2022-01-13T12:37:48.000Z">
+<meta property="article:modified_time" content="2022-06-17T09:30:30.000Z">
+<meta property="article:author" content="Chrunge">
+<meta property="article:tag" content="CS144">
+<meta property="article:tag" content="Transport">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/2/TCP.png?raw=true">
+
+
+<link rel="canonical" href="http://example.com/2022/01/13/CS144/Unit2-Transport/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/01/13/CS144/Unit2-Transport/","path":"2022/01/13/CS144/Unit2-Transport/","title":"Unit2-Transport"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Unit2-Transport | Chrunge's Wonderland</title>
+  
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+
+
+
+<link rel="preconnect" href="https://website-1256060851.file.myqcloud.com" crossorigin>
+<link rel="preconnect" href="https://sdn.geekzu.org" crossorigin>
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiangsudian/CaoMei/style.min.css">
+
+
+
+
+
+<script type="text/javascript">
+// Live2d
+// 注意：live2d_path 参数应使用绝对路径
+const live2d_path = "https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
+
+// 封装异步加载资源的方法
+function loadExternalResource(url, type) {
+	return new Promise((resolve, reject) => {
+		let tag;
+
+		if (type === "css") {
+			tag = document.createElement("link");
+			tag.rel = "stylesheet";
+			tag.href = url;
+		}
+		else if (type === "js") {
+			tag = document.createElement("script");
+			tag.src = url;
+		}
+		if (tag) {
+			tag.onload = () => resolve(url);
+			tag.onerror = () => reject(url);
+			document.head.appendChild(tag);
+		}
+	});
+}
+
+// 加载 waifu.css live2d.min.js waifu-tips.js
+if (screen.width >= 768) {
+	Promise.all([
+		loadExternalResource(live2d_path + "waifu.min.css", "css"),
+		loadExternalResource(live2d_path + "live2d.min.js", "js"),
+		loadExternalResource(live2d_path + "waifu-tips.min.js", "js")
+	]).then(() => {
+		initWidget({
+			waifuPath: live2d_path + "waifu-tips.json",
+			apiPath: "https://api.dlzhang.com/live2d/", // https://live2d.fghrsh.net/api/
+			//cdnPath: "https://cdn.jsdelivr.net/gh/fghrsh/live2d_api/"
+		});
+	});
+}
+// initWidget 第一个参数为 waifu-tips.json 的路径，第二个参数为 API 地址
+// API 后端可自行搭建，参考 https://github.com/fghrsh/live2d_api
+// 初始化看板娘会自动加载指定目录下的 waifu-tips.json
+
+console.log(`
+  く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+`);
+// End Live2d Code
+
+window.addEventListener('load', () => {
+	console.log(`\n%c醉里挑灯赏猫%c班班 @lei2rock%c\n`, 'padding: 8px; background: #3f5973; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #649ab6; font-size: large; color: #eee;','');
+	console.log(`页面加载完毕消耗了${Math.round(performance.now() * 100) / 100}ms`);
+});
+
+</script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Chrunge's Wonderland</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Bio Bio</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">46</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">48</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-0-transport-intro"><span class="nav-number">1.</span> <span class="nav-text">2.0 transport-intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-tcp-service-model"><span class="nav-number">2.</span> <span class="nav-text">2.1 tcp-service-model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-udp-service-model"><span class="nav-number">3.</span> <span class="nav-text">2.2 udp-service-model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-ICMP"><span class="nav-number">4.</span> <span class="nav-text">2.3 ICMP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-end-to-end-principle"><span class="nav-number">5.</span> <span class="nav-text">2.4 end-to-end principle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Error-Detection"><span class="nav-number">6.</span> <span class="nav-text">2.5 Error Detection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Finite-State-Machine"><span class="nav-number">7.</span> <span class="nav-text">2.6 Finite State Machine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-Flow-Control"><span class="nav-number">8.</span> <span class="nav-text">2.7 Flow Control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-reliable-connections"><span class="nav-number">9.</span> <span class="nav-text">2.8 reliable connections</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chrunge</p>
+  <div class="site-description" itemprop="description">Courage is not simply one of the virtues but the form of every virtue at the testing point.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+<div class="cc-license animated" itemprop="sponsor">
+  <a href="https://www.netlify.com" class="cc-opacity" title="Deploy with Netlify → https://www.netlify.com" target="_blank"><img width="80" src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Netlify"></a>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/13/CS144/Unit2-Transport/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chrunge's Wonderland">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Unit2-Transport | Chrunge's Wonderland">
+      <meta itemprop="description" content="Unit2-Transport">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Unit2-Transport
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-01-13 12:37:48" itemprop="dateCreated datePublished" datetime="2022-01-13T12:37:48Z">2022-01-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-17 09:30:30" itemprop="dateModified" datetime="2022-06-17T09:30:30Z">2022-06-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Network/" itemprop="url" rel="index"><span itemprop="name">Computer Network</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">Unit2-Transport</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="2-0-transport-intro"><a href="#2-0-transport-intro" class="headerlink" title="2.0 transport-intro"></a><strong>2.0 transport-intro</strong></h2><ol>
+<li><p>Question:</p>
+<ul>
+<li>How exactly does TCP set up a connection?</li>
+<li>What do TCP segments look like?</li>
+<li>How can two computers <strong>reliably</strong> transfer data with high performance?<ul>
+<li>reliable implement: checksum, cyclic redundancy checks(CRC), message authentication codes(MAC)<span id="more"></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>transport layer protocol: TCP, UDP, ICMP(internet control message protocol)<br> UDP: simple, unreliable datagrams<br> TCP: reliable, bidirectional byte stream</p>
+</li>
+<li><p>end-to-end principle</p>
+</li>
+</ol>
+<h2 id="2-1-tcp-service-model"><a href="#2-1-tcp-service-model" class="headerlink" title="2.1 tcp-service-model"></a><strong>2.1 tcp-service-model</strong></h2><ol>
+<li><p>TCP data encapsulation: </p>
+<ul>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/TCP.png?raw=true" alt="TCP"></li>
+</ul>
+</li>
+<li><p>Connection setup 3-way handshake:</p>
+<ol>
+<li>A sends a SYN(synchronize) to B, indicating that the TCP layer at A wants to establish a connection with the TCP layer at B.</li>
+<li>B responses with SYN+ACK. ACK represent B is acknowledging A’s request and agreeing to establish the communication from A to B. SYN indicating B wants to establish a connection with A. (A-&gt;B的单向通道已建立)</li>
+<li>A responses with an ACK to accept the request. (B-&gt;A的单向通道已建立)</li>
+</ol>
+</li>
+<li><p>connection teardown:</p>
+<ol>
+<li>A send FIN to B to close A-&gt;B connection, B responses ACK and stops looking for new data from A. (拆除了A-&gt;B的单向通道, B可以继续向A发送数据)</li>
+<li>sometime later, B send FIN to A to close B-&gt;A connetion, A response ACK and stops looking for new data from B.</li>
+<li>when connection fully closed, the state can be safely removed.</li>
+</ol>
+</li>
+<li><p>TCP service model and Segment Format</p>
+<ol>
+<li><strong>The Sequence number</strong> indicates the position in the byte stream of the first byte in the TCP Data field.</li>
+<li><strong>The Acknowledgment sequence number</strong> tells the other end which byte we are expecting next.</li>
+<li><strong>checksum</strong> is calculated over entire pseudo header(includes some IP header) and data for detecting corrupt data.</li>
+<li><strong>Header Length</strong> tells how long the header is.</li>
+<li><strong>Window</strong> for flow-control.</li>
+<li><strong>Urgent pointer</strong> for the urgent bit.</li>
+<li>Flags:<ol>
+<li>URG is urgent bit, TCP must inform the receiving-side upper-layer entity when urgent data exists and pass it a pointer to the end of the urgent data. </li>
+<li>ACK flag tells that the Acknowledgment sequence number is valid and we are acknowledging all of the data up until this point.(第一次connect set to 0, 以后都set to 1, 前面的已确认收到)</li>
+<li>SYN flag tells us that we are signalling a synchronize.</li>
+<li>FIN flag signals the closing of one direction of the connection.</li>
+<li>PSH flag tells the TCP layer deliver data immediately upon arrival.</li>
+<li>RST is reset bit, reset the connection because of something wrong.</li>
+<li>offset is to tell where the data begin, because we may have options.</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/The%20TCP%20service%20mod.png?raw=true" alt="The TCP service mode"></li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/The%20TCP%20segment%20Format.png?raw=true" alt="The TCP segment Format"></li>
+</ul>
+</li>
+<li><p>When host A suddenly creates a lot of new connections to Host B, it might still wrap around and try to create connections with the same global ID.</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/wrap-around-concept-and-tcp-sequence-number/">Wraparound concept</a></li>
+<li>Case 1: Assume a packet is transferred very slow, the old connection has been deleted, and new connection is the same as the old connection. So how do we know the packet isn’t the new connection’s packet, one possible solution is <strong>using a initial random sequence number</strong>, though is not totally fool proof.</li>
+<li>Case 2: It can happen at a high rate of traffic, all the sequence numbers got used up. The sequence number for every packet has to be unique but since it is finite (4 Giga) at some point in time the Sequence number is completely consumed up.</li>
+</ol>
+</li>
+<li><p>Other features:</p>
+<ul>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/TCP%20Sliding%20Window.png?raw=true" alt="TCP Sliding Window"></li>
+</ul>
+</li>
+</ol>
+<h2 id="2-2-udp-service-model"><a href="#2-2-udp-service-model" class="headerlink" title="2.2 udp-service-model"></a><strong>2.2 udp-service-model</strong></h2><ol>
+<li><p>UDP(User Datagram Protocol)</p>
+<ul>
+<li>16-bit length tells header + data length.</li>
+<li>checksum is optional.<ul>
+<li>if unused, all set 0;</li>
+<li>if used, calculated over UDP header + data + a portion of the IPv4 header. The rationale for violating the layering principle and using information from the layer below(IPv4) is that it allows the UDP layer to detect datagrams that were delivered to the wrong destination.</li>
+</ul>
+</li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/UDP%20Datagram%20Format.png?raw=true" alt="UDP Datagram Format"></li>
+</ul>
+</li>
+<li><p>UDP is merely a <strong>Demultiplexing mechanism</strong> to divide up the stream of UDP datagrams and send them to the correct process, called User Demultiplexing Protocol.</p>
+<ul>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/UDP.png?raw=true" alt="UDP"></li>
+</ul>
+</li>
+<li><p>Apply: DNS(Domain Name System), DHCP(Dynamic Host Configuration Protocol)</p>
+</li>
+<li><p>UPD provides a simpler, datagram delivery service between application processes.</p>
+</li>
+</ol>
+<h2 id="2-3-ICMP"><a href="#2-3-ICMP" class="headerlink" title="2.3 ICMP"></a><strong>2.3 ICMP</strong></h2><ol>
+<li><p>Making the Network Layer work</p>
+<ul>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/Making%20the%20Network%20Layer%20Work.png?raw=true" alt="Making the Network Layer Work"></li>
+</ul>
+</li>
+<li><p>The ICMP Service Model</p>
+<ul>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/The%20ICMP%20Service%20Model.png?raw=true" alt="The ICMP Service Model"></li>
+</ul>
+</li>
+<li><p>ICMP Message Types</p>
+<ul>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/CMP%20Message%20Types.png?raw=true" alt="ICMP Message Types"></li>
+</ul>
+</li>
+<li><p>How “ping” uses ICMP<br><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/How%20ping%20uses%20ICMP.png?raw=true" alt="How &quot;ping&quot; uses ICMP"> </p>
+</li>
+<li><p>How “traceroute” uses ICMP</p>
+<ul>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/How%20traceroute%20uses%20ICMP.png?raw=true" alt="How &quot;traceroute&quot; uses ICMP"></li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/Summary.png?raw=true" alt="Summary"></li>
+</ul>
+</li>
+</ol>
+<h2 id="2-4-end-to-end-principle"><a href="#2-4-end-to-end-principle" class="headerlink" title="2.4 end-to-end principle"></a><strong>2.4 end-to-end principle</strong></h2><ol>
+<li><p>During the communication, Why Doesn’t the Network Help?</p>
+<ul>
+<li>Compress data?</li>
+<li>Reformat&#x2F;translate&#x2F;improve requests?</li>
+<li>Serve cached data?</li>
+<li>Add security?</li>
+<li>Migrate connections across the network?</li>
+<li>Or one of any of a huge number of other things?</li>
+</ul>
+</li>
+<li><blockquote>
+<p><strong>The end-to-end Principle</strong>: The function in question can completely and correctly be implemented only with the knowledge and help of the application standing at the end points of the communication system. **Therefore, providing that questioned function as a feature of the communication system itself is not possible. (Sometimes an incomplete version of the function provided by the communication system may be useful as a performance enhancement.) We call this line of reasoning. . .”the end-to-end argument.” - Saltzer, Reed, and Clark, End-to-end Arguments in System Design, 1984</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p><strong>Strong End to End</strong>: The network’s job is to transmit datagrams as efficiently and flexibly as possible. Everything else should be done at the fringes. . .– [RFC 1958]<br>Reason: The reasoning for the strong principle is flexibility and simplicity. If the network implements a piece of functionality to try to help the endpoints, then it is assuming what the endpoints do. For example, when a wireless link layer uses retransmissions to improve reliability so TCP can work better, it’s assuming that the increased latency of the retransmissions is worth the reliability. This isn’t always true. he link layer has incorporated improved reliabilityThere are protocols other than TCP, where reliability isn’t important, which might rather send a new, different, packet than retry sending an old one. But because t, these other protocols are stuck with it. This can and does act as an impediment to innovation and progress. As layers start to add optimizations assuming what the layers above and below them do, it becomes harder and harder to redesign the layers. In the case of WiFi, it’s a link layer that assumes certain behavior at the network and transport layers. If you invent a new transport or network layer, it’s likely going to assume how WiFi behaves so it can perform well. In this way the network design becomes calcified and really hard to change.</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="2-5-Error-Detection"><a href="#2-5-Error-Detection" class="headerlink" title="2.5 Error Detection"></a><strong>2.5 Error Detection</strong></h2><ol>
+<li><p>Three Error Detection Schemes:</p>
+<ul>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/Three%20Error%20Detection%20Scheme.png?raw=true" alt="Three Error Detection Scheme"></li>
+</ul>
+</li>
+<li><p>The IPv4 header checksum is a checksum used in version 4 of the Internet Protocol (IPv4) to detect corruption in the <strong>header</strong> of IPv4 packets.</p>
+<ol>
+<li>Calculating:<ol>
+<li>sum all 16-bit words</li>
+<li>add the carry bits back</li>
+<li>Flip bits, get the checksum(if result is 0xffff, don’t flip)<ol>
+<li>In IP, UDP and TCP, a checksum field of 0 means there’s no checksum.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Checking:<ol>
+<li>add all 16-bit words, including checksum</li>
+<li>add the carry bits back, should be 0xffff</li>
+</ol>
+</li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/IPv4_header_checksum">IPv4 Checksum theory</a><br><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/IP%20Checksum.png?raw=true" alt="IP Checksum"></li>
+</ol>
+</li>
+<li><p>CRC(Cyclic Redundancy Check):</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://web.archive.org/web/20220113075327/https://blog.csdn.net/qq_26652069/article/details/100578942">Theory</a><ol>
+<li>Calculating:  <ol>
+<li>选择一个多项式G，将它转化为二进制</li>
+<li>多项式G的二进制有多少位bit, 就在M后添加多少个0bits，记为M_</li>
+<li>M_ XOR G(模二除法), 得CRC</li>
+<li>将CRC添加至M末尾, 记为M’, 再进行数据传输</li>
+</ol>
+</li>
+<li>Checking:<ol>
+<li>M’ XOR G &#x3D;&#x3D; 0<br><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/CRC.png?raw=true" alt="CRC"><br><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/Deversion%20CRC%20Mathematical%20Basis.png?raw=true" alt="Diversion: CRC Mathematical Basis"></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>MAC(Message Authentication Code)</p>
+<ol>
+<li>has both error detection and <strong>security</strong>, 保证数据在传输中不被篡改.<br><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/MAC.png?raw=true" alt="MAC"></li>
+</ol>
+</li>
+</ol>
+<h2 id="2-6-Finite-State-Machine"><a href="#2-6-Finite-State-Machine" class="headerlink" title="2.6 Finite State Machine"></a><strong>2.6 Finite State Machine</strong></h2><ol>
+<li>TCP有限状态机, 黑线的上方代表event,包括主动发起(粗体表示)的和被动接受的event, 下方表示action.</li>
+<li>对于C&#x2F;S模式, Server listen, Client connect; 对于peer to peer模式, host可能同时发起连接, 服务器也可能变成客户端, 客户端也可能变成服务器.</li>
+<li>对于Close, 区分active和passive close; 可能双方同时关闭;一方先关闭, 另一方立马关闭; 一方先关闭, 然后等一段时间另一方再关闭.<ul>
+<li><img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Tcp_state_diagram_fixed.svg" alt="TCP connection"></li>
+</ul>
+</li>
+</ol>
+<h2 id="2-7-Flow-Control"><a href="#2-7-Flow-Control" class="headerlink" title="2.7 Flow Control"></a><strong>2.7 Flow Control</strong></h2><ol>
+<li><p>Stop and Wait:<br><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/Stop%20and%20wait.PNG?raw=true" alt="Stop and wait"></p>
+</li>
+<li><p>sliding windows:<br><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/Sliding%20window%20sender.PNG?raw=true" alt="Sliding window sender"><br><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/sliding%20window%20receiver.PNG?raw=true" alt="sliding window receiver"><br><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/2/RWS,SWS,%20and%20Sequence%20Space.PNG?raw=true" alt="RWS,SWS, and Sequence Space"></p>
+</li>
+<li><p>一般情况下, RWS &#x3D; SWS, 因为SWS是有RWS进行控制的, 同时, window是可变的.</p>
+<ol>
+<li>buffer &gt; window, 如RWS &#x3D; receiver buffer - buffered data, 且window是可变的(但sender window不推荐向前收缩).</li>
+<li><a target="_blank" rel="noopener" href="https://notfalse.net/24/tcp-flow-control">TCP flow control详解</a></li>
+</ol>
+</li>
+<li><p>Go-back-N protocol: 如果sender发生timeout, 则重传所有的未被ACK的packets. 对于receiver, 可以丢弃所有out-of-order packet, 因为sender会重传所有packet(丢弃out-of-order packet的缺点很明显,个人认为还是进行缓存).</p>
+<ol>
+<li>If RWS &#x3D; 1, 就是 “go back N” protocol, 即如果某个packet dropped, 需要重新传N个packets, 因为receiver没有buffer cache.(N &#x3D;&#x3D; SWS)</li>
+</ol>
+</li>
+</ol>
+<h2 id="2-8-reliable-connections"><a href="#2-8-reliable-connections" class="headerlink" title="2.8 reliable connections"></a><strong>2.8 reliable connections</strong></h2><ol>
+<li><p>Connection establishment</p>
+<ol>
+<li>3-way handshake</li>
+<li>“simultaneous open”: 4-way handshake.</li>
+</ol>
+</li>
+<li><p>Connection Teardown</p>
+<ol>
+<li><img src="/" alt="Connection teardown"></li>
+<li>cleaning up safely<ol>
+<li>send FIN, 如果中间的FIN和ACK lost, 则keep socket around for 2 MSL(Maximum segment lifetime)</li>
+<li>也可以发送<code>RST</code>单方面结束socket.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+
+<span style="margin-top:30px; color:var(--blockquote-color); font-size:0.85em">
+        <br>
+        <span class="post-end-item" title="copyright"">
+            <span class="post-end-item-icon" style="margin-right: 3px">
+                <i class="fab fa-fw fa-creative-commons"></i>
+            </span>
+            <span class="post-end-item-text">采用署名-非商业性使用-相同方式共享 4.0（CC BY-NC-SA 4.0）许可协议</span>
+        </span>
+</span>
+
+
+
+
+
+<div class="donations">
+    <div class="donation-label">喜欢这篇文章？为什么不考虑赞赏一下作者呢？</div>
+    <a class="afdian-button" href="https://afdian.net/@lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fas fa-fw fa-bolt"></i>爱发电
+    </a>
+    <a class="paypal-button" href="https://paypal.me/lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fab fa-fw fa-paypal"></i>Paypal
+    </a>
+</div>
+          <div class="post-tags">
+              <a href="/tags/CS144/" rel="tag"># CS144</a>
+              <a href="/tags/Transport/" rel="tag"># Transport</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/12/CS144/Unit1-Internet-and-IP/" rel="prev" title="Unit1-Internet-and-IP">
+                  <i class="fa fa-chevron-left"></i> Unit1-Internet-and-IP
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/01/13/CS144/Unit3-UDP%20and%20TCP/" rel="next" title="Unit3-UDP and TCP">
+                  Unit3-UDP and TCP <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chrunge</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+if(window.location.hash){
+    var checkExist = setInterval(function() {
+        if ($(window.location.hash).length) {
+            $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+            clearInterval(checkExist);
+        }
+    }, 100);
+}
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+/* @license Minigrid v3.1.1 – https://cdn.jsdelivr.net/npm/minigrid@3.1.1/dist/minigrid.min.js */
+!function(t, e) {
+	"function" == typeof define && define.amd ? define(e) : "object" == typeof exports ? module.exports = e() : t.Minigrid = e()
+}(this, function(t) {
+	"use strict";
+	function e(t, e) {
+		for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+		return t
+	}
+	var i = function(t) {
+			var i = t.container instanceof Node ? t.container : document.querySelector(t.container),
+				r = t.item instanceof NodeList ? t.item : i.querySelectorAll(t.item);
+			this.props = e(t, {
+				container: i,
+				nodeList: r
+			})
+		};
+	return i.prototype.mount = function() {
+		if (!this.props.container) return !1;
+		if (!this.props.nodeList || 0 === this.props.nodeList.length) return !1;
+		var t = "number" == typeof this.props.gutter && isFinite(this.props.gutter) && Math.floor(this.props.gutter) === this.props.gutter ? this.props.gutter : 0,
+			e = this.props.done,
+			i = this.props.container,
+			r = this.props.nodeList;
+		i.style.width = "";
+		var n = Array.prototype.forEach,
+			o = i.getBoundingClientRect().width,
+			s = r[0].getBoundingClientRect().width + t,
+			p = Math.max(Math.floor((o - t) / s), 1),
+			a = 0;
+		o = s * p + t + "px", i.style.width = o, i.style.position = "relative";
+		for (var c = [], u = [], l = 0; l < p; ++l) u.push(l * s + t), c.push(t);
+		this.props.rtl && u.reverse(), n.call(r, function(e) {
+			var i = c.slice(0).sort(function(t, e) {
+				return t - e
+			}).shift();
+			i = c.indexOf(i);
+			var r = parseInt(u[i]),
+				n = parseInt(c[i]);
+			e.style.position = "absolute", e.style.webkitBackfaceVisibility = e.style.backfaceVisibility = "hidden", e.style.transformStyle = "preserve-3d", e.style.transform = "translate3D(" + r + "px," + n + "px, 0)", c[i] += e.getBoundingClientRect().height + t, a += 1
+		}), i.style.display = "";
+		var f = c.slice(0).sort(function(t, e) {
+			return t - e
+		}).pop();
+		i.style.height = f + "px", "function" == typeof e && e(r)
+	}, i
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

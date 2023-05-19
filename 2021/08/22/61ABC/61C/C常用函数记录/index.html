@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="C函数库函数 int feof(FILE * stream); 检测到文件结束标示返回1, 否则返回0  当文件内部位置指针指向文件结束时，并未立即置位FILE结构中的文件结束标记，只有再执行一次读文件操作，才会置位结束标志，此后调用feof()才会返回为真。   #define EOF (-1): 为End of file的缩写, fgetc()和getc()返回EOF时并不一定能表示文件结束,">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="C常用函数记录">
+<meta property="og:url" content="http://example.com/2021/08/22/61ABC/61C/C%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="Chrunge&#39;s Wonderland">
+<meta property="og:description" content="C函数库函数 int feof(FILE * stream); 检测到文件结束标示返回1, 否则返回0  当文件内部位置指针指向文件结束时，并未立即置位FILE结构中的文件结束标记，只有再执行一次读文件操作，才会置位结束标志，此后调用feof()才会返回为真。   #define EOF (-1): 为End of file的缩写, fgetc()和getc()返回EOF时并不一定能表示文件结束,">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-08-21T16:03:35.000Z">
+<meta property="article:modified_time" content="2022-06-17T09:30:30.000Z">
+<meta property="article:author" content="Chrunge">
+<meta property="article:tag" content="CS61C">
+<meta property="article:tag" content="C">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2021/08/22/61ABC/61C/C%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E8%AE%B0%E5%BD%95/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2021/08/22/61ABC/61C/C%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E8%AE%B0%E5%BD%95/","path":"2021/08/22/61ABC/61C/C常用函数记录/","title":"C常用函数记录"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>C常用函数记录 | Chrunge's Wonderland</title>
+  
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+
+
+
+<link rel="preconnect" href="https://website-1256060851.file.myqcloud.com" crossorigin>
+<link rel="preconnect" href="https://sdn.geekzu.org" crossorigin>
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiangsudian/CaoMei/style.min.css">
+
+
+
+
+
+<script type="text/javascript">
+// Live2d
+// 注意：live2d_path 参数应使用绝对路径
+const live2d_path = "https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
+
+// 封装异步加载资源的方法
+function loadExternalResource(url, type) {
+	return new Promise((resolve, reject) => {
+		let tag;
+
+		if (type === "css") {
+			tag = document.createElement("link");
+			tag.rel = "stylesheet";
+			tag.href = url;
+		}
+		else if (type === "js") {
+			tag = document.createElement("script");
+			tag.src = url;
+		}
+		if (tag) {
+			tag.onload = () => resolve(url);
+			tag.onerror = () => reject(url);
+			document.head.appendChild(tag);
+		}
+	});
+}
+
+// 加载 waifu.css live2d.min.js waifu-tips.js
+if (screen.width >= 768) {
+	Promise.all([
+		loadExternalResource(live2d_path + "waifu.min.css", "css"),
+		loadExternalResource(live2d_path + "live2d.min.js", "js"),
+		loadExternalResource(live2d_path + "waifu-tips.min.js", "js")
+	]).then(() => {
+		initWidget({
+			waifuPath: live2d_path + "waifu-tips.json",
+			apiPath: "https://api.dlzhang.com/live2d/", // https://live2d.fghrsh.net/api/
+			//cdnPath: "https://cdn.jsdelivr.net/gh/fghrsh/live2d_api/"
+		});
+	});
+}
+// initWidget 第一个参数为 waifu-tips.json 的路径，第二个参数为 API 地址
+// API 后端可自行搭建，参考 https://github.com/fghrsh/live2d_api
+// 初始化看板娘会自动加载指定目录下的 waifu-tips.json
+
+console.log(`
+  く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+`);
+// End Live2d Code
+
+window.addEventListener('load', () => {
+	console.log(`\n%c醉里挑灯赏猫%c班班 @lei2rock%c\n`, 'padding: 8px; background: #3f5973; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #649ab6; font-size: large; color: #eee;','');
+	console.log(`页面加载完毕消耗了${Math.round(performance.now() * 100) / 100}ms`);
+});
+
+</script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Chrunge's Wonderland</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Bio Bio</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">46</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">48</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#C%E5%87%BD%E6%95%B0%E5%BA%93%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">C函数库函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C%E8%AF%AD%E8%A8%80%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">1.1.</span> <span class="nav-text">C语言注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0%E5%BA%93"><span class="nav-number">2.</span> <span class="nav-text">字符串函数库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="nav-number">3.</span> <span class="nav-text">参考文档</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chrunge</p>
+  <div class="site-description" itemprop="description">Courage is not simply one of the virtues but the form of every virtue at the testing point.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+<div class="cc-license animated" itemprop="sponsor">
+  <a href="https://www.netlify.com" class="cc-opacity" title="Deploy with Netlify → https://www.netlify.com" target="_blank"><img width="80" src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Netlify"></a>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/22/61ABC/61C/C%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chrunge's Wonderland">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="C常用函数记录 | Chrunge's Wonderland">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C常用函数记录
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-08-21 16:03:35" itemprop="dateCreated datePublished" datetime="2021-08-21T16:03:35Z">2021-08-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-17 09:30:30" itemprop="dateModified" datetime="2022-06-17T09:30:30Z">2022-06-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Language/" itemprop="url" rel="index"><span itemprop="name">Language</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="C函数库函数"><a href="#C函数库函数" class="headerlink" title="C函数库函数"></a>C函数库函数</h2><ol>
+<li><p><code>int feof(FILE * stream);</code> 检测到文件结束标示返回1, 否则返回0</p>
+<ul>
+<li>当文件内部位置指针指向文件结束时，并未立即置位FILE结构中的文件结束标记，只有再执行一次读文件操作，才会置位结束标志，此后调用<code>feof()</code>才会返回为真。</li>
+</ul>
+</li>
+<li><p><code>#define EOF (-1)</code>: 为End of file的缩写, <code>fgetc()</code>和<code>getc()</code>返回EOF时并不一定能表示文件结束, 当读取文件出错时也会返回EOF; 因此，我们需要<code>feof()</code>来判断文件是否结束.</p>
+<span id="more"></span></li>
+<li><p><code>int fgetc(FILE *stream)</code>: 该函数以无符号<code>char</code>强制转换为<code>int</code>的形式返回读取的字符，如果到达文件末尾或发生读错误，则返回 EOF。</p>
+</li>
+<li><p><code>int strcmp(const char *str1, const char *str2)</code>: </p>
+<ul>
+<li>如果返回值小于 0，则表示 str1 小于 str2。</li>
+<li>如果返回值大于 0，则表示 str1 大于 str2。</li>
+<li>如果返回值等于 0，则表示 str1 等于 str2。</li>
+</ul>
+</li>
+<li><p><code>char *strcpy(char *dest, const char *src)</code>: 该函数返回一个指向最终的目标字符串 dest 的指针。</p>
+</li>
+<li><p><code>int fprintf(FILE *stream, const char *format, ...)</code></p>
+<ul>
+<li><code>stream</code> 指向 FILE 对象的指针，该 FILE 对象标识了流。 </li>
+<li><code>format</code> 为C字符串。</li>
+</ul>
+</li>
+<li><p><code>char *strdup(const char *s)</code>: This function returns a pointer to a null-terminated byte string, which is a duplicate of the string pointed to by s. The memory obtained is done <strong>dynamically using malloc</strong> and hence it can be freed using free().</p>
+</li>
+<li><p>测量程序运行时间：</p>
+<ol>
+<li><p>使用Linux命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">time ./program</span><br><span class="line"></span><br><span class="line">real    0m29.313s</span><br><span class="line">user    0m29.043s</span><br><span class="line">sys     0m0.136s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>C函数库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> #include &lt;time.h&gt;</span><br><span class="line"></span><br><span class="line">clock_t start, end;</span><br><span class="line">double cpu_time_used;</span><br><span class="line"></span><br><span class="line">start = clock();</span><br><span class="line">... /* Do the work. */</span><br><span class="line">end = clock();</span><br><span class="line">cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h3 id="C语言注意事项"><a href="#C语言注意事项" class="headerlink" title="C语言注意事项"></a>C语言注意事项</h3><ol>
+<li>通过指针引用的字符串，指针的值可以变；而通过数组名引用的字符串，<strong>数组名的值为常数，不能变</strong>。</li>
+<li>指针指向的<strong>字符串常量</strong>，其内容不可修改 。</li>
+<li>C会在字符串后面自动添加<code>\0</code>，所以<code>总长度 = strlen(str) + 1</code>。</li>
+<li>C语言的四种存储类型：auto(局部) static（整个运行期间不释放） register（寄存器） extern（外部变量声明）</li>
+<li><code>struct</code>的内存计算：<ul>
+<li>有效对齐值：是给定值<code>#pragma pack(n)</code>和结构体中最长数据类型中的较小值（即&lt;&#x3D;n, n一般为4)</li>
+<li>结构体大小为有效对齐值的整数倍；结构体中每个成员相对于结构体首地址的偏移量（offset）都是成员大小的整数倍</li>
+</ul>
+</li>
+<li>sizeof陷阱：<ol>
+<li>它是操作符，不是函数。</li>
+<li>sizeof能求出静态分配数组的大小，如<code>int temp[10]; sizeof(temp) == 40</code>为正， 但动态分配的数组，只能求出指针的大小。</li>
+</ol>
+</li>
+<li>循环使用<code>pthread_create()</code>创建子线程时, 不能在同一个循环中调用<code>pthread_join()</code>, 因为一旦调用<code>pthread_join</code>,主线程就会被堵塞, 不能继续创建剩下的子线程, 此时的情况就相当于<code>serial computation</code>.<ul>
+<li>需要在后面加另一个循环, 然后逐个<code>pthread_join()</code> </li>
+<li><code>pthread_create()</code>中的每个线程接受的参数, 需要单独的存储空间. 如果共用一个存储空间, 则可能在该线程还未使用该参数时, 里面的值就被改变了, 被用于下个线程的创建.</li>
+</ul>
+</li>
+<li>C语言中的逻辑false: <code>0, NULL, &#39;\0&#39;</code></li>
+</ol>
+<h2 id="字符串函数库"><a href="#字符串函数库" class="headerlink" title="字符串函数库"></a>字符串函数库</h2><ol>
+<li><p><code>strcpy()</code>：复制字符串。<br><code>strncpy()</code>：复制字符串，有长度限制。</p>
+<p><code>strcat()</code>：连接两个字符串。<br><code>strncat()</code>：连接两个字符串，有长度限制。</p>
+<p><code>strcmp()</code>：比较两个字符串。<br><code>strncmp()</code>：比较两个字符串，有长度限制。</p>
+<p><code>strlen()</code>：返回字符串的字节数。</p>
+</li>
+<li><p><code>char* strchr(char* str, int c);</code>: 查找指定字符, 返回该字符的指针<br><code>char* strrchr(char *str, int c);</code>: 反向查找指定字符<br><code>size_t strspn(char* str, const char* accept);</code>: 查找第一个不属于指定字符集范围内的字符串长度<br><code>size_t strcspn(char *str, const char *reject);</code>：查找第一个属于指定字符集范围的字符</p>
+<p><code>char* strpbrk(const char* s1, const char* s2);</code>: 返回s1中第一个<strong>属于s2字符集的字符</strong>的指针</p>
+<p><code>char *strstr( const char* str, const char* substr);</code>: 在<code>str</code>中查找子字符串<code>substr</code>, 并返回<code>str</code>中指向<code>substr</code>的指针</p>
+<p><code>char* strtok(char* str, const char* delim);</code>: <code>strtok()</code>用来将一个字符串按照指定的分隔符(delimiter), 分解成一系列词元(tokens)。详细使用请见<a href="(https://wangdoc.com/clang/lib/string.h.html#strchrstrrchr)">阮一峰老师的C语言教程</a>.</p>
+</li>
+</ol>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://wangdoc.com/clang/lib/string.h.html#strchrstrrchr">阮一峰C语言教程</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+
+<span style="margin-top:30px; color:var(--blockquote-color); font-size:0.85em">
+        <br>
+        <span class="post-end-item" title="copyright"">
+            <span class="post-end-item-icon" style="margin-right: 3px">
+                <i class="fab fa-fw fa-creative-commons"></i>
+            </span>
+            <span class="post-end-item-text">采用署名-非商业性使用-相同方式共享 4.0（CC BY-NC-SA 4.0）许可协议</span>
+        </span>
+</span>
+
+
+
+
+
+<div class="donations">
+    <div class="donation-label">喜欢这篇文章？为什么不考虑赞赏一下作者呢？</div>
+    <a class="afdian-button" href="https://afdian.net/@lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fas fa-fw fa-bolt"></i>爱发电
+    </a>
+    <a class="paypal-button" href="https://paypal.me/lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fab fa-fw fa-paypal"></i>Paypal
+    </a>
+</div>
+          <div class="post-tags">
+              <a href="/tags/CS61C/" rel="tag"># CS61C</a>
+              <a href="/tags/C/" rel="tag"># C</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/08/21/Tools/Vim%E6%80%BB%E7%BB%93/" rel="prev" title="Vim使用指南记录">
+                  <i class="fa fa-chevron-left"></i> Vim使用指南记录
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/08/24/Tools/Makefile%E6%80%BB%E7%BB%93/" rel="next" title="编程工具记录">
+                  编程工具记录 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chrunge</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+if(window.location.hash){
+    var checkExist = setInterval(function() {
+        if ($(window.location.hash).length) {
+            $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+            clearInterval(checkExist);
+        }
+    }, 100);
+}
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+/* @license Minigrid v3.1.1 – https://cdn.jsdelivr.net/npm/minigrid@3.1.1/dist/minigrid.min.js */
+!function(t, e) {
+	"function" == typeof define && define.amd ? define(e) : "object" == typeof exports ? module.exports = e() : t.Minigrid = e()
+}(this, function(t) {
+	"use strict";
+	function e(t, e) {
+		for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+		return t
+	}
+	var i = function(t) {
+			var i = t.container instanceof Node ? t.container : document.querySelector(t.container),
+				r = t.item instanceof NodeList ? t.item : i.querySelectorAll(t.item);
+			this.props = e(t, {
+				container: i,
+				nodeList: r
+			})
+		};
+	return i.prototype.mount = function() {
+		if (!this.props.container) return !1;
+		if (!this.props.nodeList || 0 === this.props.nodeList.length) return !1;
+		var t = "number" == typeof this.props.gutter && isFinite(this.props.gutter) && Math.floor(this.props.gutter) === this.props.gutter ? this.props.gutter : 0,
+			e = this.props.done,
+			i = this.props.container,
+			r = this.props.nodeList;
+		i.style.width = "";
+		var n = Array.prototype.forEach,
+			o = i.getBoundingClientRect().width,
+			s = r[0].getBoundingClientRect().width + t,
+			p = Math.max(Math.floor((o - t) / s), 1),
+			a = 0;
+		o = s * p + t + "px", i.style.width = o, i.style.position = "relative";
+		for (var c = [], u = [], l = 0; l < p; ++l) u.push(l * s + t), c.push(t);
+		this.props.rtl && u.reverse(), n.call(r, function(e) {
+			var i = c.slice(0).sort(function(t, e) {
+				return t - e
+			}).shift();
+			i = c.indexOf(i);
+			var r = parseInt(u[i]),
+				n = parseInt(c[i]);
+			e.style.position = "absolute", e.style.webkitBackfaceVisibility = e.style.backfaceVisibility = "hidden", e.style.transformStyle = "preserve-3d", e.style.transform = "translate3D(" + r + "px," + n + "px, 0)", c[i] += e.getBoundingClientRect().height + t, a += 1
+		}), i.style.display = "";
+		var f = c.slice(0).sort(function(t, e) {
+			return t - e
+		}).pop();
+		i.style.height = f + "px", "function" == typeof e && e(r)
+	}, i
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

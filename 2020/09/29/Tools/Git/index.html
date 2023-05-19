@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Git学习笔记">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Git">
+<meta property="og:url" content="http://example.com/2020/09/29/Tools/Git/index.html">
+<meta property="og:site_name" content="Chrunge&#39;s Wonderland">
+<meta property="og:description" content="Git学习笔记">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/git_add.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/diff.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/reset.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/reset_hard.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/reset_soft.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/revert.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/fetch.gif">
+<meta property="og:image" content="http://example.com/zob-source/image/pull.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/cherry_pick.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/rebase.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/rebase-i.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/fast_forward.gif">
+<meta property="og:image" content="http://example.com/zob-source/image/no_fast_forward.gif">
+<meta property="article:published_time" content="2020-09-28T18:44:16.000Z">
+<meta property="article:modified_time" content="2022-06-17T09:30:30.000Z">
+<meta property="article:author" content="Chrunge">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8.jpg">
+
+
+<link rel="canonical" href="http://example.com/2020/09/29/Tools/Git/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2020/09/29/Tools/Git/","path":"2020/09/29/Tools/Git/","title":"Git"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Git | Chrunge's Wonderland</title>
+  
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+
+
+
+<link rel="preconnect" href="https://website-1256060851.file.myqcloud.com" crossorigin>
+<link rel="preconnect" href="https://sdn.geekzu.org" crossorigin>
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiangsudian/CaoMei/style.min.css">
+
+
+
+
+
+<script type="text/javascript">
+// Live2d
+// 注意：live2d_path 参数应使用绝对路径
+const live2d_path = "https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
+
+// 封装异步加载资源的方法
+function loadExternalResource(url, type) {
+	return new Promise((resolve, reject) => {
+		let tag;
+
+		if (type === "css") {
+			tag = document.createElement("link");
+			tag.rel = "stylesheet";
+			tag.href = url;
+		}
+		else if (type === "js") {
+			tag = document.createElement("script");
+			tag.src = url;
+		}
+		if (tag) {
+			tag.onload = () => resolve(url);
+			tag.onerror = () => reject(url);
+			document.head.appendChild(tag);
+		}
+	});
+}
+
+// 加载 waifu.css live2d.min.js waifu-tips.js
+if (screen.width >= 768) {
+	Promise.all([
+		loadExternalResource(live2d_path + "waifu.min.css", "css"),
+		loadExternalResource(live2d_path + "live2d.min.js", "js"),
+		loadExternalResource(live2d_path + "waifu-tips.min.js", "js")
+	]).then(() => {
+		initWidget({
+			waifuPath: live2d_path + "waifu-tips.json",
+			apiPath: "https://api.dlzhang.com/live2d/", // https://live2d.fghrsh.net/api/
+			//cdnPath: "https://cdn.jsdelivr.net/gh/fghrsh/live2d_api/"
+		});
+	});
+}
+// initWidget 第一个参数为 waifu-tips.json 的路径，第二个参数为 API 地址
+// API 后端可自行搭建，参考 https://github.com/fghrsh/live2d_api
+// 初始化看板娘会自动加载指定目录下的 waifu-tips.json
+
+console.log(`
+  く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+`);
+// End Live2d Code
+
+window.addEventListener('load', () => {
+	console.log(`\n%c醉里挑灯赏猫%c班班 @lei2rock%c\n`, 'padding: 8px; background: #3f5973; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #649ab6; font-size: large; color: #eee;','');
+	console.log(`页面加载完毕消耗了${Math.round(performance.now() * 100) / 100}ms`);
+});
+
+</script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Chrunge's Wonderland</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Bio Bio</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">46</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">48</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Learning-Git"><span class="nav-number">1.</span> <span class="nav-text">Learning Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.</span> <span class="nav-text">1. 介绍:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BA%E7%89%88%E6%9C%AC%E5%BA%93"><span class="nav-number">3.</span> <span class="nav-text">2. 创建版本库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-git%E7%AC%AC%E4%B8%80%E6%AD%A5%E5%91%BD%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">3. git第一步命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%92%8C%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="nav-number">5.</span> <span class="nav-text">4. 工作区和暂存区</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%92%A4%E9%94%80%E4%BF%AE%E6%94%B9"><span class="nav-number">5.1.</span> <span class="nav-text">撤销修改:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E9%80%80%E7%89%88%E6%9C%AC"><span class="nav-number">5.2.</span> <span class="nav-text">回退版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="nav-number">5.3.</span> <span class="nav-text">删除文件:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-git%E8%BF%9C%E7%A8%8B%E5%BA%93"><span class="nav-number">6.</span> <span class="nav-text">5. git远程库:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E4%BA%BA%E5%8D%8F%E4%BD%9C"><span class="nav-number">6.1.</span> <span class="nav-text">多人协作:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86"><span class="nav-number">7.</span> <span class="nav-text">6. 分支管理:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81"><span class="nav-number">7.1.</span> <span class="nav-text">2. 解决冲突:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5"><span class="nav-number">7.2.</span> <span class="nav-text">3. 分支管理策略:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E6%A0%87%E7%AD%BE%E7%AE%A1%E7%90%86"><span class="nav-number">8.</span> <span class="nav-text">7. 标签管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E5%BF%BD%E7%95%A5%E7%89%B9%E6%AE%8A%E6%96%87%E4%BB%B6"><span class="nav-number">9.</span> <span class="nav-text">8. 忽略特殊文件:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E9%85%8D%E7%BD%AE%E5%88%AB%E5%90%8D"><span class="nav-number">10.</span> <span class="nav-text">9. 配置别名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E6%B7%BB%E5%8A%A0%E5%B7%B2%E6%9C%89%E7%9A%84ssh-key%E7%A7%81%E9%92%A5"><span class="nav-number">11.</span> <span class="nav-text">10. 添加已有的ssh key私钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-A-brief-about-command"><span class="nav-number">12.</span> <span class="nav-text">11. A brief about command</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-%E5%85%B6%E4%BB%96"><span class="nav-number">13.</span> <span class="nav-text">12:其他</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chrunge</p>
+  <div class="site-description" itemprop="description">Courage is not simply one of the virtues but the form of every virtue at the testing point.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+<div class="cc-license animated" itemprop="sponsor">
+  <a href="https://www.netlify.com" class="cc-opacity" title="Deploy with Netlify → https://www.netlify.com" target="_blank"><img width="80" src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Netlify"></a>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/29/Tools/Git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chrunge's Wonderland">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Git | Chrunge's Wonderland">
+      <meta itemprop="description" content="Git学习笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Git
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-09-28 18:44:16" itemprop="dateCreated datePublished" datetime="2020-09-28T18:44:16Z">2020-09-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-17 09:30:30" itemprop="dateModified" datetime="2022-06-17T09:30:30Z">2022-06-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">Git学习笔记</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="Learning-Git"><a href="#Learning-Git" class="headerlink" title="Learning Git"></a>Learning Git</h2><h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍:"></a>1. <strong>介绍:</strong></h2><p>Git是最先进的分布式版本控制系统，用来记录每次文件的改动.<br>集中式管理系统:拥有一个中央服务器，每次下载和上传改动都需要联网<br>分布式管理系统:没有中央服务器，每台电脑上都有一个完整的版本库，但通常也有一台充当”中央服务器”的电脑，以方便大家交换.</p>
+<p>比喻:每一次add，提交一次局部的风景图，commit则是把全部风景图整合起来形成全景图，最后放入保险箱（仓库）中。<br><img src="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8.jpg" alt="Git常用命令速查表"></p>
+<span id="more"></span>
+<h2 id="2-创建版本库"><a href="#2-创建版本库" class="headerlink" title="2. 创建版本库"></a>2. <strong>创建版本库</strong></h2><ol>
+<li>所有的版本控制系统，其实只能追踪文本文件的改动，如txt文件，网页，所有的程序代码.</li>
+</ol>
+<h2 id="3-git第一步命令"><a href="#3-git第一步命令" class="headerlink" title="3. git第一步命令"></a>3. <strong>git第一步命令</strong></h2><ol>
+<li>初始化一个Git仓库，使用<code>git init</code>命令。</li>
+<li>添加文件到Git仓库，分两步：<br> 使用命令<code>git add &lt;file&gt;</code>，注意，可反复多次使用，添加多个文件；<br> 使用命令<code>git commit -m &quot;annotation&quot;</code>，可一次提交多个文件。<br> <img src="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/git_add.png" alt="git_add"></li>
+</ol>
+<h2 id="4-工作区和暂存区"><a href="#4-工作区和暂存区" class="headerlink" title="4. 工作区和暂存区"></a>4. <strong>工作区和暂存区</strong></h2><ol>
+<li>git目录分为工作区和版本库(.git目录)，版本库中有stage(暂存区)和master分支(仓库).<br>提交修改:</li>
+<li><code>git add</code>:工作区&gt;&gt;&gt;暂存区</li>
+<li><code>git commit</code>：暂存区&gt;&gt;&gt;仓库</li>
+<li><code>git diff</code> 查看Working Directory和Stage<strong>详细</strong>差异</li>
+<li><code>git diff --cached</code> 查看Stage和HEAD的差异</li>
+<li><code>git diff HEAD</code> 查看Working Stage和HEAD的差异</li>
+<li>要随时掌握工作区的状态，使用<code>git status</code>命令，告知哪些文件被修改过</li>
+<li><img src="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/diff.png" alt="Diff"></li>
+</ol>
+<h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改:"></a><strong>撤销修改:</strong></h3><ol>
+<li><p>场景1：<code>git checkout -- file</code>(暂存区替换工作区)，相当于 <code>git add file</code> 的反向命令，丢弃本地更改。</p>
+</li>
+<li><p>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时。想丢弃修改，分两步：<br> 1. <code>git reset -- file</code>(相当于<code>git commit</code>的反向命令)<br> 2. <code>git checkout -- file</code>。</p>
+</li>
+</ol>
+<h3 id="回退版本"><a href="#回退版本" class="headerlink" title="回退版本"></a><strong>回退版本</strong></h3><ol>
+<li><code>git reset -- soft commit_id</code>: HEAD切换到<code>commit_id</code>上，都不改变Working Directory和Stage的内容</li>
+<li><code>git reset commit_id</code>： HEAD切换到<code>commit_id</code>上，只改变Stage的内容，不改变Working Directory的内容<br><img src="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/reset.gif" alt="reset"></li>
+<li><code>git reset --hard commit_id</code>切换到<code>commit_id</code>，并改变Working Directory和Stage的内容（相当于<code>commit_id</code>之后修改的内容全部丢弃）<br>再使用<code>git push -f origin branch_name</code> 强行提交<br><img src="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/reset_hard.gif" alt="reset_hard"><br><img src="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/reset_soft.gif" alt="reset_soft"></li>
+<li>本地或远程：使用<code>git revert -n commit_id</code>可以实现反做，并使用<code>git commit -m commit_id</code>提交<br><img src="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/revert.gif" alt="revert"></li>
+<li>穿梭前，用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本。要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本。</li>
+</ol>
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件:"></a><strong>删除文件:</strong></h3><ol>
+<li>删除文件:<code>rm file --&gt; git rm file</code>(提交到暂存区) –&gt;<code>git commit -m &lt;annotation&gt;</code></li>
+<li>不小心删除文件:<code>rm file --&gt; git checkout -- file</code> (暂存区替换工作区)</li>
+<li>不小心删除文件:<code>git rm file --&gt; git reset HEAD file --&gt;git checkout -- file</code>(不推荐此种删除方式)</li>
+</ol>
+<h2 id="5-git远程库"><a href="#5-git远程库" class="headerlink" title="5. git远程库:"></a>5. <strong>git远程库:</strong></h2><ol>
+<li><p>关联一个远程库，使用命令<code>git remote add origin git@server-name:path/repo-name.git</code>；</p>
+</li>
+<li><p>第一次推送:关联后，使用命令<code>git push -u origin master</code>第一次推送master分支的所有内容；</p>
+</li>
+<li><p>以后推送:每次本地提交后，只要有必要，就可以使用命令<code>git push origin master</code>推送最新修。意思是：切到本地仓库中的”master”分支，获取所有的提交，再到远程仓库”origin”中找到”master”分支，将远程仓库中没有的提交记录都添加上去.<br><br></p>
+</li>
+<li><p>克隆远程库：git clone git@github:path&#x2F;repo-name.git</p>
+</li>
+<li><p>查看远程库:git remote [-v] (-v 代表详细信息)</p>
+<ul>
+<li>master分支是主分支，因此要时刻与远程同步；</li>
+<li>dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；</li>
+<li>bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；</li>
+<li>feature分支是否推到远程，取决于是否和你的小伙伴合作在上面开发。<br><br></li>
+</ul>
+</li>
+<li><p>远程获取所有分支：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch -r | grep -v &#x27;\-&gt;&#x27; | while read remote; do git branch --track &quot;$&#123;remote#origin/&#125;&quot; &quot;$remote&quot;; done</span><br><span class="line">git fetch --all</span><br><span class="line">git pull --all</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>推送本地所有分支：<code>git push --all origin</code></p>
+</li>
+<li><p>使用GitHub，首先fork别人的仓库到自己的仓库，然后从自己的仓库中克隆到本地，再进行修改.如果完功能后提交到自己的仓库，再pull request到他人的仓库(将修改提交给他人)</p>
+</li>
+</ol>
+<h3 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作:"></a><strong>多人协作:</strong></h3><ol>
+<li><p>试图用<code>git push origin &lt;branch-name&gt;</code>推送自己的修改;</p>
+</li>
+<li><p>如果远程分支比本地分支更新，则推送失败-&gt;使用<code>git pull</code>尝试自动合并;</p>
+</li>
+<li><p><code>git pull --rebase origin master</code>：拉取远程仓库，更新到本地仓库，然后master的commits再提交到上面</p>
+<ul>
+<li>如果合并有冲突，则解决冲突，并在本地提交，最后成功推送</li>
+<li>如果<code>git pull</code>提示no tracking information，则说明本地分支比远程分支的链接关系没有创建，用 <code>git branch --set-upstream-to &lt;branch-name&gt; origin/&lt;branch-name&gt;</code> 创建链接关系<br></li>
+<li><code>git checkout -b dev origin/dev</code>基于远程分支创建本地分支<br><br></li>
+</ul>
+</li>
+<li><p><code>git push</code>：提交目前分支到关联的远程分支;<br><code>git push &lt;remote&gt; &lt;source&gt;</code>;<br><code>git push origin &lt;source&gt;:&lt;destination&gt;</code>.</p>
+</li>
+<li><p>   <code>git fetch</code>：下载所有的提交记录到本地的各个远程分支;<br>  <img src="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/fetch.gif" alt="fetch"><br>  <code>git fetch origin foo</code>：Git会到远程仓库的<code>foo</code>分支上，然后获取所有本地不存在的commits，放到本地的<code>o/foo</code>上;<br>  <code>git fetch origin &lt;source&gt;:&lt;destination&gt;</code>：从origin的source分支中取回数据，放入destination本地分支.</p>
+</li>
+<li><p>无<code>source</code>时：<code>git push origin  :foo</code>：删除远程<code>foo</code>分支<br> <code>git fetch origin  :bar</code>：在远程仓库中添加<code>bar</code>远程分支</p>
+</li>
+<li><p><code>git pull origin foo</code> 相当于：<code>git fetch origin foo</code>和<code>git merge o/foo</code><br><img src="/zob-source/image/pull.gif" alt="pull"></p>
+</li>
+<li><p><code>cherry pick commit_id1 commit_id2 ...</code>：将commit_id依次<strong>复制添加</strong>到当前分支<br> <img src="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/cherry_pick.gif" alt="cherry_pick">上</p>
+</li>
+<li><p><code>git rebase branch_name</code>：以<code>branch_name</code>为base，将分叉后的所有commit剪切上去。<br> <code>git rebase branch1 branch2</code>：以<code>branch1</code>为base，将分叉后的<code>branch2</code>的<code>commit</code>剪切上去。<br> <code>git rebase -i HEAD~4</code>：以交互的方式使用rebase</p>
+<blockquote>
+<p>There are 6 actions we can perform on the commits we’re rebasing:<br><code>reword</code>：Change the commit message<br><code>edit</code>：Amend this commit<br><code>squash</code>：Meld commit into the previous commit<br><code>fixup</code>：Meld commit into the previous commit，without keeping the commit’s log message<br><code>exec</code>：Run a command on each commit we want to rebase<br><code>drop</code>：Remove the commit</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/rebase.gif" alt="rebase"><br><img src="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/rebase-i.gif" alt="rebase-i"></p>
+</li>
+</ol>
+<h2 id="6-分支管理"><a href="#6-分支管理" class="headerlink" title="6. 分支管理:"></a>6. <strong>分支管理:</strong></h2><p>创建属于自己的分支，在开放一个功能完毕之后，再一次性合并到原来的分支上.</p>
+<ol>
+<li>HEAD是一个指针，指向的版本是当前正在其基础上工作的版本，<strong>HEAD通常情况下指向分支名，但也可以指向版本号</strong>，使用<code>git checkout branch/commit_id</code>可以改变HEAD指向;<br><br><code>HEAD^，HEAD~3</code>可代表相对引用，用于切换HEAD的位置.</li>
+</ol>
+<p>查看分支:<code>git branch</code><br>创建分支：<code>git branch &lt;name&gt;</code><br>切换分支:<code>git checkout &lt;name&gt; or git switch &lt;name&gt;</code><br>删除分支：<code>git branch -d &lt;name&gt;</code><br>合并分支到<strong>当前分支</strong>：<code>git merge &lt;name&gt;</code></p>
+<p>创建并切换分支：<code>git checkout -b &lt;name&gt; 或 git switch -c &lt;name&gt;</code><br>强行删除未合并的分支:<code>git branch -D &lt;name&gt;</code><br>将分支名（指针）指向其他位置：<code>git checkout -f &lt;branch_name&gt; HEAD~&lt;num&gt;</code><br></p>
+<h3 id="2-解决冲突"><a href="#2-解决冲突" class="headerlink" title="2. 解决冲突:"></a>2. <strong>解决冲突:</strong></h3><p>当git无法合并分支时，需要手动编辑合并失败的文件，然后在提交<br><code>git log --graph (--pretty=oneline --abbrev-commit)</code>可以查看分支的合并图.</p>
+<h3 id="3-分支管理策略"><a href="#3-分支管理策略" class="headerlink" title="3. 分支管理策略:"></a>3. <strong>分支管理策略:</strong></h3><ol>
+<li><p>git通常会用fast forward模式，在这种情况下，删除分支之后，会丢掉分叉时的信息(<code>git merge &lt;name&gt;</code>)<br><img src="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/fast_forward.gif" alt="fast forward"></p>
+</li>
+<li><p>使用–no-ff的普通模式进行合并，git会在merge时生成一个新的commit，这就能在分支历史上看出分支信息(<code>git merge --no-ff -m &quot;...&quot; &lt;name&gt;</code>)<br><img src="/zob-source/image/no_fast_forward.gif"></p>
+</li>
+<li><p><strong>分支策略:</strong><br>master分支非常稳定，用来发布版本;<br>干活都在dev分支上，每个人都从dev分支上创建自己的分支，然后再提交到dev分支上，</p>
+</li>
+<li><p><strong>Bug分支:</strong></p>
+<ol>
+<li><p>在一个任务期间，须完成一个新任务:</p>
+<p><code>git stash</code>:保留一个现场-&gt;然后去完成新任务<br><code>git stash list</code>:列出所有现场<br><code>git stash apply &lt;stash@&#123;id&#125;&gt;</code> :恢复现场，现场列表中依旧存在该现场，即没有删除栈顶<br><code>git stash dorp &lt;stash@&#123;id&#125;&gt;</code>：删除现场<br><code>git stash pop</code>：弹出现场，已删除栈顶<br><code>git cherry-pick &lt;branch id&gt;</code>：复制一个特定的提交到当前分支</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="7-标签管理"><a href="#7-标签管理" class="headerlink" title="7. 标签管理"></a>7. <strong>标签管理</strong></h2><ol>
+<li>发布一个版本时，给该版本打一个标签(tag)，就相当于总有个指针指向那个版本;<br>git的标签也相当于版本库的快照(和commit类似)，且标签和commit_id对应.</li>
+<li>打标签:<code>git tag &lt;tag-name&gt; [&lt;commit_id&gt;]</code></li>
+<li>查看标签:<code>git tag</code>;查看标签信息:<code>git show &lt;tag-name&gt;</code></li>
+<li>创建带有说明的标签，用-a指定标签名，-m指定说明文字：<code>git tag -a v0.1 -m &quot;version 0.1 released&quot; 1094adb</code></li>
+<li>删除标签:<code>git tag -d &lt;tag-name&gt;</code></li>
+<li>推送标签至远程:<code>git push origin &lt;tag-name&gt;</code>一次性推送全部标签:<code>git push origin --tags</code></li>
+<li>删除远程标签:先从本地删除(<code>git tag -d &lt;tag-nanme&gt;</code>)，再从远程删除:<code>git push origin :refs/tags/&lt;tag-name&gt;</code></li>
+<li><code>git describe ref(参考点)</code>返回离ref最近的标签</li>
+</ol>
+<h2 id="8-忽略特殊文件"><a href="#8-忽略特殊文件" class="headerlink" title="8. 忽略特殊文件:"></a>8. <strong>忽略特殊文件:</strong></h2><ol>
+<li>添加一个.gitignore文件，写入需要忽略的文件名.</li>
+<li><code>git add -f &lt;filename&gt;</code> :强制add一个文件(针对于被忽略却想添加的文件)</li>
+<li><code>git check-ignore -v &lt;filename&gt;</code>:检查.gitignore文件错误(针对于被忽略的却想添加的文件)</li>
+<li>gitignore文件本身要放到版本库里，并且可以对.gitignore做版本管理！</li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/kevingrace/p/5690241.html">gitignore规则总结</a></li>
+</ol>
+<h2 id="9-配置别名"><a href="#9-配置别名" class="headerlink" title="9. 配置别名"></a>9. <strong>配置别名</strong></h2><ol>
+<li>如将status 改为st：<code>git config --global  alias.st status</code><br>将<code>reset HEAD</code>改为<code>unstage：git config --global alias.unstage &#39;reset HEAD&#39;</code><br>(–global对当前用户起作用，不加则对当前仓库起作用)</li>
+<li>查看每个仓库的git配置：<code>cat .git/config</code></li>
+<li>查看每个用户的git配置：<code>cat .gitconfig</code>(目录为c:&#x2F;users&#x2F;计算机名称)</li>
+</ol>
+<h2 id="10-添加已有的ssh-key私钥"><a href="#10-添加已有的ssh-key私钥" class="headerlink" title="10. 添加已有的ssh key私钥"></a>10. <strong>添加已有的ssh key私钥</strong></h2><ul>
+<li><p>依次执行以下命令：</p>
+<p> exec ssh-agent bash<br> eval ssh-agent -s<br> ssh-add “C:\Users\Administrator.ssh\id_rsa”&lt;绝对路径&gt;</p>
+</li>
+</ul>
+<h2 id="11-A-brief-about-command"><a href="#11-A-brief-about-command" class="headerlink" title="11. A brief about command"></a>11. <strong>A brief about command</strong></h2><p>   This is the foundation of git. To summarize，using our photo analogy:<br></p>
+<p>git init：Creates a box in which to permanently store panoramic pictures.<br>git add：Takes a temporary photo of one thing that can be assembled into a panoramic photo later.<br>git commit -m “commit message”：Assembles all available temporary photos into a panoramic photo. Also destroys all temporary photos.<br>git log：Lists all the panoramic photos we’ve ever taken.<br>git show commit_id：Looks at what is in a particular panoramic photo.<br>git checkout：Rearranges files back to how they looked in a given panoramic photo. Does not affect the panormiac photos in your box in any way.<br>git status：Determining the exact status of each file in your repository.</p>
+<p>git add -A：stages all changes<br>git add .：stages new files and modifications，without deletion<br>git add -u：stages modifications and deletions，without new files</p>
+<p>修改或者回退：<br>git add [forgetten-file];<br>git commit –amend:Amend latest commit (changing commit message or add forgotten files)：<br>git reset HEAD [file]：Unstage a file that you haven’t yet committed<br>git checkout – [file]：Revert a file to its state at the time of the most recent commit<br>git checkout commit_id：Back to the commit_id </p>
+<p>分支：<br>git branch [new-branch-name]:The following command will create a branch off of your current branch.<br>git checkout [destination-branch]：This command lets you switch from one branch to another by changing which branch your HEAD pointer references.<br>git checkout -b [new-branch-name]：You can combine the previous two commands on creating a new branch and then checking it out with this single command:<br>git branch -d：[branch-to-delete]:You can delete branches.<br>git branch -v：You can easily figure out which branch you are on.</p>
+<p>合并分支:<br>you should checkout the master branch and merge <code>fixing-ai-heuristics</code> into master.<br>git checkout master<br>git merge <code>fixing-ai-heuristics</code></p>
+<p>远程:<br>git clone [remote-repo-URL]：Makes a copy of the specified repository，but on your local computer. Also creates a working directory that has files arranged exactly like the most recent snapshot in the download repository. Also records the URL of the remote repository for subsequent network data transfers，and gives it the special remote-repo-name “origin”.<br>git remote add [remote-repo-name] [remote-repo-URL]：Records a new location for network data transfers.<br>git remote -v：Lists all locations for network data transfers.<br>git pull [remote-repo-name] master：Get the most recent copy of the files as seen in remote-repo-name<br>git push [remote-repo-name] master：Pushes the most recent copy of your files to the remote-repo-name.</p>
+<p>git remote add [short-name] [remote-url]:[for example]:git remote add origin <a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#111;&#x6d;">&#103;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#111;&#x6d;</a>:berkeley-cs61b&#x2F;skeleton.git<br>git remote rename [old-name] [new-name]:You can rename your remote.<br>git remote rm [remote-name]:remove a remote.<br>git remote -v：list remotes.</p>
+<p>For a more particular example，let’s say that your partner creates a new branch on the remote called fixing-ai-heuristics. You can view that branch’s commits with the following steps:<br>$ git fetch origin<br>$ git branch review-ai-fix origin&#x2F;fixing-ai-heuristics:The second command creates a new branch called review-ai-fix that tracks the fixing-ai-heuristics branch on the origin remote.<br>$ git checkout review-ai-fix</p>
+<p>git pull –rebase origin master：The changes from the server will be applied onto your working copy and your commit will be stacked on top.(拉取远程仓库，更新到本地的远程仓库，然后你的commits再继续提交到上面)</p>
+<h2 id="12-其他"><a href="#12-其他" class="headerlink" title="12:其他"></a><strong>12:其他</strong></h2><ol>
+<li><a target="_blank" rel="noopener" href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1#rebase">Git动画演示，推荐</a></li>
+<li><a target="_blank" rel="noopener" href="https://learngitbranching.js.org/?locale=zh_CN">git动画通关网站，推荐</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet">Git Cheat Sheet</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/143135645">其他参考</a></li>
+<li><a target="_blank" rel="noopener" href="https://x3ro.de/integrating-a-submodule-into-the-parent-repository/">将子模块重新合并到父模块中</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000021711920">Git Fork指南</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/kevingrace/p/5690241.html">Gitignore配置运维总结</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+
+<span style="margin-top:30px; color:var(--blockquote-color); font-size:0.85em">
+        <br>
+        <span class="post-end-item" title="copyright"">
+            <span class="post-end-item-icon" style="margin-right: 3px">
+                <i class="fab fa-fw fa-creative-commons"></i>
+            </span>
+            <span class="post-end-item-text">采用署名-非商业性使用-相同方式共享 4.0（CC BY-NC-SA 4.0）许可协议</span>
+        </span>
+</span>
+
+
+
+
+
+<div class="donations">
+    <div class="donation-label">喜欢这篇文章？为什么不考虑赞赏一下作者呢？</div>
+    <a class="afdian-button" href="https://afdian.net/@lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fas fa-fw fa-bolt"></i>爱发电
+    </a>
+    <a class="paypal-button" href="https://paypal.me/lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fab fa-fw fa-paypal"></i>Paypal
+    </a>
+</div>
+          <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"># Git</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/09/28/61ABC/61A/CS61a%E7%AC%94%E8%AE%B0/" rel="prev" title="CS61A:Stucture and Interpretion of Computer Science">
+                  <i class="fa fa-chevron-left"></i> CS61A:Stucture and Interpretion of Computer Science
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/10/01/%E9%9A%8F%E7%AC%94/%E5%AD%A6%E4%B9%A0%E4%BD%93%E4%BC%9A/" rel="next" title="学习心得">
+                  学习心得 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chrunge</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+if(window.location.hash){
+    var checkExist = setInterval(function() {
+        if ($(window.location.hash).length) {
+            $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+            clearInterval(checkExist);
+        }
+    }, 100);
+}
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+/* @license Minigrid v3.1.1 – https://cdn.jsdelivr.net/npm/minigrid@3.1.1/dist/minigrid.min.js */
+!function(t, e) {
+	"function" == typeof define && define.amd ? define(e) : "object" == typeof exports ? module.exports = e() : t.Minigrid = e()
+}(this, function(t) {
+	"use strict";
+	function e(t, e) {
+		for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+		return t
+	}
+	var i = function(t) {
+			var i = t.container instanceof Node ? t.container : document.querySelector(t.container),
+				r = t.item instanceof NodeList ? t.item : i.querySelectorAll(t.item);
+			this.props = e(t, {
+				container: i,
+				nodeList: r
+			})
+		};
+	return i.prototype.mount = function() {
+		if (!this.props.container) return !1;
+		if (!this.props.nodeList || 0 === this.props.nodeList.length) return !1;
+		var t = "number" == typeof this.props.gutter && isFinite(this.props.gutter) && Math.floor(this.props.gutter) === this.props.gutter ? this.props.gutter : 0,
+			e = this.props.done,
+			i = this.props.container,
+			r = this.props.nodeList;
+		i.style.width = "";
+		var n = Array.prototype.forEach,
+			o = i.getBoundingClientRect().width,
+			s = r[0].getBoundingClientRect().width + t,
+			p = Math.max(Math.floor((o - t) / s), 1),
+			a = 0;
+		o = s * p + t + "px", i.style.width = o, i.style.position = "relative";
+		for (var c = [], u = [], l = 0; l < p; ++l) u.push(l * s + t), c.push(t);
+		this.props.rtl && u.reverse(), n.call(r, function(e) {
+			var i = c.slice(0).sort(function(t, e) {
+				return t - e
+			}).shift();
+			i = c.indexOf(i);
+			var r = parseInt(u[i]),
+				n = parseInt(c[i]);
+			e.style.position = "absolute", e.style.webkitBackfaceVisibility = e.style.backfaceVisibility = "hidden", e.style.transformStyle = "preserve-3d", e.style.transform = "translate3D(" + r + "px," + n + "px, 0)", c[i] += e.getBoundingClientRect().height + t, a += 1
+		}), i.style.display = "";
+		var f = c.slice(0).sort(function(t, e) {
+			return t - e
+		}).pop();
+		i.style.height = f + "px", "function" == typeof e && e(r)
+	}, i
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

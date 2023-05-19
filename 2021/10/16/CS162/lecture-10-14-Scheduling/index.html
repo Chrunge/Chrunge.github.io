@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Scheduling I: Concepts and Classic Policies Recall: Thread State in the kernel  对于进程中的每一个线程, 系统都维护着： 当前线程的TCB 用于syscalls&#x2F;interrupts&#x2F;traps的内核栈 这个内核状态有时候被称为”内核线程” 当该线程正在用户空间中运行时, 该”内核线程”是suspe">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="lecture 10-14: Scheduling">
+<meta property="og:url" content="http://example.com/2021/10/16/CS162/lecture-10-14-Scheduling/index.html">
+<meta property="og:site_name" content="Chrunge&#39;s Wonderland">
+<meta property="og:description" content="Scheduling I: Concepts and Classic Policies Recall: Thread State in the kernel  对于进程中的每一个线程, 系统都维护着： 当前线程的TCB 用于syscalls&#x2F;interrupts&#x2F;traps的内核栈 这个内核状态有时候被称为”内核线程” 当该线程正在用户空间中运行时, 该”内核线程”是suspe">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="http://example.com/">
+<meta property="article:published_time" content="2021-10-16T12:27:44.000Z">
+<meta property="article:modified_time" content="2022-06-17T09:30:30.000Z">
+<meta property="article:author" content="Chrunge">
+<meta property="article:tag" content="CS162">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/">
+
+
+<link rel="canonical" href="http://example.com/2021/10/16/CS162/lecture-10-14-Scheduling/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2021/10/16/CS162/lecture-10-14-Scheduling/","path":"2021/10/16/CS162/lecture-10-14-Scheduling/","title":"lecture 10-14: Scheduling"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>lecture 10-14: Scheduling | Chrunge's Wonderland</title>
+  
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+
+
+
+<link rel="preconnect" href="https://website-1256060851.file.myqcloud.com" crossorigin>
+<link rel="preconnect" href="https://sdn.geekzu.org" crossorigin>
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiangsudian/CaoMei/style.min.css">
+
+
+
+
+
+<script type="text/javascript">
+// Live2d
+// 注意：live2d_path 参数应使用绝对路径
+const live2d_path = "https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
+
+// 封装异步加载资源的方法
+function loadExternalResource(url, type) {
+	return new Promise((resolve, reject) => {
+		let tag;
+
+		if (type === "css") {
+			tag = document.createElement("link");
+			tag.rel = "stylesheet";
+			tag.href = url;
+		}
+		else if (type === "js") {
+			tag = document.createElement("script");
+			tag.src = url;
+		}
+		if (tag) {
+			tag.onload = () => resolve(url);
+			tag.onerror = () => reject(url);
+			document.head.appendChild(tag);
+		}
+	});
+}
+
+// 加载 waifu.css live2d.min.js waifu-tips.js
+if (screen.width >= 768) {
+	Promise.all([
+		loadExternalResource(live2d_path + "waifu.min.css", "css"),
+		loadExternalResource(live2d_path + "live2d.min.js", "js"),
+		loadExternalResource(live2d_path + "waifu-tips.min.js", "js")
+	]).then(() => {
+		initWidget({
+			waifuPath: live2d_path + "waifu-tips.json",
+			apiPath: "https://api.dlzhang.com/live2d/", // https://live2d.fghrsh.net/api/
+			//cdnPath: "https://cdn.jsdelivr.net/gh/fghrsh/live2d_api/"
+		});
+	});
+}
+// initWidget 第一个参数为 waifu-tips.json 的路径，第二个参数为 API 地址
+// API 后端可自行搭建，参考 https://github.com/fghrsh/live2d_api
+// 初始化看板娘会自动加载指定目录下的 waifu-tips.json
+
+console.log(`
+  く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+`);
+// End Live2d Code
+
+window.addEventListener('load', () => {
+	console.log(`\n%c醉里挑灯赏猫%c班班 @lei2rock%c\n`, 'padding: 8px; background: #3f5973; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #649ab6; font-size: large; color: #eee;','');
+	console.log(`页面加载完毕消耗了${Math.round(performance.now() * 100) / 100}ms`);
+});
+
+</script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Chrunge's Wonderland</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Bio Bio</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">46</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">48</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Scheduling-I-Concepts-and-Classic-Policies"><span class="nav-number">1.</span> <span class="nav-text">Scheduling I: Concepts and Classic Policies</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chrunge</p>
+  <div class="site-description" itemprop="description">Courage is not simply one of the virtues but the form of every virtue at the testing point.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+<div class="cc-license animated" itemprop="sponsor">
+  <a href="https://www.netlify.com" class="cc-opacity" title="Deploy with Netlify → https://www.netlify.com" target="_blank"><img width="80" src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Netlify"></a>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/16/CS162/lecture-10-14-Scheduling/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chrunge's Wonderland">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="lecture 10-14: Scheduling | Chrunge's Wonderland">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          lecture 10-14: Scheduling
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-10-16 12:27:44" itemprop="dateCreated datePublished" datetime="2021-10-16T12:27:44Z">2021-10-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-17 09:30:30" itemprop="dateModified" datetime="2022-06-17T09:30:30Z">2022-06-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Operating-System/" itemprop="url" rel="index"><span itemprop="name">Operating System</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="Scheduling-I-Concepts-and-Classic-Policies"><a href="#Scheduling-I-Concepts-and-Classic-Policies" class="headerlink" title="Scheduling I: Concepts and Classic Policies"></a>Scheduling I: Concepts and Classic Policies</h2><ol>
+<li><p>Recall: Thread State in the kernel</p>
+<ol>
+<li>对于进程中的每一个线程, 系统都维护着：<ul>
+<li>当前线程的TCB</li>
+<li>用于syscalls&#x2F;interrupts&#x2F;traps的内核栈<ul>
+<li>这个内核状态有时候被称为”内核线程”</li>
+<li>当该线程正在用户空间中运行时, 该”内核线程”是suspended状态</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>除此之外, 内核中也有内核线程<ul>
+<li>拥有TCB和kernel stack</li>
+<li>但并不属于任何进程, 也不在用户空间中运行</li>
+</ul>
+</li>
+<li>![kernel structure](Lecture10, 第19页)<span id="more"></span></li>
+</ol>
+</li>
+<li><p>Scheduling policy goals</p>
+<ol>
+<li>最小化响应时间: minimize elapsed time to do an operation</li>
+<li>最大化吞吐量: maximize operations per second</li>
+<li>公平性: share CPU among users in some equitable way<ul>
+<li>Better average response time by making system less fair</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Policy</p>
+<ol>
+<li><p>First-Come, First-Served(FCFS) Scheduling</p>
+<ul>
+<li>Convoy effect(车队效应): short process stuck behind long process, response time is too high</li>
+</ul>
+</li>
+<li><p>Round Robin(RR) Scheduling : <strong>Preemption</strong></p>
+<ul>
+<li>每个进程得到一小段CPU时间配额q, 通常10-100ms</li>
+<li>在配额消耗完之后, 放弃CPU并进入ready queue<ul>
+<li>当q很大时, 则为First-Come, First-Served</li>
+<li>当q很小时, 则为Interleaved; 但必须比context switch(0.1ms-1ms)大的多, 不然overhead is too high</li>
+</ul>
+</li>
+<li>优缺点:<ul>
+<li>Better for short jobs, fair</li>
+<li>对于long jobs来说, context-switch overhead增加, 吞吐量减少</li>
+<li>when all jobs same length, average response time is much worse than FCFS</li>
+<li>Cache State must be shared between all jobs with RR but can be devoted to each job with FIFO</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>不同重要性的任务: Strict Priority Scheduling</p>
+<ol>
+<li><img src="/" alt="Lecture 10, 42页"></li>
+<li>调度的公平性:<ol>
+<li>当给予short jobs更高的优先级的时候, 严格固定的优先级调度策略是不公平的, long running jobs may never get CPU; 必须得给long jobs一些CPU时间</li>
+<li>权衡: 通过损害平均响应时间, 来获取公平性</li>
+</ol>
+</li>
+<li>如何增加公平性呢:<ol>
+<li>分配CPU时间给每个队列</li>
+<li>提高未被服务的jobs的优先级</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p><strong>Shortest Job First(SJF)</strong> and <strong>Shortest Remaining Time First(SRTF)</strong></p>
+<ol>
+<li>Idea: get short jobs out of the system</li>
+<li>Big effect on short jobs, only small effect on long ones</li>
+<li>Result is better average response time, but may cause starvation.</li>
+<li><strong>SRTF has Optimal average response time</strong></li>
+</ol>
+</li>
+<li><p>Lottery Scheduling:</p>
+<ol>
+<li><img src="/" alt="第51页"></li>
+</ol>
+</li>
+<li><p>Multi-Level Feedback Scheduling:</p>
+<ol>
+<li><img src="/" alt="第55页"></li>
+</ol>
+</li>
+<li><p>Real-Time Scheduling: 性能的可预测性</p>
+<ol>
+<li><img src="/" alt="Lecture11, 21"></li>
+<li><img src="/" alt="Earliest Deadline First, 24"></li>
+<li><img src="/" alt="25"></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Starvation: thread fails to make progress for indefinite period of time</p>
+<ol>
+<li><p>原因:</p>
+<ul>
+<li>调度策略永远也不运行一个线程</li>
+<li>线程相互等待, 或以一种永远无法解决的方式旋转着</li>
+</ul>
+</li>
+<li><p>是否FCFS会导致Starvation?</p>
+<ul>
+<li>Yes, 当一个任务导致无限循环, 且没有preemptive schedulers.</li>
+</ul>
+</li>
+<li><p>Is Round Robin prone to Starvation? No!</p>
+</li>
+<li><p>Is Priority Scheduling Prone to Starvation?</p>
+<ul>
+<li>Yes, Low priority thread might never run.</li>
+<li>But more serious problem is <strong>Priority inversion</strong>: 当高优先级进程尝试获取被低优先级持有的lock时, 会导致wait, 此时继续调度中优先级进程. <ul>
+<li>解决方法一:Priority Donation, 高优先级的进程暂时将它的优先级授予低优先级的进程</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>SRTF and MLFQ 同样会导致Starvation</p>
+</li>
+</ol>
+</li>
+<li><p>Linux O(I) Scheduler</p>
+<ol>
+<li>基于优先级的调度程序: 140 priorities<ul>
+<li><img src="/" alt="46"></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Linux completely Fair Scheduler(CFS)：</p>
+<ol>
+<li>目标一：公平 -&gt; 选取CPU执行时间(virtual running time)最小的线程来执行<ul>
+<li><img src="/" alt="52"></li>
+</ul>
+</li>
+<li>目标二: 低延迟和饥饿<ul>
+<li><img src="/" alt="53"></li>
+<li><img src="/" alt="54"></li>
+</ul>
+</li>
+<li>目标三: throughput<ul>
+<li>Minimum length of any time slice, 即时间片不能太小</li>
+</ul>
+</li>
+<li>引入priority后的实际应用<ul>
+<li><a href="">55</a></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Lecture 12</p>
+<ol>
+<li><p>Starvation: thread waits indefinitely</p>
+<ul>
+<li>资源全被高优先级的任务使用，低优先级任务得不到资源</li>
+</ul>
+</li>
+<li><p>DeadLock: Circular waiting for resources</p>
+<ul>
+<li>任务A拥有资源1, 等待资源2; 任务B拥有资源2, 等待资源1 (哲学家的饭桌)</li>
+<li>DeadLock会导致Starvation, 反之则不成立</li>
+<li>发生死锁的四个必要条件: Mutual exclusion, Hold and wait, No preemption, Circular wait.</li>
+</ul>
+</li>
+<li><p>避免死锁的几种方法:</p>
+<ol>
+<li><img src="/" alt="12-32页"></li>
+<li>技术上阻止死锁:</li>
+</ol>
+<ul>
+<li>无限的资源, 如虚拟内存</li>
+<li>不共享资源(不太可能)</li>
+<li>不允许等待, let it retry(比如电话正在接通中…)</li>
+<li>线程同时要求所有资源, 如同时要求两只筷子</li>
+<li>线程以特定顺序要求资源, 如request disk, then memory, then…</li>
+<li><strong>线程要求资源时, 系统先检查是否会进入unsafe state</strong></li>
+</ul>
+<ol start="3">
+<li>技术上恢复死锁:</li>
+</ol>
+<ul>
+<li>终止线程, 使其放弃资源</li>
+<li>抢占其他线程的资源</li>
+<li><strong>roll back actions of deadlocked threads</strong></li>
+</ul>
+<ol start="4">
+<li><p>系统的三种状态:</p>
+<ul>
+<li>safe state: 系统可以推迟资源分配, 以阻止死锁</li>
+<li>unsafe state: (已有死锁或)未有死锁, 但该线程的资源要求会导致死锁</li>
+<li>deadlocked state: 已有死锁</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95">银行家算法</a></p>
+<ul>
+<li><p>Max: 线程提前说明所需的最大资源</p>
+</li>
+<li><p>Allocation: 已分配的资源</p>
+</li>
+<li><p>Need &#x3D; Max - Allocation: 需要的资源</p>
+</li>
+<li><p>Available: 空闲的资源</p>
+</li>
+<li><p>Finish: 进程的标签, 初始为false</p>
+</li>
+<li><p>假如有四个线程A, B, C, D; 找出<code>Need &lt; Availble</code>的进程, 配置给它然后再回收, 标记改为true; 继续重复以上步骤</p>
+</li>
+<li><p><img src="/" alt="47页"></p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>总结:</p>
+<ul>
+<li><img src="/" alt="56"></li>
+<li><img src="/" alt="59"></li>
+<li><img src="/" alt="60"></li>
+<li><img src="/" alt="12-50"></li>
+</ul>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+
+<span style="margin-top:30px; color:var(--blockquote-color); font-size:0.85em">
+        <br>
+        <span class="post-end-item" title="copyright"">
+            <span class="post-end-item-icon" style="margin-right: 3px">
+                <i class="fab fa-fw fa-creative-commons"></i>
+            </span>
+            <span class="post-end-item-text">采用署名-非商业性使用-相同方式共享 4.0（CC BY-NC-SA 4.0）许可协议</span>
+        </span>
+</span>
+
+
+
+
+
+<div class="donations">
+    <div class="donation-label">喜欢这篇文章？为什么不考虑赞赏一下作者呢？</div>
+    <a class="afdian-button" href="https://afdian.net/@lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fas fa-fw fa-bolt"></i>爱发电
+    </a>
+    <a class="paypal-button" href="https://paypal.me/lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fab fa-fw fa-paypal"></i>Paypal
+    </a>
+</div>
+          <div class="post-tags">
+              <a href="/tags/CS162/" rel="tag"># CS162</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/09/18/CS162/Lecture-7-8-Semaphore%20and%20Monitor/" rel="prev" title="Synchronization I and II: Concurrency, Lock Implementation">
+                  <i class="fa fa-chevron-left"></i> Synchronization I and II: Concurrency, Lock Implementation
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/11/07/Language/Java/" rel="next" title="Java">
+                  Java <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chrunge</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+if(window.location.hash){
+    var checkExist = setInterval(function() {
+        if ($(window.location.hash).length) {
+            $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+            clearInterval(checkExist);
+        }
+    }, 100);
+}
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+/* @license Minigrid v3.1.1 – https://cdn.jsdelivr.net/npm/minigrid@3.1.1/dist/minigrid.min.js */
+!function(t, e) {
+	"function" == typeof define && define.amd ? define(e) : "object" == typeof exports ? module.exports = e() : t.Minigrid = e()
+}(this, function(t) {
+	"use strict";
+	function e(t, e) {
+		for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+		return t
+	}
+	var i = function(t) {
+			var i = t.container instanceof Node ? t.container : document.querySelector(t.container),
+				r = t.item instanceof NodeList ? t.item : i.querySelectorAll(t.item);
+			this.props = e(t, {
+				container: i,
+				nodeList: r
+			})
+		};
+	return i.prototype.mount = function() {
+		if (!this.props.container) return !1;
+		if (!this.props.nodeList || 0 === this.props.nodeList.length) return !1;
+		var t = "number" == typeof this.props.gutter && isFinite(this.props.gutter) && Math.floor(this.props.gutter) === this.props.gutter ? this.props.gutter : 0,
+			e = this.props.done,
+			i = this.props.container,
+			r = this.props.nodeList;
+		i.style.width = "";
+		var n = Array.prototype.forEach,
+			o = i.getBoundingClientRect().width,
+			s = r[0].getBoundingClientRect().width + t,
+			p = Math.max(Math.floor((o - t) / s), 1),
+			a = 0;
+		o = s * p + t + "px", i.style.width = o, i.style.position = "relative";
+		for (var c = [], u = [], l = 0; l < p; ++l) u.push(l * s + t), c.push(t);
+		this.props.rtl && u.reverse(), n.call(r, function(e) {
+			var i = c.slice(0).sort(function(t, e) {
+				return t - e
+			}).shift();
+			i = c.indexOf(i);
+			var r = parseInt(u[i]),
+				n = parseInt(c[i]);
+			e.style.position = "absolute", e.style.webkitBackfaceVisibility = e.style.backfaceVisibility = "hidden", e.style.transformStyle = "preserve-3d", e.style.transform = "translate3D(" + r + "px," + n + "px, 0)", c[i] += e.getBoundingClientRect().height + t, a += 1
+		}), i.style.display = "";
+		var f = c.slice(0).sort(function(t, e) {
+			return t - e
+		}).pop();
+		i.style.height = f + "px", "function" == typeof e && e(r)
+	}, i
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

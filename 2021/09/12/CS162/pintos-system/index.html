@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Pintos教学系统的文档总结">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="pintos system">
+<meta property="og:url" content="http://example.com/2021/09/12/CS162/pintos-system/index.html">
+<meta property="og:site_name" content="Chrunge&#39;s Wonderland">
+<meta property="og:description" content="Pintos教学系统的文档总结">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-09-12T09:34:41.000Z">
+<meta property="article:modified_time" content="2022-06-17T09:30:30.000Z">
+<meta property="article:author" content="Chrunge">
+<meta property="article:tag" content="CS162">
+<meta property="article:tag" content="Pintos">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2021/09/12/CS162/pintos-system/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2021/09/12/CS162/pintos-system/","path":"2021/09/12/CS162/pintos-system/","title":"pintos system"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>pintos system | Chrunge's Wonderland</title>
+  
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+
+
+
+<link rel="preconnect" href="https://website-1256060851.file.myqcloud.com" crossorigin>
+<link rel="preconnect" href="https://sdn.geekzu.org" crossorigin>
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiangsudian/CaoMei/style.min.css">
+
+
+
+
+
+<script type="text/javascript">
+// Live2d
+// 注意：live2d_path 参数应使用绝对路径
+const live2d_path = "https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
+
+// 封装异步加载资源的方法
+function loadExternalResource(url, type) {
+	return new Promise((resolve, reject) => {
+		let tag;
+
+		if (type === "css") {
+			tag = document.createElement("link");
+			tag.rel = "stylesheet";
+			tag.href = url;
+		}
+		else if (type === "js") {
+			tag = document.createElement("script");
+			tag.src = url;
+		}
+		if (tag) {
+			tag.onload = () => resolve(url);
+			tag.onerror = () => reject(url);
+			document.head.appendChild(tag);
+		}
+	});
+}
+
+// 加载 waifu.css live2d.min.js waifu-tips.js
+if (screen.width >= 768) {
+	Promise.all([
+		loadExternalResource(live2d_path + "waifu.min.css", "css"),
+		loadExternalResource(live2d_path + "live2d.min.js", "js"),
+		loadExternalResource(live2d_path + "waifu-tips.min.js", "js")
+	]).then(() => {
+		initWidget({
+			waifuPath: live2d_path + "waifu-tips.json",
+			apiPath: "https://api.dlzhang.com/live2d/", // https://live2d.fghrsh.net/api/
+			//cdnPath: "https://cdn.jsdelivr.net/gh/fghrsh/live2d_api/"
+		});
+	});
+}
+// initWidget 第一个参数为 waifu-tips.json 的路径，第二个参数为 API 地址
+// API 后端可自行搭建，参考 https://github.com/fghrsh/live2d_api
+// 初始化看板娘会自动加载指定目录下的 waifu-tips.json
+
+console.log(`
+  く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+`);
+// End Live2d Code
+
+window.addEventListener('load', () => {
+	console.log(`\n%c醉里挑灯赏猫%c班班 @lei2rock%c\n`, 'padding: 8px; background: #3f5973; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #649ab6; font-size: large; color: #eee;','');
+	console.log(`页面加载完毕消耗了${Math.round(performance.now() * 100) / 100}ms`);
+});
+
+</script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Chrunge's Wonderland</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Bio Bio</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">46</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">48</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pintos%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">Pintos系统简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98layout"><span class="nav-number">2.</span> <span class="nav-text">虚拟内存layout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E7%BA%BF%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">切换线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#80x86%E8%B0%83%E7%94%A8%E7%BA%A6%E5%AE%9A"><span class="nav-number">4.</span> <span class="nav-text">80x86调用约定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8"><span class="nav-number">5.</span> <span class="nav-text">程序启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E6%B5%8B%E8%AF%95"><span class="nav-number">6.</span> <span class="nav-text">增加测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B"><span class="nav-number">7.</span> <span class="nav-text">线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B"><span class="nav-number">8.</span> <span class="nav-text">进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E8%AF%A6%E8%A7%A3"><span class="nav-number">8.1.</span> <span class="nav-text">进程详解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Synchronization-Primitives"><span class="nav-number">9.</span> <span class="nav-text">Synchronization Primitives</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optimization-Barriers"><span class="nav-number">10.</span> <span class="nav-text">Optimization Barriers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="nav-number">11.</span> <span class="nav-text">内存分配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Page-Allocator"><span class="nav-number">11.1.</span> <span class="nav-text">Page Allocator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Block-allocator"><span class="nav-number">11.2.</span> <span class="nav-text">Block allocator</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Doubly-Linked-List"><span class="nav-number">12.</span> <span class="nav-text">Doubly Linked List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Debug"><span class="nav-number">13.</span> <span class="nav-text">Debug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FPU"><span class="nav-number">14.</span> <span class="nav-text">FPU</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Enabling-the-FPU"><span class="nav-number">14.1.</span> <span class="nav-text">Enabling the FPU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FPU-Initialization-Syscall"><span class="nav-number">14.2.</span> <span class="nav-text">FPU Initialization, Syscall</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#System-Call"><span class="nav-number">15.</span> <span class="nav-text">System Call</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Process-System-Calls"><span class="nav-number">15.1.</span> <span class="nav-text">Process System Calls</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File-System-Calls"><span class="nav-number">15.2.</span> <span class="nav-text">File System Calls</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0%EF%BC%9A"><span class="nav-number">16.</span> <span class="nav-text">具体实现：</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chrunge</p>
+  <div class="site-description" itemprop="description">Courage is not simply one of the virtues but the form of every virtue at the testing point.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+<div class="cc-license animated" itemprop="sponsor">
+  <a href="https://www.netlify.com" class="cc-opacity" title="Deploy with Netlify → https://www.netlify.com" target="_blank"><img width="80" src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Netlify"></a>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/12/CS162/pintos-system/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chrunge's Wonderland">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="pintos system | Chrunge's Wonderland">
+      <meta itemprop="description" content="Pintos教学系统的文档总结">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          pintos system
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-09-12 09:34:41" itemprop="dateCreated datePublished" datetime="2021-09-12T09:34:41Z">2021-09-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-17 09:30:30" itemprop="dateModified" datetime="2022-06-17T09:30:30Z">2022-06-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Operating-System/" itemprop="url" rel="index"><span itemprop="name">Operating System</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">Pintos教学系统的文档总结</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="Pintos系统简介"><a href="#Pintos系统简介" class="headerlink" title="Pintos系统简介"></a>Pintos系统简介</h2><ol>
+<li>Proj0:<ol>
+<li>编译和运行所有Proj1的测试: 在<code>userprog</code>目录下<code>make</code>和<code>make check</code>.<ol>
+<li>运行单个测试: <code>pintos-test stack-align-0</code></li>
+<li>运行单个debug测试: <code>PINTOS_DEBUG=1 pintos-test stack-align-0</code>, 然后输入<code>debugpintos</code>以连接Pintos process</li>
+<li>debug page faults: 在前面加上<code>FORCE_SIMULATOR=--bochs</code><ol>
+<li>但kernel遇到page faults时, <code>set $eip = ((void**) $esp)[1]</code>,<code>up</code>,<code>down</code>来检查本地变量和stack trace.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<span id="more"></span>
+<pre><code>  1. debug kernel panic: `backtrace kernel.o 0xc0106eff 0xc01102fb 0xc010dc22 0xc010cf67 0xc0102319 ...`
+</code></pre>
+<ol start="2">
+<li><p>输出结果在<code>proj-intro/src/userprog/build/tests/userprog/do-nothing.result</code>中</br></br></p>
+</li>
+<li><p><code>src/</code>下的目录简介:</p>
+<ol>
+<li><code>threads/</code>: Pintos内核基础, 包括bootloader, kernel entrypoint, base interrupt handler, page allocator, subpage memory allocator, and CPU scheduler.<ul>
+<li><code>thread.h</code>: 包含<code>struct thread</code>(TCB)的定义, <code>#ifdef USERPROG ... #endif</code>中共同定义了PCB.</li>
+<li><code>start.S</code>: Contains assembly code that Pintos bootloader jumps to. This is the <strong>first kernel code</strong> that starts executing.</li>
+<li><code>init.c</code>: 在<code>start.S</code>中的内核码进行一些基本设置之后, 然后跳转到<code>init.c</code>的<code>int main(void)</code>(C语言), 进行更多的设置, 然后执行Pintos要求的任务.(比如运行一个测试或者用户程序)</li>
+<li><code>intr-stub.S</code>: Code for saving registers and executing an interrupt handler. 相应的中断stack frame structure 被定义在 <code>interrupt.h</code>.</li>
+<li><code>switch.S</code>: Code for saving registers on a context switch between two kernel threads.</li>
+</ul>
+</li>
+<li><code>userprog/</code>: 用户程序支持目录, 包括page&#x2F;segment tables, handlers for system calls, page faults, and other traps.<ul>
+<li><code>build/Makefile</code>: <code>Makefile.build</code>的副本</li>
+<li><code>build/kernel.o</code>: 整个内核的Object file, 包含debug信息</li>
+<li><code>build/kernel.bin</code>: 整个内核的内存镜像文件, 不包括debug信息</li>
+<li><code>build/loader.bin</code>: kernel loader的内存镜像, 用汇编写的, 主要功能是将kernel加载进内存中并启动. </br></br></li>
+<li><code>process.h</code>: 包含<code>struct process</code>(PCB)的定义</li>
+<li><code>process.c</code>: <code>process.h</code>的实现, 还包括如何加载ELF binaries, 开始进程, context switch时切换page tables</li>
+<li><code>pagedir.c</code>: manage page tables</li>
+<li><code>exception.h</code>: 处理异常</li>
+<li><code>syscall.c</code>: This is a skeleton system call handler.</li>
+</ul>
+</li>
+<li><code>vm/</code>: ……</li>
+<li><code>filesys/</code>: Pintos文件系统<ul>
+<li>阅读<code>filesys.h</code> and <code>file.h</code>以理解如何使用文件系统</li>
+</ul>
+</li>
+<li><code>devices/</code>: I&#x2F;O设备接口的源代码</li>
+<li><code>lib/</code>: C标准库的子集实现代码<ul>
+<li><code>lib/kernel/</code>: 仅Kernel使用的库函数, 包含一些数据类型实现, 如bitmaps, doubly linked list, and hash tables.</li>
+<li><code>lib/user/</code>: 仅用户程序使用的库函数</br></br></li>
+<li><code>syscall.c</code>: system call handler</li>
+<li><code>lib/user/syscall.c</code>: 为C语言用户程序提供库函数, 以进行system call.</li>
+<li><code>syscall-nr.h</code>: 为每一个系统调用定义个syscall number.</li>
+<li><code>float.h</code>: 管理FPU硬件</li>
+</ul>
+</li>
+<li><code>test/</code>: 每个Project使用的测试代码</li>
+<li><code>Examples/</code>: 用户程序例子</li>
+<li><code>Makefile.build</code>: 描述如何构造系统</li>
+<li><code>gdt.c</code>: Global Descriptor Table描述正在使用的segments</li>
+<li><code>tss.c</code>: 管理Task-State Segment(TSS), 用于在80x86架构中实现人物切换</li>
+</ol>
+</li>
+<li><p>增加源文件: 将测试放入<code>tests/userprog/</code>, 然后编辑<code>tests/userprog/Make.tests</code></p>
+</li>
+</ol>
+<h2 id="虚拟内存layout"><a href="#虚拟内存layout" class="headerlink" title="虚拟内存layout"></a>虚拟内存layout</h2><ol>
+<li>用户虚拟内存从0至PHYS_BASE(默认3GB), 定义在<code>threads/vaddr.h</code>, 内核内存空间从PHYS_BASE至4GB.</li>
+<li>但进程切换时会切换虚拟地址空间, by change processor’s page directory base register(在<code>userprog/pagedir.c</code>的pagedir_activate()中), <code>struct thread</code>包含一个指向进程页表的指针.</li>
+<li>一个进程如果访问内核的虚拟内存, 会造成page fault, 此错误由<code>userprog/exception.c的page_fault.c</code>来处理. 同时, 如果内核访问一个没有虚拟内存映射的内存地址时, 也会造成page fault.<ol>
+<li>检查指针的有效性, 然后dereference it.</li>
+<li>仅确保指针小于PHYS_BASE, 然后dereference. 无效的指针再造成page fault.<ul>
+<li>以上两种方案都需要确保不会leak resource, 比如释放锁和free malloced page.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="切换线程"><a href="#切换线程" class="headerlink" title="切换线程"></a>切换线程</h2><ol>
+<li>显示当前的线程id: <code>call thread_current()-&gt;id</code></li>
+<li>显示同时存在与pintos中的其他线程: <code>dumplist &amp;all_list thread allelem</code></li>
+</ol>
+<h2 id="80x86调用约定"><a href="#80x86调用约定" class="headerlink" title="80x86调用约定"></a>80x86调用约定</h2><ol>
+<li>将参数从右到左依次入stack</li>
+<li>将return address推入stack, 然后jump to callee</li>
+<li>调用callee, 按照约定取得参数, 返回值存入eax中</li>
+<li>返回时, 弹出return address, jump to return address</li>
+<li>caller再弹出所有参数</li>
+</ol>
+<h2 id="程序启动"><a href="#程序启动" class="headerlink" title="程序启动"></a>程序启动</h2><ol>
+<li>Pintos为用户程序在<code>lib/user/entry.c</code>中设计了<code>_start()</code>函数, 作为用户程序的入口点. 该函数时一个包装函数, 在main()返回后调用exit().</li>
+<li>kernel为为<code>_start()</code>准备好参数</li>
+</ol>
+<h2 id="增加测试"><a href="#增加测试" class="headerlink" title="增加测试"></a>增加测试</h2><p>1. </p>
+<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><ol>
+<li><p>线程切换的具体实现在<code>threads/switch.S</code>中, 一个线程调用<code>switch_threads()</code>来切换到另一个线程, 新线程所做的第一件事, 就是从<code>switch_threads()</code>中返回</p>
+</li>
+<li><p>The thread struct</p>
+<ol>
+<li>每个线程在内核中拥有4KB大小的内存页. 用于线程的内核stack和thread struct.</li>
+<li>每个thread struct代表一个内核线程或用户进程(???), 大小仅a few bytes, 处在内存页的起始位置, 剩下的内存页则用于thread stack.</li>
+</ol>
+</li>
+<li><p>struct thread成员</p>
+<ol>
+<li><code>tid_t tid</code>: thread thread’s identifier</li>
+<li><code>enum thread_status status</code>: <code>THREAD_RUNNING</code>运行中, <code>THREAD_READY</code> ready to run, <code>THREAD_BLOCKED</code> waiting for something, <code>THREAD_DYING</code>线程已经exit, 等待被破坏.</li>
+<li><code>char name[16]</code>: 线程的名字</li>
+<li><code>uint8_t *stack</code>: 用于在切换线程时, 保存stack pointer; 其他的register保存在stack中.</li>
+<li><code>int priority</code>: 线程的优先级, 从PRI_MIN(0) 至 PRI_MAX(63); 0的优先级最低.</li>
+<li><code>struct list_elem allelem</code>: 包含所有线程的list</li>
+<li><code>struct list_elem elem</code>: 将线程放入双向链表中, 要么是read_list, 要么是等待semaphore的list.</li>
+<li><code>uint32_t pagedir</code>: 进程的页表</li>
+<li><code>unsigned magic</code>: 被设置为<code>THREAD_MAGIC</code>, stack overflow会改变this value, <code>check_current()</code>会检测它.</li>
+</ol>
+</li>
+<li><p>线程函数:</p>
+<ol>
+<li><code>void thread_init(void)</code>: 创建一个<code>struct thread</code>, 用于pintos初始化线程</li>
+<li><code>struct thread *thread_current (void)</code>: 返回运行中的线程</li>
+<li><code>void thread_exit (void) NO_RETURN</code>: 让当前线程exit, 且不返回.</li>
+</ol>
+</li>
+</ol>
+<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><ol>
+<li>每个进程都有一个PCB，管理着进程运行时所需的所有信息；每个线程也拥有自己的TCB，包括name, priority, stack pointer。内核也将每个用户线程和一个内核线程关联起来，用于处理线程的特权操作。</li>
+<li>在Pintos中，线程的TCB与stack在同一个page中，TCB处在page的底部；而进程没有stack，所以只能使用malloc，将PCB存储在进程的heap中；线程通过指针来访问它。PCB定义在<code>userprog/process.c</code>中</li>
+</ol>
+<h3 id="进程详解"><a href="#进程详解" class="headerlink" title="进程详解"></a>进程详解</h3><ol>
+<li><p><strong>First user program:</strong> 所有的用户程序都来源于已有的用户程序执行<code>exec</code> syscall，但第一个用户程序来自哪里呢？ 当系统启动时，它首先运行<code>threads/init.c</code>，如果用户想运行用户程序，<code>run_task</code>函数会被调用，它使pintos的主线程调用&#96;process_wait(process_execute(task))。所以第一个用户程序是OS的主线程创建的。</p>
+</li>
+<li><p>区分OS的主线程和用户程序的主线程：</p>
+<ol>
+<li>OS的主线程是运行<code>threads/init.c</code>的线程，这个线程会设置好OS，并开始运行第一个任务（kernel task or user program）。</li>
+<li>而用户的主线程，是用户进程被创建时的那个线程。</li>
+<li>因为首个用户程序是被OS的主线程创建的，则OS主线程也必须有一个PCB。所以在<code>userprog/process.c</code>的<code>userprog_init</code>函数中给予了OS主线程a minimal PCB。</li>
+</ol>
+</li>
+<li><p>PID and TID</p>
+<ol>
+<li>In the starter code, 定义了一个进程的PID为主线程的TID</li>
+<li>相关函数:<code>bool is_main_thread(struct thread* t, struct process* p)</code> and <code>pid_t get_pid(struct process* p)</code></li>
+</ol>
+</li>
+<li><p>The Process Struct</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/* The process control block for a given process. Since</span><br><span class="line">there can be multiple threads per process, we need a separate</span><br><span class="line">PCB from the TCB. All TCBs in a process will have a pointer</span><br><span class="line">to the PCB, and the PCB will have a pointer to the main thread</span><br><span class="line">of the process, which is `special`. */</span><br><span class="line">struct process &#123;</span><br><span class="line">/* Owned by process.c. */</span><br><span class="line">uint32_t* pagedir; /* Page directory. */</span><br><span class="line">char process_name[16]; /* Name of the main thread */</span><br><span class="line">struct thread* main_thread; /* Pointer to main thread */</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Synchronization-Primitives"><a href="#Synchronization-Primitives" class="headerlink" title="Synchronization Primitives"></a>Synchronization Primitives</h2><ol>
+<li><p>Disabling Interrupts</p>
+<ol>
+<li>Types and functions for disabling and enabling interrupts are in <code>threads/interrupt.h.</code><ul>
+<li>Type: <code>enum intr_level</code>: <code>INTR_OFF</code> and <code>INTR_ON</code></li>
+<li><code>enum intr_level intr_get_level(void)</code>: 返回当前中断状态</li>
+<li><code>enum intr_level intr_set_level (enum intr_level level)</code>: 根据<code>level</code>打开或者关闭中断, 返回以前的中断状态</li>
+<li><code>enum intr_level intr_enable (void)</code>: enable interrupt</li>
+<li><code>enum intr_level intr_disable (void)</code>: disable interrupt</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Semaphore</p>
+<ol>
+<li>Pintos’ semaphore type and operations are declared in <code>threads/synch.h</code><ul>
+<li>Type: <code>struct semaphore</code></li>
+<li><code>void sema_init (struct semaphore *sema, unsigned value)</code>: 初始化</li>
+<li><code>void sema_down (struct semaphore *sema)</code>: 等待值变正, 并减一</li>
+<li><code>bool sema_try_down (struct semaphore *sema)</code>: 尝试减一, 成功则返回true, 失败则返回法绿色, 不等待</li>
+<li>void sema_up (struct semaphore *sema): 值加一, 如果有等待线程, 则唤醒</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Lock</p>
+<ol>
+<li>相比于semaphore: 只有持有该锁的线程才能release it.</li>
+<li>Lock types and functions are declared in <code>threads/synch.h</code><ul>
+<li>Type: <code>struct lock</code></li>
+<li><code>void lock_init (struct lock *lock)</code>: 初始化</li>
+<li><code>void lock_acquire (struct lock *lock)</code>: 为当前线程获取锁, 或等待其他线程释放锁</li>
+<li><code>bool lock_try_acquire (struct lock *lock)</code>: 尝试获取锁, 不等待</li>
+<li><code>void lock_release (struct lock *lock)</code>: 释放锁</li>
+<li><code>bool lock_held_by_current_thread (const struct lock *lock)</code></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Monitors: Lock + Conditional Variables</p>
+<ol>
+<li>Condition variable typ es and functions are declared in <code>threads/synch.h</code><ul>
+<li>Type: <code>struct condition</code></li>
+<li><code>void cond_init (struct condition *cond)</code>: 初始化</li>
+<li><code>void cond_wait (struct condition *cond, struct lock *lock)</code>: 自动释放锁, 并等待signal; 其他线程发出signal之后, 该线程重新获取锁, 并再次检查CV</li>
+<li><code>void cond_signal (struct condition *cond, struct lock *lock)</code>: 发出signal, 唤醒等待线程</li>
+<li><code>void cond_broadcast (struct condition *cond, struct lock *lock)</code>: wake up all threads.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="Optimization-Barriers"><a href="#Optimization-Barriers" class="headerlink" title="Optimization Barriers"></a>Optimization Barriers</h2><ol>
+<li>阻止编译器对内存状态做出假设, The compiler will not reorder reads or writes of variables<br>across the barrier or assume that a variable’s value is unmodified across the barrier.</li>
+<li>定义: In Pintos, <code>threads/synch.h</code> defines the <code>barrier()</code> macro as an optimization barrier.</li>
+<li>使用场景:<ol>
+<li>when data can change asynchronously</li>
+<li>避免编译器优化</li>
+<li>用于顺序的内存读写</li>
+</ol>
+</li>
+</ol>
+<h2 id="内存分配"><a href="#内存分配" class="headerlink" title="内存分配"></a>内存分配</h2><ol>
+<li>Pintos包括两种内存分配器, 一种以page为单位, 另一种则可以分配任何大小的block</li>
+</ol>
+<h3 id="Page-Allocator"><a href="#Page-Allocator" class="headerlink" title="Page Allocator"></a>Page Allocator</h3><ol>
+<li>声明位置为<code>threads/palloc.h</code></li>
+<li>默认情况下, the page allocator将内存分为kernel pool和user pool; 默认情况下, 每个pool得到系统内存的一半, 大约有1MiB; user pool用于给用户的进程分配内存, kernel pool用于其他所有分配.</li>
+<li>每个pool都有一个bitmap来追踪其使用, one bit per page. False bit代表该page未使用, true bit代表已使用.</li>
+<li>Pages在中断环境中不会被allcaoted, 但可以free; 当page is freed, its all bytes都被设置为0xcc<ol>
+<li><code>void * palloc_get_page (enum palloc_flags flags)</code> 和 <code>void * palloc_get_multiple (enum palloc_flags flags, size_t page_cnt)</code>: 分配page, 失败则返回null pointer.<ul>
+<li>Page Allocator Flag: <code>PAL_ASSERT</code>: If the pages cannot b e allo cated, panic the kernel.</li>
+<li>Page Allocator Flag: <code>PAL_ZERO</code>: 在return前, zero all the bytes in the allocated page</li>
+<li>Page Allo cator Flag: <code>PAL_USER</code>: Obtain the pages from the user pool.</li>
+</ul>
+</li>
+<li><code>void palloc_free_page (void *page)</code> 和<code>void palloc_free_multiple (void *pages, size_t page_cnt</code></li>
+</ol>
+</li>
+</ol>
+<h3 id="Block-allocator"><a href="#Block-allocator" class="headerlink" title="Block allocator"></a>Block allocator</h3><ol>
+<li>声明位置: <code>threads/malloc.h</code>, Block allocator分配的block来自kernel pool</li>
+<li>两种分配策略:<ol>
+<li>当block小于等于1KiB时, 分配的大小被约等于MAX(2的幂次方, 16字节), Then they are group ed into a page used only for allocations of that size.</li>
+<li>当block大于1KiB时, 分配的大小将被约等于最接近的pages大小, 然后分配连续的pages.</li>
+</ol>
+<ul>
+<li><code>void * malloc (size_t size)</code>: 从kernel pool中返回一个new block</li>
+<li><code>void * calloc (size_t a, size_t b)</code>: a*b bytes long</li>
+<li><code>void * realloc (void *block, size_t new_size)</code></li>
+<li><code>void free (void *block</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="Doubly-Linked-List"><a href="#Doubly-Linked-List" class="headerlink" title="Doubly Linked List"></a>Doubly Linked List</h2><ol>
+<li><p>Pintos Linked List data stucture: <code>lib/kernel/list.h</code></p>
+</li>
+<li><p>list_entry(LIST_ELEM, STRUCT, MEMBER):</p>
+<ul>
+<li><p>作用: 通过指向<code>LIST_ELEM</code>的指针<strong>反推出</strong>指向该<code>STRUCT</code>的指针, 简单点说, 如果知道了你的指纹, 可以反推出你是谁.</p>
+</li>
+<li><p><code>LIST_ELEM</code>是指向<code>list_elem</code>的指针, <code>STRUCT</code>是结构体的名字, <code>MEMBER</code>表示<code>list_elem</code>在结构体<code>STRUCT</code>中的名字.</p>
+</li>
+<li><p>这里的<code>list_elem</code>相当于Linux中的<code>list_head</code>.</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">The list_entry() macro works by computing the offset of the elem field inside of `struct int_list_elem`. In our example, this offset is 4 bytes. To convert a pointer to a generic `struct list_elem` to a pointer to our custom `struct int_list_elem`, the list_entry() just needs to subtract 4 bytes! (It also casts</span><br><span class="line">the pointer, in order to satisfy the C typ e system.)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>官方文档</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> /* List element. */</span><br><span class="line"> struct list_elem &#123;</span><br><span class="line"> struct list_elem* prev; /* Previous list element. */</span><br><span class="line"> struct list_elem* next; /* Next list element. */</span><br><span class="line"> &#125;;</span><br><span class="line"></span><br><span class="line"> /* List. */</span><br><span class="line"> struct list &#123;</span><br><span class="line"> struct list_elem head; /* List head. */</span><br><span class="line"> struct list_elem tail; /* List tail. */</span><br><span class="line"> &#125;;</span><br><span class="line"></span><br><span class="line"> /* Converts pointer to list element LIST_ELEM into a pointer to</span><br><span class="line">the structure that LIST_ELEM is embedded inside.  Supply the</span><br><span class="line">name of the outer structure STRUCT and the member name MEMBER</span><br><span class="line">of the list element.  See the big comment at the top of the</span><br><span class="line">file for an example. */</span><br><span class="line">#define list_entry(LIST_ELEM, STRUCT MEMBER)                                                      \</span><br><span class="line">((STRUCT*)((uint8_t*)&amp;(LIST_ELEM)-&gt;next - offsetof(STRUCT, MEMBER.next)))</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h2><ol>
+<li><code>printf</code>: 善用<code>printf</code>来缩小错误范围</li>
+<li><code>ASSERT(expression)</code>: 理想情况下, 每个函数都应该在开始时使用assert来检查参数的有效性.</li>
+<li>函数和参数属性:<ul>
+<li><code>UNUSED</code>: 添加在函数参数之后, 告诉编译器该参数不会被使用</li>
+<li><code>NO_RETURN</code>: 在function prototype之后添加, 告诉编译器此函数不会return</li>
+<li><code>NO_INLINE</code>: tell the compiler to never emit the function in-line</li>
+<li><code>PRINTF_FORMAT (format, first)</code>: 类似于<code>printf</code>的格式的参数</li>
+</ul>
+</li>
+<li><code>backtrace</code>: a summary of how your program got where it is, as a list of addresses inside the functions that were running at the time of the panic.<ol>
+<li><strong>backtrace tool</strong>: 将call stack 转化为可读形式, <code>backtrace kernel.o hexadecimal_numbers</code>; 也可以backtrace user program: <code>backtrace user_program hexadecimal_numbers</code>或<code>backtrace kernel.o Call stack</code>(???)</li>
+</ol>
+<ul>
+<li><code>debug_backtrace</code>: print a backtrace at any point in your code.</li>
+<li><code>debug_backtrace_all</code>: prints backtraces of all threads.</li>
+</ul>
+</li>
+</ol>
+<h2 id="FPU"><a href="#FPU" class="headerlink" title="FPU"></a>FPU</h2><ol>
+<li>为用户程序执行浮点运算并不需要特定的硬件(kernel中的线程不需要浮点运算), 可通过必要的bit-level操作来对浮点值进行add, sub, multiplication, 但速度会慢许多.</li>
+<li>FPI并没有自己的浮点寄存器, 而是有一个register stack. <ul>
+<li>如计算√π, 先push π to stack, 然后运行<code>fsqrt</code>, pop π, 然后将计算结果push to stack. </li>
+<li><code>fadd</code>, pop two operands from the stack, add them together, push the result into stack.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Enabling-the-FPU"><a href="#Enabling-the-FPU" class="headerlink" title="Enabling the FPU"></a>Enabling the FPU</h3><ol>
+<li>在<code>src/threads/start.S</code>里面修改,<ul>
+<li><code>- orl $CR0_PE | CR0_PG | CR0_WP | CR0_EM, %eax</code></li>
+<li><code>+ orl $CR0_PE | CR0_PG | CR0_WP, %eax </code></li>
+</ul>
+</li>
+</ol>
+<h3 id="FPU-Initialization-Syscall"><a href="#FPU-Initialization-Syscall" class="headerlink" title="FPU Initialization, Syscall"></a>FPU Initialization, Syscall</h3><ol>
+<li><p>通过write assembly code to interact with the FPU directly.</p>
+</li>
+<li><p>需要向了解kernel目前时如何运行code的, 然后扩展它去支持floating-point.</p>
+</li>
+<li><p>FPU测试代码在<code>lib/stdio.c</code>中</p>
+</li>
+</ol>
+<h2 id="System-Call"><a href="#System-Call" class="headerlink" title="System Call"></a>System Call</h2><ol>
+<li><strong>external interrupts</strong>: from I&#x2F;O interrupt, caused by entities out of CPU.</li>
+<li><strong>software exception</strong>: events that occur in program code.</li>
+<li>In pintos, user programs invokes <code>int $0x30</code> to make a system call. The system call number and any additional arguments are expected to be pushed on the stack <strong>in the normal fashion</strong> before invoking the interrupt; <ol>
+<li><code>syscall_handler()</code>可以从<code>struct intr_frame</code>的<code>esp</code>成员中获得 caller stack pointer; syscall的return value也放入<code>struct intr_frame</code>的<code>eax</code>成员中.</li>
+</ol>
+</li>
+</ol>
+<h3 id="Process-System-Calls"><a href="#Process-System-Calls" class="headerlink" title="Process System Calls"></a>Process System Calls</h3><ol>
+<li><code>int practice(int i)</code></li>
+<li><code>void halt(void)</code>: Terminates Pintos by calling <code>shutdown_power_off()</code> (declared in <code>devices/shutdown.h</code>).</li>
+<li><code>void exit(int status)</code>: Terminates the current user program, returning status to the kernel.</li>
+<li><code>pid_t exec (const char *cmd_line)</code>Runs the executable whose name is given in <code>cmd_line</code> , passing any given arguments, and returns the new process’s program id ( pid ).</li>
+<li><code>int wait (pid_t pid)</code>: Waits for a child process pid and retrieves the child’s exit status. If is still alive, waits until it terminates.</li>
+</ol>
+<h3 id="File-System-Calls"><a href="#File-System-Calls" class="headerlink" title="File System Calls"></a>File System Calls</h3><ol>
+<li><code>bool create (const char *file, unsigned initial_size)</code></li>
+<li><code>bool remove (const char *file)</code></li>
+<li><code>int open (const char *file)</code>: Opens the file called file. Returns a nonnegative integer handle called a file descriptor (fd), or -1 if the file could not be opened.<ul>
+<li>fd 0(STDIN_FILENO) is standard input.</li>
+<li>fd 1(STDOUT_FILENO) is standrad output.</li>
+</ul>
+</li>
+<li><code>int filesize (int fd)</code>: Returns the size, in bytes, of the file open as fd.</li>
+<li><code>int read (int fd, void *buffer, unsigned size)</code></li>
+<li><code>int write (int fd, const void *buffer, unsigned size)</code></li>
+<li><code>void seek (int fd, unsigned position)</code></li>
+<li><code>unsigned tell (int fd)</code></li>
+<li><code>void close(fd)</code></li>
+</ol>
+<h2 id="具体实现："><a href="#具体实现：" class="headerlink" title="具体实现："></a>具体实现：</h2><ol>
+<li><code>loader.S</code>: This code should be stored in the first sector of a hard disk. When the BIOS runs, it loads this code at physical address 0x7c00-0x7e00 (512 bytes) and jumps to the beginning of it, in real mode.  The loader loads the kernel into memory and jumps to its entry point, which is the start function in start.S.</li>
+<li><code>start.S</code>: The loader (in loader.S) loads the kernel at physical address 0x20000 (128 kB) and jumps to “start”, defined here.  This code switches from real mode to 32-bit protected mode and call main().</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+
+<span style="margin-top:30px; color:var(--blockquote-color); font-size:0.85em">
+        <br>
+        <span class="post-end-item" title="copyright"">
+            <span class="post-end-item-icon" style="margin-right: 3px">
+                <i class="fab fa-fw fa-creative-commons"></i>
+            </span>
+            <span class="post-end-item-text">采用署名-非商业性使用-相同方式共享 4.0（CC BY-NC-SA 4.0）许可协议</span>
+        </span>
+</span>
+
+
+
+
+
+<div class="donations">
+    <div class="donation-label">喜欢这篇文章？为什么不考虑赞赏一下作者呢？</div>
+    <a class="afdian-button" href="https://afdian.net/@lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fas fa-fw fa-bolt"></i>爱发电
+    </a>
+    <a class="paypal-button" href="https://paypal.me/lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fab fa-fw fa-paypal"></i>Paypal
+    </a>
+</div>
+          <div class="post-tags">
+              <a href="/tags/CS162/" rel="tag"># CS162</a>
+              <a href="/tags/Pintos/" rel="tag"># Pintos</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/08/24/Tools/Makefile%E6%80%BB%E7%BB%93/" rel="prev" title="编程工具记录">
+                  <i class="fa fa-chevron-left"></i> 编程工具记录
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/09/13/CS162/Lecture-1-What-is-an-Operating-System/" rel="next" title="Lecture 1: What is an Operating System">
+                  Lecture 1: What is an Operating System <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chrunge</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+if(window.location.hash){
+    var checkExist = setInterval(function() {
+        if ($(window.location.hash).length) {
+            $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+            clearInterval(checkExist);
+        }
+    }, 100);
+}
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+/* @license Minigrid v3.1.1 – https://cdn.jsdelivr.net/npm/minigrid@3.1.1/dist/minigrid.min.js */
+!function(t, e) {
+	"function" == typeof define && define.amd ? define(e) : "object" == typeof exports ? module.exports = e() : t.Minigrid = e()
+}(this, function(t) {
+	"use strict";
+	function e(t, e) {
+		for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+		return t
+	}
+	var i = function(t) {
+			var i = t.container instanceof Node ? t.container : document.querySelector(t.container),
+				r = t.item instanceof NodeList ? t.item : i.querySelectorAll(t.item);
+			this.props = e(t, {
+				container: i,
+				nodeList: r
+			})
+		};
+	return i.prototype.mount = function() {
+		if (!this.props.container) return !1;
+		if (!this.props.nodeList || 0 === this.props.nodeList.length) return !1;
+		var t = "number" == typeof this.props.gutter && isFinite(this.props.gutter) && Math.floor(this.props.gutter) === this.props.gutter ? this.props.gutter : 0,
+			e = this.props.done,
+			i = this.props.container,
+			r = this.props.nodeList;
+		i.style.width = "";
+		var n = Array.prototype.forEach,
+			o = i.getBoundingClientRect().width,
+			s = r[0].getBoundingClientRect().width + t,
+			p = Math.max(Math.floor((o - t) / s), 1),
+			a = 0;
+		o = s * p + t + "px", i.style.width = o, i.style.position = "relative";
+		for (var c = [], u = [], l = 0; l < p; ++l) u.push(l * s + t), c.push(t);
+		this.props.rtl && u.reverse(), n.call(r, function(e) {
+			var i = c.slice(0).sort(function(t, e) {
+				return t - e
+			}).shift();
+			i = c.indexOf(i);
+			var r = parseInt(u[i]),
+				n = parseInt(c[i]);
+			e.style.position = "absolute", e.style.webkitBackfaceVisibility = e.style.backfaceVisibility = "hidden", e.style.transformStyle = "preserve-3d", e.style.transform = "translate3D(" + r + "px," + n + "px, 0)", c[i] += e.getBoundingClientRect().height + t, a += 1
+		}), i.style.display = "";
+		var f = c.slice(0).sort(function(t, e) {
+			return t - e
+		}).pop();
+		i.style.height = f + "px", "function" == typeof e && e(r)
+	}, i
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

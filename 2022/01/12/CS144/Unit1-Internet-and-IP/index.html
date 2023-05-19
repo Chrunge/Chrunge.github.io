@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="CS144 notes for unit 1">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Unit1-Internet-and-IP">
+<meta property="og:url" content="http://example.com/2022/01/12/CS144/Unit1-Internet-and-IP/index.html">
+<meta property="og:site_name" content="Chrunge&#39;s Wonderland">
+<meta property="og:description" content="CS144 notes for unit 1">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/1/The%204%20Layer%20Internet%20Model.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/1/The%207-layer%20OSI%20Model.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/1/IP%20is%20the%20thin%20waist.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/1/The%20IP%20service%20Model.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/1/IPv4%20Datagram.png?raw=true">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/1/Packet%20Formats.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/1/Layering%20in%20a%20computer%20system.png?raw=true">
+<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/1/Encapsulation.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/1/Address%20Structure.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/1/Address%20Structure%20Today.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/1/Address%20Resolution%20Protocol.png?raw=true">
+<meta property="og:image" content="http://example.com/">
+<meta property="article:published_time" content="2022-01-12T13:03:42.000Z">
+<meta property="article:modified_time" content="2022-06-17T09:30:30.000Z">
+<meta property="article:author" content="Chrunge">
+<meta property="article:tag" content="CS144">
+<meta property="article:tag" content="IP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Chrunge/Pictures/blob/master/CS144/1/The%204%20Layer%20Internet%20Model.png?raw=true">
+
+
+<link rel="canonical" href="http://example.com/2022/01/12/CS144/Unit1-Internet-and-IP/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/01/12/CS144/Unit1-Internet-and-IP/","path":"2022/01/12/CS144/Unit1-Internet-and-IP/","title":"Unit1-Internet-and-IP"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Unit1-Internet-and-IP | Chrunge's Wonderland</title>
+  
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+
+
+
+<link rel="preconnect" href="https://website-1256060851.file.myqcloud.com" crossorigin>
+<link rel="preconnect" href="https://sdn.geekzu.org" crossorigin>
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiangsudian/CaoMei/style.min.css">
+
+
+
+
+
+<script type="text/javascript">
+// Live2d
+// 注意：live2d_path 参数应使用绝对路径
+const live2d_path = "https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
+
+// 封装异步加载资源的方法
+function loadExternalResource(url, type) {
+	return new Promise((resolve, reject) => {
+		let tag;
+
+		if (type === "css") {
+			tag = document.createElement("link");
+			tag.rel = "stylesheet";
+			tag.href = url;
+		}
+		else if (type === "js") {
+			tag = document.createElement("script");
+			tag.src = url;
+		}
+		if (tag) {
+			tag.onload = () => resolve(url);
+			tag.onerror = () => reject(url);
+			document.head.appendChild(tag);
+		}
+	});
+}
+
+// 加载 waifu.css live2d.min.js waifu-tips.js
+if (screen.width >= 768) {
+	Promise.all([
+		loadExternalResource(live2d_path + "waifu.min.css", "css"),
+		loadExternalResource(live2d_path + "live2d.min.js", "js"),
+		loadExternalResource(live2d_path + "waifu-tips.min.js", "js")
+	]).then(() => {
+		initWidget({
+			waifuPath: live2d_path + "waifu-tips.json",
+			apiPath: "https://api.dlzhang.com/live2d/", // https://live2d.fghrsh.net/api/
+			//cdnPath: "https://cdn.jsdelivr.net/gh/fghrsh/live2d_api/"
+		});
+	});
+}
+// initWidget 第一个参数为 waifu-tips.json 的路径，第二个参数为 API 地址
+// API 后端可自行搭建，参考 https://github.com/fghrsh/live2d_api
+// 初始化看板娘会自动加载指定目录下的 waifu-tips.json
+
+console.log(`
+  く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+`);
+// End Live2d Code
+
+window.addEventListener('load', () => {
+	console.log(`\n%c醉里挑灯赏猫%c班班 @lei2rock%c\n`, 'padding: 8px; background: #3f5973; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #649ab6; font-size: large; color: #eee;','');
+	console.log(`页面加载完毕消耗了${Math.round(performance.now() * 100) / 100}ms`);
+});
+
+</script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Chrunge's Wonderland</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Bio Bio</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">46</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">48</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unit-1-Internet-and-IP"><span class="nav-number">1.</span> <span class="nav-text">Unit 1: Internet and IP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-0-internet-and-ip-book-start"><span class="nav-number">1.1.</span> <span class="nav-text">1.0 internet and ip book start</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-application"><span class="nav-number">1.2.</span> <span class="nav-text">1.1 application</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-four-layer"><span class="nav-number">1.3.</span> <span class="nav-text">1.2 four-layer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-IP-service-model"><span class="nav-number">1.4.</span> <span class="nav-text">1.3 IP service model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-Life-of-a-packet"><span class="nav-number">1.5.</span> <span class="nav-text">1.4 Life of a packet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-Packet-switching"><span class="nav-number">1.6.</span> <span class="nav-text">1.5 Packet switching</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-Principle-layer"><span class="nav-number">1.7.</span> <span class="nav-text">1.6 Principle layer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7-Principle-encapsulation"><span class="nav-number">1.8.</span> <span class="nav-text">1.7 Principle encapsulation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8-byte-order"><span class="nav-number">1.9.</span> <span class="nav-text">1.8 byte order</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-9-IPv4"><span class="nav-number">1.10.</span> <span class="nav-text">1.9 IPv4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-10-Address-Resolution-Protocol"><span class="nav-number">1.11.</span> <span class="nav-text">1.10 Address Resolution Protocol</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-11-internet-and-ip-book-end"><span class="nav-number">1.12.</span> <span class="nav-text">1.11 internet and ip book end</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AF%E8%AF%AD%E8%A1%A8"><span class="nav-number">2.</span> <span class="nav-text">术语表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7"><span class="nav-number">3.</span> <span class="nav-text">网络工具</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chrunge</p>
+  <div class="site-description" itemprop="description">Courage is not simply one of the virtues but the form of every virtue at the testing point.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+<div class="cc-license animated" itemprop="sponsor">
+  <a href="https://www.netlify.com" class="cc-opacity" title="Deploy with Netlify → https://www.netlify.com" target="_blank"><img width="80" src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Netlify"></a>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/12/CS144/Unit1-Internet-and-IP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chrunge's Wonderland">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Unit1-Internet-and-IP | Chrunge's Wonderland">
+      <meta itemprop="description" content="CS144 notes for unit 1">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Unit1-Internet-and-IP
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-01-12 13:03:42" itemprop="dateCreated datePublished" datetime="2022-01-12T13:03:42Z">2022-01-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-17 09:30:30" itemprop="dateModified" datetime="2022-06-17T09:30:30Z">2022-06-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Network/" itemprop="url" rel="index"><span itemprop="name">Computer Network</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">CS144 notes for unit 1</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="Unit-1-Internet-and-IP"><a href="#Unit-1-Internet-and-IP" class="headerlink" title="Unit 1: Internet and IP"></a><strong>Unit 1: Internet and IP</strong></h2><h3 id="1-0-internet-and-ip-book-start"><a href="#1-0-internet-and-ip-book-start" class="headerlink" title="1.0 internet and ip book start"></a><strong>1.0 internet and ip book start</strong></h3><ol>
+<li><p>Question:</p>
+<ul>
+<li>what is Internet?<ul>
+<li>Answer: (Making IP run over any link layer made sense because the Internet was created specifically to) interconnect existing networks.</li>
+</ul>
+</li>
+<li>What is an Internet Address?</li>
+<li>How do applications such as the web, Skype, and BitTorrent work?<span id="more"></span></li>
+</ul>
+</li>
+<li><p><strong>4-layer model of Internet</strong>:</p>
+<ol>
+<li>Application</li>
+<li>Transport</li>
+<li>Network</li>
+<li>Link</li>
+</ol>
+</li>
+<li><p>Basic architectural ideas and principles:</p>
+<ul>
+<li>Packet switching</li>
+<li>Layering</li>
+<li>Encapsulation</li>
+</ul>
+</li>
+</ol>
+<h3 id="1-1-application"><a href="#1-1-application" class="headerlink" title="1.1 application"></a><strong>1.1 application</strong></h3><ol>
+<li>Most applications use a <strong>reliable, bidirectional byte stream</strong> to communicate.</li>
+</ol>
+<p>2.Application level controls communication pattern and payloads:</p>
+<ol>
+<li>World Wide Web: Client-Server(HTTP)<ol>
+<li>request: GET, PUT, DELETE, and INFO</li>
+<li>response: 200 OK; 400 Bad Request</li>
+</ol>
+</li>
+<li>BitTorrent: Tracker and Client, a tracker is a node that keeps track of what clients are members of the swarms.<ol>
+<li>torrent file: describes some information about data file and tells BitTorrent about who the tracker is for that torrent.</li>
+</ol>
+</li>
+<li>Skype: client behind NAT can open connections out to the Internet, but can’t be opened from the Internet. So, you need a Rendezvous or Relay for communication.<ol>
+<li>Case 1: Client B has a NAT, but client A hasn’t. First, B open a connection to the rendezvous server, if A wants to connect to B, A firstly connect to rendezvous and then Rendezvous tells B to open a connection to A.</li>
+<li>Case 2: Client A and B both behind NAT, there is a relay needed to communicate between A and B.</li>
+</ol>
+</li>
+</ol>
+<h3 id="1-2-four-layer"><a href="#1-2-four-layer" class="headerlink" title="1.2 four-layer"></a><strong>1.2 four-layer</strong></h3><ol>
+<li><p><strong>Layer allows each to focus on its job, without worrying about how the other layer works.</strong></p>
+<ol>
+<li>Each layer communicates with its peer layer.</li>
+</ol>
+</li>
+<li><p>Internet &#x3D; end-hosts + links + routers.</p>
+</li>
+<li><p>Link Layer: to carry the data over <strong>one link</strong> at a time.</p>
+<ol>
+<li>including <strong>Ethernet, WIFI, 3G…</strong></li>
+</ol>
+</li>
+<li><p>Network Layer: to deliver packets <strong>end-to-end</strong> across the Internet.</p>
+<ol>
+<li>Packet(datagram): a <strong>self-contained</strong> collection of data, plus a header that describes that the data is, where it is going and where it came from.</li>
+<li>IP makes a best-effort attempt, but datagrams can get lost, out of order or corrupted.<ul>
+<li><strong>Datagram</strong></li>
+<li><strong>Unreliable</strong></li>
+<li><strong>Best effort</strong></li>
+<li><strong>Connectionless</strong></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Transport Layer:</p>
+<ol>
+<li>TCP is the most common, it guarantees correct in-order delivery of data.</li>
+<li>UDP offers no delivery guarantees.</li>
+</ol>
+</li>
+<li><p>Application Layer: reuse Transport Layer by using well-defined API </p>
+<ol>
+<li>http, bittorrent, skype</li>
+</ol>
+</li>
+<li><p><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/1/The%204%20Layer%20Internet%20Model.png?raw=true" alt="The 4 Layer Internet Model"></p>
+</li>
+<li><p>Complementary material:</p>
+<ul>
+<li>Ip is “the thin waist”.</li>
+<li>Layer 3 &#x3D; Network, 2 &#x3D; Link</li>
+</ul>
+</li>
+<li><p><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/1/The%207-layer%20OSI%20Model.png?raw=true" alt="The 7-layer OSI Model"></p>
+</li>
+<li><p><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/1/IP%20is%20the%20thin%20waist.png?raw=true" alt="IP is the thin waist"></p>
+</li>
+</ol>
+<h3 id="1-3-IP-service-model"><a href="#1-3-IP-service-model" class="headerlink" title="1.3 IP service model"></a><strong>1.3 IP service model</strong></h3><ol>
+<li>Specified Packet unit name for each layer: Message &#x3D;&gt; Transport Segment &#x3D;&gt; IP Datagram &#x3D;&gt;Link Frame</li>
+<li>IP’s job is to deliver the datagram to the other end.<ol>
+<li>IP datagrams consist of a header and some data.</li>
+<li>IP datagram &#x3D;&gt; Linker Layer(Link frame) &#x3D;&gt; router (decides next router by forwarding table) &#x3D;&gt; IP destination address.</li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/1/The%20IP%20service%20Model.png?raw=true" alt="The IP service Model"></li>
+</ol>
+</li>
+<li>Why IP is so simple?<ul>
+<li>faster, more streamlined and lower cost to build and maintain.</li>
+<li><strong>end-to-end principle</strong>: Where possible, implement features in the end hosts.</li>
+<li>allows a variety of reliable and unreliable services to be built on top.</li>
+<li>works over any link layer: IP makes very few assumptions about the link layer below.</li>
+</ul>
+</li>
+<li>Details<ol>
+<li>Prevent packets looping forever: time to live &#x3D; 128, which is the maximum number of hop.</li>
+<li>Fragment packets if they are too long.<ul>
+<li>Ethernet carry packets shorter than 1500bytes long.</li>
+<li>Total packet length can be up 64KBytes.</li>
+</ul>
+</li>
+<li>Uses a header <strong>checksum</strong> to reduce chances of delivering datagram to wrong destination.</li>
+<li>IP allows new fields to be added to the datagram header.</li>
+<li>IPv4 to IPv6.</li>
+<li>Protocol ID: tells us what is inside the data field, such as “6” tells us the data contains a TCB segment.</li>
+<li>Header Length: how long the header is</li>
+<li>Type of Service: gives a hint to routers about how important this packet is.</li>
+</ol>
+</li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/1/IPv4%20Datagram.png?raw=true" alt="IPv4 Datagram"></li>
+</ol>
+<h3 id="1-4-Life-of-a-packet"><a href="#1-4-Life-of-a-packet" class="headerlink" title="1.4 Life of a packet"></a><strong>1.4 Life of a packet</strong></h3><ol>
+<li>TCP: three way handshake &#x3D; “<strong>SYN + SYN-ACK + ACK</strong>“<ul>
+<li>TCP server port: 80</li>
+</ul>
+</li>
+<li>Router: router has <strong>IP address</strong> ,and <strong>a forwarding table</strong> consisting of a set of IP address patterns and the link to send across for each pattern.<br><img src="/" alt="Inside Each Hop"></li>
+<li>Routers use Longest Prefix Match.</li>
+</ol>
+<h3 id="1-5-Packet-switching"><a href="#1-5-Packet-switching" class="headerlink" title="1.5 Packet switching"></a><strong>1.5 Packet switching</strong></h3><ol>
+<li><strong>Packet</strong>: Break data into discrete, self-contained unit of data that carries information necessary for it to reach its destination.</li>
+<li>Packet switching: Independently for each arriving packet, pick its outgoing link. If the link is free, send it. Else hold the packet for later.</li>
+<li><strong>Flow</strong>: A collection of datagrams belonging to the same end-to-end communication, e.g. a TCP connection.</li>
+<li>Two nice properties: <strong>Simple and Efficient</strong><ul>
+<li>A switch can make individual, local decisions for each packet.</li>
+<li>Let a switch efficiently share a link between many parties.<ul>
+<li>Data traffic is bursty<ul>
+<li>Packet switching allows flows to use all available link capacity.</li>
+<li>Packet switching allows flows to share link capacity.</li>
+<li>This is called <strong>Statistical Multiplexing</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/1/Packet%20Formats.png?raw=true" alt="Packet Formats"></li>
+</ol>
+<h3 id="1-6-Principle-layer"><a href="#1-6-Principle-layer" class="headerlink" title="1.6 Principle layer"></a><strong>1.6 Principle layer</strong></h3><ol>
+<li>Layer: Each layer provides a well-defined service to the layer above, using the services provided by layers below and its private processing.<ul>
+<li>Layers are functional components.</li>
+<li>Layers communicate sequentially with the layers above and below.</li>
+</ul>
+</li>
+<li>Reason for layering:<ol>
+<li>modularity</li>
+<li>well defined service</li>
+<li>reuse</li>
+<li>separation of concerns</li>
+<li>continuous improvement</li>
+<li>peer-to-peer communications(相同层级之间交流)</li>
+</ol>
+</li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/1/Layering%20in%20a%20computer%20system.png?raw=true" alt="Layering in a computer system"></li>
+</ol>
+<h3 id="1-7-Principle-encapsulation"><a href="#1-7-Principle-encapsulation" class="headerlink" title="1.7 Principle encapsulation"></a><strong>1.7 Principle encapsulation</strong></h3><ol>
+<li>Encapsulation: the principle that unifies layering and packet switching.</li>
+<li><strong>Layer N data is payload of layer N-1</strong>: HTTP GET request is the payload of a TCP segment. TCP segment is the payload of an IP packet which is also the payload of a WiFi frame.(层层封装)</li>
+<li>Encapsulation Flexibility: Encapsulation allows you to layer recursively.<ol>
+<li>Example: <img src="/" alt="VPN encapsulation"></li>
+</ol>
+</li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/1/Encapsulation.png?raw=true" alt="Encapsulation"></li>
+</ol>
+<h3 id="1-8-byte-order"><a href="#1-8-byte-order" class="headerlink" title="1.8 byte order"></a><strong>1.8 byte order</strong></h3><ol>
+<li>Big endian: most significant byte is at lowest address(same as human readable number)</li>
+<li>Little endian: least significant byte is at lowest address.</li>
+<li>x86 processors from Intel and AMD are little endian; while ARM processors are big endian. Network Port is also big endian.</li>
+<li>C Helper function: <code>htons()</code>, <code>ntohs()</code>, <code>htonl</code> and <code>ntohl()</code><ul>
+<li>htons: host to network short</li>
+<li>ntohl: network to host long</li>
+</ul>
+</li>
+<li><strong>Be careful!!!</strong></li>
+</ol>
+<h3 id="1-9-IPv4"><a href="#1-9-IPv4" class="headerlink" title="1.9 IPv4"></a><strong>1.9 IPv4</strong></h3><ol>
+<li>32 bits long, written as 4 octets.</li>
+<li>Netmask: apply this mask, if it matches, in the same local network. if not, go through an IP router.<ul>
+<li>two computers are in the same network if they take a bitwise AND with netmask and get the same resulting address.</li>
+</ul>
+</li>
+<li>Originally 3 classes of address: <ul>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/1/Address%20Structure.png?raw=true" alt="Address Structure"></li>
+</ul>
+</li>
+<li>Address Structure Today: CIDR<ul>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/1/Address%20Structure%20Today.png?raw=true" alt="Address Structure Today"></li>
+</ul>
+</li>
+</ol>
+<h3 id="1-10-Address-Resolution-Protocol"><a href="#1-10-Address-Resolution-Protocol" class="headerlink" title="1.10 Address Resolution Protocol"></a><strong>1.10 Address Resolution Protocol</strong></h3><ol>
+<li>ARP: It is a mechanism by which the network layer can discover the link address associated with a network address it’s directly connected to.</li>
+<li>IP address: describes a host, a unique destination at the network layer.</li>
+<li>Link address: describes a particular network card. Ethernet has 48bit addresses.</li>
+<li>If a node’s mapping doesn’t contain a IP and link address mapping, then it will broadcasts a request:”who has the IP address, tell me your Link address”. Other nodes can learn the requestor’s IP and link address mapping, and only the node who owned the right IP responses its link address. Today, it is common to broadcast response.</li>
+<li>Mapping can last 20 minutes for Mac OSX, or 4 hours for some Cisco devices.</li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS144/1/Address%20Resolution%20Protocol.png?raw=true" alt="Address Resolution Protocol"></li>
+<li><img src="/" alt="APR Packet Format"></li>
+</ol>
+<h3 id="1-11-internet-and-ip-book-end"><a href="#1-11-internet-and-ip-book-end" class="headerlink" title="1.11 internet and ip book end"></a><strong>1.11 internet and ip book end</strong></h3><h2 id="术语表"><a href="#术语表" class="headerlink" title="术语表"></a><strong>术语表</strong></h2><ol>
+<li>APR: Address Resolution Protocol</li>
+<li>CIDR: Classless Inter-Domain Routing</li>
+<li>HTTP: HyperText Transfer Protocol</li>
+<li>IANA: The Internet Assigned Numbers Authority</li>
+<li>ICANN: the Internet Corporation for Assignment of Names and Numbers</li>
+<li>NAT: Network Address Translation</li>
+<li>RIRs: Regional Internet Registeries</li>
+<li>TCP: Transmission Control Protocol</li>
+<li>UDP: User Datagram Protocol</li>
+<li>VPN: Virtual Private Network</li>
+</ol>
+<h2 id="网络工具"><a href="#网络工具" class="headerlink" title="网络工具"></a><strong>网络工具</strong></h2><ol>
+<li>Wireshark to show all of the packet, for example “tcp.port &#x3D;&#x3D; 80 &amp;&amp; ip.addr &#x3D;&#x3D; xxx.xxx.x.x”.</li>
+<li>traceroute to observe the <strong>path</strong> that packets take through the Internet.</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+
+<span style="margin-top:30px; color:var(--blockquote-color); font-size:0.85em">
+        <br>
+        <span class="post-end-item" title="copyright"">
+            <span class="post-end-item-icon" style="margin-right: 3px">
+                <i class="fab fa-fw fa-creative-commons"></i>
+            </span>
+            <span class="post-end-item-text">采用署名-非商业性使用-相同方式共享 4.0（CC BY-NC-SA 4.0）许可协议</span>
+        </span>
+</span>
+
+
+
+
+
+<div class="donations">
+    <div class="donation-label">喜欢这篇文章？为什么不考虑赞赏一下作者呢？</div>
+    <a class="afdian-button" href="https://afdian.net/@lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fas fa-fw fa-bolt"></i>爱发电
+    </a>
+    <a class="paypal-button" href="https://paypal.me/lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fab fa-fw fa-paypal"></i>Paypal
+    </a>
+</div>
+          <div class="post-tags">
+              <a href="/tags/CS144/" rel="tag"># CS144</a>
+              <a href="/tags/IP/" rel="tag"># IP</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/12/CS144/Unit5-Application-and-NATs/" rel="prev" title="Unit5-Application-and-NATs">
+                  <i class="fa fa-chevron-left"></i> Unit5-Application-and-NATs
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/01/13/CS144/Unit2-Transport/" rel="next" title="Unit2-Transport">
+                  Unit2-Transport <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chrunge</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+if(window.location.hash){
+    var checkExist = setInterval(function() {
+        if ($(window.location.hash).length) {
+            $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+            clearInterval(checkExist);
+        }
+    }, 100);
+}
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+/* @license Minigrid v3.1.1 – https://cdn.jsdelivr.net/npm/minigrid@3.1.1/dist/minigrid.min.js */
+!function(t, e) {
+	"function" == typeof define && define.amd ? define(e) : "object" == typeof exports ? module.exports = e() : t.Minigrid = e()
+}(this, function(t) {
+	"use strict";
+	function e(t, e) {
+		for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+		return t
+	}
+	var i = function(t) {
+			var i = t.container instanceof Node ? t.container : document.querySelector(t.container),
+				r = t.item instanceof NodeList ? t.item : i.querySelectorAll(t.item);
+			this.props = e(t, {
+				container: i,
+				nodeList: r
+			})
+		};
+	return i.prototype.mount = function() {
+		if (!this.props.container) return !1;
+		if (!this.props.nodeList || 0 === this.props.nodeList.length) return !1;
+		var t = "number" == typeof this.props.gutter && isFinite(this.props.gutter) && Math.floor(this.props.gutter) === this.props.gutter ? this.props.gutter : 0,
+			e = this.props.done,
+			i = this.props.container,
+			r = this.props.nodeList;
+		i.style.width = "";
+		var n = Array.prototype.forEach,
+			o = i.getBoundingClientRect().width,
+			s = r[0].getBoundingClientRect().width + t,
+			p = Math.max(Math.floor((o - t) / s), 1),
+			a = 0;
+		o = s * p + t + "px", i.style.width = o, i.style.position = "relative";
+		for (var c = [], u = [], l = 0; l < p; ++l) u.push(l * s + t), c.push(t);
+		this.props.rtl && u.reverse(), n.call(r, function(e) {
+			var i = c.slice(0).sort(function(t, e) {
+				return t - e
+			}).shift();
+			i = c.indexOf(i);
+			var r = parseInt(u[i]),
+				n = parseInt(c[i]);
+			e.style.position = "absolute", e.style.webkitBackfaceVisibility = e.style.backfaceVisibility = "hidden", e.style.transformStyle = "preserve-3d", e.style.transform = "translate3D(" + r + "px," + n + "px, 0)", c[i] += e.getBoundingClientRect().height + t, a += 1
+		}), i.style.display = "";
+		var f = c.slice(0).sort(function(t, e) {
+			return t - e
+		}).pop();
+		i.style.height = f + "px", "function" == typeof e && e(r)
+	}, i
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

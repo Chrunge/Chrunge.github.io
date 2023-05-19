@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="61C课程的整体知识点，方便以后查询">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Summary of 61C">
+<meta property="og:url" content="http://example.com/2021/07/25/61ABC/61C/Summary-of-61C/index.html">
+<meta property="og:site_name" content="Chrunge&#39;s Wonderland">
+<meta property="og:description" content="61C课程的整体知识点，方便以后查询">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS61C/Summary/%E6%B1%87%E7%BC%96%E6%A0%BC%E5%BC%8F.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS61C/Summary/pesudo-assembly.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS61C/Summary/pesudo-assembly2.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS61C/Summary/%E6%89%80%E6%9C%89%E6%B1%87%E7%BC%96%E7%A0%81.png?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/CS61C/Summary/Datapath.jpg?raw=true">
+<meta property="article:published_time" content="2021-07-24T20:47:02.000Z">
+<meta property="article:modified_time" content="2022-06-17T09:30:30.000Z">
+<meta property="article:author" content="Chrunge">
+<meta property="article:tag" content="CS61C">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Chrunge/Pictures/blob/master/CS61C/Summary/%E6%B1%87%E7%BC%96%E6%A0%BC%E5%BC%8F.png?raw=true">
+
+
+<link rel="canonical" href="http://example.com/2021/07/25/61ABC/61C/Summary-of-61C/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2021/07/25/61ABC/61C/Summary-of-61C/","path":"2021/07/25/61ABC/61C/Summary-of-61C/","title":"Summary of 61C"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Summary of 61C | Chrunge's Wonderland</title>
+  
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+
+
+
+<link rel="preconnect" href="https://website-1256060851.file.myqcloud.com" crossorigin>
+<link rel="preconnect" href="https://sdn.geekzu.org" crossorigin>
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiangsudian/CaoMei/style.min.css">
+
+
+
+
+
+<script type="text/javascript">
+// Live2d
+// 注意：live2d_path 参数应使用绝对路径
+const live2d_path = "https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
+
+// 封装异步加载资源的方法
+function loadExternalResource(url, type) {
+	return new Promise((resolve, reject) => {
+		let tag;
+
+		if (type === "css") {
+			tag = document.createElement("link");
+			tag.rel = "stylesheet";
+			tag.href = url;
+		}
+		else if (type === "js") {
+			tag = document.createElement("script");
+			tag.src = url;
+		}
+		if (tag) {
+			tag.onload = () => resolve(url);
+			tag.onerror = () => reject(url);
+			document.head.appendChild(tag);
+		}
+	});
+}
+
+// 加载 waifu.css live2d.min.js waifu-tips.js
+if (screen.width >= 768) {
+	Promise.all([
+		loadExternalResource(live2d_path + "waifu.min.css", "css"),
+		loadExternalResource(live2d_path + "live2d.min.js", "js"),
+		loadExternalResource(live2d_path + "waifu-tips.min.js", "js")
+	]).then(() => {
+		initWidget({
+			waifuPath: live2d_path + "waifu-tips.json",
+			apiPath: "https://api.dlzhang.com/live2d/", // https://live2d.fghrsh.net/api/
+			//cdnPath: "https://cdn.jsdelivr.net/gh/fghrsh/live2d_api/"
+		});
+	});
+}
+// initWidget 第一个参数为 waifu-tips.json 的路径，第二个参数为 API 地址
+// API 后端可自行搭建，参考 https://github.com/fghrsh/live2d_api
+// 初始化看板娘会自动加载指定目录下的 waifu-tips.json
+
+console.log(`
+  く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+`);
+// End Live2d Code
+
+window.addEventListener('load', () => {
+	console.log(`\n%c醉里挑灯赏猫%c班班 @lei2rock%c\n`, 'padding: 8px; background: #3f5973; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #649ab6; font-size: large; color: #eee;','');
+	console.log(`页面加载完毕消耗了${Math.round(performance.now() * 100) / 100}ms`);
+});
+
+</script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Chrunge's Wonderland</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Bio Bio</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">46</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">48</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-I-6-Great-Ideas"><span class="nav-number">1.</span> <span class="nav-text">Part I: 6 Great Ideas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-II-Number-Representation-and-C-language"><span class="nav-number">2.</span> <span class="nav-text">Part II: Number Representation and C language</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-Representation"><span class="nav-number">2.1.</span> <span class="nav-text">Number Representation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Integer"><span class="nav-number">2.2.</span> <span class="nav-text">Integer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Floating-Point"><span class="nav-number">2.3.</span> <span class="nav-text">Floating Point</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-language"><span class="nav-number">2.4.</span> <span class="nav-text">C language</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-II-ISA-Assembly-Instructions"><span class="nav-number">3.</span> <span class="nav-text">Part II: ISA: Assembly Instructions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-III-Components-design-of-CPU"><span class="nav-number">4.</span> <span class="nav-text">Part III: Components design of CPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-IV-CPU-and-Pipeline"><span class="nav-number">5.</span> <span class="nav-text">Part IV: CPU and Pipeline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-V-Cache-and-Virtual-Memory"><span class="nav-number">6.</span> <span class="nav-text">Part V: Cache and Virtual Memory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cache"><span class="nav-number">6.1.</span> <span class="nav-text">Cache</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Virtual-Memory-OS-and-I-x2F-O"><span class="nav-number">6.2.</span> <span class="nav-text">Virtual Memory, OS and I&#x2F;O</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#OS"><span class="nav-number">6.2.1.</span> <span class="nav-text">OS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Virtual-Memory"><span class="nav-number">6.2.2.</span> <span class="nav-text">Virtual Memory</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#I-x2F-O-devices"><span class="nav-number">6.3.</span> <span class="nav-text">I&#x2F;O devices</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Parallelism-in-Data-Level-and-Thread-Level"><span class="nav-number">7.</span> <span class="nav-text">Parallelism in Data-Level and Thread-Level</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Level-Parallelism"><span class="nav-number">7.1.</span> <span class="nav-text">Data-Level Parallelism</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thread-Level-Parallelism"><span class="nav-number">7.2.</span> <span class="nav-text">Thread-Level Parallelism</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MapReduce-and-Spark"><span class="nav-number">7.3.</span> <span class="nav-text">MapReduce and Spark</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dependability-via-Redundancy-Time-vs-Space"><span class="nav-number">8.</span> <span class="nav-text">Dependability via Redundancy: Time vs Space</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chrunge</p>
+  <div class="site-description" itemprop="description">Courage is not simply one of the virtues but the form of every virtue at the testing point.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+<div class="cc-license animated" itemprop="sponsor">
+  <a href="https://www.netlify.com" class="cc-opacity" title="Deploy with Netlify → https://www.netlify.com" target="_blank"><img width="80" src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Netlify"></a>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/25/61ABC/61C/Summary-of-61C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chrunge's Wonderland">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Summary of 61C | Chrunge's Wonderland">
+      <meta itemprop="description" content="61C课程的整体知识点，方便以后查询">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Summary of 61C
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-07-24 20:47:02" itemprop="dateCreated datePublished" datetime="2021-07-24T20:47:02Z">2021-07-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-17 09:30:30" itemprop="dateModified" datetime="2022-06-17T09:30:30Z">2022-06-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">计算机基础</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">61C课程的整体知识点，方便以后查询</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="Part-I-6-Great-Ideas"><a href="#Part-I-6-Great-Ideas" class="headerlink" title="Part I: 6 Great Ideas"></a>Part I: 6 Great Ideas</h2><ol>
+<li>Abstraction to Simplify Design</li>
+<li>More’s Law</li>
+<li>Principle of Locality&#x2F;Memory Hierarchy: Temporal and Spatial Locality</li>
+<li>Parallelism</li>
+<li>Performance measurement(Amdahl’s law) and Improvement</li>
+<li>Dependability via Redundancy</li>
+</ol>
+<p>   Note: Time&#x2F;Program &#x3D; Instruction&#x2F;Program * Cycles&#x2F;Instruction * Time&#x2F;Cycle</p>
+<span id="more"></span>
+<h2 id="Part-II-Number-Representation-and-C-language"><a href="#Part-II-Number-Representation-and-C-language" class="headerlink" title="Part II: Number Representation and C language"></a>Part II: Number Representation and C language</h2><h3 id="Number-Representation"><a href="#Number-Representation" class="headerlink" title="Number Representation"></a>Number Representation</h3><h3 id="Integer"><a href="#Integer" class="headerlink" title="Integer"></a>Integer</h3><ol>
+<li>Sign and Magnitude: Define leftmost bit to be sign! Two zeros!!!</li>
+<li>One’s complement: Two zeros!!!</li>
+<li>Two’s complement: <strong>One zero!!!</strong></li>
+</ol>
+<h3 id="Floating-Point"><a href="#Floating-Point" class="headerlink" title="Floating Point"></a>Floating Point</h3><ol>
+<li>Floating Point: 1 bit sign + 8&#x2F;11 bits Exponent + 23&#x2F;52 bits Significand, and Exponent &#x3D; unsigned - bias(127&#x2F;1023)</li>
+<li>Value &#x3D; (-1)^s^ × (1 + Significand)^Exponent^. And when Exponent &lt; 0, radix &#x3D; Significand without adding 1.</li>
+<li>It ranges from (+-） 2^-149^ to 2^129^</li>
+<li>Underflow and Overflow</li>
+</ol>
+<h3 id="C-language"><a href="#C-language" class="headerlink" title="C language"></a>C language</h3><ol>
+<li><strong>Pointer and Array</strong>, <strong>Pass by Value</strong>, refer to K&amp;R</li>
+<li>Stack and Heap: malloc, free, realloc, sizeof</li>
+<li>Compiling language and Interpreting language</li>
+<li>CALL: Compiling, Assembly, Linking and Loading<ul>
+<li>.text .data .globl .string .word</li>
+</ul>
+</li>
+</ol>
+<h2 id="Part-II-ISA-Assembly-Instructions"><a href="#Part-II-ISA-Assembly-Instructions" class="headerlink" title="Part II: ISA: Assembly Instructions"></a>Part II: ISA: Assembly Instructions</h2><ol>
+<li><p>Assembly Instruction:</p>
+<ul>
+<li>Arithmetic&#x2F;logic:<ul>
+<li>add, sub, and, or, xor, sll, srl, sra</li>
+</ul>
+</li>
+<li>Immediate<ul>
+<li>addi, subi, andi, ori, xori, slli, srli, srai</li>
+</ul>
+</li>
+<li>Load&#x2F;Store:<ul>
+<li>lw, lb, lbu, sw, sb</li>
+</ul>
+</li>
+<li>Branching&#x2F;jumps<ul>
+<li>beq, bne, bge, blt, bgeu, bltu, jal jalr</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><img src="https://github.com/Chrunge/Pictures/blob/master/CS61C/Summary/%E6%B1%87%E7%BC%96%E6%A0%BC%E5%BC%8F.png?raw=true" alt="Assembly Type"></p>
+</li>
+<li><p><img src="https://github.com/Chrunge/Pictures/blob/master/CS61C/Summary/pesudo-assembly.png?raw=true" alt="Pseudo-assembly"></p>
+</li>
+<li><p><img src="https://github.com/Chrunge/Pictures/blob/master/CS61C/Summary/pesudo-assembly2.png?raw=true" alt="Pseudo-assembly2"></p>
+</li>
+<li><p><img src="https://github.com/Chrunge/Pictures/blob/master/CS61C/Summary/%E6%89%80%E6%9C%89%E6%B1%87%E7%BC%96%E7%A0%81.png?raw=true" alt="Machine code of Assembly"></p>
+</li>
+</ol>
+<h2 id="Part-III-Components-design-of-CPU"><a href="#Part-III-Components-design-of-CPU" class="headerlink" title="Part III: Components design of CPU"></a>Part III: Components design of CPU</h2><ol>
+<li>Synchronous Digital Systems State: setup time, hold time and clk-to-q time</li>
+<li><strong>Laws of Boolean Algebra</strong></li>
+<li>Finite State Machines: <strong>Truth Table, Boolean Expression and Gate Diagram</strong></li>
+<li>Mux: Data Multiplexors Design</li>
+<li>ALU: design <strong>Adder&#x2F;Subtractor</strong> by hardware and address <strong>overflow</strong></li>
+</ol>
+<h2 id="Part-IV-CPU-and-Pipeline"><a href="#Part-IV-CPU-and-Pipeline" class="headerlink" title="Part IV: CPU and Pipeline"></a>Part IV: CPU and Pipeline</h2><ol>
+<li>DataPath:<ul>
+<li>IF: Instruction Fetch</li>
+<li>ID: Instruction Decode</li>
+<li>EX: Execute - ALU(Arithmetic-Logic Unit)</li>
+<li>MEM: Memory Access</li>
+<li>WB: Write Back to Register</li>
+</ul>
+</li>
+<li>由简单到复杂：逐步添加add，sub，imm指令…..到datapath中，形成一个完成的datapath。</li>
+<li><img src="https://github.com/Chrunge/Pictures/blob/master/CS61C/Summary/Datapath.jpg?raw=true" alt="Datapath"></li>
+<li>Pipeline: Split data to several stages, and add registers between stages to save datapath status to run for next cycle.</li>
+<li>Pipeline Hazards: <ul>
+<li>Strutural hazard: more hardware</li>
+<li>Data hazard: directly fetch data from registers, out-of-order instructions in compiling stage or add nop for <code>lw</code> instruction.</li>
+<li>Control hazard: predict and flush datapath</li>
+</ul>
+</li>
+<li>SupersScalar Processors: multiple pipelines</li>
+</ol>
+<h2 id="Part-V-Cache-and-Virtual-Memory"><a href="#Part-V-Cache-and-Virtual-Memory" class="headerlink" title="Part V: Cache and Virtual Memory"></a>Part V: Cache and Virtual Memory</h2><h3 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h3><ol>
+<li>Kissing me gives ten percent extra zeal &amp; youth!</li>
+<li><strong>Spatial and Temporal Locality</strong></li>
+<li><strong>Tag&#x2F;Index&#x2F;Offset</strong> for cache block: first find index; then check valid bit and tag; finally hit and offset, or miss.</li>
+<li>Direct-Mapped Cache, Full Associative Cache and N-way Associative Cache</li>
+<li>Cache Miss: Compulsory Miss, Capacity Miss, Conflict Miss and Coherency Miss</li>
+<li>Write-back and write-through, LRU&#x2F;FIFO&#x2F;Random replacement policy</li>
+<li>Average Memory Access Time(AMAT)</li>
+</ol>
+<h3 id="Virtual-Memory-OS-and-I-x2F-O"><a href="#Virtual-Memory-OS-and-I-x2F-O" class="headerlink" title="Virtual Memory, OS and I&#x2F;O"></a>Virtual Memory, OS and I&#x2F;O</h3><h4 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h4><ol>
+<li>OS: What does the OS do and What is the functionality of OS???<ul>
+<li>Provide <strong>isolation</strong> between running processes</li>
+<li>Provide <strong>interaction</strong> with the outside world.</li>
+</ul>
+</li>
+<li>Waht does OS need from hardware：<ul>
+<li>Memory translation, Protection and privilege, Traps &amp; Interrupts</li>
+</ul>
+</li>
+</ol>
+<h4 id="Virtual-Memory"><a href="#Virtual-Memory" class="headerlink" title="Virtual Memory"></a>Virtual Memory</h4><ol>
+<li>The functionality of virtual memory: Isolation and Protection , More Memory, Illusion for all Memory(Abstraction)</li>
+<li>Virtual Address &#x3D;&gt; Page Table and TLB(Translation Lookaside Buffer) &#x3D;&gt; Physical Address Space.<ul>
+<li>Virtual address &#x3D; page number + offset</li>
+<li>Page faults: Not valid or valid but on disk.</li>
+<li>only Write-back.</li>
+</ul>
+</li>
+<li>Page Table is big? &#x3D;&gt; Hierarchical Page Tables</li>
+<li>Where is TLBs in Datapath???</li>
+</ol>
+<h3 id="I-x2F-O-devices"><a href="#I-x2F-O-devices" class="headerlink" title="I&#x2F;O devices"></a>I&#x2F;O devices</h3><ol>
+<li>Memory mapped I&#x2F;O: Portion of address space dedicated to I&#x2F;O.</li>
+<li>I&#x2F;O polling: Processor checks status, then act.</li>
+<li>I&#x2F;O Interrupts: Interrupt current program, then transfer control to the trap handler in the operating system.</li>
+<li><strong>DMA</strong>(Direct Memory Access): By DMA engine, allows I&#x2F;O devices to directly read&#x2F;write main memory.</li>
+</ol>
+<h2 id="Parallelism-in-Data-Level-and-Thread-Level"><a href="#Parallelism-in-Data-Level-and-Thread-Level" class="headerlink" title="Parallelism in Data-Level and Thread-Level"></a>Parallelism in Data-Level and Thread-Level</h2><h3 id="Data-Level-Parallelism"><a href="#Data-Level-Parallelism" class="headerlink" title="Data-Level Parallelism"></a>Data-Level Parallelism</h3><ol>
+<li>Flynn’s Taxonomy: <ul>
+<li>software: sequential, concurrent</li>
+<li>hardware: serial, parallel</li>
+</ul>
+</li>
+<li>SIMD: Single Instruction Multiple Data, for array computation by <strong>Intel SSE Intrinsics</strong> and large specified register(MMX, SSE, AVX)</li>
+</ol>
+<h3 id="Thread-Level-Parallelism"><a href="#Thread-Level-Parallelism" class="headerlink" title="Thread-Level Parallelism"></a>Thread-Level Parallelism</h3><ol>
+<li><p>Thread: A thread stands for “thread of execution”, is a single stream of instructions. </p>
+</li>
+<li><p>Process and Thread, Core and HardWare Thread and Software.</p>
+</li>
+<li><p>Multithreading: to copy with saving current thread state and load new thread state.</p>
+</li>
+<li><p>MIMD: Multiple Instruction Multiple Data; Go, OpenMP in C and hazards caused by non-deterministic result &#x3D;&gt; Synchronization with <strong>Locks</strong>.</p>
+</li>
+<li><p>Hardware Synchronization: Read &amp; write in single instruction(Atomic)</p>
+</li>
+<li><p>Shared Memory and Caches: Cache Coherency</p>
+<ul>
+<li>Idea: When any processor has cache miss or writes, notify other processors via interconnection network.</li>
+<li>Each cache tracks state of each block in Cache: Shared, Modified, Exclusive, Owner.<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Cache_coherency_protocols_(examples)#MOESI_protocol">MOESI</a></li>
+<li>Coherency Misses(false sharing): Several processors reading&#x2F;writing X and writing Y, where X and Y are in the same block cache. Causing <strong>block ping-pongs</strong>.</li>
+</ul>
+</li>
+<li><p>The five kinds of parallelism</p>
+<ul>
+<li>Request Level Parallelism: warehouse scale computers</li>
+<li>Instruction Level Parallelism: Pipelining, Superscalar, out-of-order execution, branch prediction</li>
+<li>Data Level Parallelism: SIMD Instructions, graphics cards</li>
+<li>Data&#x2F;Task Level Parallelism: Map&#x2F;Reduce: Hadoop and Spark</li>
+<li>Thread Level Parallelism: Multicore systems, OpenMP, Go</li>
+</ul>
+</li>
+</ol>
+<h3 id="MapReduce-and-Spark"><a href="#MapReduce-and-Spark" class="headerlink" title="MapReduce and Spark"></a>MapReduce and Spark</h3><ol>
+<li>Amdahl’s Law</li>
+<li>Request-Level and Data-Level Parallelism</li>
+<li>MapReduce &#x3D;&gt; Simple data-parallel programming model designed for scalability and fault-tolerance.</li>
+<li>Spark &#x3D;&gt; fast and general engine for large-scale data processing.<ul>
+<li>textFile(), faltMap(), Map(), reduceByKey()</li>
+</ul>
+</li>
+</ol>
+<h2 id="Dependability-via-Redundancy-Time-vs-Space"><a href="#Dependability-via-Redundancy-Time-vs-Space" class="headerlink" title="Dependability via Redundancy: Time vs Space"></a>Dependability via Redundancy: Time vs Space</h2><ol>
+<li>PUE(Power Usage Effectiveness)</li>
+<li>Dependability Metrics: Mean Time to Failure(MTTF), Mean Time to Repair(MTTR), Mean time between failures(MTBF), Annualized Failure Rate(AFR)</li>
+<li>Parity and Hamming Code:<br>Parity: Simple Error-Detection Coding(just odd numbers of errors are detected) </li>
+<li>Hamming ECC: Single Error Correction &#x3D;&gt; p1 covers all positions with LSB &#x3D; 1; p2 LSB &#x3D; 2….</li>
+<li>RAID(Redundant Arrays of Disks ): RAID 0-5</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+
+<span style="margin-top:30px; color:var(--blockquote-color); font-size:0.85em">
+        <br>
+        <span class="post-end-item" title="copyright"">
+            <span class="post-end-item-icon" style="margin-right: 3px">
+                <i class="fab fa-fw fa-creative-commons"></i>
+            </span>
+            <span class="post-end-item-text">采用署名-非商业性使用-相同方式共享 4.0（CC BY-NC-SA 4.0）许可协议</span>
+        </span>
+</span>
+
+
+
+
+
+<div class="donations">
+    <div class="donation-label">喜欢这篇文章？为什么不考虑赞赏一下作者呢？</div>
+    <a class="afdian-button" href="https://afdian.net/@lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fas fa-fw fa-bolt"></i>爱发电
+    </a>
+    <a class="paypal-button" href="https://paypal.me/lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fab fa-fw fa-paypal"></i>Paypal
+    </a>
+</div>
+          <div class="post-tags">
+              <a href="/tags/CS61C/" rel="tag"># CS61C</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/07/15/%E9%9A%8F%E7%AC%94/%E5%A6%84%E6%83%B3%E6%97%A5%E8%AE%B0/" rel="prev" title="梦境与幻想">
+                  <i class="fa fa-chevron-left"></i> 梦境与幻想
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/08/21/Tools/Vim%E6%80%BB%E7%BB%93/" rel="next" title="Vim使用指南记录">
+                  Vim使用指南记录 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chrunge</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+if(window.location.hash){
+    var checkExist = setInterval(function() {
+        if ($(window.location.hash).length) {
+            $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+            clearInterval(checkExist);
+        }
+    }, 100);
+}
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+/* @license Minigrid v3.1.1 – https://cdn.jsdelivr.net/npm/minigrid@3.1.1/dist/minigrid.min.js */
+!function(t, e) {
+	"function" == typeof define && define.amd ? define(e) : "object" == typeof exports ? module.exports = e() : t.Minigrid = e()
+}(this, function(t) {
+	"use strict";
+	function e(t, e) {
+		for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+		return t
+	}
+	var i = function(t) {
+			var i = t.container instanceof Node ? t.container : document.querySelector(t.container),
+				r = t.item instanceof NodeList ? t.item : i.querySelectorAll(t.item);
+			this.props = e(t, {
+				container: i,
+				nodeList: r
+			})
+		};
+	return i.prototype.mount = function() {
+		if (!this.props.container) return !1;
+		if (!this.props.nodeList || 0 === this.props.nodeList.length) return !1;
+		var t = "number" == typeof this.props.gutter && isFinite(this.props.gutter) && Math.floor(this.props.gutter) === this.props.gutter ? this.props.gutter : 0,
+			e = this.props.done,
+			i = this.props.container,
+			r = this.props.nodeList;
+		i.style.width = "";
+		var n = Array.prototype.forEach,
+			o = i.getBoundingClientRect().width,
+			s = r[0].getBoundingClientRect().width + t,
+			p = Math.max(Math.floor((o - t) / s), 1),
+			a = 0;
+		o = s * p + t + "px", i.style.width = o, i.style.position = "relative";
+		for (var c = [], u = [], l = 0; l < p; ++l) u.push(l * s + t), c.push(t);
+		this.props.rtl && u.reverse(), n.call(r, function(e) {
+			var i = c.slice(0).sort(function(t, e) {
+				return t - e
+			}).shift();
+			i = c.indexOf(i);
+			var r = parseInt(u[i]),
+				n = parseInt(c[i]);
+			e.style.position = "absolute", e.style.webkitBackfaceVisibility = e.style.backfaceVisibility = "hidden", e.style.transformStyle = "preserve-3d", e.style.transform = "translate3D(" + r + "px," + n + "px, 0)", c[i] += e.getBoundingClientRect().height + t, a += 1
+		}), i.style.display = "";
+		var f = c.slice(0).sort(function(t, e) {
+			return t - e
+		}).pop();
+		i.style.height = f + "px", "function" == typeof e && e(r)
+	}, i
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
