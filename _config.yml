@@ -3,17 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Chrunge's Wonderland
-subtitle: 'Bio Bio'
+title: 勇气
+subtitle: 唯有爱与勇气
 description: Courage is not simply one of the virtues but the form of every virtue at the testing point.
-keywords: [Blog, Chrunge, Notebook, Computer Science]
+keywords: [Calibre, Love and Courage, Mind, Curiosity, Computer Science]
 author: Chrunge
-language: en
+language: zh-CN
 timezone: 'UTC'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://chrunge.github.io/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -114,3 +115,33 @@ deploy:
 #   total_time: true
 #   awl: 4
 #   wpm: 275
+
+# rss feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 3
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:
+
+
+# 脚注
+footer:
+  since: 2020        # 建站开始时间
+  icon:
+    name: user       # 设置 建站初始时间和至今时间中间的图标，默认是一个'小人像'，更改user为heart可以变成一个心
+    animated: true
+    color: "#808080" # 更改图标的颜色，红色为'#ff0000'
+  powered:
+    enable: true     # 开启hexo驱动
+    version: true    # 开启hexo版本号
+  theme:
+    enable: true     # 开启主题驱动
+    version: true    # 开启主题版本号
+  custom_text: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a> # 这里的底部标识是为了添加coding page服务时的版权声明 打开注释就可以看到底部有一个 hosted by coding pages
