@@ -1,3 +1,16 @@
+---
+title: 汇总表
+top: false
+cover: false
+toc: true
+mathjax: true
+date: 2022-02-20
+password:
+description: 
+tags:
+categories:
+---
+
 # 始于2022-06-16
 
 Where is my dream?
@@ -13,6 +26,8 @@ Where is my dream?
 | [周记](https://github.com/yihong0618/2021/issues/18) | 0 (周) | 0 | NO |
 
 <!--END_SECTION:my_number-->
+
+<!--more-->
 
 ## The repos I created
 <!--START_SECTION:my_github-->

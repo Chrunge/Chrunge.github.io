@@ -10,7 +10,7 @@ description: 记录算法题中的一些常见思路和模板
 tags: 
 - Algorithm
 categories:
-- Computer Science
+- Algorithm
 ---
 
 ## 排序
