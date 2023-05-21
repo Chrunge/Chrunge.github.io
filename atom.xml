@@ -6,7 +6,7 @@
   <link href="https://chrunge.github.io/atom.xml" rel="self"/>
   
   <link href="https://chrunge.github.io/"/>
-  <updated>2023-05-21T04:31:01.458Z</updated>
+  <updated>2023-05-21T05:12:10.433Z</updated>
   <id>https://chrunge.github.io/</id>
   
   <author>
@@ -17,53 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://chrunge.github.io/2023/05/21/Tools/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E7%BB%B4%E6%8A%A4/"/>
-    <id>https://chrunge.github.io/2023/05/21/Tools/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E7%BB%B4%E6%8A%A4/</id>
-    <published>2023-05-21T04:31:01.454Z</published>
-    <updated>2023-05-21T04:31:01.458Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;博客搭建&quot;&gt;&lt;a href=&quot;#博客搭建&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://chrunge.github.io/2023/05/21/Tools/Tools%20Conclusion/"/>
-    <id>https://chrunge.github.io/2023/05/21/Tools/Tools%20Conclusion/</id>
-    <published>2023-05-21T04:10:48.910Z</published>
-    <updated>2023-05-21T04:10:48.913Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;工具参考汇总&quot;&gt;&lt;a href=&quot;#工具参考汇总&quot; class=&quot;headerlink&quot; title=&quot;工具参考汇总&quot;&gt;&lt;/a&gt;工具参考汇总&lt;/h2&gt;&lt;h3 id=&quot;C&quot;&gt;&lt;a href=&quot;#C&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>美国制宪会议人员表</title>
     <link href="https://chrunge.github.io/2023/05/21/%E9%9A%8F%E7%AC%94/%E7%BE%8E%E5%9B%BD%E5%88%B6%E5%AE%AA%E4%BC%9A%E8%AE%AE%E4%BA%BA%E5%91%98%E8%A1%A8/"/>
     <id>https://chrunge.github.io/2023/05/21/%E9%9A%8F%E7%AC%94/%E7%BE%8E%E5%9B%BD%E5%88%B6%E5%AE%AA%E4%BC%9A%E8%AE%AE%E4%BA%BA%E5%91%98%E8%A1%A8/</id>
     <published>2023-05-21T04:10:24.095Z</published>
-    <updated>2023-05-21T04:50:02.649Z</updated>
+    <updated>2023-05-21T05:12:10.433Z</updated>
     
     
       
@@ -85,10 +43,75 @@
     
     
     
-    <category term="历史" scheme="https://chrunge.github.io/categories/%E5%8E%86%E5%8F%B2/"/>
+    <category term="随笔" scheme="https://chrunge.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-    <category term="美国宪法" scheme="https://chrunge.github.io/tags/%E7%BE%8E%E5%9B%BD%E5%AE%AA%E6%B3%95/"/>
+    <category term="宪法" scheme="https://chrunge.github.io/tags/%E5%AE%AA%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CS Tools conclusion</title>
+    <link href="https://chrunge.github.io/2023/05/20/Language/Tools%20Conclusion/"/>
+    <id>https://chrunge.github.io/2023/05/20/Language/Tools%20Conclusion/</id>
+    <published>2023-05-20T00:00:00.000Z</published>
+    <updated>2023-05-21T05:49:33.640Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;工具参考汇总&quot;&gt;&lt;a href=&quot;#工具参考汇总&quot; class=&quot;headerlink&quot; title=&quot;工具参考汇总&quot;&gt;&lt;/a&gt;工具参考汇总&lt;/h2&gt;&lt;h3 id=&quot;C&quot;&gt;&lt;a href=&quot;#C&quot; class=&quot;headerlink&quot; title=&quot;C&quot;&gt;&lt;/a&gt;C&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://inst.eecs.berkeley.edu/~cs61c/fa11/lec/04-reference/2011Fa-CS61C-L04-dg-c2-reference.pdf&quot;&gt;K&amp;amp;R Ch. 1-5 C Reference Slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://inst.eecs.berkeley.edu/~cs61c/resources/HarveyNotesC1-3.pdf&quot;&gt;Brian Harvey’s Intro to C&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Quick Review of C: &lt;a href=&quot;https://cs162.org/ladder/&quot;&gt;Ladder&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Prof. Harvey’s &lt;a href=&quot;https://inst.eecs.berkeley.edu/%7Ecs61c/resources/HarveyNotesC1-3.pdf&quot;&gt;notes on C&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Prof. Hilfinger’s &lt;a href=&quot;https://inst.eecs.berkeley.edu/%7Ecs61c/sp21/resources-pdfs/pnh.stg.mgmt.pdf&quot;&gt;notes on memory management&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://learning.oreilly.com/library/view/head-first-c/9781449335649/&quot;&gt;Head First C  1st Edition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://learning.oreilly.com/library/view/21st-century-c/9781491904428/&quot;&gt;21st Century C  2nd Edition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;K&amp;amp;R C Programming Language&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tools" scheme="https://chrunge.github.io/categories/Tools/"/>
+    
+    
+    <category term="C++" scheme="https://chrunge.github.io/tags/C/"/>
+    
+    <category term="GDB" scheme="https://chrunge.github.io/tags/GDB/"/>
+    
+    <category term="C" scheme="https://chrunge.github.io/tags/C/"/>
+    
+    <category term="Git" scheme="https://chrunge.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>笔记流程</title>
+    <link href="https://chrunge.github.io/2023/05/19/Tools/Markdown/%E7%AC%94%E8%AE%B0%E5%8A%9F%E8%83%BD%20+%20%E6%B5%81%E7%A8%8B/"/>
+    <id>https://chrunge.github.io/2023/05/19/Tools/Markdown/%E7%AC%94%E8%AE%B0%E5%8A%9F%E8%83%BD%20+%20%E6%B5%81%E7%A8%8B/</id>
+    <published>2023-05-19T02:34:03.990Z</published>
+    <updated>2022-06-17T09:30:30.000Z</updated>
+    
+    
+    <summary type="html">&lt;h4 id=&quot;视频笔记&quot;&gt;&lt;a href=&quot;#视频笔记&quot; class=&quot;headerlink&quot; title=&quot;视频笔记&quot;&gt;&lt;/a&gt;视频笔记&lt;/h4&gt;&lt;p&gt;Obsidian + Media extended + Media extended bilibili plugin。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;bilibili视频：文字笔记 + 带有时间戳的URL链接(阅读模式下)&lt;ul&gt;
+&lt;li&gt;缺点：视频容易下架&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;本地视频：&lt;ul&gt;
+&lt;li&gt;有时间戳 + 笔记&lt;ul&gt;
+&lt;li&gt;绝对路径(文件位置容易移动)&lt;/li&gt;
+&lt;li&gt;相对路径(视频文件可能过大)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;无时间戳：笔记 + potplayer书签功能（书签应本地保存）</summary>
+    
+    
+    
+    <category term="Tools" scheme="https://chrunge.github.io/categories/Tools/"/>
+    
+    
+    <category term="Obsidian" scheme="https://chrunge.github.io/tags/Obsidian/"/>
     
   </entry>
   

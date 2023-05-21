@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#e7ddc8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#181c27" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/resources/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/resources/favicon/favicon.ico">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"chrunge.github.io","root":"/","images":"/resources/img/","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/config.min.js"></script>
+
+    <meta name="description" content="This a the notebook of CS61C——Great Ideas in Computer Architecture (Machine Structures)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="61C: Number, C syntax and Floating Point">
+<meta property="og:url" content="https://chrunge.github.io/2021/04/07/Computer%20Basic%20Course/61C/61C%20Number,%20C%20syntax%20and%20Floating%20Point/index.html">
+<meta property="og:site_name" content="勇气">
+<meta property="og:description" content="This a the notebook of CS61C——Great Ideas in Computer Architecture (Machine Structures)">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Number%20Representation/negative%20compute.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Number%20Representation/negative%20compute2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/C%20Pre-Processor.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/C%20vs%20Java%201.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/C%20vs%20Java%202.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/C%20vs%20Java%203.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Typed%20Variables%20in%20C.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Integer%20Python%20vs%20Java%20vs%20C.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Consts%20and%20Enums%20in%20C.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Structs%20in%20C.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Control%20Flow.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Abstraction.png">
+<meta property="og:image" content="https://chrunge.github.io/">
+<meta property="og:image" content="https://chrunge.github.io/">
+<meta property="og:image" content="https://chrunge.github.io/">
+<meta property="article:published_time" content="2021-04-06T20:59:58.000Z">
+<meta property="article:modified_time" content="2023-05-21T05:29:06.865Z">
+<meta property="article:author" content="Chrunge">
+<meta property="article:tag" content="C">
+<meta property="article:tag" content="CS61C">
+<meta property="article:tag" content="Assembly">
+<meta property="article:tag" content="Computer Architecture">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Number%20Representation/negative%20compute.png">
+
+
+<link rel="canonical" href="https://chrunge.github.io/2021/04/07/Computer%20Basic%20Course/61C/61C%20Number,%20C%20syntax%20and%20Floating%20Point/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://chrunge.github.io/2021/04/07/Computer%20Basic%20Course/61C/61C%20Number,%20C%20syntax%20and%20Floating%20Point/","path":"2021/04/07/Computer Basic Course/61C/61C Number, C syntax and Floating Point/","title":"61C: Number, C syntax and Floating Point"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>61C: Number, C syntax and Floating Point | 勇气</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/resources/fonts/longcang/longcang-regular.css" >
+<link rel="stylesheet" href="/resources/fonts/lxgw/lxgwwenkailite-regular.css" >
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="勇气" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">勇气</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">唯有爱与勇气</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">59</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">59</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          目 录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec01-6-Great-Ideas-in-Computer-Architecture"><span class="nav-text">Lec01: 6 Great Ideas in Computer Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec02-Number-Representation"><span class="nav-text">Lec02: Number Representation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture03-Introduction-into-the-C-programming-language"><span class="nav-text">Lecture03: Introduction into the C programming language</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Compile-vs-Interpret"><span class="nav-text">Compile vs Interpret</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-vs-Java"><span class="nav-text">C vs Java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-syntax"><span class="nav-text">C syntax</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture4-C-Intro-Pointer-Arrays-Strings"><span class="nav-text">Lecture4: C Intro: Pointer, Arrays, Strings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture5-Dynamic-Memory-Allocation"><span class="nav-text">Lecture5: Dynamic Memory Allocation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C-memory-Management"><span class="nav-text">C memory Management</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture6-Floating-Point"><span class="nav-text">Lecture6: Floating Point</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Chrunge"
+      src="/resources/img/avatar.webp">
+  <p class="site-author-name" itemprop="name">Chrunge</p>
+  <div class="site-description" itemprop="description">Courage is not simply one of the virtues but the form of every virtue at the testing point.</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Chrunge" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Chrunge" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/dqiucheng@gmail.com" title="E-Mail → dqiucheng@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/39574700/" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;39574700&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2021/04/07/Computer%20Basic%20Course/61C/61C%20Number,%20C%20syntax%20and%20Floating%20Point/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/resources/img/avatar.webp">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇气">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="61C: Number, C syntax and Floating Point | 勇气">
+      <meta itemprop="description" content="This a the notebook of CS61C——Great Ideas in Computer Architecture (Machine Structures)">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          61C: Number, C syntax and Floating Point
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-04-06 20:59:58" itemprop="dateCreated datePublished" datetime="2021-04-06T20:59:58Z">2021-04-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Computer-Basic-Course/" itemprop="url" rel="index"><span itemprop="name">Computer Basic Course</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">This a the notebook of CS61C——Great Ideas in Computer Architecture (Machine Structures)</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="Lec01-6-Great-Ideas-in-Computer-Architecture"><a href="#Lec01-6-Great-Ideas-in-Computer-Architecture" class="headerlink" title="Lec01: 6 Great Ideas in Computer Architecture"></a>Lec01: 6 Great Ideas in Computer Architecture</h2><ol>
+<li>Abstraction(Layers of Representation&#x2F;Intepretation)</li>
+<li>Moore’s Law</li>
+<li>Principle of Locality or Memory Hierarchy</li>
+<li>Parallelism</li>
+<li>Performance Measurement &amp; Improvement</li>
+<li>Dependability via redundancy<span id="more"></span></li>
+</ol>
+<h2 id="Lec02-Number-Representation"><a href="#Lec02-Number-Representation" class="headerlink" title="Lec02: Number Representation"></a>Lec02: Number Representation</h2><ol>
+<li><p>Real world is analog! To import analog information, we must do <strong>sample and Quantize</strong>.</p>
+</li>
+<li><p>Big idea: bits can represent everything, including color, address, commands and etc…</p>
+</li>
+<li><p>Several base:Binary, Octal, Decimal, Hexadecimal and they will be interconverted.</p>
+</li>
+<li><p><strong>Numerals</strong>(not number) have infinite number of digits in theory. But in real world, if result of add (or -, *, &#x2F; ) cannot be represented by these rightmost HW bits, we say <strong>overflow</strong> occurred.</p>
+</li>
+<li><p>Number Representation:</p>
+<ol>
+<li>Unsigned Numbers</li>
+<li>Sign and Magnitude(原码): define leftmost bit to be sign, 0(-) and 1(+).<ol>
+<li>Shortcomings:Wrong direction. when go right, sometimes increases values and sometimes decreases values.</li>
+<li>two zeros, increase circuit complexity.</li>
+</ol>
+</li>
+<li>One’s complement(反码): two zeros.</li>
+<li>Two’s complement(补码): Based one’s complement, shift the<br>negative mappings left by one.<ul>
+<li>Two ways to compute negative numbers.<ul>
+<li><img data-src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Number%20Representation/negative%20compute.png" alt="negative compute"></li>
+<li><img data-src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Number%20Representation/negative%20compute2.png" alt="negative compute2"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bias Encoding &#x3D; unsigned + bias(-2<sup>n-1</sup>-1).</li>
+</ol>
+</li>
+</ol>
+<h2 id="Lecture03-Introduction-into-the-C-programming-language"><a href="#Lecture03-Introduction-into-the-C-programming-language" class="headerlink" title="Lecture03: Introduction into the C programming language"></a>Lecture03: Introduction into the C programming language</h2><ol>
+<li>Why C:<ul>
+<li>Allow us to exploit underlying features of the architecture: <strong>memory management, special instructions, parallelism</strong></li>
+</ul>
+</li>
+<li>Key C concepts: Pointers, Arrays, Implications for Memory management</li>
+</ol>
+<h3 id="Compile-vs-Interpret"><a href="#Compile-vs-Interpret" class="headerlink" title="Compile vs Interpret"></a>Compile vs Interpret</h3><ol>
+<li>Compilation: C compilers map C programs directly into <strong>architecture-specific</strong> machine code (string of 1s and 0s)<ul>
+<li>Unlike Java, which converts to <strong>architecture-independent bytecode</strong> that may then be compiled by a just-in-time compiler(JIT)</li>
+<li>Unlike Python environments, which converts to a byte code at runtime<ul>
+<li>These differ mainly in exactly <strong>when</strong> your program is converted to low-level machine instructions (“levels of interpretation”)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>C Advantages and Disadvantages:<ul>
+<li>Advantages:<ul>
+<li>Reasonable compilation time: only modified files to be recompiled and can compile in parallel: <code>make -j</code></li>
+<li>Excellent run-time performance</li>
+</ul>
+</li>
+<li>Disadvantages:<ul>
+<li>Compiled files, including the executable, are architecture-specific, depending on processor type (e.g., MIPS vs. x86 vs. RISC-V) and the operating system</li>
+<li>Executable must be rebuilt on each new system</li>
+<li>“Change → Compile → Run [repeat]” iteration cycle can be slow during development</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>C Pre-Process:<ul>
+<li><img data-src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/C%20Pre-Processor.png" alt="C pre-process"></li>
+</ul>
+</li>
+</ol>
+<h3 id="C-vs-Java"><a href="#C-vs-Java" class="headerlink" title="C vs Java"></a>C vs Java</h3><ul>
+<li><img data-src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/C%20vs%20Java%201.png" alt="C vs Java1"></li>
+<li><img data-src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/C%20vs%20Java%202.png" alt="C vs Java2"></li>
+<li><img data-src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/C%20vs%20Java%203.png" alt="C vs Java3"></li>
+</ul>
+<h3 id="C-syntax"><a href="#C-syntax" class="headerlink" title="C syntax"></a>C syntax</h3><ol>
+<li>main: <code>int main(int argc,char *argv[])</code></li>
+<li>True or False:<ul>
+<li>False: 0, null, Boolean types</li>
+<li>Everything else is True</li>
+</ul>
+</li>
+<li>Typed Variables in C:<ul>
+<li><img data-src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Typed%20Variables%20in%20C.png" alt="Typed Variables in C"></li>
+<li><img data-src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Integer%20Python%20vs%20Java%20vs%20C.png" alt="Integer VS"></li>
+</ul>
+</li>
+<li>Consts and Enums in C:<ul>
+<li><img data-src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Consts%20and%20Enums%20in%20C.png" alt="Consts and Enums in C"></li>
+</ul>
+</li>
+<li>Structs in C:<ul>
+<li><img data-src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Structs%20in%20C.png" alt="Structs in C"></li>
+</ul>
+</li>
+<li>Control Flow:<ul>
+<li><img data-src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Control%20Flow.png" alt="Control Flow"></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Degression:<ul>
+<li>In 1949, first general stored-program computer war invented.<ul>
+<li>This is the revolution: It isn’t just programmable, but the program is just the same type of data that the computer computes on</li>
+<li>Bits are not just the numbers being manipulated, but the instructions on how to manipulate the numbers!</li>
+<li><img data-src="https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/C%20program%20language/Abstraction.png" alt="Abstraction"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Lecture4-C-Intro-Pointer-Arrays-Strings"><a href="#Lecture4-C-Intro-Pointer-Arrays-Strings" class="headerlink" title="Lecture4: C Intro: Pointer, Arrays, Strings"></a>Lecture4: C Intro: Pointer, Arrays, Strings</h2><ol start="0">
+<li>Value vs Address:<ol>
+<li>Each cell has an address associated with it.</li>
+<li>Each cell also store some value.</li>
+</ol>
+</li>
+<li><strong>Pointer</strong>: A variable that contains the address of a variable.</li>
+<li>Pointer Syntax: <code>int *p</code>, <code>p = &amp;y</code>, <code>z = *p</code>. (<code>*</code>在&#x3D;之前和之后的意思不同)<ol>
+<li><code>&amp;</code> called the “adddress operator” in this context.</li>
+<li><code>*</code> declare a pointer or play a role of “dereference operator”, latter means getting the value point to.</li>
+<li><code>void *</code> is a type that can point to anything(generic pointer)</li>
+<li><code>fn(int *p)</code> includes <code>int *</code>(represent a pointer) and <code>p</code>(name of the pointer), so the argument <code>p</code> is a pointer.</li>
+</ol>
+</li>
+<li>Why use pointer:<ol>
+<li>If we want to pass a large <code>struct</code> or array, it’s faster to pass a pointer than a whole thing. (or it will copy whole <code>struct</code> or array)</li>
+<li>More compact and cleaner code.<br>Note: In C, parameters <strong>pass by value</strong> like Java. but it has no reference type, it only has pointer.</li>
+</ol>
+</li>
+</ol>
+<hr>
+<ol start="4">
+<li><strong>Array</strong>: <code>char *string</code> and <code>char string[]</code> are nearly identical. Excepts:<ol>
+<li>Array name always point to the first elements.(can’t changed)</li>
+<li><code>pointer + n</code> &#x3D; add <code>n*sizeof(elements)</code> to the memory address.</li>
+<li>An array in C does not know its own length.</li>
+</ol>
+</li>
+</ol>
+<hr>
+<p>Notes:</p>
+<ol>
+<li>A variable may be initialized in its declaration, <strong>if not, it hold garbage</strong>.</li>
+<li>Undefined Behavior will cause bugs,some are “Heisenbugs”, and the other is “Bohrbugs”.</li>
+</ol>
+<h2 id="Lecture5-Dynamic-Memory-Allocation"><a href="#Lecture5-Dynamic-Memory-Allocation" class="headerlink" title="Lecture5: Dynamic Memory Allocation"></a>Lecture5: Dynamic Memory Allocation</h2><ol>
+<li><p><code>malloc</code>: to allocate memory to something new to point to, for instance: <code>ptr = (int *) malloc (n * sizeof(int));</code></p>
+</li>
+<li><p>After dynamically allocating space, we <strong>must</strong> dynamically free it: <code>free(ptr);</code></p>
+</li>
+<li><p><code>realloc(p, size)</code>: realloc memory for p, equal to malloc when p is NULL, or equal to free when size &#x3D; 0.</p>
+</li>
+</ol>
+<h3 id="C-memory-Management"><a href="#C-memory-Management" class="headerlink" title="C memory Management"></a>C memory Management</h3><ol>
+<li><p>4 regions:</p>
+<ul>
+<li>The Stack: local variable storage, parameters, return address.(top to down)</li>
+<li>The Heap(dynamic malloc storage): data lives until deallocated by programmer.(down to top)</li>
+<li>Static data: variables declared outside main, does not grow or shrink.(global)</li>
+<li>code: loaded when programs starts, does not change.</li>
+</ul>
+</li>
+<li><p>Heap management:</p>
+<ol>
+<li>Each block of memory is preceded by a header that has two fields:<ol>
+<li><strong>size</strong> of the block and <strong>a pointer</strong> to the next block.</li>
+<li>All free blocks are kept in a circular linked list, the pointer field is unused in an allocated block.</li>
+<li>Three ways to find free space when given a request:<ul>
+<li>First fit (find first one that’s free)</li>
+<li>Next fit (same as first, but remembers where left off)</li>
+<li>Best fit (finds most “snug” free space)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Summary:<br><img data-src="/" alt="MiniSummary"></p>
+</li>
+</ol>
+<h2 id="Lecture6-Floating-Point"><a href="#Lecture6-Floating-Point" class="headerlink" title="Lecture6: Floating Point"></a>Lecture6: Floating Point</h2><ol start="0">
+<li><strong>“Binary Point”</strong> like decimal point signifies boundary betw. integer and fractional parts:</li>
+<li>Fixed point to representation of Fractions:<ul>
+<li>10.1010<sub>2</sub> &#x3D; 1x2<sup>1</sup> + 1x2<sup>-1</sup> + 1x2<sup>-3</sup> &#x3D; 2.625<sub>10</sub> ,If we assume “fixed binary point”, range of 6-bit representations with this format: 0 to 3.9375 (almost 4).</li>
+</ul>
+</li>
+<li><strong>Floating Point</strong>: “float the binary point”.</li>
+<li><strong>Overflow and Underflow</strong>:<ul>
+<li>Overflow: Exponent larger than represented in 8-bit Exponent field</li>
+<li>Underflow: Negative exponent larger than represented in 8-bit Exponent field</li>
+</ul>
+</li>
+<li>Floating Point:<br><img data-src="/" alt="numberSummary"></li>
+<li><strong>Exponent decides how long is the ruler and Signficand is the actual ruler</strong>.<ol>
+<li>the minimum ruler is 2<sup>-149</sup>.</li>
+<li>In each exponent, it contains 2<sup>23</sup> rulers, and then ruler doubled.</li>
+</ol>
+</li>
+</ol>
+<hr>
+<ul>
+<li>Notes:<ul>
+<li>Floating Point add is not associative: &#96;(x + y) + z !&#x3D; x + (y + z)</li>
+<li>High <strong>precision</strong> permits high <strong>accuracy</strong> but doesn’t guarantee it.</li>
+<li>Rounding: to -∞, +∞, truncate, 0 or even.</li>
+<li>float -&gt; int -&gt; float could change its value.</li>
+<li><img data-src="/" alt="doublePrecision"></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+
+
+
+
+
+
+
+<div class="license">
+  <div class="license-title">61C: Number, C syntax and Floating Point</div>
+  <div class="license-link">
+    <a href="https://chrunge.github.io/2021/04/07/Computer%20Basic%20Course/61C/61C%20Number,%20C%20syntax%20and%20Floating%20Point/">https://chrunge.github.io/2021/04/07/Computer%20Basic%20Course/61C/61C%20Number,%20C%20syntax%20and%20Floating%20Point/</a>
+  </div>
+  <div class="license-meta">
+    <div class="license-meta-item">
+      <div class="license-meta-title">本文作者</div>
+      <div class="license-meta-text">
+          Chrunge
+      </div>
+    </div>
+      <div class="license-meta-item">
+        <div class="license-meta-title">发布于</div>
+        <div class="license-meta-text">
+          2021-04-06
+        </div>
+      </div>
+      <div class="license-meta-item">
+        <div class="license-meta-title">更新于</div>
+        <div class="license-meta-text">
+          2023-05-21
+        </div>
+      </div>
+    <div class="license-meta-item">
+      <div class="license-meta-title">许可协议</div>
+      <div class="license-meta-text">
+          禁止转载引用
+      </div>
+    </div>
+  </div>
+  <div class="license-statement">
+      如需转载或引用本文，请先获得作者授权！
+  </div>
+</div>
+
+
+
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Chrunge
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://chrunge.github.io/2021/04/07/Computer%20Basic%20Course/61C/61C%20Number,%20C%20syntax%20and%20Floating%20Point/" title="61C: Number, C syntax and Floating Point">https://chrunge.github.io/2021/04/07/Computer Basic Course/61C/61C Number, C syntax and Floating Point/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C</a>
+              <a href="/tags/CS61C/" rel="tag"><i class="fa fa-tag"></i> CS61C</a>
+              <a href="/tags/Assembly/" rel="tag"><i class="fa fa-tag"></i> Assembly</a>
+              <a href="/tags/Computer-Architecture/" rel="tag"><i class="fa fa-tag"></i> Computer Architecture</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/04/14/Language/C/61C%20C%E7%BC%96%E8%AF%91%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/" rel="prev" title="C编译与运算符优先级">
+                  <i class="fa fa-chevron-left"></i> C编译与运算符优先级
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/01/01/%E9%9A%8F%E7%AC%94/%E9%9A%8F%E8%AE%B0%E7%81%B5%E6%84%9F/" rel="next" title="随记灵感">
+                  随记灵感 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fas fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chrunge</span>
+</div><div class="footer-menu">
+    <a href="/tags/">文章标签</a> · <a href="/policy/">网站政策</a> · <a href="/links/">友情链接</a>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.staticfile.org/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdn.staticfile.org/jquery/3.6.4/jquery.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.staticfile.org/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.staticfile.org/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/comments.min.js"></script><script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/utils.min.js"></script><script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/next-boot.min.js"></script><script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/pjax.min.js"></script>
+
+  
+
+
+  <script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/third-party/fancybox.min.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.staticfile.org/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/third-party/math/mathjax.min.js"></script>
+
+
+
+
+
+<script data-pjax type="text/javascript">
+  //jquery selector
+  var $linkList = $(".link-list");
+  if ($linkList.length != 0) {
+    var j = -1;
+    for	(var i = 0; i < $linkList.length; i++) {
+      const listPath = $linkList[i].getAttribute('json-src');
+      const iconPath = $linkList[i].getAttribute('icon-src');
+      //使用 getJSON 读取 JSON 文件中的数据
+      $.getJSON(listPath, function(data) {
+        j++;
+        //存储数据的变量 
+        var li = "";
+        //清空内容 
+        $linkList.eq(j).empty();
+        //将获取到的 json 格式数据遍历到 div 中
+        $.each(data, function(infoIndex, info) {
+          var labelWarn = '';
+          var labelInfo = '';
+          if (info['warn']) { 
+            labelWarn = '<span class="label warn">' + info['warn'] + '</span>';
+          }
+          if (info['info']) { 
+            labelInfo = '<span class="label info">' + info['info'] + '</span>';
+          }
+          li += '<div class="link-list-container">';
+          li += '<img class="link-list-image" src="' + iconPath + info['logo'] + '">';
+          li += '<p>' + info['title'] + labelInfo + labelWarn + '</p>';
+          li += '<p>' + info['intro'] + '</p>';
+          li += '<a href="' + info['url'] + '" rel="noopener" target="_blank" data-pjax-state=""></a>';
+          li += '</div>';
+        })
+        //显示处理后的数据 
+        $linkList.eq(j).html(li);
+      })
+    }
+  }
+</script>
+
+
+
+<script data-pjax type="text/javascript">
+  //jquery selector
+  var $cultureList = $(".culture-list");
+  if ($cultureList.length != 0) {
+    var j = -1;
+    for	(var i = 0; i < $cultureList.length; i++) {
+      const listPath = $cultureList[i].getAttribute('json-src');
+      const coverPath = $cultureList[i].getAttribute('cover-src');
+      //使用 getJSON 读取 JSON 文件中的数据
+      $.getJSON(listPath, function(data) {
+        j++;
+        //存储数据的变量 
+        var li = "";
+        //清空内容 
+        $cultureList.eq(j).empty();
+        //将获取到的 json 格式数据遍历到 div 中
+        $.each(data, function(infoIndex, info) {
+          //影评书评链接
+          var title = info['title'];
+          if (info['pid']) {
+            title = '<a href="/posts/'+ info['pid'] +'/" >' + info['title'] +'</a>';
+          }
+
+          //作者
+          if (info['author']) {
+            var author = '<span class="author">' + info['author'] +'</span>';
+          } else {
+            var author = '';
+          }
+
+          //简介
+          if (info['intro']) {
+            var intro = info['intro'];
+          } else {
+            var intro = '';
+          }
+          
+          //分数
+          if (info['score'] == null) {
+            var star = '';
+          } else {
+            //初始化
+            var colorStar = '';
+            var greyStar = '';
+            var int = info['score'] - info['score'] % 1; //整数部分
+            //是否有小数
+            var fract = 0; 
+            if (info['score'] % 1 != 0) {
+              fract = 1;
+            }
+            //整数星级
+            for	(var m = 0; m < int; m++) {
+              colorStar += '★';
+            }
+            //半星级
+            if (fract != 0) {
+              colorStar += '☆';
+            }
+            //用空缺星补齐五星
+            for	(var m = 0; m < (5 - fract - int); m++) {
+              greyStar += '☆';
+            }
+            if (info['score'] != 5) {
+              star = '<span class="star-score">'+ colorStar +'<span class="grey-star">'+ greyStar +'</span></span>';
+            } else {
+              star = '<span class="star-score">'+ colorStar +'</span>';
+            }
+          }
+
+          li += '<div class="media">';
+          li += '<div class="media-cover" style="background-image:url(' + coverPath + info['cover'] + ')"></div>';
+          li += '<div class="media-meta">';
+          li += '<div class="media-meta-item title">' + title + '</div>';
+          li += '<div class="media-meta-item">' + author + star +'</div>';
+          li += '<div class="media-meta-item intro">' + intro + '</div>';
+          li += '</div></div>';
+        })
+        
+        //显示处理后的数据 
+        $cultureList.eq(j).html(li);
+      })
+    }
+  }
+</script>
+
+
+
+
+<script src="/resources/minigrid.min.js"></script>
+<script data-pjax type="text/javascript">
+  var $album = $(".album")[0];
+  if($album) {
+    // 相册列表 JSON 数据
+    var imgDataPath = $album.getAttribute('json-src');
+    // 照片存储路径
+    var imgPath = $album.getAttribute('photo-src');
+    // 最多显示数量
+    var imgMaxNum = 50;
+    // 获取窗口大小以决定图片宽度
+    var windowWidth = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+    if (windowWidth < 768) {
+        var imageWidth = 145; // 移动端图片宽度
+    } else {
+        var imageWidth = 235;
+    }
+
+    // 腾讯云自定义样式 (数据万象外网流量需要付费)
+    //var imgStyle = '!' + imageWidth + 'x';
+    //var imgStyle = '!300x';
+
+    // 生成相册
+    var LinkDataPath = imgDataPath;
+    photo = {
+        page: 1,
+        offset: imgMaxNum,
+        init: function () {
+            var that = this;
+            $.getJSON(LinkDataPath, function (data) {
+                that.render(that.page, data);
+            });
+        },
+        render: function (page, data) {
+            var begin = (page - 1) * this.offset;
+            var end = page * this.offset;
+            if (begin >= data.length) return;
+            var imgNameWithPattern, imgName, imageSize, imageX, imageY, li = "";
+            for (var i = begin; i < end && i < data.length; i++) {
+                imgNameWithPattern = data[i].split(' ')[1];
+                imgName = imgNameWithPattern.split('.')[0]
+                imageSize = data[i].split(' ')[0];
+                imageX = imageSize.split('.')[0];
+                imageY = imageSize.split('.')[1];
+                li += '<div class="card" style="width:' + imageWidth + 'px" >'
+                li += '<div class="album-photo" style="height:'+ imageWidth * imageY / imageX + 'px">'
+                li += '<a class="fancybox fancybox.image" href="' + imgPath + imgNameWithPattern + '" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url" data-fancybox="group" rel="group" data-caption="' + imgName + '" title="' +  imgName + '">'
+                li += '<img data-src="' + imgPath + imgNameWithPattern + '" src="' + imgPath + imgNameWithPattern + '" alt="' +  imgName + '" data-loaded="true">'
+                li += '</a>'
+                li += '</div>'
+                li += '</div>'
+            }
+            $(".album").append(li);
+            this.minigrid();
+        },
+
+        minigrid: function() {
+          var grid = new Minigrid({
+              container: '.album',
+              item: '.card',
+              gutter: 12
+          });
+          grid.mount();
+          $(window).resize(function() {
+              grid.mount();
+          });
+        }
+    }
+    photo.init();
+  }
+</script>
+</body>
+</html>

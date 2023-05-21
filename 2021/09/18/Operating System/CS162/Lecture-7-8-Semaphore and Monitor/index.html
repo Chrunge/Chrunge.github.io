@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#e7ddc8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#181c27" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/resources/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/resources/favicon/favicon.ico">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"chrunge.github.io","root":"/","images":"/resources/img/","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/config.min.js"></script>
+
+    <meta name="description" content="Locks   Atomic Operation: 一种不能在半路暂停的操作, 要么不干, 要干就得干到底  不可分割性: 不能在中间停下, 也不能在中途被其他人修改 基本的构件块: 如果没有atomic operation, 也就没有线程之间的相互合作   Locks: 阻止某人做某事  在进入关键区和获取共享数据之前, 需要acquire(&amp;lock) 在离开之后, 需要release">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Synchronization I and II: Concurrency, Lock Implementation">
+<meta property="og:url" content="https://chrunge.github.io/2021/09/18/Operating%20System/CS162/Lecture-7-8-Semaphore%20and%20Monitor/index.html">
+<meta property="og:site_name" content="勇气">
+<meta property="og:description" content="Locks   Atomic Operation: 一种不能在半路暂停的操作, 要么不干, 要干就得干到底  不可分割性: 不能在中间停下, 也不能在中途被其他人修改 基本的构件块: 如果没有atomic operation, 也就没有线程之间的相互合作   Locks: 阻止某人做某事  在进入关键区和获取共享数据之前, 需要acquire(&amp;lock) 在离开之后, 需要release">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://chrunge.github.io/">
+<meta property="og:image" content="https://chrunge.github.io/">
+<meta property="og:image" content="https://chrunge.github.io/">
+<meta property="og:image" content="https://chrunge.github.io/">
+<meta property="og:image" content="https://chrunge.github.io/">
+<meta property="og:image" content="https://chrunge.github.io/">
+<meta property="og:image" content="https://chrunge.github.io/">
+<meta property="og:image" content="https://chrunge.github.io/">
+<meta property="og:image" content="https://chrunge.github.io/">
+<meta property="article:published_time" content="2021-09-18T12:54:45.000Z">
+<meta property="article:modified_time" content="2023-05-21T05:27:00.865Z">
+<meta property="article:author" content="Chrunge">
+<meta property="article:tag" content="CS162">
+<meta property="article:tag" content="Semaphore">
+<meta property="article:tag" content="Monitor">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://chrunge.github.io/">
+
+
+<link rel="canonical" href="https://chrunge.github.io/2021/09/18/Operating%20System/CS162/Lecture-7-8-Semaphore%20and%20Monitor/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://chrunge.github.io/2021/09/18/Operating%20System/CS162/Lecture-7-8-Semaphore%20and%20Monitor/","path":"2021/09/18/Operating System/CS162/Lecture-7-8-Semaphore and Monitor/","title":"Synchronization I and II: Concurrency, Lock Implementation"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Synchronization I and II: Concurrency, Lock Implementation | 勇气</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/resources/fonts/longcang/longcang-regular.css" >
+<link rel="stylesheet" href="/resources/fonts/lxgw/lxgwwenkailite-regular.css" >
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="勇气" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">勇气</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">唯有爱与勇气</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">59</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">59</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          目 录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Locks"><span class="nav-text">Locks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Producer-Consumer-with-a-Bounded-Buffer"><span class="nav-text">Producer-Consumer with a Bounded Buffer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Semaphores"><span class="nav-text">Semaphores</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-implement-lock-by-interrupt-x2F-atomic-operations"><span class="nav-text">How to implement lock by interrupt&#x2F;atomic operations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Monitors"><span class="nav-text">Monitors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-text">Conclusion</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Chrunge"
+      src="/resources/img/avatar.webp">
+  <p class="site-author-name" itemprop="name">Chrunge</p>
+  <div class="site-description" itemprop="description">Courage is not simply one of the virtues but the form of every virtue at the testing point.</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Chrunge" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Chrunge" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/dqiucheng@gmail.com" title="E-Mail → dqiucheng@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/39574700/" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;39574700&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2021/09/18/Operating%20System/CS162/Lecture-7-8-Semaphore%20and%20Monitor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/resources/img/avatar.webp">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇气">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Synchronization I and II: Concurrency, Lock Implementation | 勇气">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Synchronization I and II: Concurrency, Lock Implementation
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-09-18 12:54:45" itemprop="dateCreated datePublished" datetime="2021-09-18T12:54:45Z">2021-09-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Operating-System/" itemprop="url" rel="index"><span itemprop="name">Operating System</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="Locks"><a href="#Locks" class="headerlink" title="Locks"></a>Locks</h2><ol>
+<li><p><img data-src="/" alt="第29页, Definitions: Synchronization, Mutual Exclusion, Critical Section"></p>
+</li>
+<li><p>Atomic Operation: 一种不能在半路暂停的操作, 要么不干, 要干就得干到底</p>
+<ul>
+<li>不可分割性: 不能在中间停下, 也不能在中途被其他人修改</li>
+<li>基本的构件块: 如果没有atomic operation, 也就没有线程之间的相互合作</li>
+</ul>
+</li>
+<li><p>Locks: 阻止某人做某事</p>
+<ol>
+<li>在进入关键区和获取共享数据之前, 需要<code>acquire(&amp;lock)</code></li>
+<li>在离开之后, 需要<code>release(&amp;lock)</code></li>
+<li><code>Wait</code> if locked<ul>
+<li>Important idea: all synchronization involves waiting. <span id="more"></span></li>
+</ul>
+</li>
+<li>使用之前, 需要分配和初始化:<ul>
+<li><code>structure Lock mylock</code> or <code>pthread_mutex_t lock</code> </li>
+<li>初始化: <code>lock_init(&amp;mylock)</code> or <code>mylock = PTHREAD_MUTEX_INITIALIZER</code>;</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>race condition: 两个线程试图同时获取相同的数据, 并且其中至少一个线程执行写操作(不能都是读操作), 就会造成<code>竞争条件</code>, 看是你写的快, 还是我写或读的快.</p>
+</li>
+</ol>
+<h2 id="Producer-Consumer-with-a-Bounded-Buffer"><a href="#Producer-Consumer-with-a-Bounded-Buffer" class="headerlink" title="Producer-Consumer with a Bounded Buffer"></a>Producer-Consumer with a Bounded Buffer</h2><ol>
+<li>问题定义:<ul>
+<li>Producer put things into a shared buffer</li>
+<li>Consumer take them out</li>
+<li>Need synchronization to coordinate producer&#x2F;consumer</li>
+</ul>
+</li>
+<li>因为有了buffer, 所以不需要双方速度一致<ul>
+<li>need to synchronize access to this buffer</li>
+<li>如果buffer满了, producer需要等待</li>
+<li>如果buffer空了, consumer需要等待</li>
+</ul>
+</li>
+<li>General rule of thumb: <strong>Use a separate semaphore for each constraint</strong><ul>
+<li>Semaphore fullBuffers; &#x2F;&#x2F; consumer’s constraint</li>
+<li>Semaphore emptyBuffers; &#x2F;&#x2F; producer’s constraint</li>
+<li>Semaphore mutex; &#x2F;&#x2F; mutual exclusion</li>
+</ul>
+</li>
+</ol>
+<h2 id="Semaphores"><a href="#Semaphores" class="headerlink" title="Semaphores"></a>Semaphores</h2><ol>
+<li><p>定义: a Semaphore has a non-negative integer value and supports the following two operation</p>
+<ul>
+<li><code>Down() or P()</code>: an atomic operation that waits for semaphore to become positive, then decrements it by 1<ul>
+<li>类似<code>wait()</code></li>
+</ul>
+</li>
+<li><code>Up() or V()</code>: an atomic operation that increments the semaphore by 1, waking up a waiting P, if any.<ul>
+<li>类似<code>signal()</code></li>
+</ul>
+</li>
+<li><img data-src="/" alt="第40页, 红绿灯信号"></li>
+</ul>
+</li>
+<li><p>两种应用:</p>
+<ol>
+<li>Mutual Exclusion(initial value &#x3D; 1)</li>
+<li>Scheduling Constraints(initial value &#x3D; 0)<ol>
+<li>比如用于实现pthread_join(),<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Initial value of semaphore = 0</span><br><span class="line"># 主线程</span><br><span class="line">ThreadJoin&#123;</span><br><span class="line">    semaP(&amp;mysem)</span><br><span class="line">&#125; </span><br><span class="line"># 子线程</span><br><span class="line">ThreadFinish &#123;</span><br><span class="line">    semaV(&amp;mysem)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code>3. ![第43页, Full Solution to Bounded Buffer]()
+</code></pre>
+<h2 id="How-to-implement-lock-by-interrupt-x2F-atomic-operations"><a href="#How-to-implement-lock-by-interrupt-x2F-atomic-operations" class="headerlink" title="How to implement lock by interrupt&#x2F;atomic operations"></a>How to implement lock by interrupt&#x2F;atomic operations</h2><ol>
+<li>How can we build multi-instruction atomic operations?<ol>
+<li><p><img data-src="/" alt="第66页"></p>
+<ol>
+<li><strong>Key Idea: maintain a lock variable and impose mutual exclusion only during operations on that variable.</strong><ul>
+<li><img data-src="/" alt="第67页"></li>
+<li>在检查和设置lock value时, 必须要避免中断, 否则两个线程都认为它们可以持有锁.</li>
+</ul>
+</li>
+<li>How to re-enable after sleep()?<br><img data-src="/" alt="第75页">  <ul>
+<li>被唤醒之后, re-enable interrupt.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Atomic Read-Modify-Write Instructions</p>
+<ol>
+<li>由硬件负责实现，单核处理器上方便，多核处理器上需要coherence protocol</li>
+<li><img data-src="/" alt="Examples of Read-Modify-Write Lecture-8-47">  </li>
+<li>Implementing lock with test&amp;set<ul>
+<li><img data-src="/" alt="Busy waiting, 49"></li>
+<li><img data-src="/" alt="Better Implement, 51"></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>比较<code>Interrupt</code> and <code>test&amp;set</code></p>
+<ul>
+<li><img data-src="/" alt="52"></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="Monitors"><a href="#Monitors" class="headerlink" title="Monitors"></a>Monitors</h2><ol>
+<li><p>Cleaner Idea: using <strong>locks</strong> for mutual exclusion and <strong>condition variables</strong> for scheduling constraints</p>
+<ul>
+<li><a href="">56</a> </li>
+<li><a href="">57</a></li>
+</ul>
+</li>
+<li><p>Mesa vs Hoare Monitors</p>
+<ul>
+<li><a href="">61</a></li>
+<li><a href="">Mesa need while, 62</a></li>
+</ul>
+</li>
+<li><p>Construct Monitors from Semaphores: 构建失败</p>
+</li>
+</ol>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><pre><code>![第82页]()
+![第83页]() 
+![8-64]()
+![8-65]()
+</code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+
+
+
+
+
+
+
+<div class="license">
+  <div class="license-title">Synchronization I and II: Concurrency, Lock Implementation</div>
+  <div class="license-link">
+    <a href="https://chrunge.github.io/2021/09/18/Operating%20System/CS162/Lecture-7-8-Semaphore%20and%20Monitor/">https://chrunge.github.io/2021/09/18/Operating%20System/CS162/Lecture-7-8-Semaphore%20and%20Monitor/</a>
+  </div>
+  <div class="license-meta">
+    <div class="license-meta-item">
+      <div class="license-meta-title">本文作者</div>
+      <div class="license-meta-text">
+          Chrunge
+      </div>
+    </div>
+      <div class="license-meta-item">
+        <div class="license-meta-title">发布于</div>
+        <div class="license-meta-text">
+          2021-09-18
+        </div>
+      </div>
+      <div class="license-meta-item">
+        <div class="license-meta-title">更新于</div>
+        <div class="license-meta-text">
+          2023-05-21
+        </div>
+      </div>
+    <div class="license-meta-item">
+      <div class="license-meta-title">许可协议</div>
+      <div class="license-meta-text">
+          禁止转载引用
+      </div>
+    </div>
+  </div>
+  <div class="license-statement">
+      如需转载或引用本文，请先获得作者授权！
+  </div>
+</div>
+
+
+
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Chrunge
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://chrunge.github.io/2021/09/18/Operating%20System/CS162/Lecture-7-8-Semaphore%20and%20Monitor/" title="Synchronization I and II: Concurrency, Lock Implementation">https://chrunge.github.io/2021/09/18/Operating System/CS162/Lecture-7-8-Semaphore and Monitor/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/CS162/" rel="tag"><i class="fa fa-tag"></i> CS162</a>
+              <a href="/tags/Semaphore/" rel="tag"><i class="fa fa-tag"></i> Semaphore</a>
+              <a href="/tags/Monitor/" rel="tag"><i class="fa fa-tag"></i> Monitor</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/10/16/Operating%20System/CS162/lecture-10-14-Scheduling/" rel="prev" title="lecture 10-14: Scheduling">
+                  <i class="fa fa-chevron-left"></i> lecture 10-14: Scheduling
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/09/15/Operating%20System/CS162/Lecture-6-Synchronization-I-Concurrency/" rel="next" title="Lecture 6: Synchronization I - Concurrency">
+                  Lecture 6: Synchronization I - Concurrency <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fas fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chrunge</span>
+</div><div class="footer-menu">
+    <a href="/tags/">文章标签</a> · <a href="/policy/">网站政策</a> · <a href="/links/">友情链接</a>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.staticfile.org/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdn.staticfile.org/jquery/3.6.4/jquery.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.staticfile.org/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.staticfile.org/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/comments.min.js"></script><script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/utils.min.js"></script><script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/next-boot.min.js"></script><script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/pjax.min.js"></script>
+
+  
+
+
+  <script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/third-party/fancybox.min.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.staticfile.org/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/third-party/math/mathjax.min.js"></script>
+
+
+
+
+
+<script data-pjax type="text/javascript">
+  //jquery selector
+  var $linkList = $(".link-list");
+  if ($linkList.length != 0) {
+    var j = -1;
+    for	(var i = 0; i < $linkList.length; i++) {
+      const listPath = $linkList[i].getAttribute('json-src');
+      const iconPath = $linkList[i].getAttribute('icon-src');
+      //使用 getJSON 读取 JSON 文件中的数据
+      $.getJSON(listPath, function(data) {
+        j++;
+        //存储数据的变量 
+        var li = "";
+        //清空内容 
+        $linkList.eq(j).empty();
+        //将获取到的 json 格式数据遍历到 div 中
+        $.each(data, function(infoIndex, info) {
+          var labelWarn = '';
+          var labelInfo = '';
+          if (info['warn']) { 
+            labelWarn = '<span class="label warn">' + info['warn'] + '</span>';
+          }
+          if (info['info']) { 
+            labelInfo = '<span class="label info">' + info['info'] + '</span>';
+          }
+          li += '<div class="link-list-container">';
+          li += '<img class="link-list-image" src="' + iconPath + info['logo'] + '">';
+          li += '<p>' + info['title'] + labelInfo + labelWarn + '</p>';
+          li += '<p>' + info['intro'] + '</p>';
+          li += '<a href="' + info['url'] + '" rel="noopener" target="_blank" data-pjax-state=""></a>';
+          li += '</div>';
+        })
+        //显示处理后的数据 
+        $linkList.eq(j).html(li);
+      })
+    }
+  }
+</script>
+
+
+
+<script data-pjax type="text/javascript">
+  //jquery selector
+  var $cultureList = $(".culture-list");
+  if ($cultureList.length != 0) {
+    var j = -1;
+    for	(var i = 0; i < $cultureList.length; i++) {
+      const listPath = $cultureList[i].getAttribute('json-src');
+      const coverPath = $cultureList[i].getAttribute('cover-src');
+      //使用 getJSON 读取 JSON 文件中的数据
+      $.getJSON(listPath, function(data) {
+        j++;
+        //存储数据的变量 
+        var li = "";
+        //清空内容 
+        $cultureList.eq(j).empty();
+        //将获取到的 json 格式数据遍历到 div 中
+        $.each(data, function(infoIndex, info) {
+          //影评书评链接
+          var title = info['title'];
+          if (info['pid']) {
+            title = '<a href="/posts/'+ info['pid'] +'/" >' + info['title'] +'</a>';
+          }
+
+          //作者
+          if (info['author']) {
+            var author = '<span class="author">' + info['author'] +'</span>';
+          } else {
+            var author = '';
+          }
+
+          //简介
+          if (info['intro']) {
+            var intro = info['intro'];
+          } else {
+            var intro = '';
+          }
+          
+          //分数
+          if (info['score'] == null) {
+            var star = '';
+          } else {
+            //初始化
+            var colorStar = '';
+            var greyStar = '';
+            var int = info['score'] - info['score'] % 1; //整数部分
+            //是否有小数
+            var fract = 0; 
+            if (info['score'] % 1 != 0) {
+              fract = 1;
+            }
+            //整数星级
+            for	(var m = 0; m < int; m++) {
+              colorStar += '★';
+            }
+            //半星级
+            if (fract != 0) {
+              colorStar += '☆';
+            }
+            //用空缺星补齐五星
+            for	(var m = 0; m < (5 - fract - int); m++) {
+              greyStar += '☆';
+            }
+            if (info['score'] != 5) {
+              star = '<span class="star-score">'+ colorStar +'<span class="grey-star">'+ greyStar +'</span></span>';
+            } else {
+              star = '<span class="star-score">'+ colorStar +'</span>';
+            }
+          }
+
+          li += '<div class="media">';
+          li += '<div class="media-cover" style="background-image:url(' + coverPath + info['cover'] + ')"></div>';
+          li += '<div class="media-meta">';
+          li += '<div class="media-meta-item title">' + title + '</div>';
+          li += '<div class="media-meta-item">' + author + star +'</div>';
+          li += '<div class="media-meta-item intro">' + intro + '</div>';
+          li += '</div></div>';
+        })
+        
+        //显示处理后的数据 
+        $cultureList.eq(j).html(li);
+      })
+    }
+  }
+</script>
+
+
+
+
+<script src="/resources/minigrid.min.js"></script>
+<script data-pjax type="text/javascript">
+  var $album = $(".album")[0];
+  if($album) {
+    // 相册列表 JSON 数据
+    var imgDataPath = $album.getAttribute('json-src');
+    // 照片存储路径
+    var imgPath = $album.getAttribute('photo-src');
+    // 最多显示数量
+    var imgMaxNum = 50;
+    // 获取窗口大小以决定图片宽度
+    var windowWidth = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+    if (windowWidth < 768) {
+        var imageWidth = 145; // 移动端图片宽度
+    } else {
+        var imageWidth = 235;
+    }
+
+    // 腾讯云自定义样式 (数据万象外网流量需要付费)
+    //var imgStyle = '!' + imageWidth + 'x';
+    //var imgStyle = '!300x';
+
+    // 生成相册
+    var LinkDataPath = imgDataPath;
+    photo = {
+        page: 1,
+        offset: imgMaxNum,
+        init: function () {
+            var that = this;
+            $.getJSON(LinkDataPath, function (data) {
+                that.render(that.page, data);
+            });
+        },
+        render: function (page, data) {
+            var begin = (page - 1) * this.offset;
+            var end = page * this.offset;
+            if (begin >= data.length) return;
+            var imgNameWithPattern, imgName, imageSize, imageX, imageY, li = "";
+            for (var i = begin; i < end && i < data.length; i++) {
+                imgNameWithPattern = data[i].split(' ')[1];
+                imgName = imgNameWithPattern.split('.')[0]
+                imageSize = data[i].split(' ')[0];
+                imageX = imageSize.split('.')[0];
+                imageY = imageSize.split('.')[1];
+                li += '<div class="card" style="width:' + imageWidth + 'px" >'
+                li += '<div class="album-photo" style="height:'+ imageWidth * imageY / imageX + 'px">'
+                li += '<a class="fancybox fancybox.image" href="' + imgPath + imgNameWithPattern + '" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url" data-fancybox="group" rel="group" data-caption="' + imgName + '" title="' +  imgName + '">'
+                li += '<img data-src="' + imgPath + imgNameWithPattern + '" src="' + imgPath + imgNameWithPattern + '" alt="' +  imgName + '" data-loaded="true">'
+                li += '</a>'
+                li += '</div>'
+                li += '</div>'
+            }
+            $(".album").append(li);
+            this.minigrid();
+        },
+
+        minigrid: function() {
+          var grid = new Minigrid({
+              container: '.album',
+              item: '.card',
+              gutter: 12
+          });
+          grid.mount();
+          $(window).resize(function() {
+              grid.mount();
+          });
+        }
+    }
+    photo.init();
+  }
+</script>
+</body>
+</html>
