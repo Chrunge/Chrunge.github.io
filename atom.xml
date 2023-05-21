@@ -6,7 +6,7 @@
   <link href="https://chrunge.github.io/atom.xml" rel="self"/>
   
   <link href="https://chrunge.github.io/"/>
-  <updated>2023-05-21T05:12:10.433Z</updated>
+  <updated>2023-05-21T06:01:06.304Z</updated>
   <id>https://chrunge.github.io/</id>
   
   <author>
@@ -21,25 +21,10 @@
     <link href="https://chrunge.github.io/2023/05/21/%E9%9A%8F%E7%AC%94/%E7%BE%8E%E5%9B%BD%E5%88%B6%E5%AE%AA%E4%BC%9A%E8%AE%AE%E4%BA%BA%E5%91%98%E8%A1%A8/"/>
     <id>https://chrunge.github.io/2023/05/21/%E9%9A%8F%E7%AC%94/%E7%BE%8E%E5%9B%BD%E5%88%B6%E5%AE%AA%E4%BC%9A%E8%AE%AE%E4%BA%BA%E5%91%98%E8%A1%A8/</id>
     <published>2023-05-21T04:10:24.095Z</published>
-    <updated>2023-05-21T05:12:10.433Z</updated>
+    <updated>2023-05-21T06:01:06.304Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;州名&lt;/th&gt;
-&lt;th&gt;代表名字&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;新罕布什尔州 (New Hampshire)&lt;/td&gt;
-&lt;td&gt;约翰·朗东 (John Langdon,</summary>
-        
-      
+    <summary type="html">1787年5至9月，一群绅士聚在费城召开制宪会议，由此产生的宪法在两百年后的今天仍然生机勃勃。</summary>
     
     
     
@@ -51,23 +36,60 @@
   </entry>
   
   <entry>
+    <title>汇总表</title>
+    <link href="https://chrunge.github.io/2023/05/21/README/"/>
+    <id>https://chrunge.github.io/2023/05/21/README/</id>
+    <published>2023-05-21T03:58:46.609Z</published>
+    <updated>2023-05-21T06:07:46.413Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;始于2023-05-21&quot;&gt;&lt;a href=&quot;#始于2023-05-21&quot; class=&quot;headerlink&quot; title=&quot;始于2023-05-21&quot;&gt;&lt;/a&gt;始于2023-05-21&lt;/h1&gt;&lt;p&gt;Where is my dream?&lt;/p&gt;
+&lt;h2 id=&quot;我的数字&quot;&gt;&lt;a href=&quot;#我的数字&quot; class=&quot;headerlink&quot; title=&quot;我的数字&quot;&gt;&lt;/a&gt;我的数字&lt;/h2&gt;&lt;!--START_SECTION:my_number--&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;Name&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;Status&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;Streak&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;Today?&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;https://github.com/yihong0618/2021/issues/12&quot;&gt;早起&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;0 (天)&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;0&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;NO&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;https://github.com/yihong0618/2021/issues/17&quot;&gt;GTD&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;0 (个)&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;0&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;NO&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;https://github.com/yihong0618/2021/issues/18&quot;&gt;周记&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;0 (周)&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;0&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;NO&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;!--END_SECTION:my_number--&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>CS Tools conclusion</title>
     <link href="https://chrunge.github.io/2023/05/20/Language/Tools%20Conclusion/"/>
     <id>https://chrunge.github.io/2023/05/20/Language/Tools%20Conclusion/</id>
     <published>2023-05-20T00:00:00.000Z</published>
-    <updated>2023-05-21T05:49:33.640Z</updated>
+    <updated>2023-05-21T06:05:10.858Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;工具参考汇总&quot;&gt;&lt;a href=&quot;#工具参考汇总&quot; class=&quot;headerlink&quot; title=&quot;工具参考汇总&quot;&gt;&lt;/a&gt;工具参考汇总&lt;/h2&gt;&lt;h3 id=&quot;C&quot;&gt;&lt;a href=&quot;#C&quot; class=&quot;headerlink&quot; title=&quot;C&quot;&gt;&lt;/a&gt;C&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://inst.eecs.berkeley.edu/~cs61c/fa11/lec/04-reference/2011Fa-CS61C-L04-dg-c2-reference.pdf&quot;&gt;K&amp;amp;R Ch. 1-5 C Reference Slides&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://inst.eecs.berkeley.edu/~cs61c/resources/HarveyNotesC1-3.pdf&quot;&gt;Brian Harvey’s Intro to C&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Quick Review of C: &lt;a href=&quot;https://cs162.org/ladder/&quot;&gt;Ladder&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Prof. Harvey’s &lt;a href=&quot;https://inst.eecs.berkeley.edu/%7Ecs61c/resources/HarveyNotesC1-3.pdf&quot;&gt;notes on C&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Prof. Hilfinger’s &lt;a href=&quot;https://inst.eecs.berkeley.edu/%7Ecs61c/sp21/resources-pdfs/pnh.stg.mgmt.pdf&quot;&gt;notes on memory management&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://learning.oreilly.com/library/view/head-first-c/9781449335649/&quot;&gt;Head First C  1st Edition&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://learning.oreilly.com/library/view/21st-century-c/9781491904428/&quot;&gt;21st Century C  2nd Edition&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;K&amp;amp;R C Programming Language&lt;/li&gt;
-&lt;/ul&gt;</summary>
+    <summary type="html">各种编程语言的外围工具汇总链接，可作为入门使用或者查阅手册。</summary>
     
     
     
@@ -76,42 +98,11 @@
     
     <category term="C++" scheme="https://chrunge.github.io/tags/C/"/>
     
-    <category term="GDB" scheme="https://chrunge.github.io/tags/GDB/"/>
-    
     <category term="C" scheme="https://chrunge.github.io/tags/C/"/>
     
     <category term="Git" scheme="https://chrunge.github.io/tags/Git/"/>
     
-  </entry>
-  
-  <entry>
-    <title>笔记流程</title>
-    <link href="https://chrunge.github.io/2023/05/19/Tools/Markdown/%E7%AC%94%E8%AE%B0%E5%8A%9F%E8%83%BD%20+%20%E6%B5%81%E7%A8%8B/"/>
-    <id>https://chrunge.github.io/2023/05/19/Tools/Markdown/%E7%AC%94%E8%AE%B0%E5%8A%9F%E8%83%BD%20+%20%E6%B5%81%E7%A8%8B/</id>
-    <published>2023-05-19T02:34:03.990Z</published>
-    <updated>2022-06-17T09:30:30.000Z</updated>
-    
-    
-    <summary type="html">&lt;h4 id=&quot;视频笔记&quot;&gt;&lt;a href=&quot;#视频笔记&quot; class=&quot;headerlink&quot; title=&quot;视频笔记&quot;&gt;&lt;/a&gt;视频笔记&lt;/h4&gt;&lt;p&gt;Obsidian + Media extended + Media extended bilibili plugin。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;bilibili视频：文字笔记 + 带有时间戳的URL链接(阅读模式下)&lt;ul&gt;
-&lt;li&gt;缺点：视频容易下架&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;本地视频：&lt;ul&gt;
-&lt;li&gt;有时间戳 + 笔记&lt;ul&gt;
-&lt;li&gt;绝对路径(文件位置容易移动)&lt;/li&gt;
-&lt;li&gt;相对路径(视频文件可能过大)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;无时间戳：笔记 + potplayer书签功能（书签应本地保存）</summary>
-    
-    
-    
-    <category term="Tools" scheme="https://chrunge.github.io/categories/Tools/"/>
-    
-    
-    <category term="Obsidian" scheme="https://chrunge.github.io/tags/Obsidian/"/>
+    <category term="GDB" scheme="https://chrunge.github.io/tags/GDB/"/>
     
   </entry>
   
