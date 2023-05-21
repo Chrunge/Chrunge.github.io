@@ -99,7 +99,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">46</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">47</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">48</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">60</span></a></li>
   </ul>
 </nav>
 
@@ -157,6 +157,1045 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2023/05/21/Tools/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E7%BB%B4%E6%8A%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/resources/img/avatar.webp">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇气">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 勇气">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/05/21/Tools/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E7%BB%B4%E6%8A%A4/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-05-21 04:31:01" itemprop="dateCreated datePublished" datetime="2023-05-21T04:31:01Z">2023-05-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h2><ol>
+<li>本博客使用hexo+next搭建<ol>
+<li>安装hexo框架:<ol>
+<li>下载安装Git和node.js, 通过npm安装hexo-cli</li>
+<li>安装hexo框架:  <code>npm install -g hexo-cli</code></li>
+<li>初始化网站:  <code>hexo init &lt;folder&gt;</code>（我的folder name为Blog）</li>
+</ol>
+</li>
+<li>安装next主题:<ol>
+<li>进入<code>Blog</code>, 安装next主题:<code>git clone https://github.com/next-theme/hexo-theme-next themes/next</code></li>
+</ol>
+</li>
+<li>后续更新hexo+next<ol>
+<li><a target="_blank" rel="noopener" href="https://novnan.github.io/Hexo/update_hexo/">更新hexo-cli和hexo</a></li>
+<li>更新next: 进入themes&#x2F;next文件夹, <code>git pull origin master</code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li>Note1: windows下安装git和node后但不能使用命令, 则需添加环境变量</li>
+<li>Note2:  <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/commands.html">hexo的命令</a><ul>
+<li>清除缓存和静态文件: <code>hexo clean</code></li>
+<li>生成静态文件: <code>hexo g</code></li>
+<li>本地预览: <code>hexo s</code></li>
+<li>部署至github: <code>hexo d</code></li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><p>配置修改</p>
+<ol>
+<li><code>Blog</code>下的<code>_config.yml</code>为hexo的配置文件, 使用主题next: <code>theme:next</code></li>
+<li><code>themes/next/_config.yml</code>为next的配置文件, 将它拷贝并重命名<code>cp themes/next/_config.yml _config.next.yml</code>, 所有对next的修改都在<code>_config.next.yml</code>中</li>
+</ol>
+</li>
+<li><p>Blog界面修改: </p>
+<ol>
+<li>修改数据主要来自于<code>source/_data</code>，其中<code>variables_</code>为变量,<code>styles</code>为样式的主要内容</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2023/05/21/Tools/Tools%20Conclusion/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/resources/img/avatar.webp">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇气">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 勇气">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/05/21/Tools/Tools%20Conclusion/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-05-21 04:10:48" itemprop="dateCreated datePublished" datetime="2023-05-21T04:10:48Z">2023-05-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="工具参考汇总"><a href="#工具参考汇总" class="headerlink" title="工具参考汇总"></a>工具参考汇总</h2><h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/~cs61c/fa11/lec/04-reference/2011Fa-CS61C-L04-dg-c2-reference.pdf">K&amp;R Ch. 1-5 C Reference Slides</a></li>
+<li><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/~cs61c/resources/HarveyNotesC1-3.pdf">Brian Harvey’s Intro to C</a></li>
+<li>Quick Review of C: <a target="_blank" rel="noopener" href="https://cs162.org/ladder/">Ladder</a></li>
+<li>Prof. Harvey’s <a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/%7Ecs61c/resources/HarveyNotesC1-3.pdf">notes on C</a></li>
+<li>Prof. Hilfinger’s <a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/%7Ecs61c/sp21/resources-pdfs/pnh.stg.mgmt.pdf">notes on memory management</a></li>
+<li><a target="_blank" rel="noopener" href="https://learning.oreilly.com/library/view/head-first-c/9781449335649/">Head First C  1st Edition</a></li>
+<li><a target="_blank" rel="noopener" href="https://learning.oreilly.com/library/view/21st-century-c/9781491904428/">21st Century C  2nd Edition</a></li>
+<li>K&amp;R C Programming Language</li>
+</ul>
+<h3 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h3><ul>
+<li>All of the code in this programming assignment must be written in C++. The projects will be specifically written C++17, but we have found that it is generally sufficient to know C++11 for the rest of the semester. If you have not used C++ before, here is a <a target="_blank" rel="noopener" href="http://www.thegeekstuff.com/2016/02/c-plus-plus-11/">short tutorial</a> on the language. More detailed documentation of language internals is available on <a target="_blank" rel="noopener" href="https://en.cppreference.com/w/">cppreference</a>. <a target="_blank" rel="noopener" href="https://cmu.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma991019600108604436&context=L&vid=01CMU_INST:01CMU&search_scope=MyInst_and_CI&isFrbr=true&tab=Everything&lang=en">A Tour of C++</a> and <a target="_blank" rel="noopener" href="https://cmu.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma991019578256104436&context=L&vid=01CMU_INST:01CMU&search_scope=MyInst_and_CI&tab=Everything&lang=en">Effective Modern C++</a> are also digitally available from the CMU library.</li>
+</ul>
+<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.oracle.com/en/java/javase/17/docs/api/">Java 17 Documentation</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.pythontutor.com/java.html#mode=edit">JavaTutor</a></li>
+<li><a target="_blank" rel="noopener" href="http://cscircles.cemc.uwaterloo.ca/java_visualize/">Java Visualizer</a></li>
+<li><a target="_blank" rel="noopener" href="http://junit.org/">JUnit Documentation</a></li>
+</ul>
+<h3 id="RUST"><a href="#RUST" class="headerlink" title="RUST"></a>RUST</h3><p><a target="_blank" rel="noopener" href="https://learning.oreilly.com/library/view/programming-rust-2nd/9781492052586/">Programming Rust 2nd Edition</a></p>
+<h3 id="Linux-Kernel"><a href="#Linux-Kernel" class="headerlink" title="Linux Kernel"></a>Linux Kernel</h3><p><a target="_blank" rel="noopener" href="https://www.oreilly.com/library/view/linux-kernel-development/9780768696974/">Linux Kernel Development 3rd Edition</a></p>
+<h4 id="GDB"><a href="#GDB" class="headerlink" title="GDB"></a>GDB</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/~cs61c/fa21/labs/lab01/">C与GDB入门练习</a></li>
+<li><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/~cs162/fa20/static/sections/section0.pdf">C与GDB入门练习2</a></li>
+<li>GDB Reference Card: <a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/%7Ecs61c/resources/gdb5-refcard.pdf">PDF</a></li>
+<li>CS15-445 recommendation about GDB: There are many tutorials available to teach you how to use <code>gdb</code> effectively. Here are some that we have found useful:<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cs.cmu.edu/~gilpin/tutorial/">Debugging Under Unix: gdb Tutorial</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.techbeamers.com/how-to-use-gdb-top-debugging-tips/">GDB Tutorial: Advanced Debugging Tips For C&#x2F;C++ Programmers</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=PorfLSr3DDI">Give me 15 minutes &amp; I’ll change your view of GDB</a> [VIDEO]</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.cs.cmu.edu/~gilpin/tutorial/">Debugging Under Unix: gdb Tutorial</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.techbeamers.com/how-to-use-gdb-top-debugging-tips/">GDB Tutorial: Advanced Debugging Tips For C&#x2F;C++ Programmers</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=PorfLSr3DDI">Give me 15 minutes &amp; I’ll change your view of GDB, VIDEO</a></li>
+<li><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/%7Ecs61c/resources/gdb5-refcard.pdf">GDB reference card</a></li>
+<li><a target="_blank" rel="noopener" href="https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf">GDB cheat sheet</a></li>
+<li><a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/~cs61c/fa20/labs/lab01/"><em>Valgrind for heisenbugs</em></a></li>
+</ul>
+<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><ul>
+<li><a target="_blank" rel="noopener" href="http://git-scm.com/doc">Git Documentation</a></li>
+<li><a target="_blank" rel="noopener" href="https://wildlyinaccurate.com/a-hackers-guide-to-git/">A Hacker’s Guide to Git</a></li>
+<li><a target="_blank" rel="noopener" href="https://fa22.datastructur.es/materials/guides/git/">Using Git</a></li>
+<li><a target="_blank" rel="noopener" href="https://fa22.datastructur.es/materials/guides/git/wtfs/">Git WTFs</a>, or Weird Technical Failures</li>
+<li><a target="_blank" rel="noopener" href="https://learning.oreilly.com/library/view/version-control-with/9781492091189/">Version Control with Git  3rd Edition</a></li>
+</ul>
+<h3 id="IntelliJ"><a href="#IntelliJ" class="headerlink" title="IntelliJ"></a>IntelliJ</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://fa22.datastructur.es/materials/guides/intellij/">Using IntelliJ</a></li>
+<li><a target="_blank" rel="noopener" href="https://fa22.datastructur.es/materials/guides/intellij/wtfs/">IntelliJ WTFs</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jetbrains.com/help/idea/getting-started.html">JetBrains IntelliJ Docs</a></li>
+<li><a target="_blank" rel="noopener" href="https://fa22.datastructur.es/materials/guides/intellij/plugin/">IntelliJ Plugins</a></li>
+<li><a target="_blank" rel="noopener" href="https://fa22.datastructur.es/materials/guides/intellij/debugging/">Debugging Guide</a></li>
+<li><a target="_blank" rel="noopener" href="http://fa20.datastructur.es/materials/lab/lab2setup/lab2setup#importing-libraries-and-running-code">安装Intellij, 61B plugins and Java Library</a></li>
+<li><a target="_blank" rel="noopener" href="http://fa20.datastructur.es/materials/lab/lab2/lab2">Junit Test and Intellij Debug</a></li>
+<li><a target="_blank" rel="noopener" href="http://fa20.datastructur.es/materials/lab/lab3/lab3/lab3">Unit Testing with JUnit, Debugging</a></li>
+<li><a target="_blank" rel="noopener" href="https://sp18.datastructur.es/materials/lab/lab4/lab4#permanently-set-up-libraries-in-intellij">Permanently Set Up Libraries in IntelliJ</a></li>
+</ul>
+<h3 id="Data-Structures-and-Algorithms"><a href="#Data-Structures-and-Algorithms" class="headerlink" title="Data Structures and Algorithms"></a>Data Structures and Algorithms</h3><ul>
+<li><a target="_blank" rel="noopener" href="http://www-inst.eecs.berkeley.edu/~cs61b/fa14/book2/data-structures.pdf">Professor Hilfinger’s <em>Data Structures Into Java</em> Book</a></li>
+<li><a target="_blank" rel="noopener" href="http://en.wikibooks.org/wiki/Data_Structures">Data Structures Wikibook</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.cs.usfca.edu/~galles/visualization/Algorithms.html">Data Structures Visualizations</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.cs.usfca.edu/~galles/visualization/Algorithms.html">USFCA Visualizations</a></li>
+<li><a target="_blank" rel="noopener" href="https://visualgo.net/en">VisuAlgo</a></li>
+<li><a target="_blank" rel="noopener" href="https://qiao.github.io/PathFinding.js/visual/">PathFinding.js</a></li>
+</ul>
+<h3 id="Asymptotics"><a href="#Asymptotics" class="headerlink" title="Asymptotics"></a>Asymptotics</h3><ul>
+<li><a target="_blank" rel="noopener" href="http://bigocheatsheet.com/">Big-O Cheat Sheet</a></li>
+</ul>
+<h3 id="SDS-Boolean-Algebra-FSMs"><a href="#SDS-Boolean-Algebra-FSMs" class="headerlink" title="SDS, Boolean Algebra, FSMs"></a>SDS, Boolean Algebra, FSMs</h3><ul>
+<li>Prof. Wawryznek’s notes on <a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/%7Ecs61c/resources/state.pdf">state</a>, <a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/%7Ecs61c/resources/blocks.pdf">blocks</a>, <a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/%7Ecs61c/resources/sds.pdf">SDS</a>, and <a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/%7Ecs61c/resources/boolean.pdf">boolean logic</a></li>
+</ul>
+<h2 id="CS61A"><a href="#CS61A" class="headerlink" title="CS61A"></a><a target="_blank" rel="noopener" href="https://cs61a.org/">CS61A</a></h2><h4 id="Advice"><a href="#Advice" class="headerlink" title="Advice"></a>Advice</h4><ul>
+<li><a target="_blank" rel="noopener" href="http://owenjow.xyz/cs61a/words-of-wisdom/">(Spring 2018) Owen Jow</a></li>
+<li><a target="_blank" rel="noopener" href="http://kevinl.info/cs61a/">(Fall 2017) Kevin Lin</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.google.com/presentation/d/17etd_yHLNeUOewTTSSi8MOIKrP0cgL9O_1FYmqQSRME/edit?usp=sharing">(Fall 2017) How to Learn Computer Science</a></li>
+</ul>
+<h4 id="Misc-Guides"><a href="#Misc-Guides" class="headerlink" title="Misc Guides"></a>Misc Guides</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://cs61a.org/articles/pair-programming/">(Spring 2023) Pair Programming Guide</a></li>
+<li><a target="_blank" rel="noopener" href="https://cs61a.org/articles/studying/">(Spring 2023) Studying Guide</a></li>
+<li><a target="_blank" rel="noopener" href="https://cs61a.org/articles/composition/">(Spring 2023) Composition Guide</a></li>
+<li><a target="_blank" rel="noopener" href="https://cs61a.org/articles/debugging/">(Spring 2023) Debugging Guide</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.google.com/document/d/10qXNoBI5g_n4NlqKkcePXkZeV3kjwdhQpuP60oN3yAY/edit#">(Summer 2019) Su19 Guide to Studying for the Final</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.google.com/document/d/1Yw6wK6PPL7x7wJB6Wo9qkWz8rgJwo-t0cXU5pFstaVA/edit?usp=sharing">(Spring 2014) Andrew’s Guide to Getting Unstuck</a></li>
+<li></li>
+</ul>
+<h2 id="CS61B"><a href="#CS61B" class="headerlink" title="CS61B"></a><a href="%5Bhttp://datastructur.es/%5D(http://datastructur.es/)">CS61B</a></h2><h3 id="Reading"><a href="#Reading" class="headerlink" title="Reading"></a>Reading</h3><p><strong>There is no required textbook for the class.</strong></p>
+<p>There is an online textbook written by myself and a large team of former TAs. It can be found at <a target="_blank" rel="noopener" href="https://joshhug.gitbooks.io/hug61b">https://joshhug.gitbooks.io/hug61b</a>. If you find these notes insufficient, you might consider consulting <a target="_blank" rel="noopener" href="http://www-inst.eecs.berkeley.edu/~cs61b/fa14/book1/java.pdf">Paul Hilfinger’s (free) Java Reference</a> or <a target="_blank" rel="noopener" href="https://www.google.com/search?q=head+first+java">Head First Java, 2nd Edition by Sierra and Bates (O’Reilly, 2005)</a>. These are not required for the course. The <strong>optional</strong> textbook for the weeks 5-14 of the course is Algorithms, 4th Edition by Wayne and Sedgewick.</p>
+<p>The official description of the Java core language is available online in <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/specs/jls/se17/html/index.html">The Java Language Specification</a> (Java SE 17 Edition) by James Gosling, Bill Joy, Guy Steele, Gilad Bracha, Alex Buckley, Daniel Smith, and Gavin Bierman. It’s extremely thorough and precise, at the expense of being quite dense and technical. You will find the official <a href="ttps://docs.oracle.com/en/java/javase/17/docs/api/index.html">Java 17 documentation</a> to be useful as well</p>
+<h3 id="Past-TA-Resources"><a href="#Past-TA-Resources" class="headerlink" title="Past TA Resources"></a>Past TA Resources</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://fa22.datastructur.es/materials/guides/asymptotics.md">Omar’s Asymptotics Guide</a></li>
+<li><a target="_blank" rel="noopener" href="http://aguo.us/cs61b/">Allen Guo’s Website</a></li>
+<li><a target="_blank" rel="noopener" href="http://danielnguyen.io/cs61b/">Daniel Nguyen’s Website</a></li>
+<li><a target="_blank" rel="noopener" href="https://mattsit.github.io/cs61b">Matt Sit’s Website</a></li>
+<li><a target="_blank" rel="noopener" href="http://kevinl.info/cs61b">Kevin Lin’s Website</a></li>
+<li><a target="_blank" rel="noopener" href="https://wayne-li2.github.io/sp18-cs61b">Wayne Li’s Website</a></li>
+<li><a target="_blank" rel="noopener" href="http://tinyurl.com/cs61b-christine-zhou">Christine Zhou’s Materials</a></li>
+<li><a target="_blank" rel="noopener" href="http://kartikkapur.com/61B.html">Kartik’s Textbook and Practice Midterms</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLEdR-EJ6X7NrMIEgC1chCWUUvmU0j5ftZ">Nicole’s videos on typing, overloading, and overriding</a></li>
+<li><a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1lsSW3vrN7-x8SwsHqjfjDbAkyY0c_uv_/view?usp=sharing">Antares’ and Vivian’s notes on inheritance</a></li>
+</ul>
+<h2 id="CS61C"><a href="#CS61C" class="headerlink" title="CS61C"></a><a target="_blank" rel="noopener" href="https://cs61c.org/">CS61C</a></h2><h3 id="Textbooks"><a href="#Textbooks" class="headerlink" title="Textbooks"></a>Textbooks</h3><ul>
+<li>Computer Organization and Design RISC-V Edition, 1st or 2nd ed. by David Patterson, and John Hennessy</li>
+<li>The C Programming Language, 2nd ed. by Brian Kernighan and Dennis Ritchie</li>
+<li>The Datacenter as a Computer by Luiz André Barroso and Urs Hölzle (<a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/%7Ecs61c/resources/WSCBarrosoHolzle.pdf">PDF</a>)</li>
+</ul>
+<h3 id="Reference-Cards"><a href="#Reference-Cards" class="headerlink" title="Reference Cards"></a>Reference Cards</h3><ul>
+<li>CS 61C Reference Card: <a target="_blank" rel="noopener" href="https://cs61c.org/sp23/pdfs/resources/reference-card.pdf">PDF</a></li>
+<li>GDB Reference Card: <a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/%7Ecs61c/resources/gdb5-refcard.pdf">PDF</a></li>
+<li>Venus Reference: <a target="_blank" rel="noopener" href="https://cs61c.org/sp23/resources/venus-reference/">HTML</a></li>
+</ul>
+<h3 id="RISC-V"><a href="#RISC-V" class="headerlink" title="RISC-V"></a>RISC-V</h3><ul>
+<li>Nick Riasanovsky’s <a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/%7Ecs61c/resources/RISCV_Calling_Convention.pdf">calling convention notes</a></li>
+<li>Sruthi’s <a target="_blank" rel="noopener" href="https://docs.google.com/document/d/1bst_vGxWNwnHbYQYFCFAoCCu9hYlkBBeW8-Xb6pZY_c/edit">Verilog notes</a></li>
+</ul>
+<h3 id="Number-Representation"><a href="#Number-Representation" class="headerlink" title="Number Representation"></a>Number Representation</h3><ul>
+<li>Sean Farhat’s <a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/%7Ecs61c/resources/Sean_Number_Rep_Notes.pdf">number rep notes</a></li>
+<li>Anusha’s <a target="_blank" rel="noopener" href="https://inst.eecs.berkeley.edu/%7Ecs61c/resources/Anusha_Number_Rep_Notes.pdf">number rep notes</a></li>
+<li>Allan Yu’s <a target="_blank" rel="noopener" href="https://docs.google.com/document/d/1IVTwu4_epNdfid0_N-XKm4Fr2E-VGCSUGwsCQCWD0C8/edit">floating point notes</a></li>
+</ul>
+<h2 id="CS162"><a href="#CS162" class="headerlink" title="CS162"></a><a target="_blank" rel="noopener" href="https://cs162.org/">CS162</a></h2><h4 id="Reading-1"><a href="#Reading-1" class="headerlink" title="Reading"></a>Reading</h4><ul>
+<li>John R. Garman, <a target="_blank" rel="noopener" href="https://cs162.org/static/readings/garman_bug_81.pdf">“The Bug Heard ‘round the World,”</a><br>ACM SIGSOFT Software Engineering Notes, Vol 6 No 5, Oct 1981</li>
+<li>Nancy Leveson, <a target="_blank" rel="noopener" href="https://cs162.org/static/readings/TheracNew.pdf">“Medical Devices: The Therac-25,”</a><br>Safeware: System Safety and Computers, Adison-Wesley, 1995</li>
+<li>Queuing Theory References<ul>
+<li><p><a target="_blank" rel="noopener" href="https://cs162.org/static/readings/patterson_queue.pdf">Queuing section</a> from <a target="_blank" rel="noopener" href="https://cs162.org/static/readings/Appendix_D_online.pdf">Appendix D</a> of <a target="_blank" rel="noopener" href="http://booksite.elsevier.com/9780123838728/index.php">“Computer Architecture: A quantitative approach”</a> second edition by Hennessy and Patterson  </p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://web2.uwindsor.ca/math/hlynka/qonline.html">A bunch of resources on Queuing Theory</a></p>
+</li>
+</ul>
+</li>
+<li>File Systems:<ul>
+<li><a target="_blank" rel="noopener" href="https://cs162.org/static/readings/UNIX-annotated.pdf">The UNIX Time-Sharing System</a>. D.M. Ritchie and Kk. Thompson. ACM Symposium on Operating Systems Principles, October 1973</li>
+<li><a target="_blank" rel="noopener" href="https://cs162.org/static/readings/FFS84.pdf">A Fast File System for UNIX</a>. M. McKusick, W. Joy, S. Leffler, and R. Fabry. ACM Transactions on Computer Systems, Vol 2, No 3, August 1984, Pages 181-197</li>
+<li><a target="_blank" rel="noopener" href="https://cs162.org/static/readings/sba-usenix05.pdf">Analysis and Evolution of Journaling File Systems</a>. Vijayan Prabhakaran, Andrea C. Arpaci-Dusseau, and Remzi H. Arpaci-Dusseau. <em>USENIX Technical Conference,</em> 2005</li>
+<li><a target="_blank" rel="noopener" href="https://cs162.org/static/readings/LFS.pdf">The Design and Implementation of a Log-Structured File System</a>, Mendel Rosenblum and John K. Ousterhout. <em>Proceedings of the 13th ACM Symposium on Operating Systems Principles</em> (SOSP)<em>,</em> October 1991</li>
+<li><a target="_blank" rel="noopener" href="https://cs162.org/static/readings/fast15-paper-lee.pdf">F2FS: A New File System for Flash Storage</a>. Changman Lee, Dongho Sim, Joo-Young Hwang, and Sangyeun Cho. <em>Proceedings of the 13th USENIX Conference on File and Storage Technologies</em> (FAST 2015)</li>
+</ul>
+</li>
+<li>RAID&#x2F;Erasure Coding<ul>
+<li><a target="_blank" rel="noopener" href="https://cs162.org/static/readings/p109-patterson.pdf">A Case for Redundant Arrays of Inexpensive Disks (RAID)</a>, David patterson, Garth Gibson, and Randy Katz, <em>ACM SIGMOD conference,</em> 1988</li>
+<li><a target="_blank" rel="noopener" href="https://cs162.org/static/readings/p245-blaum.pdf">EVENODD: an optimal scheme for tolerating double disk failures in RAID architectures</a>, M. Blaum, J. Brady, J. Bruck and J. Menon. <em>Proceedings of the 21st International Symposium on Computer Architecture</em> (ISCA), 1996</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="http://pages.cs.wisc.edu/~remzi/OSTEP/dist-intro.pdf">Distributed Systems: RPC</a></li>
+<li><a target="_blank" rel="noopener" href="http://pages.cs.wisc.edu/~remzi/OSTEP/dist-nfs.pdf">Distributed Systems: NFS</a></li>
+<li><a target="_blank" rel="noopener" href="https://cs162.org/static/readings/endtoend.pdf">End-to-End Design</a></li>
+<li><a target="_blank" rel="noopener" href="https://cs162.org/static/readings/jacobson-congestion.pdf">Van Jacobson’s TCP Paper</a></li>
+<li><a target="_blank" rel="noopener" href="https://cs162.org/static/readings/Original_Byzantine.pdf">The Byzantine Generals Problem.</a> Leslie Lamport, Robert Shostak, and Marshall Pease. ACM Transactions on Programming Languages and Systems, Vol 4, No. 3, July 1982, Pages 382-401</li>
+<li><a target="_blank" rel="noopener" href="http://www.cs.berkeley.edu/~culler/papers/sciam-near-final.pdf">Smart Sensors to Network the World</a></li>
+<li><a target="_blank" rel="noopener" href="http://dl.acm.org/citation.cfm?id=358824">Experience with processes and monitors in Mesa.</a></li>
+<li><a target="_blank" rel="noopener" href="https://cs162.org/static/readings/dynamo.pdf">Dynamo: Amazon’s Highly Available Key-value Store</a></li>
+<li><a target="_blank" rel="noopener" href="http://pdos.csail.mit.edu/papers/chord:sigcomm01/chord_sigcomm.pdf">Chord: A scalable peer-to-peer lookup service for internet applications</a></li>
+</ul>
+<h4 id="pintos-docs-x2F"><a href="#pintos-docs-x2F" class="headerlink" title="pintos-docs&#x2F;"></a><a target="_blank" rel="noopener" href="https://cs162.org/static/proj/pintos-docs">pintos-docs&#x2F;</a></h4>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2023/05/21/%E9%9A%8F%E7%AC%94/%E7%BE%8E%E5%9B%BD%E5%88%B6%E5%AE%AA%E4%BC%9A%E8%AE%AE%E4%BA%BA%E5%91%98%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/resources/img/avatar.webp">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇气">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 勇气">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/05/21/%E9%9A%8F%E7%AC%94/%E7%BE%8E%E5%9B%BD%E5%88%B6%E5%AE%AA%E4%BC%9A%E8%AE%AE%E4%BA%BA%E5%91%98%E8%A1%A8/" class="post-title-link" itemprop="url">美国制宪会议人员表</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-05-21 04:10:24" itemprop="dateCreated datePublished" datetime="2023-05-21T04:10:24Z">2023-05-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%8E%86%E5%8F%B2/" itemprop="url" rel="index"><span itemprop="name">历史</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <table>
+<thead>
+<tr>
+<th>州名</th>
+<th>代表名字</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>新罕布什尔州 (New Hampshire)</td>
+<td>约翰·朗东 (John Langdon, 40)<br>尼古拉斯·吉尔曼 (Nicholas Gilman, 30)</td>
+</tr>
+<tr>
+<td>马萨诸塞州 (Massachusetts)</td>
+<td><strong>艾尔布里奇·格里 (Elbridge Gerry, 37)</strong><br>纳撒尼尔·戈汉姆 (Nathaniel Gorham, 46)<br>鲁夫斯·金 (Rufus King, 33)<br>卡立巴·斯特朗 (Caleb Strong, 35)</td>
+</tr>
+<tr>
+<td>罗得岛州 (Rhode Island)</td>
+<td>未派代表参加</td>
+</tr>
+<tr>
+<td>康涅狄格州 (Connecticut)</td>
+<td><strong>罗杰·谢尔曼 (Roger Sherman, 60)</strong><br>奥利弗·艾尔斯沃斯 (Oliver Ellsworth, 37)<br>威廉·萨缪尔·约翰逊 (William Samuel Johnson, 60)</td>
+</tr>
+<tr>
+<td>纽约州 (New York)</td>
+<td><strong>亚历山大·汉密尔顿 (Alexander Hamilton, 33)</strong><br>约翰·兰辛 (John Lansing Jr., 32)<br>罗伯特·耶茨 (Robert Yates, 45)</td>
+</tr>
+<tr>
+<td>新泽西州 (New Jersey)</td>
+<td><strong>威廉·佩特森 (William Paterson, 34)</strong><br>戴维·布瑞利 (David Brearley, 40)<br>威廉·豪斯通 (William Houston)<br>乔纳森·戴顿 (Jonathan Dayton, 30)<br>威廉·利文斯通(William Livingston, 60)</td>
+</tr>
+<tr>
+<td>宾夕法尼亚州 (Pennsylvania)</td>
+<td><strong>本杰明·富兰克林 (Benjamin Franklin, 82)</strong><br>罗伯特·莫里斯 (Robert Morris, 50)<br><strong>詹姆斯·威尔逊 (James Wilson, 45)</strong><br>古文诺·莫里斯 (Gouverneur Morris, 38)<br>托马斯·米弗林 (Thomas Mifflin, 40)<br>贾雷德·英格索尔 (Jared Ingersoll, 36)<br>托马斯·费兹西蒙斯 (Thomas Fitzsimons, 40)<br>乔治·克莱默(George Clymer, 40)</td>
+</tr>
+<tr>
+<td>特拉华州 (Delaware)</td>
+<td>乔治·里德 (George Read,50)<br>冈宁·贝德福德 (Gunning Bedford Jr., 32)<br>约翰·狄金森 (John Dickinson,55)<br>理查德·巴塞特 (Richard Bassett, 36)<br>雅可布·布鲁姆(Jacob Broom)</td>
+</tr>
+<tr>
+<td>马里兰州 (Maryland)</td>
+<td>詹姆斯·麦克亨利 (James McHenry, 32)<br>丹尼尔·卡乐尔 (Daniel Carroll)<br>约翰·弗朗西斯·梅瑟 (John Francis Mercer)<br>路德·马丁 (Luther Martin, 34)<br>丹尼尔·圣·托马斯·詹尼弗 (Daniel of St. Thomas Jenifer, 55)</td>
+</tr>
+<tr>
+<td>弗吉尼亚州 (Virginia)</td>
+<td>乔治·华盛顿 (George Washington, 52)<br><strong>詹姆斯·麦迪逊 (James Madison, 37)</strong><br>乔治·韦斯 (George Wythe, 55)<br><strong>乔治·梅森 (George Mason, 60)</strong><br>约翰·布莱尔 (John Blair, 50)<br>詹姆斯·麦克朗 (James McClurg, 38)<br><strong>爱德蒙·伦道夫 (Edmund Randolph, 32)</strong></td>
+</tr>
+<tr>
+<td>北卡罗来纳州 (North Carolina)</td>
+<td>威廉·布朗特 (William Blount, 36)<br>理查德·多布斯·斯帕特 (Richard Dobbs Spaight, 31)<br>休·威廉森 (Hugh Williamson, 48)<br>亚历山大·马丁 (Alexander Martin, 40)<br>威廉·理查德森·戴维 (William Richardson Davie, 30)</td>
+</tr>
+<tr>
+<td>南卡罗来纳州 (South Carolina)</td>
+<td><strong>约翰·拉特里奇 (John Rutledge, 48)</strong><br>查尔斯·科茨沃斯·平克尼 (Charles Cotesworth Pinckney, 40)<br><strong>查尔斯·平克尼 (Charles Pinckney, 24)</strong><br>皮尔斯·巴特勒 (Pierce Butler, 40)</td>
+</tr>
+<tr>
+<td>佐治亚州 (Georgia)</td>
+<td>威廉·弗尤 (William Few, 35)<br>阿伯拉罕·鲍德温 (Abraham Baldwin, 38)<br>威廉·豪斯通 (William Houstoun, 30)<br>威廉·皮尔斯 (William Pierce, 48)</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2023/05/21/zob-config/Templates/Week%20Note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/resources/img/avatar.webp">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇气">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 勇气">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/05/21/zob-config/Templates/Week%20Note/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-05-21 03:58:47" itemprop="dateCreated datePublished" datetime="2023-05-21T03:58:47Z">2023-05-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ol>
+<li><p>这周打电话回家了吗？</p>
+</li>
+<li><p>这周的学习计划完成程度？</p>
+</li>
+<li><p>计划执行过程中，有什么需要维持和改进的地方？</p>
+</li>
+<li><p>下周&#x2F;下个月的学习计划是什么？</p>
+</li>
+<li><p>有什么值得记录的事情？</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2023/05/21/zob-config/Templates/Post%20Template/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/resources/img/avatar.webp">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇气">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 勇气">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/05/21/zob-config/Templates/Post%20Template/" class="post-title-link" itemprop="url">Change it!</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-05-21 03:58:47" itemprop="dateCreated datePublished" datetime="2023-05-21T03:58:47Z">2023-05-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2023/05/21/zob-config/Templates/Mdnotes%20Default%20Template/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/resources/img/avatar.webp">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇气">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 勇气">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/05/21/zob-config/Templates/Mdnotes%20Default%20Template/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-05-21 03:58:47" itemprop="dateCreated datePublished" datetime="2023-05-21T03:58:47Z">2023-05-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+            
+
+<hr>
+<h2 id="Metadata"><a href="#Metadata" class="headerlink" title="Metadata"></a>Metadata</h2>
+
+
+1684641527044
+
+
+
+
+
+
+<hr>
+<h4 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h4><ul>
+<li></li>
+</ul>
+<h4 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h4><ul>
+<li></li>
+</ul>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
+<li></li>
+</ul>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><ul>
+<li></li>
+</ul>
+<h4 id="亮点"><a href="#亮点" class="headerlink" title="亮点"></a>亮点</h4><ul>
+<li></li>
+</ul>
+<h4 id="灵感"><a href="#灵感" class="headerlink" title="灵感"></a>灵感</h4><ul>
+<li></li>
+</ul>
+<h2 id="注释笔记"><a href="#注释笔记" class="headerlink" title="注释笔记"></a>注释笔记</h2><ul>
+<li>![[Annotations]]</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2023/05/21/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/resources/img/avatar.webp">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇气">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 勇气">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/05/21/README/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-05-21 03:58:46" itemprop="dateCreated datePublished" datetime="2023-05-21T03:58:46Z">2023-05-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="始于2022-06-16"><a href="#始于2022-06-16" class="headerlink" title="始于2022-06-16"></a>始于2022-06-16</h1><p>Where is my dream?</p>
+<h2 id="我的数字"><a href="#我的数字" class="headerlink" title="我的数字"></a>我的数字</h2><!--START_SECTION:my_number-->
+
+<table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="center">Status</th>
+<th align="center">Streak</th>
+<th align="center">Today?</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/yihong0618/2021/issues/12">早起</a></td>
+<td align="center">0 (天)</td>
+<td align="center">0</td>
+<td align="center">NO</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/yihong0618/2021/issues/17">GTD</a></td>
+<td align="center">0 (个)</td>
+<td align="center">0</td>
+<td align="center">NO</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/yihong0618/2021/issues/18">周记</a></td>
+<td align="center">0 (周)</td>
+<td align="center">0</td>
+<td align="center">NO</td>
+</tr>
+</tbody></table>
+<!--END_SECTION:my_number-->
+
+<h2 id="The-repos-I-created"><a href="#The-repos-I-created" class="headerlink" title="The repos I created"></a>The repos I created</h2><!--START_SECTION:my_github-->
+<table>
+<thead>
+<tr>
+<th align="center">ID</th>
+<th align="center">REPO</th>
+<th align="center">START</th>
+<th align="center">UPDATE</th>
+<th align="center">LAUGUAGE</th>
+<th align="center">STARS</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/yihong0618/running_page">running_page</a></td>
+<td align="center">2020-09-17</td>
+<td align="center">2022-01-01</td>
+<td align="center">Python</td>
+<td align="center">1540</td>
+</tr>
+<tr>
+<td align="center">sum</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+<h2 id="The-repos-I-contributed-to"><a href="#The-repos-I-contributed-to" class="headerlink" title="The repos I contributed to"></a>The repos I contributed to</h2><table>
+<thead>
+<tr>
+<th align="center">ID</th>
+<th align="center">REPO</th>
+<th align="center">FIRSTDATE</th>
+<th align="center">LASTEDATE</th>
+<th align="center">PRCOUNT</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/LeetCode-OpenSource/vscode-leetcode">vscode-leetcode</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/LeetCode-OpenSource/vscode-leetcode/pull/487">2019-12-03</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/LeetCode-OpenSource/vscode-leetcode/pull/602">2020-07-22</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/LeetCode-OpenSource/vscode-leetcode/pulls?q=is:pr+author:yihong0618">6</a></td>
+</tr>
+<tr>
+<td align="center">sum</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">77</td>
+</tr>
+</tbody></table>
+<h2 id="The-repos-I-stared-random-10"><a href="#The-repos-I-stared-random-10" class="headerlink" title="The repos I stared (random 10)"></a>The repos I stared (random 10)</h2><table>
+<thead>
+<tr>
+<th align="center">ID</th>
+<th align="center">REPO</th>
+<th align="center">STAREDDATE</th>
+<th align="center">LAUGUAGE</th>
+<th align="center">LATESTUPDATE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/steveruizok/perfect-arrows">perfect-arrows</a></td>
+<td align="center">2021-06-29</td>
+<td align="center">TypeScript</td>
+<td align="center">2022-01-01</td>
+</tr>
+</tbody></table>
+<!--END_SECTION:my_github-->
+
+<h2 id="刷剧"><a href="#刷剧" class="headerlink" title="刷剧"></a>刷剧</h2><!--START_SECTION:my_drama-->
+
+<table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="center">Start</th>
+<th align="center">Update</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/yihong0618/2021/issues/8#issuecomment-842002234">《爱死亡和机器人》</a></td>
+<td align="center">2021-05-17</td>
+<td align="center">2021-05-17</td>
+</tr>
+</tbody></table>
+<!--END_SECTION:my_drama-->
+
+<h2 id="追番"><a href="#追番" class="headerlink" title="追番"></a>追番</h2><!--START_SECTION:my_bangumi-->
+
+<table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="center">Start</th>
+<th align="center">Update</th>
+</tr>
+</thead>
+</table>
+<p>| <a target="_blank" rel="noopener" href="https://github.com/yihong0618/2021/issues/6#issuecomment-905063357">《Odd Taxi》</a> | 2021-08-25 | 2021-08-25 |</p>
+<!--END_SECTION:my_bangumi-->
+
+<h2 id="观影"><a href="#观影" class="headerlink" title="观影"></a>观影</h2><!--START_SECTION:my_movie-->
+
+<table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="center">Start</th>
+<th align="center">Update</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/yihong0618/2021/issues/2#issuecomment-757446059">《汽车总动员第一部》</a></td>
+<td align="center">2021-01-10</td>
+<td align="center">2021-01-12</td>
+</tr>
+</tbody></table>
+<!--END_SECTION:my_movie-->
+
+<h2 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h2><!--START_SECTION:my_game-->
+
+<table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="center">Start</th>
+<th align="center">Update</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/yihong0618/2021/issues/11#issuecomment-772144499">《哈迪斯》</a></td>
+<td align="center">2021-02-03</td>
+<td align="center">2021-02-03</td>
+</tr>
+</tbody></table>
+<!--END_SECTION:my_game-->
+
+<h2 id="做饭"><a href="#做饭" class="headerlink" title="做饭"></a>做饭</h2><!--START_SECTION:my_cook-->
+
+<table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="center">First_date</th>
+<th align="center">Last_date</th>
+<th align="center">Times</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">葱爆羊肉</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/yihong0618/2021/issues/1#issuecomment-755339449">2021-01-06</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/yihong0618/2021/issues/1#issuecomment-758656836">2021-01-12</a></td>
+<td align="center">2</td>
+</tr>
+</tbody></table>
+<!--END_SECTION:my_cook-->
+
+<h2 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h2><!--START_SECTION:my_blog-->
+
+<table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="center">Start</th>
+<th align="center">Update</th>
+<th align="center">Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/yihong0618/gitblog/issues/209">何用一个仓库记录自己的一年</a></td>
+<td align="center">2021-05-28</td>
+<td align="center">2021-09-27</td>
+<td align="center">23</td>
+</tr>
+</tbody></table>
+<!--END_SECTION:my_blog-->
+
+<h2 id="收藏的文章"><a href="#收藏的文章" class="headerlink" title="收藏的文章"></a>收藏的文章</h2><table>
+<thead>
+<tr>
+<th align="center">文章名称</th>
+<th align="center">添加日期</th>
+<th align="center">type</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/diantong/p/10507132.html">硬链接与软链接</a></td>
+<td align="center">2022.06.17</td>
+<td align="center">技术文章</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://shuhari.dev/blog/2020/12/500lines-rewrite-interpreter">500lines-rewrite-interpreter</a></td>
+<td align="center">2021.01.04</td>
+<td align="center">技术文章</td>
+<td align="center">宝藏</td>
+</tr>
+</tbody></table>
+<h2 id="收藏的博客"><a href="#收藏的博客" class="headerlink" title="收藏的博客"></a>收藏的博客</h2><table>
+<thead>
+<tr>
+<th align="center">博客名称</th>
+<th align="center">添加日期</th>
+<th align="center">type</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://shuhari.dev/blog/">SHUHARI 的博客</a></td>
+<td align="center">2021.01.04</td>
+<td align="center">重写 500 Lines</td>
+<td align="center">宝藏</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -424,585 +1463,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2022/03/30/Algorithm/Algorithm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/resources/img/avatar.webp">
-      <meta itemprop="name" content="Chrunge">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇气">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 勇气">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/30/Algorithm/Algorithm/" class="post-title-link" itemprop="url">Algorithm</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-03-30 00:00:00" itemprop="dateCreated datePublished" datetime="2022-03-30T00:00:00Z">2022-03-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>算法的一些常见解法</p>
-          <!--noindex-->
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2022/02/27/CS144/Unit7-Lower-Layer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/resources/img/avatar.webp">
-      <meta itemprop="name" content="Chrunge">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇气">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 勇气">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/02/27/CS144/Unit7-Lower-Layer/" class="post-title-link" itemprop="url">Unit7-Lower-Layer</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-02-26 16:25:35" itemprop="dateCreated datePublished" datetime="2022-02-26T16:25:35Z">2022-02-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer-Network/" itemprop="url" rel="index"><span itemprop="name">Computer Network</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="Capacity-and-Modulation"><a href="#Capacity-and-Modulation" class="headerlink" title="Capacity and Modulation"></a>Capacity and Modulation</h2><ol>
-<li><p>Shannon Limit: Channel Capacity &#x3D; B*log<sub>2</sub>(1+S&#x2F;N)</p>
-<ul>
-<li>B is Bandwidth, S is Signal strength, N is Noise.</br></br></li>
-</ul>
-</li>
-<li><p>Amplitude Shift Keying(ASK): Represent number by different amplitude</p>
-<ol>
-<li>It works well in wired networks because signal strength does not decrease much with distance.</li>
-<li>PAM-5: five level pulse amplitude modulation, used in 100BASE-T and 1000BASE-T Ethernet</li>
-<li>PAM-16: used 10GBASE-T Ethernet
-          <!--noindex-->
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2022/02/27/CS144/Unit8-Security/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/resources/img/avatar.webp">
-      <meta itemprop="name" content="Chrunge">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇气">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 勇气">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/02/27/CS144/Unit8-Security/" class="post-title-link" itemprop="url">Unit8-Security</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-02-26 16:25:35" itemprop="dateCreated datePublished" datetime="2022-02-26T16:25:35Z">2022-02-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer-Network/" itemprop="url" rel="index"><span itemprop="name">Computer Network</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ol>
-<li>Network Security Classes:<ol>
-<li>Eavesdrop</li>
-<li>Modify, delete, insert: </li>
-<li>Prevent communication: DDos</li>
-</ol>
-</li>
-</ol>
-          <!--noindex-->
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2022/01/13/CS144/Unit2-Transport/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/resources/img/avatar.webp">
-      <meta itemprop="name" content="Chrunge">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇气">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 勇气">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/01/13/CS144/Unit2-Transport/" class="post-title-link" itemprop="url">Unit2-Transport</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-01-13 12:37:48" itemprop="dateCreated datePublished" datetime="2022-01-13T12:37:48Z">2022-01-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer-Network/" itemprop="url" rel="index"><span itemprop="name">Computer Network</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Unit2-Transport</p>
-          <!--noindex-->
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2022/01/13/CS144/Unit3-UDP%20and%20TCP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/resources/img/avatar.webp">
-      <meta itemprop="name" content="Chrunge">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇气">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 勇气">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/01/13/CS144/Unit3-UDP%20and%20TCP/" class="post-title-link" itemprop="url">Unit3-UDP and TCP</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-01-13 12:37:48" itemprop="dateCreated datePublished" datetime="2022-01-13T12:37:48Z">2022-01-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer-Network/" itemprop="url" rel="index"><span itemprop="name">Computer Network</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Unit3-UDP and TCP</p>
-          <!--noindex-->
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2022/01/12/CS144/Unit1-Internet-and-IP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/resources/img/avatar.webp">
-      <meta itemprop="name" content="Chrunge">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇气">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 勇气">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/01/12/CS144/Unit1-Internet-and-IP/" class="post-title-link" itemprop="url">Unit1-Internet-and-IP</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-01-12 13:03:42" itemprop="dateCreated datePublished" datetime="2022-01-12T13:03:42Z">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer-Network/" itemprop="url" rel="index"><span itemprop="name">Computer Network</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>CS144 notes for unit 1</p>
-          <!--noindex-->
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2022/01/12/CS144/Unit5-Application-and-NATs/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/resources/img/avatar.webp">
-      <meta itemprop="name" content="Chrunge">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="勇气">
-      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 勇气">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/01/12/CS144/Unit5-Application-and-NATs/" class="post-title-link" itemprop="url">Unit5-Application-and-NATs</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-01-12 13:03:42" itemprop="dateCreated datePublished" datetime="2022-01-12T13:03:42Z">2022-01-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer-Network/" itemprop="url" rel="index"><span itemprop="name">Computer Network</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>CS144 notes for unit 5</p>
-          <!--noindex-->
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
@@ -1064,10 +1526,6 @@
 <script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/third-party/math/mathjax.min.js"></script>
 
 
-<link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
-
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Chrunge","repo":"Chrunge.github.io/","client_id":"dfaea8450d847f6036d8","client_secret":"eb6c8cc017ad7538c23dc0c0127259613ab5f735","admin_user":"Chrunge","distraction_free_mode":true,"proxy":"https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"d1546d731a9f30cc80127d57142a482b"}</script>
-<script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/third-party/comments/gitalk.min.js"></script>
 
 
 

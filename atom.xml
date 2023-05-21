@@ -6,7 +6,7 @@
   <link href="https://chrunge.github.io/atom.xml" rel="self"/>
   
   <link href="https://chrunge.github.io/"/>
-  <updated>2022-06-17T09:30:30.000Z</updated>
+  <updated>2023-05-21T04:31:01.458Z</updated>
   <id>https://chrunge.github.io/</id>
   
   <author>
@@ -17,87 +17,78 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>笔记流程</title>
-    <link href="https://chrunge.github.io/2023/05/19/Tools/Obsidian/%E7%AC%94%E8%AE%B0%E5%8A%9F%E8%83%BD%20+%20%E6%B5%81%E7%A8%8B/"/>
-    <id>https://chrunge.github.io/2023/05/19/Tools/Obsidian/%E7%AC%94%E8%AE%B0%E5%8A%9F%E8%83%BD%20+%20%E6%B5%81%E7%A8%8B/</id>
-    <published>2023-05-19T02:34:03.990Z</published>
-    <updated>2022-06-17T09:30:30.000Z</updated>
+    <title></title>
+    <link href="https://chrunge.github.io/2023/05/21/Tools/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E7%BB%B4%E6%8A%A4/"/>
+    <id>https://chrunge.github.io/2023/05/21/Tools/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B8%8E%E7%BB%B4%E6%8A%A4/</id>
+    <published>2023-05-21T04:31:01.454Z</published>
+    <updated>2023-05-21T04:31:01.458Z</updated>
     
     
-    <summary type="html">&lt;h4 id=&quot;视频笔记&quot;&gt;&lt;a href=&quot;#视频笔记&quot; class=&quot;headerlink&quot; title=&quot;视频笔记&quot;&gt;&lt;/a&gt;视频笔记&lt;/h4&gt;&lt;p&gt;Obsidian + Media extended + Media extended bilibili plugin。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;bilibili视频：文字笔记 + 带有时间戳的URL链接(阅读模式下)&lt;ul&gt;
-&lt;li&gt;缺点：视频容易下架&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;本地视频：&lt;ul&gt;
-&lt;li&gt;有时间戳 + 笔记&lt;ul&gt;
-&lt;li&gt;绝对路径(文件位置容易移动)&lt;/li&gt;
-&lt;li&gt;相对路径(视频文件可能过大)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;无时间戳：笔记 + potplayer书签功能（书签应本地保存）</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;博客搭建&quot;&gt;&lt;a href=&quot;#博客搭建&quot; class=&quot;headerlink&quot;</summary>
+        
+      
     
     
     
-    <category term="Tools" scheme="https://chrunge.github.io/categories/Tools/"/>
-    
-    
-    <category term="Obsidian" scheme="https://chrunge.github.io/tags/Obsidian/"/>
     
   </entry>
   
   <entry>
-    <title>Obsidian语法</title>
-    <link href="https://chrunge.github.io/2023/05/19/Tools/Obsidian/obsidian%E8%AF%AD%E6%B3%95/"/>
-    <id>https://chrunge.github.io/2023/05/19/Tools/Obsidian/obsidian%E8%AF%AD%E6%B3%95/</id>
-    <published>2023-05-19T02:34:03.988Z</published>
-    <updated>2023-05-19T03:44:50.513Z</updated>
+    <title></title>
+    <link href="https://chrunge.github.io/2023/05/21/Tools/Tools%20Conclusion/"/>
+    <id>https://chrunge.github.io/2023/05/21/Tools/Tools%20Conclusion/</id>
+    <published>2023-05-21T04:10:48.910Z</published>
+    <updated>2023-05-21T04:10:48.913Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;标题一&quot;&gt;&lt;a href=&quot;#标题一&quot; class=&quot;headerlink&quot; title=&quot;标题一&quot;&gt;&lt;/a&gt;标题一&lt;/h2&gt;&lt;h4 id=&quot;标题二&quot;&gt;&lt;a href=&quot;#标题二&quot; class=&quot;headerlink&quot; title=&quot;标题二&quot;&gt;&lt;/a&gt;标题二&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;obsidian%E8%AF%AD%E6%B3%95.md&quot;&gt;链接到文件&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;随便输入一些东西&lt;br&gt;^reference&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%E6%A0%87%E9%A2%98%E4%B8%80&quot;&gt;连接到标题&lt;/a&gt;&lt;br&gt;5.&lt;a href=&quot;#%E6%A0%87%E9%A2%98%E4%B8%80&quot;&gt;连接到标题&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;../../Computer%20Science/Algorithm/Algorithm.md#Arrays&quot;&gt;连接到其他地方的标题&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%5Ereference&quot;&gt;链接到块&lt;/a&gt;</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;工具参考汇总&quot;&gt;&lt;a href=&quot;#工具参考汇总&quot; class=&quot;headerlink&quot; title=&quot;工具参考汇总&quot;&gt;&lt;/a&gt;工具参考汇总&lt;/h2&gt;&lt;h3 id=&quot;C&quot;&gt;&lt;a href=&quot;#C&quot; class=&quot;headerlink&quot;</summary>
+        
+      
     
     
     
-    <category term="Tools" scheme="https://chrunge.github.io/categories/Tools/"/>
-    
-    
-    <category term="Obsidian" scheme="https://chrunge.github.io/tags/Obsidian/"/>
     
   </entry>
   
   <entry>
-    <title>Markdown语法</title>
-    <link href="https://chrunge.github.io/2023/05/19/Tools/Obsidian/Markdown%E8%AF%AD%E6%B3%95/"/>
-    <id>https://chrunge.github.io/2023/05/19/Tools/Obsidian/Markdown%E8%AF%AD%E6%B3%95/</id>
-    <published>2023-05-19T02:34:03.986Z</published>
-    <updated>2022-06-17T09:30:30.000Z</updated>
+    <title>美国制宪会议人员表</title>
+    <link href="https://chrunge.github.io/2023/05/21/%E9%9A%8F%E7%AC%94/%E7%BE%8E%E5%9B%BD%E5%88%B6%E5%AE%AA%E4%BC%9A%E8%AE%AE%E4%BA%BA%E5%91%98%E8%A1%A8/"/>
+    <id>https://chrunge.github.io/2023/05/21/%E9%9A%8F%E7%AC%94/%E7%BE%8E%E5%9B%BD%E5%88%B6%E5%AE%AA%E4%BC%9A%E8%AE%AE%E4%BA%BA%E5%91%98%E8%A1%A8/</id>
+    <published>2023-05-21T04:10:24.095Z</published>
+    <updated>2023-05-21T04:50:02.649Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;Markdown-语法&quot;&gt;&lt;a href=&quot;#Markdown-语法&quot; class=&quot;headerlink&quot; title=&quot;Markdown 语法&quot;&gt;&lt;/a&gt;Markdown 语法&lt;/h1&gt;&lt;h2 id=&quot;1-标题-amp-目录&quot;&gt;&lt;a href=&quot;#1-标题-amp-目录&quot; class=&quot;headerlink&quot; title=&quot;1. 标题&amp;amp;目录&quot;&gt;&lt;/a&gt;1. 标题&amp;amp;目录&lt;/h2&gt;&lt;h3 id=&quot;1-1-标题&quot;&gt;&lt;a href=&quot;#1-1-标题&quot; class=&quot;headerlink&quot; title=&quot;1.1 标题&quot;&gt;&lt;/a&gt;1.1 标题&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Markdown标题共有 &lt;strong&gt;六级&lt;/strong&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;标题 的格式：&lt;/strong&gt;   &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;kbd&gt;#&lt;/kbd&gt;&lt;/strong&gt; × 标题级数  + &lt;strong&gt;&lt;kbd&gt;空格&lt;/kbd&gt;&lt;/strong&gt; + 文本内容&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight md&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;这是一段普通的文本&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;# 这是一级标题&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;## 这是二级标题&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;### 这是三级标题&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;#### 这是四级标题&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;##### 这是五级标题&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;###### 这是六级标题 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;州名&lt;/th&gt;
+&lt;th&gt;代表名字&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;新罕布什尔州 (New Hampshire)&lt;/td&gt;
+&lt;td&gt;约翰·朗东 (John Langdon,</summary>
+        
+      
     
     
     
-    <category term="Tools" scheme="https://chrunge.github.io/categories/Tools/"/>
+    <category term="历史" scheme="https://chrunge.github.io/categories/%E5%8E%86%E5%8F%B2/"/>
     
     
-    <category term="Obsidian" scheme="https://chrunge.github.io/tags/Obsidian/"/>
-    
-    <category term="Markdown" scheme="https://chrunge.github.io/tags/Markdown/"/>
+    <category term="美国宪法" scheme="https://chrunge.github.io/tags/%E7%BE%8E%E5%9B%BD%E5%AE%AA%E6%B3%95/"/>
     
   </entry>
   

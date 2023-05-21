@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#e7ddc8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#181c27" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/resources/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/resources/favicon/favicon.ico">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"chrunge.github.io","root":"/","images":"/resources/img/","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/config.min.js"></script>
+
+    <meta name="description" content="Trap机制 用户空间和内核空间的切换场景  程序执行系统调用 程序出现了类似page fault、运算时除以0的错误 一个设备触发了中断使得当前程序运行需要响应内核设备驱动   在Trap过程中, 需要对寄存器做一些更改.   寄存器种类 stack pointer（也叫做堆栈寄存器 stack register） 在硬件中还有一个寄存器叫做程序计数器（Program Counter Regis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lecture 6: Isolation &amp; system call entry+exit (Robert)">
+<meta property="og:url" content="https://chrunge.github.io/2021/09/13/6.S081/Lecture6%20%20Isolation%20&%20system%20call%20entry+exit%20(Robert)/index.html">
+<meta property="og:site_name" content="勇气">
+<meta property="og:description" content="Trap机制 用户空间和内核空间的切换场景  程序执行系统调用 程序出现了类似page fault、运算时除以0的错误 一个设备触发了中断使得当前程序运行需要响应内核设备驱动   在Trap过程中, 需要对寄存器做一些更改.   寄存器种类 stack pointer（也叫做堆栈寄存器 stack register） 在硬件中还有一个寄存器叫做程序计数器（Program Counter Regis">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://chrunge.github.io/Attachments/Pasted%20image%2020220829194120.png">
+<meta property="og:image" content="https://chrunge.github.io/Attachments/Pasted%20image%2020220829200130.png">
+<meta property="article:published_time" content="2021-09-13T09:10:30.000Z">
+<meta property="article:modified_time" content="2023-05-21T04:48:16.943Z">
+<meta property="article:author" content="Chrunge">
+<meta property="article:tag" content="6.S081">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://chrunge.github.io/Attachments/Pasted%20image%2020220829194120.png">
+
+
+<link rel="canonical" href="https://chrunge.github.io/2021/09/13/6.S081/Lecture6%20%20Isolation%20&%20system%20call%20entry+exit%20(Robert)/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://chrunge.github.io/2021/09/13/6.S081/Lecture6%20%20Isolation%20&%20system%20call%20entry+exit%20(Robert)/","path":"2021/09/13/6.S081/Lecture6  Isolation & system call entry+exit (Robert)/","title":"Lecture 6: Isolation & system call entry+exit (Robert)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Lecture 6: Isolation & system call entry+exit (Robert) | 勇气</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/resources/fonts/longcang/longcang-regular.css" >
+<link rel="stylesheet" href="/resources/fonts/lxgw/lxgwwenkailite-regular.css" >
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="勇气" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">勇气</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">唯有爱与勇气</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">48</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">60</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          目 录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Chrunge"
+      src="/resources/img/avatar.webp">
+  <p class="site-author-name" itemprop="name">Chrunge</p>
+  <div class="site-description" itemprop="description">Courage is not simply one of the virtues but the form of every virtue at the testing point.</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Chrunge" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Chrunge" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/dqiucheng@gmail.com" title="E-Mail → dqiucheng@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/39574700/" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;39574700&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2021/09/13/6.S081/Lecture6%20%20Isolation%20&%20system%20call%20entry+exit%20(Robert)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/resources/img/avatar.webp">
+      <meta itemprop="name" content="Chrunge">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="勇气">
+      <meta itemprop="description" content="Courage is not simply one of the virtues but the form of every virtue at the testing point.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Lecture 6: Isolation & system call entry+exit (Robert) | 勇气">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Lecture 6: Isolation & system call entry+exit (Robert)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-09-13 09:10:30" itemprop="dateCreated datePublished" datetime="2021-09-13T09:10:30Z">2021-09-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Operating-System/" itemprop="url" rel="index"><span itemprop="name">Operating System</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h4 id="Trap机制"><a href="#Trap机制" class="headerlink" title="Trap机制"></a>Trap机制</h4><ol>
+<li><p>用户空间和内核空间的切换场景</p>
+<ol>
+<li>程序执行系统调用</li>
+<li>程序出现了类似page fault、运算时除以0的错误</li>
+<li>一个设备触发了中断使得当前程序运行需要响应内核设备驱动</li>
+</ol>
+</li>
+<li><p>在Trap过程中, 需要对寄存器做一些更改.</p>
+</li>
+</ol>
+<h6 id="寄存器种类"><a href="#寄存器种类" class="headerlink" title="寄存器种类"></a>寄存器种类</h6><ol>
+<li>stack pointer（也叫做堆栈寄存器 stack register）</li>
+<li>在硬件中还有一个寄存器叫做程序计数器（Program Counter Register）</li>
+<li>表明当前mode的标志位，这个标志位表明了当前是supervisor mode还是user mode。当我们在运行Shell的时候，自然是在user mode。<ol>
+<li>当你在supervisor mode时，你可以：读写SATP寄存器，也就是page table的指针；STVEC，也就是处理trap的内核指令地址；SEPC，保存当发生trap时的程序计数器；SSCRATCH等等。在supervisor mode你可以读写这些寄存器，而用户代码不能做这样的操作。</li>
+<li>另一件事情supervisor mode可以做的是，它可以使用PTE_U标志位为0的PTE。当PTE_U标志位为1的时候，表明用户代码可以使用这个页表；如果这个标志位为0，则只有supervisor mode可以使用这个页表。</li>
+<li>这两点就是supervisor mode可以做的事情，除此之外就不能再干别的事情了。</li>
+<li>如果一个虚拟地址并不在当前由SATP指向的page table中，又或者SATP指向的page table中PTE_U&#x3D;1，那么supervisor mode不能使用那个地址</li>
+</ol>
+</li>
+<li>还有一堆控制CPU工作方式的寄存器，比如SATP（Supervisor Address Translation and Protection）寄存器，它包含了指向page table的物理内存地址（详见4.3）。</li>
+<li>还有一些对于今天讨论非常重要的寄存器，比如STVEC（Supervisor Trap Vector Base Address Register）寄存器，它指向了内核中处理trap的指令的起始地址。</li>
+<li>SEPC（Supervisor Exception Program Counter）寄存器，在trap的过程中保存程序计数器的值。</li>
+<li>SSRATCH（Supervisor Scratch Register）寄存器，这也是个非常重要的寄存器（详见6.5）。SCRATCH寄存器的作用就是保存另一个寄存器的值，并将自己的值加载给另一个寄存器.</li>
+</ol>
+<h4 id="Trap执行力流程"><a href="#Trap执行力流程" class="headerlink" title="Trap执行力流程"></a>Trap执行力流程</h4><ol>
+<li><img data-src="/Attachments/Pasted%20image%2020220829194120.png"></li>
+<li><img data-src="/Attachments/Pasted%20image%2020220829200130.png"></li>
+<li>ecall并不会切换page table，这是ecall指令的一个非常重要的特点。所以这意味着，trap处理代码必须存在于每一个user page table中。而这个trampoline page，是由内核小心的映射到每一个user page table中，以使得当我们仍然在使用user page table时，内核在一个地方能够执行trap机制的最开始的一些指令。<ol>
+<li>ecall将代码从user mode改到supervisor mode</li>
+<li>ecall将程序计数器的值保存在了SEPC寄存器</li>
+<li>ecall会跳转到STVEC寄存器指向的指令</li>
+</ol>
+</li>
+<li>保存用户进程的寄存器: uservec函数<ol>
+<li>一个部分是，XV6在每个user page table映射了trapframe page，这样每个进程都有自己的trapframe page。这个page包含了很多有趣的数据，但是现在最重要的数据是用来保存用户寄存器的32个空槽位。所以，在trap处理代码中，现在的好消息是，我们在user page table有一个之前由kernel设置好的映射关系，这个映射关系指向了一个可以用来存放这个进程的用户寄存器的内存位置。这个位置的虚拟地址总是0x3ffffffe000。</li>
+<li>另一半的答案在于我们之前提过的SSCRATCH寄存器。</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>学生提问：我想知道csrrw指令是干什么的？<br>Robert教授：这条指令交换了寄存器a0和sscratch的内容。这个操作超级重要，它回答了这个问题，内核的trap代码如何能够在不使用任何寄存器的前提下做任何操作。<br>学生提问：为什么我们在gdb中看不到ecall的具体内容？或许我错过了，但是我觉得我们是直接跳到trampoline代码的。<br>Robert教授：ecall只会更新CPU中的mode标志位为supervisor，并且设置程序计数器成STVEC寄存器内的值。**在进入到用户空间之前(进程初始化时)**，内核会将trampoline page的地址存在STVEC寄存器中。所以ecall的下一条指令的位置是STVEC指向的地址，也就是trampoline page的起始地址。（注，实际上ecall是CPU的指令，自然在gdb中看不到具体内容）<br>学生提问：当与a0寄存器进行交换时，trapframe的地址是怎么出现在SSCRATCH寄存器中的？<br>Robert教授：在内核前一次切换回用户空间时，内核会执行set sscratch指令，将这个寄存器的内容设置为0x3fffffe000，也就是trapframe page的虚拟地址。所以，当我们在运行用户代码，比如运行Shell时，SSCRATCH保存的就是指向trapframe的地址。之后，Shell执行了ecall指令，跳转到了trampoline page，这个page中的第一条指令会交换a0和SSCRATCH寄存器的内容。所以，SSCRATCH中的值，也就是指向trapframe的指针现在存储与a0寄存器中。</p>
+</blockquote>
+<ol start="5">
+<li><p>trampoline page在user page table中的映射与kernel page table中的映射是完全一样的。</p>
+<h4 id="UART驱动的top部分"><a href="#UART驱动的top部分" class="headerlink" title="UART驱动的top部分"></a>UART驱动的top部分</h4><p> 如何从Shell程序输出提示符“$ ”到Console</p>
+<h4 id="UART驱动的bottom部分"><a href="#UART驱动的bottom部分" class="headerlink" title="UART驱动的bottom部分"></a>UART驱动的bottom部分</h4></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+
+
+
+
+
+
+
+<div class="license">
+  <div class="license-title">Lecture 6: Isolation & system call entry+exit (Robert)</div>
+  <div class="license-link">
+    <a href="https://chrunge.github.io/2021/09/13/6.S081/Lecture6%20%20Isolation%20&%20system%20call%20entry+exit%20(Robert)/">https://chrunge.github.io/2021/09/13/6.S081/Lecture6%20%20Isolation%20&%20system%20call%20entry+exit%20(Robert)/</a>
+  </div>
+  <div class="license-meta">
+    <div class="license-meta-item">
+      <div class="license-meta-title">本文作者</div>
+      <div class="license-meta-text">
+          Chrunge
+      </div>
+    </div>
+      <div class="license-meta-item">
+        <div class="license-meta-title">发布于</div>
+        <div class="license-meta-text">
+          2021-09-13
+        </div>
+      </div>
+      <div class="license-meta-item">
+        <div class="license-meta-title">更新于</div>
+        <div class="license-meta-text">
+          2023-05-21
+        </div>
+      </div>
+    <div class="license-meta-item">
+      <div class="license-meta-title">许可协议</div>
+      <div class="license-meta-text">
+          禁止转载引用
+      </div>
+    </div>
+  </div>
+  <div class="license-statement">
+      如需转载或引用本文，请先获得作者授权！
+  </div>
+</div>
+
+
+
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Chrunge
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://chrunge.github.io/2021/09/13/6.S081/Lecture6%20%20Isolation%20&%20system%20call%20entry+exit%20(Robert)/" title="Lecture 6: Isolation &amp; system call entry+exit (Robert)">https://chrunge.github.io/2021/09/13/6.S081/Lecture6  Isolation & system call entry+exit (Robert)/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/6-S081/" rel="tag"><i class="fa fa-tag"></i> 6.S081</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/09/13/6.S081/Lecture4%20Page%20Tables/" rel="prev" title="Lecture 4: Page Tables">
+                  <i class="fa fa-chevron-left"></i> Lecture 4: Page Tables
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/09/13/6.S081/Lecture8%20Page%20fault/" rel="next" title="Lecture 8: Page fault">
+                  Lecture 8: Page fault <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fas fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chrunge</span>
+</div><div class="footer-menu">
+    <a href="/tags/">文章标签</a> · <a href="/policy/">网站政策</a> · <a href="/links/">友情链接</a>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.staticfile.org/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdn.staticfile.org/jquery/3.6.4/jquery.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.staticfile.org/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.staticfile.org/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/comments.min.js"></script><script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/utils.min.js"></script><script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/next-boot.min.js"></script><script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/pjax.min.js"></script>
+
+  
+
+
+  <script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/third-party/fancybox.min.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.staticfile.org/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/third-party/math/mathjax.min.js"></script>
+
+
+
+
+
+<script data-pjax type="text/javascript">
+  //jquery selector
+  var $linkList = $(".link-list");
+  if ($linkList.length != 0) {
+    var j = -1;
+    for	(var i = 0; i < $linkList.length; i++) {
+      const listPath = $linkList[i].getAttribute('json-src');
+      const iconPath = $linkList[i].getAttribute('icon-src');
+      //使用 getJSON 读取 JSON 文件中的数据
+      $.getJSON(listPath, function(data) {
+        j++;
+        //存储数据的变量 
+        var li = "";
+        //清空内容 
+        $linkList.eq(j).empty();
+        //将获取到的 json 格式数据遍历到 div 中
+        $.each(data, function(infoIndex, info) {
+          var labelWarn = '';
+          var labelInfo = '';
+          if (info['warn']) { 
+            labelWarn = '<span class="label warn">' + info['warn'] + '</span>';
+          }
+          if (info['info']) { 
+            labelInfo = '<span class="label info">' + info['info'] + '</span>';
+          }
+          li += '<div class="link-list-container">';
+          li += '<img class="link-list-image" src="' + iconPath + info['logo'] + '">';
+          li += '<p>' + info['title'] + labelInfo + labelWarn + '</p>';
+          li += '<p>' + info['intro'] + '</p>';
+          li += '<a href="' + info['url'] + '" rel="noopener" target="_blank" data-pjax-state=""></a>';
+          li += '</div>';
+        })
+        //显示处理后的数据 
+        $linkList.eq(j).html(li);
+      })
+    }
+  }
+</script>
+
+
+
+<script data-pjax type="text/javascript">
+  //jquery selector
+  var $cultureList = $(".culture-list");
+  if ($cultureList.length != 0) {
+    var j = -1;
+    for	(var i = 0; i < $cultureList.length; i++) {
+      const listPath = $cultureList[i].getAttribute('json-src');
+      const coverPath = $cultureList[i].getAttribute('cover-src');
+      //使用 getJSON 读取 JSON 文件中的数据
+      $.getJSON(listPath, function(data) {
+        j++;
+        //存储数据的变量 
+        var li = "";
+        //清空内容 
+        $cultureList.eq(j).empty();
+        //将获取到的 json 格式数据遍历到 div 中
+        $.each(data, function(infoIndex, info) {
+          //影评书评链接
+          var title = info['title'];
+          if (info['pid']) {
+            title = '<a href="/posts/'+ info['pid'] +'/" >' + info['title'] +'</a>';
+          }
+
+          //作者
+          if (info['author']) {
+            var author = '<span class="author">' + info['author'] +'</span>';
+          } else {
+            var author = '';
+          }
+
+          //简介
+          if (info['intro']) {
+            var intro = info['intro'];
+          } else {
+            var intro = '';
+          }
+          
+          //分数
+          if (info['score'] == null) {
+            var star = '';
+          } else {
+            //初始化
+            var colorStar = '';
+            var greyStar = '';
+            var int = info['score'] - info['score'] % 1; //整数部分
+            //是否有小数
+            var fract = 0; 
+            if (info['score'] % 1 != 0) {
+              fract = 1;
+            }
+            //整数星级
+            for	(var m = 0; m < int; m++) {
+              colorStar += '★';
+            }
+            //半星级
+            if (fract != 0) {
+              colorStar += '☆';
+            }
+            //用空缺星补齐五星
+            for	(var m = 0; m < (5 - fract - int); m++) {
+              greyStar += '☆';
+            }
+            if (info['score'] != 5) {
+              star = '<span class="star-score">'+ colorStar +'<span class="grey-star">'+ greyStar +'</span></span>';
+            } else {
+              star = '<span class="star-score">'+ colorStar +'</span>';
+            }
+          }
+
+          li += '<div class="media">';
+          li += '<div class="media-cover" style="background-image:url(' + coverPath + info['cover'] + ')"></div>';
+          li += '<div class="media-meta">';
+          li += '<div class="media-meta-item title">' + title + '</div>';
+          li += '<div class="media-meta-item">' + author + star +'</div>';
+          li += '<div class="media-meta-item intro">' + intro + '</div>';
+          li += '</div></div>';
+        })
+        
+        //显示处理后的数据 
+        $cultureList.eq(j).html(li);
+      })
+    }
+  }
+</script>
+
+
+
+
+<script src="/resources/minigrid.min.js"></script>
+<script data-pjax type="text/javascript">
+  var $album = $(".album")[0];
+  if($album) {
+    // 相册列表 JSON 数据
+    var imgDataPath = $album.getAttribute('json-src');
+    // 照片存储路径
+    var imgPath = $album.getAttribute('photo-src');
+    // 最多显示数量
+    var imgMaxNum = 50;
+    // 获取窗口大小以决定图片宽度
+    var windowWidth = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+    if (windowWidth < 768) {
+        var imageWidth = 145; // 移动端图片宽度
+    } else {
+        var imageWidth = 235;
+    }
+
+    // 腾讯云自定义样式 (数据万象外网流量需要付费)
+    //var imgStyle = '!' + imageWidth + 'x';
+    //var imgStyle = '!300x';
+
+    // 生成相册
+    var LinkDataPath = imgDataPath;
+    photo = {
+        page: 1,
+        offset: imgMaxNum,
+        init: function () {
+            var that = this;
+            $.getJSON(LinkDataPath, function (data) {
+                that.render(that.page, data);
+            });
+        },
+        render: function (page, data) {
+            var begin = (page - 1) * this.offset;
+            var end = page * this.offset;
+            if (begin >= data.length) return;
+            var imgNameWithPattern, imgName, imageSize, imageX, imageY, li = "";
+            for (var i = begin; i < end && i < data.length; i++) {
+                imgNameWithPattern = data[i].split(' ')[1];
+                imgName = imgNameWithPattern.split('.')[0]
+                imageSize = data[i].split(' ')[0];
+                imageX = imageSize.split('.')[0];
+                imageY = imageSize.split('.')[1];
+                li += '<div class="card" style="width:' + imageWidth + 'px" >'
+                li += '<div class="album-photo" style="height:'+ imageWidth * imageY / imageX + 'px">'
+                li += '<a class="fancybox fancybox.image" href="' + imgPath + imgNameWithPattern + '" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url" data-fancybox="group" rel="group" data-caption="' + imgName + '" title="' +  imgName + '">'
+                li += '<img data-src="' + imgPath + imgNameWithPattern + '" src="' + imgPath + imgNameWithPattern + '" alt="' +  imgName + '" data-loaded="true">'
+                li += '</a>'
+                li += '</div>'
+                li += '</div>'
+            }
+            $(".album").append(li);
+            this.minigrid();
+        },
+
+        minigrid: function() {
+          var grid = new Minigrid({
+              container: '.album',
+              item: '.card',
+              gutter: 12
+          });
+          grid.mount();
+          $(window).resize(function() {
+              grid.mount();
+          });
+        }
+    }
+    photo.init();
+  }
+</script>
+</body>
+</html>

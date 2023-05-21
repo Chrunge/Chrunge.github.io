@@ -26,11 +26,13 @@
 <meta property="og:site_name" content="勇气">
 <meta property="og:description" content="C的常用命令行">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="app://local/D:/ALearning/obsidian/Post/Language/C/Attachments/Pasted%20image%2020220830105705.png?1684374672123">
 <meta property="article:published_time" content="2021-04-14T08:33:48.000Z">
-<meta property="article:modified_time" content="2022-06-17T09:30:30.000Z">
+<meta property="article:modified_time" content="2023-05-21T04:15:04.453Z">
 <meta property="article:author" content="Chrunge">
 <meta property="article:tag" content="C">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="app://local/D:/ALearning/obsidian/Post/Language/C/Attachments/Pasted%20image%2020220830105705.png?1684374672123">
 
 
 <link rel="canonical" href="https://chrunge.github.io/2021/04/14/Language/C/61C%20C%E7%BC%96%E8%AF%91%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7/">
@@ -97,7 +99,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">46</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">47</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">48</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">60</span></a></li>
   </ul>
 </nav>
 
@@ -244,8 +246,24 @@
 <li>Python中, 假值：0、None、空字符串””、空元组()、空列表[]、空字典{}等都为False。</li>
 </ol>
 </li>
+<li><p>struct内存分配原则:</p>
+<ul>
+<li>原则一：结构体中元素按照定义顺序存放到内存中，但并不是紧密排列。从结构体存储的首地址开始 ，每一个元素存入内存中时，它都会认为内存是以自己的宽度来划分空间的，因此元素存放的位置一定会在自己大小的整数倍上开始。</li>
+<li>原则二： 在原则一的基础上，检查计算出的存储单元是否为所有元素中最宽的元素长度的整数倍。若是，则结束；否则，将其补齐为它的整数倍。</li>
+</ul>
+</li>
 </ol>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a target="_blank" rel="noopener" href="https://web.archive.org/web/20210509052850/https://zhuanlan.zhihu.com/p/69038922">fscanf用法详解</a><br><a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-operators.html">C运算符优先级</a><br><a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-constants.html">define与const区别</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/358190927">printf格式详解</a></p>
+<p>因此: 定义位域时，各个成员的类型最好保持一致，比如都用char，或都用int，不要混合使用，这样才能达到节省内存空间的目的。<br>8. Union: union类型是<strong>共享内存</strong>的，以size最大的结构作为自己的大小.</p>
+<ol start="9">
+<li><blockquote>
+<p>学生提问：.asm文件和.s文件有什么区别？<br>TA：我并不是百分百确定。这两类文件都是汇编代码，.asm文件中包含大量额外的标注，而.s文件中没有。所以通常来说当你编译你的C代码，你得到的是.s文件。如果你好奇我们是如何得到.asm文件，makefile里面包含了具体的步骤。<br>学生提问：你是怎么打开多个terminal窗口的？<br>TA：我是通过tmux打开的。<br>TA：从最初的代码可以看出，这里的程序完全是汇编代码实现的，所以自然也没有关联的C程序。如果我将断点设置在C代码中，在命中断点之后输入layout split或者layout source，就可以看到相应的C代码了。对于gdb，也可以使用apropos指令查看帮助。</p>
+</blockquote>
+</li>
+</ol>
+<p>text区域是程序的指令，data区域存放的是初始化了的全局变量，BSS包含了未被初始化或者初始化为0的全局变量。</p>
+<p><img data-src="app://local/D:/ALearning/obsidian/Post/Language/C/Attachments/Pasted%20image%2020220830105705.png?1684374672123"></p>
+<p>应用程序是从地址0开始运行。text区域从地址0开始向上增长。位于地址0的指令是会触发第一个page fault的指令，因为我们还没有真正的加载内存。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a target="_blank" rel="noopener" href="https://web.archive.org/web/20210509052850/https://zhuanlan.zhihu.com/p/69038922">fscanf用法详解</a><br><a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-operators.html">C运算符优先级</a><br><a target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-constants.html">define与const区别</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/358190927">printf格式详解</a><br><a target="_blank" rel="noopener" href="https://www.runoob.com/note/33842">struct内存分配原则</a></p>
 
     </div>
 
@@ -283,7 +301,7 @@
       <div class="license-meta-item">
         <div class="license-meta-title">更新于</div>
         <div class="license-meta-text">
-          2022-06-17
+          2023-05-21
         </div>
       </div>
     <div class="license-meta-item">
@@ -345,7 +363,6 @@
 
 
 
-    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -405,10 +422,6 @@
 <script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/third-party/math/mathjax.min.js"></script>
 
 
-<link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
-
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Chrunge","repo":"Chrunge.github.io/","client_id":"dfaea8450d847f6036d8","client_secret":"eb6c8cc017ad7538c23dc0c0127259613ab5f735","admin_user":"Chrunge","distraction_free_mode":true,"proxy":"https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"31fddc8d59bddb60ceba2ba8ee0d7f9d"}</script>
-<script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/third-party/comments/gitalk.min.js"></script>
 
 
 
