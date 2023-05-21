@@ -1,3 +1,19 @@
+---
+title: 'Lecture 5: Calling conventions and stack frames RISC-V (TA)'
+top: false
+cover: false
+toc: true
+mathjax: true
+date: 2021-09-13 09:10:30
+password:
+description: Lecture 5 - Calling conventions and stack frames RISC-V 
+tags:
+- 6.S081
+categories:
+- Operating System
+---
+
+
 #### C, RISC-V vs x86
 1. 处理器并不能理解C语言。处理器能够理解的是汇编语言，或者更具体的说，处理器能够理解的是二进制编码之后的汇编代码。
 2. RISC-V中的RISC是精简指令集（Reduced Instruction Set Computer）的意思，而x86通常被称为CISC，复杂指令集（Complex Instruction Set Computer）。

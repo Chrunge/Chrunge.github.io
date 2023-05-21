@@ -1,3 +1,18 @@
+---
+title: 'Lecture 8: Page fault'
+top: false
+cover: false
+toc: true
+mathjax: true
+date: 2021-09-13 09:10:30
+password:
+description: How to deal with page fault?
+tags:
+- 6.S081
+categories:
+- Operating System
+---
+
 #### Lay page allocation
 1. page fault发生时，需要的信息
 	1. 出错的虚拟地址，或者是触发page fault的源，将出错的地址存放在STVAL寄存器中。

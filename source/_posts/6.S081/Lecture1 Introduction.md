@@ -1,3 +1,18 @@
+---
+title: 'Lecture 1: 操作系统的目标'
+top: false
+cover: false
+toc: true
+mathjax: true
+date: 2021-09-13 09:10:30
+password:
+description: Lecture 1 - What is an Operating System
+tags:
+- 6.S081
+categories:
+- Operating System
+---
+
 ## Lecture 1
 1. 操作系统的目标: 
 	1. ![](Attachments/Pasted%20image%2020220828125255.png)

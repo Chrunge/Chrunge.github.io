@@ -1,3 +1,18 @@
+---
+title: 'Lecture 3: 操作系统的功能'
+top: false
+cover: false
+toc: true
+mathjax: true
+date: 2021-09-13 09:10:30
+password:
+description: Lecture 3 - How to achieve OS goals?
+tags:
+- 6.S081
+categories:
+- Operating System
+---
+
 四个话题: Isolation, Kernel and User mode, System calls, vx6的实现
 
 #### Isolation

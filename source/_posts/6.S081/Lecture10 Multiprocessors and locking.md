@@ -1,3 +1,18 @@
+---
+title: 'Lecture 10: Multiprocessors and locking'
+top: false
+cover: false
+toc: true
+mathjax: true
+date: 2021-09-13 09:10:30
+password:
+description: How to deal with page fault?
+tags:
+- 6.S081
+categories:
+- Operating System
+---
+
 1. 并行来获得高性能
 2. 为了确保正确性。当一份共享数据同时被读写时，如果没有锁的话，可能会出现race condition，进而导致程序出错。
 3. ![](../Attachments/image.png)

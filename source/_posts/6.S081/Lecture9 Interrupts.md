@@ -1,3 +1,18 @@
+---
+title: 'Lecture 9: Interrupts'
+top: false
+cover: false
+toc: true
+mathjax: true
+date: 2021-09-13 09:10:30
+password:
+description: How to deal with page fault?
+tags:
+- 6.S081
+categories:
+- Operating System
+---
+
 ![](Attachments/image.png)
 
 中断对应的场景很简单，就是硬件想要得到操作系统的关注。操作系统需要做的是，保存当前的工作，处理中断，处理完成之后再恢复之前的工作。这里的保存和恢复工作，与我们之前看到的系统调用过程（注，详见lec06）非常相似。所以系统调用，page fault，中断，都使用相同的机制。

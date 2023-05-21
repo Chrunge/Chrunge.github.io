@@ -1,3 +1,18 @@
+---
+title: 'Lecture 4: Page Tables'
+top: false
+cover: false
+toc: true
+mathjax: true
+date: 2021-09-13 09:10:30
+password:
+description: Lecture 4 - Address space
+tags:
+- 6.S081
+categories:
+- Operating System
+---
+
 #### 地址空间
 1. ![](Attachments/Pasted%20image%2020220829093052.png)
 2. Page Table: 页表是在硬件中通过处理器和内存管理单元（Memory Management Unit）实现。
