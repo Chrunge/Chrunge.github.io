@@ -7,7 +7,7 @@ mathjax: true
 date: 2021-09-14 15:40:53
 password:
 description:
-tags: [CS162, Pipes and sockets]
+tags: [CS162]
 categories:
 - Operating System
 ---

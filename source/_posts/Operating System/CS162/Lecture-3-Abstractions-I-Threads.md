@@ -7,7 +7,7 @@ mathjax: true
 date: 2021-09-14 12:25:42
 password:
 description: Abstractions I - Threads, A quick, programmer's viewpoint
-tags: [CS162, Threads]
+tags: [CS162, Thread]
 categories:
 - Operating System
 ---

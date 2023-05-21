@@ -7,8 +7,7 @@ mathjax: true
 date: 2021-09-13 09:10:30
 password:
 description: Lecture 4 - Address space
-tags:
-- [6.S081, Page Table]
+tags: [6.S081, Page Table]
 categories:
 - Operating System
 ---

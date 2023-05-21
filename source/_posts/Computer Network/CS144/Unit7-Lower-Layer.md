@@ -9,7 +9,6 @@ password:
 description:
 tags:
 - CS144
-- Lower layer
 categories:
 - Computer Network
 ---

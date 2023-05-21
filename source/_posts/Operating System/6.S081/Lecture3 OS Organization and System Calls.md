@@ -7,8 +7,7 @@ mathjax: true
 date: 2021-09-13 09:10:30
 password:
 description: Lecture 3 - How to achieve OS goals?
-tags:
-- [6.S081, System Call]
+tags: [6.S081, System Call]
 categories:
 - Operating System
 ---

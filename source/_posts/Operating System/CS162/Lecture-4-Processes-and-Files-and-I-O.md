@@ -7,7 +7,7 @@ mathjax: true
 date: 2021-09-14 14:28:54
 password:
 description:
-tags: [CS162, Process, File, I/O]
+tags: [CS162, Process, I/O]
 categories:
 - Operating System
 ---
