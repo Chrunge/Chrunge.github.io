@@ -1,5 +1,5 @@
 ---
-title: 'Synchronization I and II: Concurrency, Lock Implementation'
+title: 'Lecture 7-8: Synchronization I and II: Concurrency, Lock Implementation'
 top: false
 cover: false
 toc: true

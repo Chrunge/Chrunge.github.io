@@ -6,7 +6,7 @@ toc: true
 mathjax: true
 date: 2022-03-30
 password:
-description: 记录算法题中的一些常见思路和模板
+description: 记录Leetcode算法题中的一些常见思路和模板
 tags: 
 - Algorithm
 categories:

@@ -20,11 +20,12 @@ categories:
       - 用于syscalls/interrupts/traps的内核栈
          - 这个内核状态有时候被称为"内核线程"
          - 当该线程正在用户空间中运行时, 该"内核线程"是suspended状态
+<!-- more -->
    2. 除此之外, 内核中也有内核线程
        - 拥有TCB和kernel stack
        - 但并不属于任何进程, 也不在用户空间中运行
    3. ![kernel structure](Lecture10, 第19页)
-<!-- more -->
+
 2. Scheduling policy goals
    1. 最小化响应时间: minimize elapsed time to do an operation
    2. 最大化吞吐量: maximize operations per second

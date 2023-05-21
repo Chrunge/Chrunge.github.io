@@ -6,12 +6,14 @@ toc: true
 mathjax: true
 date: 2023-05-20
 password:
-description: 
+description: 各种编程语言的外围工具汇总链接，可作为入门使用或者查阅手册。
 tags: [C, C++, Git, GDB]
 categories: Tools
 ---
 
 ## 工具参考汇总
+
+### [awesome-cheatsheets](https://github.com/skywind3000/awesome-cheatsheets)
 
 ### C
 
@@ -192,3 +194,6 @@ The official description of the Java core language is available online in [The J
 -   [Chord: A scalable peer-to-peer lookup service for internet applications](http://pdos.csail.mit.edu/papers/chord:sigcomm01/chord_sigcomm.pdf)
 
 #### [pintos-docs/](https://cs162.org/static/proj/pintos-docs)
+
+
+## [ruanyf Linux Bash tutorial](https://github.com/wangdoc/bash-tutorial)
