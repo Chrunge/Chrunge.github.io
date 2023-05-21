@@ -6,3 +6,12 @@ node_modules/
 public/
 .deploy*/
 _multiconfig.yml
+
+
+source/_posts/.trash/
+
+*.mkv
+*.mp4
+*.avi
+*.mov
+source/_posts/.obsidian/workspace

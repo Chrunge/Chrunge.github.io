@@ -187,3 +187,210 @@ categories:
 
 1. `signal(registerd signal, signal handler)`, 使用handler函数处理信号
 2. `raise(signal sig)`可以引发信号
+
+
+
+
+
+## 其他
+
+CS15-445 recommendation about C++: If you have not used C++ before, here is a [short tutorial](http://www.thegeekstuff.com/2016/02/c-plus-plus-11/) on the language. More detailed documentation of language internals is available on [cppreference](https://en.cppreference.com/w/). [A Tour of C++](https://cmu.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma991019600108604436&context=L&vid=01CMU_INST:01CMU&search_scope=MyInst_and_CI&isFrbr=true&tab=Everything&lang=en) and [Effective Modern C++](https://cmu.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma991019578256104436&context=L&vid=01CMU_INST:01CMU&search_scope=MyInst_and_CI&tab=Everything&lang=en) are also digitally available from the CMU library.
+
+### C++
+#### 关键字
+1. const: 
+	1. 修饰变量: 该变量不可改变
+	2. 修饰指针:
+		1. 在`*`的左边, 指向常量的指针（常量指针）
+			1. `const int* a = &[1]`(修饰的int); `int const *a = &[2]`(修饰的`*a`)
+		2. 在`*`的右边, 修饰指针, 即该指针为常量（指针常量）
+			1. `int* const a = &[3]`(修饰的a)
+	3. 修饰函数和参数
+		1. 参数`const A& a`: 既避免了拷贝, 又避免了函数中对参数的修改
+		2. 修饰返回值: 
+			1. 以指针传递: `const char* f()`, `const char* str = f()`, 指针指向的内容不能被修改; 
+			2. 以引用传递: 返回值的内容不能被改变
+		3. 修饰成员函数: 该函数不会修改成员数据
+	4. 类中: 
+		1. const成员变量, 不能在声明时初始化, 只能在类构造时初始化.
+		2. const A a: 常量对象只能调用常量函数
+		3. **static变量的赋值, 必须在class外面**
+2. typedef 和 define的区别: 
+	1. 用法不同：typedef定义数据结构的别名，增强可读性；而define定义常量，以及书写复杂且频繁使用的宏
+	2. 执行时间不同：typedef在编译时执行，且有类型检查；而define在预编译时进行简单的字符串替换。
+	3. 作用域不同：typedef有作用域限定，而define没有
+3. define与const区别: 
+	1. const在编译时处理, 有类型安全检查, 要分配内存, 存储在数据段, 不可取消; define在预编译时字符串替换, 无类型安全检查, 不分配内存, 存储在代码段, 可取消.
+4. extern: 修饰变量的声明，说明此变量将在文件以外或在文件后面部分定义。
+5. this: 
+	1. 每次对象调用非静态成员函数时, 编译程序先将对象的地址赋给 `this` 指针, 然后`this`指针作为隐含参数传入成员函数中.
+	2. `this` 指针被隐含地声明为: `ClassName *const this`，这意味着不能给 `this` 指针赋值；在 `ClassName` 类的 `const` 成员函数中，`this` 指针的类型为：`const ClassName* const`，这说明不能对 `this` 指针所指向的这种对象是不可修改的（即不能对这种对象的数据成员进行赋值操作）
+	3. `this`是右值, 不能取地址
+	4. 当成员函数被调用时，会自动向它传递一个隐含的`this`指针.
+6. inline: 
+	1. 将函数体写在调用`inline`的函数处, 不用执行进入函数的步骤(空间换时间);
+	2. 相当于宏, 但多了类型检查; 
+	3. 在类中定义的函数, 除了虚函数之外都自动隐式的转为内联函数; 类外定义的函数需要显式转化.
+	4. 内联(编译时)可以修饰虚函数, 但虚函数表现为多态(运行时)时则不可内联.
+7.volatile:
+	1. volatile 关键字是一种类型修饰符，用它声明的类型变量表示可以被某些编译器未知的因素（操作系统、硬件、其它线程等）更改。(主要用于多线程中)
+	2. volatile 关键字声明的变量, **每次访问时都必须从内存中取出值**.
+	3. const可以是volatile(只读寄存器), 指针可以是volatile.
+8. assert: 断言, 是**宏**, 而非函数, assert 宏的原型定义在 `<ass.ert.h>`（C）、`<cassert>`（C++）中.
+9. `#pragma pack(n)`:设定struct、union以及类成员变量以 n 字节方式对齐
+10. struct 中的: `unsigned int b: 3`
+	1. 声明具有以位为单位的明确大小的**类数据成员**, 不能时静态数据成员.
+	2. 只能是整型或者枚举类型
+11. extern "C": 让 C++ 编译器将 `extern "C"` 声明的代码当作 C 语言代码处理
+12. struct 与 class
+	1. 默认的访问控制: struct是public, class是private
+13. explicit: 
+	1. 修饰构造函数时，可以防止隐式转换和复制初始化
+	2. explicit 修饰转换函数时，可以防止隐式转换，但 [按语境转换](https://zh.cppreference.com/w/cpp/language/implicit_conversion) 除外
+14. decltype: 关键字用于检查实体的声明类型或表达式的类型及值分类.
+15. 虚析构函数: 为了解决基类的指针指向派生类对象，并用基类的指针删除派生类对象。
+16. 虚指针和虚函数表:
+	1. 虚指针：在含有虚函数类的对象中，指向虚函数表，在**运行时**确定。
+	2. 虚函数表：在程序只读数据段(`.rodata section`), 存放虚函数指针，如果派生类实现了基类的某个虚函数，则在虚表中覆盖原本基类的那个虚函数指针，在**编译时根据类的声明**创建。
+17. 虚继承: 解决多继承条件下的菱形继承问题
+#### 类的大小
+1. 类的成员函数，静态成员函数和静态数据，都不占大小；仅成员数据占大小。
+2. 类中若存在虚函数，只有一个虚指针指向虚表
+3. 类中也有字节对齐
+4.  空类占1 byte
+
+
+#### C++内存段
+1. ![](Attachments/20210305135407422.png)
+1. head and stack
+	1. 自由存储区: 使用`malloc()`和`free()`进行分配和释放
+2. text segmen: 包括程序的机器代码 + 只读数据
+3. data: 
+	1. data: 存放已初始化的全局变量
+4. bbs(Block Started by Symbol): 存放未初始化的全局变量, 在文件中不占用空间, 在加载时用0填充.
+5. **几种存储类型**的存放空间
+	1. auto: 一般用于局部变量，自动识别类型，存储在stack中
+	2. extern: 用来声明其他文件中的全局变量。若已初始化，则data区；否则bbs区
+	3. register: 寄存器
+	4. static: 无论是全局还是局部变量，都存放在data区
+	5. 字符串常量: data区
+	6. ![](Attachments/2021030514201134.jpg)
+6. **比较变量区别的角度**: 作用域的不同；内存存储方式的不同；生命周期的不同；使用方式的不同.
+7. [C/C++内存管理详解](https://chenqx.github.io/2014/09/25/Cpp-Memory-Management/ "C/C++内存管理详解")
+8. [C++ 堆区，栈区，数据段，bss段，代码区](https://blog.csdn.net/JACKSONMHLK/article/details/114392343)
+
+
+#### C++全局变量, 静态变量, 局部变量
+\ |全局变量 | 静态全局变量 | 静态局部变量 | 局部变量
+-- | -- | -- | -- | -- 
+生命周期 | 整个程序 | 整个程序 | 整个程序 | block
+作用域 | 所有源文件 | 本源文件 | block内 | block内
+定义方法 | 使用extern引用 | 全局static和const | block内static | block内
+内存位置 | data | data | data | stack
+
+3. [全局变量、静态变量、局部变量的生存周期与作用域](https://blog.csdn.net/nine_cc/article/details/105472698)
+
+
+#### 返回局部变量
+1. pass by value, 返回局部变量本身
+2. 返回一个字符串常量`char *str = "hello"`, 不能返回`char str[] = "hello"`.
+3. 非要返回一个局部变量地址, 可以在函数内部, 通过`static`将本地变量转化为静态变量
+4. 返回`new`的对象, 但需要外部释放, 不建议
+
+
+#### c++容器的方法
+1. 迭代器失效的情况![](Attachments/Pasted%20image%2020220911094708.png)
+2. 成员函数表格![](Attachments/Pasted%20image%2020220911094822.png)
+
+
+#### C++内存管理
+
+#### C++字符串
+###### 拷贝构造和赋值构造
+1. 拷贝构造函数`string(const string &s)`, 形参通常是`const T&`, 不能传入实例, 否则会造成无限递归.
+2. 赋值操作符重载`string& operator=(const string &s)`, 第一个操作数隐式绑定到`this`指针.
+3. 深拷贝和浅拷贝: 当数据成员中有指针时, 必须调用深拷贝, 将指针指向的对象重复赋值一份.
+4. 赋值函数: 1. 检查自复制; 2. 释放原有资源; 3. 重新分配资源并拷贝; 4. 返回本对象的引用
+5. 拷贝 vs 赋值: **如果临时变量是第一次出现，那么调用的只能是拷贝构造函数，反之如果变量已经存在，那么调用的就是赋值函数**
+6. [C++ 拷贝构造函数与赋值函数](https://blog.csdn.net/wenqian1991/article/details/29178649)
+###### char* 
+1. `char* p = "hello world"`
+2. 字符串常量存在静态存储区, `p`指向静态存储区
+###### char[]
+1. `char p[128]`
+2. 数组存储空间为stack, 使用`+`拼接后的字符串的空间地址可能不连续
+###### string
+1. `string s = "hello world"`
+2. `string`的数据内容存储在stack或者heap中, 大于16字节的变量放在heap中，小于等于16字节的变量放在stack中.
+###### return a string
+1. `string func()`: `return str`, 编译器会自动`move`
+2. `string& func(string& des, string& src)`, 原地修改, `return des`
+3. `char* func(string& s)`, `return s.data()
+4. 
+5. 
+6. 
+7. `
+
+
+#### C++11特性
+###### 左值与右值
+1. 左值是可寻址的变量，具有持久性
+2. 右值一般是不可寻址的常量，或在表达式求值过程中创建的无名临时对象，具有短暂性
+3. 左值引用&：引用一个对象
+4. 右值引用&&：短暂引用一个右值, 实现移动语义.
+5. [左值与右值](https://nettee.github.io/posts/2018/Understanding-lvalues-and-rvalues-in-C-and-C/)
+###### shared_ptr 
+1. 定义: 通过指针保存对象的共享所有权的智能指针. 以下情况销毁对象:
+	1. 最后占有对象的shared_ptr被销毁
+	2. 最后占优对象的shared_ptr通过`=`或`reset()`赋值为另一指针
+2. 公开方法:`reset, swap, get, *, ->, [], use_count, unique, owner_before`
+3. 相比于`new`的优势
+	1. `new`出来的对象必须在局部范围内`delete`(外部无法`delete`, 会造成内存泄露), 无法在外部使用. 而`shared_ptr`可以通过计数, 将局部范围的变量用于外部. 
+	2. `shared_ptr`中存在引用计数, 当引用计数为0时, 自动释放内存.
+4. 事故:
+	1. 循环引用: 使用`weak_ptr`进行解决, `weak_ptr`时`shared_tpr`的观察者, 但却不参与引用计数中.
+	2. 多个无关的`shared_ptr`共同管理一个裸指针, 解决办法: 不要将`new`用在shared_ptr构造函数参数列表以外的地方，或者干脆不用`new`，改用`make_shared`。
+	3. 
+6. [详细连接](https://www.jianshu.com/p/5e2000c3f6a7)
+7. [shared_ptr 原理与事故](https://heleifz.github.io/14696398760857.html)
+
+
+###### weak_ptr
+1. 定义:`std::weak_ptr` 是一种智能指针，它对被 `std::shared_ptr`管理的对象存在**非拥有性**（“弱”）引用, 在访问前必须先转化为`std::shared_ptr`。
+	1. `std::weak_ptr` 用来表达**临时所有权**的概念：当某个对象只有存在时才需要被访问，而且随时可能被他人删除时，可以使用 `std::weak_ptr` 来跟踪该对象.
+	2. 需要获得临时所有权时，则将其转换为`std::shared_ptr`. 此时如果原来的 `std::shared_ptr`被销毁，则该对象的生命期将被延长至这个临时的 `std::shared_ptr`同样被销毁为止。
+2. 公开方法: `reset, swap, use_count, expired, lock, owner_before`
+
+
+###### unique_ptr
+1. 定义：拥有并管理另一个对象的智能指针，当unique_ptr超出作用域时，销毁对象。
+2. 公开方法：`release, reset, swap, get, get_deleter`
+3. `make_unique`: 创建一个管理新对象的独占指针
+4. `unique_ptr` 的赋值运算符`=`只接受由`std::move`生成的右值
+
+
+
+
+#### C++50问
+1. 变量的定义与声明
+2. sizeof与strlen区别，3点：sizeof 在编译时确定，strlen 在运行时确定
+3. static在C与C++中的区别：除了都可以定义局部静态变量和全局静态变量之外，C++中可以修饰静态变量和静态成员函数
+4. malloc与new的区别，5点：new 可以调用对象的构造函数，对应的delete 调用相应的析构函数。
+
+6. 数组中a与&a区别：a为数组的首地址，&a为指向数组的指针
+7. strcpy, memcpy, sprintf区别: 
+8. 面向对象三大特性：封装，继承和多态
+9. C++空类有哪些函数：默认构造，默认赋值，默认拷贝构造，默认析构，默认取址运算符和默认取值运算符const
+10. 拷贝构造函数生成新的实例（**必须以引用的方式传递参数**），而赋值运算符是将对象的值复制给一个**已经存在的实例**
+	1. **当有类中有指针类型的成员变量时，一定要重写拷贝构造函数和赋值运算符，不要使用默认的。**
+12. 重写和重载的区别：重写是子类重写父类的函数；重载是同一类中，函数名相同，参数不同。
+	1. 隐藏：**不同作用域中定义的同名函数构成隐藏**，如局部同名函数隐藏全局同名函数。
+13. 简述多态的实现原理：若类中存在虚函数，则有vptr指向vtable，vtable中存储着虚函数的指针。在生成实例时，先调用父类的构造函数，再是子类的构造函数，则开始时，先生成父类的vtable，再替换vtable中被重写的虚函数，形成子类的vtable.
+14. 链表和数组的区别
+15. 反转链表，递归算法和循环算法
+16. 10各排序算法
+17. 编程规范：程序的可行性，可读性，可移植性和可复用性
+18. C++引用和C指针的区别，3点
+19. 写一个标准的宏MIN：#define min(a,b) ((a) < (b) ? (a) : (b))
+
+21. 构造函数不能为虚函数，且不能在构造函数中调用虚函数；但析构函数可以为虚函数

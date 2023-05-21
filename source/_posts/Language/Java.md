@@ -30,3 +30,15 @@ categories:
    4. `b ? x : y`
    5. Java中采用Unicode编码, 一个英文字符和一个中文字符都占两个字节.
    6. 可以用`+`连接字符串, 多行字符串使用`"""***"""`; 字符串的内容不可变.
+
+#### Java vs C++
+- Java的基本类型和引用都分配在stack上，而对象都分配在堆上。
+	- 因此，Java的垃圾回收器，只回收没有引用指向的对象。
+	- Java可以返回局部引用
+	- Java是pass by value.
+- C++的引用与Java不同，是对象的别名。
+	- C++的基本类型不需要destructor。
+	- C++中，new的对象分配在堆上，需要手动释放。其余对象声明，空间分配在stack上，自动调用destructor.
+	- C++中的char p[10] = "hello world"被视为动态数组，空间分配在stack上。
+	- C++中的char p* = "hello world"，数据在heap上，可返回p。
+

@@ -295,11 +295,11 @@ reading_progress:
 # Gitalk
 # For more information: https://gitalk.github.io
 gitalk:
-  enable: true
+  enable: false
   github_id: Chrunge
   repo: Chrunge.github.io/
-  client_id: dfaea8450d847f6036d8
-  client_secret: eb6c8cc017ad7538c23dc0c0127259613ab5f735
+  client_id: 
+  client_secret: 
   admin_user: Chrunge # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # When the official proxy is not available, you can change it to your own proxy address
