@@ -6,7 +6,7 @@
   <link href="https://chrunge.github.io/atom.xml" rel="self"/>
   
   <link href="https://chrunge.github.io/"/>
-  <updated>2023-05-21T06:26:21.028Z</updated>
+  <updated>2023-05-30T03:47:35.850Z</updated>
   <id>https://chrunge.github.io/</id>
   
   <author>
@@ -17,11 +17,52 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>美国制宪会议人员表</title>
+    <title>关于信息来源和信息处理</title>
+    <link href="https://chrunge.github.io/2023/05/30/%E9%9A%8F%E7%AC%94/%E4%BF%A1%E6%81%AF%E5%A4%84%E7%90%86/"/>
+    <id>https://chrunge.github.io/2023/05/30/%E9%9A%8F%E7%AC%94/%E4%BF%A1%E6%81%AF%E5%A4%84%E7%90%86/</id>
+    <published>2023-05-30T02:36:39.875Z</published>
+    <updated>2023-05-30T03:47:35.850Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://raw.githubusercontent.com/Chrunge/Pictures/master/Cover/2023-05-30.webp&quot;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;目前信息来源：微信以及公众号，QQ群，清水河畔，Bilibili，Telegram　Channel，RSS。其他可能来源：Economist， Reuter，Blog，discord，Youtube，Podcast</summary>
+    
+    
+    
+    <category term="随笔" scheme="https://chrunge.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="心得" scheme="https://chrunge.github.io/tags/%E5%BF%83%E5%BE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>23年已过半，最近的一些想法</title>
+    <link href="https://chrunge.github.io/2023/05/26/%E9%9A%8F%E7%AC%94/To%20do%20list/"/>
+    <id>https://chrunge.github.io/2023/05/26/%E9%9A%8F%E7%AC%94/To%20do%20list/</id>
+    <published>2023-05-26T00:00:00.000Z</published>
+    <updated>2023-05-30T03:47:27.271Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://raw.githubusercontent.com/Chrunge/Pictures/master/Cover/2023-05-26.webp&quot;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;梳理一下对于个人品格的看法，品格与品格之间的联系&lt;/li&gt;
+&lt;li&gt;记录下自己各方面的爱好，偶像等</summary>
+    
+    
+    
+    <category term="随笔" scheme="https://chrunge.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>制宪会议出席名单</title>
     <link href="https://chrunge.github.io/2023/05/21/%E9%9A%8F%E7%AC%94/%E7%BE%8E%E5%9B%BD%E5%88%B6%E5%AE%AA%E4%BC%9A%E8%AE%AE%E4%BA%BA%E5%91%98%E8%A1%A8/"/>
     <id>https://chrunge.github.io/2023/05/21/%E9%9A%8F%E7%AC%94/%E7%BE%8E%E5%9B%BD%E5%88%B6%E5%AE%AA%E4%BC%9A%E8%AE%AE%E4%BA%BA%E5%91%98%E8%A1%A8/</id>
     <published>2023-05-21T04:10:24.095Z</published>
-    <updated>2023-05-21T06:26:21.028Z</updated>
+    <updated>2023-05-30T03:48:01.595Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Scene_at_the_Signing_of_the_Constitution_of_the_United_States.jpg/1920px-Scene_at_the_Signing_of_the_Constitution_of_the_United_States.jpg&quot;&gt;&lt;/p&gt;
@@ -33,77 +74,6 @@
     
     
     <category term="宪法" scheme="https://chrunge.github.io/tags/%E5%AE%AA%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>汇总表</title>
-    <link href="https://chrunge.github.io/2023/05/21/README/"/>
-    <id>https://chrunge.github.io/2023/05/21/README/</id>
-    <published>2023-05-21T03:58:46.609Z</published>
-    <updated>2023-05-21T06:07:46.413Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;始于2023-05-21&quot;&gt;&lt;a href=&quot;#始于2023-05-21&quot; class=&quot;headerlink&quot; title=&quot;始于2023-05-21&quot;&gt;&lt;/a&gt;始于2023-05-21&lt;/h1&gt;&lt;p&gt;Where is my dream?&lt;/p&gt;
-&lt;h2 id=&quot;我的数字&quot;&gt;&lt;a href=&quot;#我的数字&quot; class=&quot;headerlink&quot; title=&quot;我的数字&quot;&gt;&lt;/a&gt;我的数字&lt;/h2&gt;&lt;!--START_SECTION:my_number--&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&quot;center&quot;&gt;Name&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;Status&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;Streak&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;Today?&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;https://github.com/yihong0618/2021/issues/12&quot;&gt;早起&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;0 (天)&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;0&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;NO&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;https://github.com/yihong0618/2021/issues/17&quot;&gt;GTD&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;0 (个)&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;0&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;NO&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;&lt;a href=&quot;https://github.com/yihong0618/2021/issues/18&quot;&gt;周记&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;0 (周)&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;0&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;NO&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;!--END_SECTION:my_number--&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>CS Tools conclusion</title>
-    <link href="https://chrunge.github.io/2023/05/20/Language/Tools%20Conclusion/"/>
-    <id>https://chrunge.github.io/2023/05/20/Language/Tools%20Conclusion/</id>
-    <published>2023-05-20T00:00:00.000Z</published>
-    <updated>2023-05-21T06:05:10.858Z</updated>
-    
-    
-    <summary type="html">各种编程语言的外围工具汇总链接，可作为入门使用或者查阅手册。</summary>
-    
-    
-    
-    <category term="Tools" scheme="https://chrunge.github.io/categories/Tools/"/>
-    
-    
-    <category term="C++" scheme="https://chrunge.github.io/tags/C/"/>
-    
-    <category term="C" scheme="https://chrunge.github.io/tags/C/"/>
-    
-    <category term="Git" scheme="https://chrunge.github.io/tags/Git/"/>
-    
-    <category term="GDB" scheme="https://chrunge.github.io/tags/GDB/"/>
     
   </entry>
   
