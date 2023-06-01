@@ -1,84 +1,64 @@
 ---
-title: 汇总表
+title: 生活的足迹
 top: true
 cover: false
 toc: true
 mathjax: true
 date: <% tp.date.now() %>
 password:
-description: 
-tags:
-categories:
+description: 每天的数据记录
+tags: [汇总表]
+categories: [随笔]
 ---
 
-# 始于2023-05-21
+# 始于2023-05-30
 
-Where is my dream?
+我大概知道我想要什么，现在需要腾出时间，鼓起勇气前进了。
 
-## 我的数字
+## 足迹
 
 <!--START_SECTION:my_number-->
 
-| Name | Status | Streak | Today? |
+| Name | Status | Fortnight | Today? |
 | :-: | :-: | :-: |:-:|
-| [早起](https://github.com/yihong0618/2021/issues/12) | 0 (天) | 0 | NO |
-| [GTD](https://github.com/yihong0618/2021/issues/17) | 0 (个) | 0 | NO |
-| [周记](https://github.com/yihong0618/2021/issues/18) | 0 (周) | 0 | NO |
+| 早起 | 3 (天) | 3 | Yes |
+| 运动 | 2 (次) | 2 | Yes |
+| 周记 | 1 (篇) | 1 | NO |
 
 <!--END_SECTION:my_number-->
 
-<!--more-->
+## GTD
 
-## The repos I created
-<!--START_SECTION:my_github-->
-| ID | REPO | START | UPDATE | LAUGUAGE | STARS |
-|:-:|:-:|:-:|:-:|:-:| :-:|
-| 1 | [running_page](https://github.com/yihong0618/running_page) | 2020-09-17 | 2022-01-01 | Python | 1540 |
-| sum | | | | | 0 |
+- [ ] 梳理一下对于个人品格的看法，品格与品格之间的联系
+- [ ] 记录下自己各方面的爱好，偶像等
+- [ ] 写一下关于《置身事内》的读后感，第一次简单写写就行
+- [ ] 记录下最近正在追的动漫和玩的游戏，和看过的电视剧
+- [ ] 记录下对于自杀和友谊的理解
+- [ ] 写写自己的GPT prompt，提高问题质量，避免重复思考问题模版
+- [ ] 京阿尼是一家传递爱与勇气的动画公司
+- [ ] 记录学习的下一步目标和完成后的奖励
+- [ ] 了解Git，Missing course in CS和设计模式
 
-## The repos I contributed to
-
-| ID | REPO | FIRSTDATE | LASTEDATE | PRCOUNT |
-|:-:|:-:|:-:|:-:|:-:|
-| 1 | [vscode-leetcode](https://github.com/LeetCode-OpenSource/vscode-leetcode) | [2019-12-03](https://github.com/LeetCode-OpenSource/vscode-leetcode/pull/487) | [2020-07-22](https://github.com/LeetCode-OpenSource/vscode-leetcode/pull/602) | [6](https://github.com/LeetCode-OpenSource/vscode-leetcode/pulls?q=is%3Apr+author%3Ayihong0618) |
-| sum | | | | 77 |
-
-## The repos I stared (random 10)
-
-| ID | REPO | STAREDDATE | LAUGUAGE | LATESTUPDATE |
-|:-:|:-:|:-:|:-:|:-:|
-| 1 | [perfect-arrows](https://github.com/steveruizok/perfect-arrows) | 2021-06-29 | TypeScript | 2022-01-01 |
-
-<!--END_SECTION:my_github-->
-
-## 刷剧
-
-<!--START_SECTION:my_drama-->
-
-| Name | Start | Update |
-| :-: | :-: | :-: |
-| [《爱死亡和机器人》](https://github.com/yihong0618/2021/issues/8#issuecomment-842002234) | 2021-05-17 | 2021-05-17 |
-
-<!--END_SECTION:my_drama-->
-
-## 追番
+## 动漫
 
 <!--START_SECTION:my_bangumi-->
 
-| Name | Start | Update |
+| Name | Start | Finish |
 | :-: | :-: | :-: |
-
-| [《Odd Taxi》](https://github.com/yihong0618/2021/issues/6#issuecomment-905063357) | 2021-08-25 | 2021-08-25 |
+| [《跃动青春》]() | 2023-04-12 | Cont. |
+| [鬼灭之刃 锻刀篇]() | 2023-05-26 | Cont. | 
+| [为美好世界献上爆焰]() |  2023-05-24 | Cont. |
 
 <!--END_SECTION:my_bangumi-->
 
-## 观影
+## 影音
 
 <!--START_SECTION:my_movie-->
 
 | Name | Start | Update |
 | :-: | :-: | :-: |
-| [《汽车总动员第一部》](https://github.com/yihong0618/2021/issues/2#issuecomment-757446059) | 2021-01-10 | 2021-01-12 |
+| [《漫长的季节》]() | 2023-05-04 | 2023-05-05 |
+| [《天空之城》]() | 2023-06-01 | 2023-06-01 |
 
 <!--END_SECTION:my_movie-->
 
@@ -88,39 +68,45 @@ Where is my dream?
 
 | Name | Start | Update |
 | :-: | :-: | :-: |
-| [《哈迪斯》](https://github.com/yihong0618/2021/issues/11#issuecomment-772144499) | 2021-02-03 | 2021-02-03 |
+| [《This war of mine》]() | 2023-05-28 | Continue |
 
 <!--END_SECTION:my_game-->
 
-## 做饭
+## 书籍
+<!-- START_SECTION:my_books-->
 
-<!--START_SECTION:my_cook-->
+| Name | Start | Update |
+| :-: | :-: | :-: |
+|[《近距离看美国系列》]()| 2023-02-01 | 2023-03-01 |
+|[《美国宪政历程》]()| 2023-03-20 | 2023-04-01 |
+| [《辩论》]() | 2023-04-04 | Cont. |
+| [《置身事内》]() | 2023-05-15 | 2023-05-20 |
 
-| Name | First_date | Last_date | Times |
-| :-: | :-: | :-: | :-:|
-| 葱爆羊肉 | [2021-01-06](https://github.com/yihong0618/2021/issues/1#issuecomment-755339449) | [2021-01-12](https://github.com/yihong0618/2021/issues/1#issuecomment-758656836) | 2 |
 
-<!--END_SECTION:my_cook-->
+<!-- END_SECTION:my_books-->
 
-## 写博客
+## 推送博客
 
 <!--START_SECTION:my_blog-->
 
-| Name | Start | Update | Comments |
-| :-: | :-: | :-: |:-:|
-| [何用一个仓库记录自己的一年](https://github.com/yihong0618/gitblog/issues/209) | 2021-05-28 | 2021-09-27 | 23 |
+| Name | Start | Update |
+| :-: | :-: | :-: |
+| [关于品格的个人看法]() | Cont. | Cont. |
 
 <!--END_SECTION:my_blog-->
 
-## 收藏的文章
+## 收藏文章
 
 | 文章名称 | 添加日期 | type | 备注 |
 | :-: | :-: | :-: |:-:|
-| [硬链接与软链接](https://www.cnblogs.com/diantong/p/10507132.html) | 2022.06.17|技术文章|  |
-| [500lines-rewrite-interpreter](https://shuhari.dev/blog/2020/12/500lines-rewrite-interpreter) | 2021.01.04 | 技术文章 | 宝藏 |
+| [CS61A: The Ultimate Study Guide](https://www.notion.so/CS61A-The-Ultimate-Study-Guide-b3250fb11b4943a5a1db4f1bdabfea35) | 2023-05-30 | 学习方法 | |
+| [The Math Ceiling: Where’s your cognitive breaking point?](https://mathwithbaddrawings.com/2015/04/08/the-math-ceiling-wheres-your-cognitive-breaking-point/?utm_source=pocket_reader) | 2023-05-30 | 学习方法 | 认知角度 |
+| [如何写递归](https://zhuanlan.zhihu.com/p/108551642?utm_source=pocket_reader) | 2023-05-30 | 算法 | 递归类型 |
+| [回避性依恋人格](https://zhuanlan.zhihu.com/p/264425224?utm_source=pocket_reader)| 2023-05-30 | 人格 | 别看 |
 
-## 收藏的博客
+## 收藏博客
 
 | 博客名称 | 添加日期 | type | 备注 |
 | :-: | :-: | :-: |:-:|
 | [SHUHARI 的博客](https://shuhari.dev/blog/) | 2021.01.04 | 重写 500 Lines | 宝藏 |
+
