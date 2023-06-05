@@ -21,8 +21,8 @@ categories: [随笔]
 
 | Name | Status | Fortnight | Today? |
 | :-: | :-: | :-: |:-:|
-| 早起 | 3 (天) | 3 | Yes |
-| 运动 | 2 (次) | 2 | Yes |
+| 早起 | 6 (天) | 6 | Yes |
+| 运动 | 5 (次) | 5 | Yes |
 | 周记 | 1 (篇) | 1 | NO |
 
 <!--END_SECTION:my_number-->
