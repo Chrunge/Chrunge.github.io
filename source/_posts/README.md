@@ -17,15 +17,12 @@ categories: [随笔]
 
 ## 足迹
 
-<!--START_SECTION:my_number-->
-
 | Name | Status | Fortnight | Today? |
 | :-: | :-: | :-: |:-:|
-| 早起 | 6 (天) | 6 | Yes |
-| 运动 | 5 (次) | 5 | Yes |
-| 周记 | 1 (篇) | 1 | NO |
+| 早起 | 7 (天) | 7 | No |
+| 运动 | 6 (次) | 6 | Yes |
+| 周记 | 1 (篇) | 1 | No |
 
-<!--END_SECTION:my_number-->
 
 ## GTD
 
@@ -39,74 +36,54 @@ categories: [随笔]
 - [ ] 记录学习的下一步目标和完成后的奖励
 - [ ] 了解Git，Missing course in CS和设计模式
 
-## 动漫
-
-<!--START_SECTION:my_bangumi-->
+## 动漫影音
 
 | Name | Start | Finish |
 | :-: | :-: | :-: |
 | [《跃动青春》]() | 2023-04-12 | Cont. |
 | [鬼灭之刃 锻刀篇]() | 2023-05-26 | Cont. | 
 | [为美好世界献上爆焰]() |  2023-05-24 | Cont. |
-
-<!--END_SECTION:my_bangumi-->
-
-## 影音
-
-<!--START_SECTION:my_movie-->
-
-| Name | Start | Update |
-| :-: | :-: | :-: |
 | [《漫长的季节》]() | 2023-05-04 | 2023-05-05 |
 | [《天空之城》]() | 2023-06-01 | 2023-06-01 |
 
-<!--END_SECTION:my_movie-->
-
 ## 游戏
 
-<!--START_SECTION:my_game-->
-
-| Name | Start | Update |
-| :-: | :-: | :-: |
-| [《This war of mine》]() | 2023-05-28 | Continue |
-
-<!--END_SECTION:my_game-->
+| Name | Start | Update | Finish |
+| :-: | :-: | :-: | :-: |
+| [《This war of mine》]() | 2023-05-28 | Cont. | No |
 
 ## 书籍
-<!-- START_SECTION:my_books-->
 
-| Name | Start | Update |
-| :-: | :-: | :-: |
-|[《近距离看美国系列》]()| 2023-02-01 | 2023-03-01 |
-|[《美国宪政历程》]()| 2023-03-20 | 2023-04-01 |
-| [《辩论》]() | 2023-04-04 | Cont. |
-| [《置身事内》]() | 2023-05-15 | 2023-05-20 |
-
-
-<!-- END_SECTION:my_books-->
+| Name | Start | Finish | type | Note |
+| :-: | :-: | :-: | :-: | :-: |
+| [The Missing Semester of Your CS Education](https://missing-semester-cn.github.io) | 2023-06-08 | Cont. | Course | 编程工具介绍，[中文视频](https://www.bilibili.com/video/BV1uc411N7eK/?spm_id_from=444.41.top_right_bar_window_custom_collection.content.click&vd_source=25ad8f9b69ba55e6cf5ed0e34cf3f67a) |
+|[《近距离看美国系列》]()| 2023-02-01 | 2023-03-01 | Book | 美国三权体制入门，较有趣 |
+|[《美国宪政历程》]()| 2023-03-20 | 2023-04-01 | Book | 美国司法判例 |
+| [《辩论》]() | 2023-04-04 | Cont. | Book | 美国宪法辩论过程 |
+| [《置身事内》]() | 2023-05-15 | 2023-05-20 | Book | 经济视角下的中国政府体制 |
+| [《叫魂》]()| 2023-06-07 | Cont. | Book | 清朝历史的一角 |
 
 ## 推送博客
-
-<!--START_SECTION:my_blog-->
 
 | Name | Start | Update |
 | :-: | :-: | :-: |
 | [关于品格的个人看法]() | Cont. | Cont. |
 
-<!--END_SECTION:my_blog-->
-
 ## 收藏文章
 
-| 文章名称 | 添加日期 | type | 备注 |
+| Name | Start | type | Note |
 | :-: | :-: | :-: |:-:|
-| [CS61A: The Ultimate Study Guide](https://www.notion.so/CS61A-The-Ultimate-Study-Guide-b3250fb11b4943a5a1db4f1bdabfea35) | 2023-05-30 | 学习方法 | |
-| [The Math Ceiling: Where’s your cognitive breaking point?](https://mathwithbaddrawings.com/2015/04/08/the-math-ceiling-wheres-your-cognitive-breaking-point/?utm_source=pocket_reader) | 2023-05-30 | 学习方法 | 认知角度 |
-| [如何写递归](https://zhuanlan.zhihu.com/p/108551642?utm_source=pocket_reader) | 2023-05-30 | 算法 | 递归类型 |
-| [回避性依恋人格](https://zhuanlan.zhihu.com/p/264425224?utm_source=pocket_reader)| 2023-05-30 | 人格 | 别看 |
+| [CS61A: The Ultimate Study Guide](https://www.notion.so/CS61A-The-Ultimate-Study-Guide-b3250fb11b4943a5a1db4f1bdabfea35) | 2020-11-30 | 学习方法 | 课程指导 |
+| [The Math Ceiling: Where’s your cognitive breaking point?](https://mathwithbaddrawings.com/2015/04/08/the-math-ceiling-wheres-your-cognitive-breaking-point/?utm_source=pocket_reader) | 2021-05-30 | 学习方法 | 认知角度 |
+| [如何写递归](https://zhuanlan.zhihu.com/p/108551642?utm_source=pocket_reader) | 2021-06-30 | 递归 | 递归类型 |
+| [回避性依恋人格](https://zhuanlan.zhihu.com/p/264425224?utm_source=pocket_reader)| 2023-04-20 | 人格 | 别打开 |
 
 ## 收藏博客
 
-| 博客名称 | 添加日期 | type | 备注 |
-| :-: | :-: | :-: |:-:|
-| [SHUHARI 的博客](https://shuhari.dev/blog/) | 2021.01.04 | 重写 500 Lines | 宝藏 |
+| Name | Date | type | Note |
+| :-: | :-: | :-: | :-: |
+| [SHUHARI's Blog](https://shuhari.dev/blog/) | 2021-01-04 | 重构 | 500Lines重写 |
+| [arthurchiao's Blog](http://arthurchiao.art/index.html) | 2023-06-07 | LinuxAI | Linux, 技术文章翻译 | 
+
+
 
