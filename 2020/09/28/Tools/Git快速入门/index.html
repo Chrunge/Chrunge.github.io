@@ -19,32 +19,32 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"chrunge.github.io","root":"/","images":"/resources/img/","scheme":"Gemini","darkmode":true,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/config.min.js"></script>
 
-    <meta name="description" content="编程语法问题模板：作为一名专门从事C++和计算机科学的专家，你对《A Tour of C++》和《C++ Prime》这两本经典书籍有深入的理解，并且对C++标准库有全面的掌握。对我这个C++的初学者而言，你是最理想的问询对象。为了方便理解，我会请你按照以下三个步骤简要回答我的问题（如果我需要对某些部分更深入的了解，则会在随后的问题中进一步询问）：  提供被问及的C++概念的解释，解释其被引入的原">
+    <meta name="description" content="Git快速入门指南">
 <meta property="og:type" content="article">
-<meta property="og:title" content="勇气">
-<meta property="og:url" content="https://chrunge.github.io/1970/01/01/%E9%9A%8F%E7%AC%94/GPT%E6%A8%A1%E6%9D%BF%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="Git">
+<meta property="og:url" content="https://chrunge.github.io/2020/09/28/Tools/Git%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="勇气">
-<meta property="og:description" content="编程语法问题模板：作为一名专门从事C++和计算机科学的专家，你对《A Tour of C++》和《C++ Prime》这两本经典书籍有深入的理解，并且对C++标准库有全面的掌握。对我这个C++的初学者而言，你是最理想的问询对象。为了方便理解，我会请你按照以下三个步骤简要回答我的问题（如果我需要对某些部分更深入的了解，则会在随后的问题中进一步询问）：  提供被问及的C++概念的解释，解释其被引入的原">
+<meta property="og:description" content="Git快速入门指南">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="1970-01-01T00:00:00.000Z">
-<meta property="article:modified_time" content="2023-06-09T16:15:39.931Z">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/Git/ThreeState.jpg?raw=true">
+<meta property="og:image" content="https://github.com/Chrunge/Pictures/blob/master/Git/DiffandShow.jpg?raw=true">
+<meta property="og:image" content="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/git_add.png">
+<meta property="article:published_time" content="2020-09-28T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-06-10T04:18:27.203Z">
 <meta property="article:author" content="Chrunge">
-<meta property="article:tag" content="Calibre">
-<meta property="article:tag" content="Love and Courage">
-<meta property="article:tag" content="Mind">
-<meta property="article:tag" content="Curiosity">
-<meta property="article:tag" content="Computer Science">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Chrunge/Pictures/blob/master/Git/ThreeState.jpg?raw=true">
 
 
-<link rel="canonical" href="https://chrunge.github.io/1970/01/01/%E9%9A%8F%E7%AC%94/GPT%E6%A8%A1%E6%9D%BF%E9%97%AE%E9%A2%98/">
+<link rel="canonical" href="https://chrunge.github.io/2020/09/28/Tools/Git%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://chrunge.github.io/1970/01/01/%E9%9A%8F%E7%AC%94/GPT%E6%A8%A1%E6%9D%BF%E9%97%AE%E9%A2%98/","path":"1970/01/01/随笔/GPT模板问题/","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://chrunge.github.io/2020/09/28/Tools/Git%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/","path":"2020/09/28/Tools/Git快速入门/","title":"Git"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title> | 勇气</title>
+<title>Git | 勇气</title>
   
 
 
@@ -113,7 +113,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           目 录
@@ -126,6 +126,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git%E6%96%87%E4%BB%B6%E5%AF%B9%E8%B1%A1"><span class="nav-text">Git文件对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E4%B8%AA%E7%8A%B6%E6%80%81%E5%8C%BA"><span class="nav-text">三个状态区:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C"><span class="nav-text">分支操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%80%BC%E5%BE%97%E4%B8%80%E6%8F%90%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-text">其他值得一提的内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-text">补充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E5%BC%95%E7%94%A8"><span class="nav-text">参考引用</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -169,7 +170,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/1970/01/01/%E9%9A%8F%E7%AC%94/GPT%E6%A8%A1%E6%9D%BF%E9%97%AE%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="https://chrunge.github.io/2020/09/28/Tools/Git%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/resources/img/avatar.webp">
@@ -182,12 +183,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 勇气">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="Git | 勇气">
+      <meta itemprop="description" content="Git快速入门指南">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          Git
         </h1>
 
         <div class="post-meta-container">
@@ -198,26 +199,92 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：1970-01-01 00:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T00:00:00Z">1970-01-01</time>
+      <time title="创建时间：2020-09-28 00:00:00" itemprop="dateCreated datePublished" datetime="2020-09-28T00:00:00Z">2020-09-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a>
+        </span>
     </span>
 
   
 </div>
 
+            <div class="post-description">Git快速入门指南</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody"><h4 id="编程语法问题模板："><a href="#编程语法问题模板：" class="headerlink" title="编程语法问题模板："></a>编程语法问题模板：</h4><p>作为一名专门从事C++和计算机科学的专家，你对《A Tour of C++》和《C++ Prime》这两本经典书籍有深入的理解，并且对C++标准库有全面的掌握。对我这个C++的初学者而言，你是最理想的问询对象。为了方便理解，我会请你按照以下三个步骤简要回答我的问题（如果我需要对某些部分更深入的了解，则会在随后的问题中进一步询问）：</p>
-<ol>
-<li>提供被问及的C++概念的解释，解释其被引入的原因，以及其在实际中的主要应用场景。</li>
-<li>借助STL标准库源码的知识，提供示例代码以及代码注释进行演示。</li>
-<li>描述该概念与其他相关C++和计算机科学概念之间的联系，并对这些相关概念进行简要的解释。</li>
+    <div class="post-body" itemprop="articleBody"><h2 id="Git文件对象"><a href="#Git文件对象" class="headerlink" title="Git文件对象"></a>Git文件对象</h2><ol>
+<li>Git与某些版本控制系统不同, 它不保存版本之间的差异, 也将所有内容整合为一个大文件后再整体保存, 而是分别保存每个文件. 同时, 每一次进行快照时,对于没有改动的文件,它不会保存两份, 而是通过指针指向未改动的文件.</li>
+<li>Git保存的对象有三种类型: <ol>
+<li>普通文件保存为<code>blob = array&lt;byte&gt;</code></li>
+<li>目录为<code>Tree = Map&lt;String, tree | blob&gt;</code></li>
+<li>快照为 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Commit = <span class="keyword">struct</span> &#123; </span><br><span class="line">parent: <span class="built_in">array</span>&lt;commit&gt; </span><br><span class="line">author: <span class="built_in">string</span></span><br><span class="line">message: <span class="built_in">string</span></span><br><span class="line">snapshot: tree</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h4 id="英语单词记忆模板"><a href="#英语单词记忆模板" class="headerlink" title="英语单词记忆模板"></a>英语单词记忆模板</h4><p>身为一位卓越的英语教师，你对各种英语教学方法有深厚的理解。而我，作为一名英语初学者，现在正面临需要记忆英语单词的挑战。我会提供一些英语单词以及它们的中文释义，希望你能够巧妙地将这些单词续写一篇关于Legend of League’s shadow-and-fortune-story的英文文章中(我提供的英语单词使用黑体表示，文章的字数请保持在1000词以内）。此外，也请你在文章下方创建一个Markdown格式的表格，表格的第一列为我提供的英文单词，第二列为其美音标(去除英音标），第三列为单词的中文释义。下面是我要记忆的英语单词：<br>1 mindset &#x2F;‘maindset&#x2F; n. 心态；倾向；习惯；精神状态<br>2 synopsis 英:&#x2F;sɪ’nɒpsɪs&#x2F; 美:&#x2F;sɪ’nɑpsɪs&#x2F; n. 概要，大纲<br>3 fallout 英:&#x2F;‘fɔːlaʊt&#x2F; 美:&#x2F;‘fɔlaʊt&#x2F; n. 原子尘；放射性尘埃；原子尘微粒回降；附带结果 </p>
-<p>注释：英语单词是由欧陆词典导出的简要html格式.</p>
+</li>
+<li>快照在仓库中的保存形式为Map(HashOfCommit, Commit), 然而Hash值不易读, 因此可以通过分支名指向Hash值. 同时,还存在一个HEAD指针, 它指向分支名.</li>
+</ol>
+<span id="more"></span>
+
+<h2 id="三个状态区"><a href="#三个状态区" class="headerlink" title="三个状态区:"></a>三个状态区:</h2><p>工作区(working directory), 暂存区(staged)和仓库(commit)</p>
+<h4 id="状态区之间的文件流动"><a href="#状态区之间的文件流动" class="headerlink" title="状态区之间的文件流动:"></a>状态区之间的文件流动:</h4><p><img data-src="https://github.com/Chrunge/Pictures/blob/master/Git/ThreeState.jpg?raw=true" alt="三个区域的文件覆盖"></p>
+<h4 id="状态区之间的文件比较与查看"><a href="#状态区之间的文件比较与查看" class="headerlink" title="状态区之间的文件比较与查看: "></a>状态区之间的文件比较与查看: <img data-src="https://github.com/Chrunge/Pictures/blob/master/Git/DiffandShow.jpg?raw=true" alt="GitDiffandShow"></h4><h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><p>跳转该网址: <a target="_blank" rel="noopener" href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1#rebase">Git分支操作</a></p>
+<h2 id="其他值得一提的内容"><a href="#其他值得一提的内容" class="headerlink" title="其他值得一提的内容"></a>其他值得一提的内容</h2><ol>
+<li>查看当前状态: <code>git status</code></li>
+<li>查看历史提交: <code>git log</code></li>
+<li>查看历史命令: <code>git reflog</code>, 可补救<code>git reset --hard commit_id</code></li>
+<li>忽略文件: <code>.gitignore</code></li>
+<li>删除文件:<ol>
+<li>删除文件:<code>rm file --&gt; git rm file</code>(提交到暂存区) –&gt;<code>git commit -m &lt;annotation&gt;</code></li>
+<li>恢复不小心删除文件:<code>rm file --&gt; git checkout -- file</code> (暂存区替换工作区)</li>
+</ol>
+</li>
+<li>暂时离开: <code>git stash</code></li>
+<li>标签管理: <code>git tag</code></li>
+<li>git子库的管理</li>
+<li>重构git历史, 比如git历史中包含了密钥,或者特别大的文件</li>
+</ol>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h4 id="文件添加补充-git-add"><a href="#文件添加补充-git-add" class="headerlink" title="文件添加补充: git add"></a>文件添加补充: git add</h4><ul>
+<li><img data-src="https://raw.githubusercontent.com/Chrunge/Chrunge.github.io/dev/source/_posts/Tools/Attachments/git_add.png" alt="git_add"></li>
+</ul>
+<h4 id="立即离开现场-git-stash"><a href="#立即离开现场-git-stash" class="headerlink" title="立即离开现场: git stash"></a>立即离开现场: git stash</h4><ol>
+<li>应用场景: 在一个任务期间，须立即离开去完成一个新任务,如紧急Bug修复</li>
+<li><code>git stash</code>:保留一个现场-&gt;然后去完成新任务</li>
+<li><code>git stash list</code>:列出所有现场</li>
+<li><code>git stash apply &lt;stash@&#123;id&#125;&gt;</code> :恢复现场，现场列表中依旧存在该现场，即没有删除栈顶</li>
+<li><code>git stash dorp &lt;stash@&#123;id&#125;&gt;</code>：删除现场</li>
+<li><code>git stash pop</code>：弹出现场，已删除栈顶</li>
+<li><code>git cherry-pick &lt;branch id&gt;</code>：复制一个特定的提交到当前分支</li>
+</ol>
+<h4 id="标签管理-git-tag"><a href="#标签管理-git-tag" class="headerlink" title="标签管理: git tag"></a>标签管理: git tag</h4><ol>
+<li>当达到一个里程碑时，给该版本打一个标签(tag)，相当于总有个指针指向那个版本;<br>git的标签也相当于版本库的快照(和commit类似)，且标签和commit_id对应.(标签有两种: lightweight和annotation)</li>
+<li>打标签:<code>git tag &lt;tag-name&gt; [&lt;commit_id&gt;]</code></li>
+<li>查看标签:<code>git tag</code>; 查看标签信息:<code>git show &lt;tag-name&gt;</code></li>
+<li>创建带有说明的标签，用-a指定标签名，-m指定说明文字：<code>git tag -a v0.1 -m &quot;version 0.1 released&quot; 1094adb</code></li>
+<li>删除标签:<code>git tag -d &lt;tag-name&gt;</code></li>
+<li>推送标签至远程:<code>git push origin &lt;tag-name&gt;</code>一次性推送全部标签:<code>git push origin --tags</code></li>
+<li>删除远程标签:先从本地删除(<code>git tag -d &lt;tag-nanme&gt;</code>)，再从远程删除:<code>git push origin :refs/tags/&lt;tag-name&gt;</code></li>
+<li><code>git describe ref(参考点)</code>返回离ref最近的标签</li>
+</ol>
+<h4 id="添加已有ssh-key私钥"><a href="#添加已有ssh-key私钥" class="headerlink" title="添加已有ssh key私钥"></a>添加已有ssh key私钥</h4><ul>
+<li>依次执行以下命令：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exec</span> ssh-agent bash</span><br><span class="line"><span class="built_in">eval</span> ssh-agent -s</span><br><span class="line">ssh-add <span class="string">&quot;C:\Users\Administrator\.ssh\id_rsa&quot;</span>&lt;绝对路径&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="参考引用"><a href="#参考引用" class="headerlink" title="参考引用"></a><strong>参考引用</strong></h2><ol>
+<li><a target="_blank" rel="noopener" href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1#rebase">Git动画演示</a></li>
+<li><a target="_blank" rel="noopener" href="https://learngitbranching.js.org/?locale=zh_CN">git动画通关网站</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Chrunge/Awesome-cheatsheets/blob/master/tools/git.txt">Git Cheatsheet</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Chrunge/CheatSheet/blob/main/docs/git.md">Git Cheatsheet2</a></li>
+<li><a target="_blank" rel="noopener" href="https://x3ro.de/integrating-a-submodule-into-the-parent-repository/">将子模块重新合并到父模块中</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000021711920">Git Fork指南</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/kevingrace/p/5690241.html">Gitignore配置运维总结</a></li>
+</ol>
 
     </div>
 
@@ -235,9 +302,9 @@
 
 
 <div class="license">
-  <div class="license-title"></div>
+  <div class="license-title">Git</div>
   <div class="license-link">
-    <a href="https://chrunge.github.io/1970/01/01/%E9%9A%8F%E7%AC%94/GPT%E6%A8%A1%E6%9D%BF%E9%97%AE%E9%A2%98/">https://chrunge.github.io/1970/01/01/%E9%9A%8F%E7%AC%94/GPT%E6%A8%A1%E6%9D%BF%E9%97%AE%E9%A2%98/</a>
+    <a href="https://chrunge.github.io/2020/09/28/Tools/Git%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">https://chrunge.github.io/2020/09/28/Tools/Git%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</a>
   </div>
   <div class="license-meta">
     <div class="license-meta-item">
@@ -249,13 +316,13 @@
       <div class="license-meta-item">
         <div class="license-meta-title">发布于</div>
         <div class="license-meta-text">
-          1970-01-01
+          2020-09-28
         </div>
       </div>
       <div class="license-meta-item">
         <div class="license-meta-title">更新于</div>
         <div class="license-meta-text">
-          2023-06-09
+          2023-06-10
         </div>
       </div>
     <div class="license-meta-item">
@@ -282,7 +349,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://chrunge.github.io/1970/01/01/%E9%9A%8F%E7%AC%94/GPT%E6%A8%A1%E6%9D%BF%E9%97%AE%E9%A2%98/" title="">https://chrunge.github.io/1970/01/01/随笔/GPT模板问题/</a>
+      <a href="https://chrunge.github.io/2020/09/28/Tools/Git%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="Git">https://chrunge.github.io/2020/09/28/Tools/Git快速入门/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -290,18 +357,21 @@
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/1970/01/01/README/" rel="prev" title="生活的足迹">
-                  <i class="fa fa-chevron-left"></i> 生活的足迹
+                <a href="/2020/10/01/%E9%9A%8F%E7%AC%94/%E5%AD%A6%E4%B9%A0%E4%BD%93%E4%BC%9A/" rel="prev" title="学习心得">
+                  <i class="fa fa-chevron-left"></i> 学习心得
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/1970/01/01/%E9%9A%8F%E7%AC%94/%E5%88%B6%E5%AE%AA%E4%BC%9A%E8%AE%AE%E5%87%BA%E5%B8%AD%E5%90%8D%E5%8D%95/" rel="next" title="制宪会议出席名单">
-                  制宪会议出席名单 <i class="fa fa-chevron-right"></i>
+                <a href="/2020/09/28/Computer%20Basic%20Course/61A/CS61a%E7%AC%94%E8%AE%B0/" rel="next" title="CS61A:Stucture and Interpretion of Computer Science">
+                  CS61A:Stucture and Interpretion of Computer Science <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -369,7 +439,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.staticfile.org/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.staticfile.org/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="https://cdn.staticfile.org/hexo-theme-next/8.16.0/third-party/math/mathjax.min.js"></script>
 
 

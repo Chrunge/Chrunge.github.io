@@ -6,7 +6,7 @@
   <link href="https://chrunge.github.io/atom.xml" rel="self"/>
   
   <link href="https://chrunge.github.io/"/>
-  <updated>2023-05-21T06:05:10.858Z</updated>
+  <updated>2023-06-10T04:22:54.604Z</updated>
   <id>https://chrunge.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>生活的足迹</title>
+    <link href="https://chrunge.github.io/2100/01/01/README/"/>
+    <id>https://chrunge.github.io/2100/01/01/README/</id>
+    <published>2100-01-01T00:00:00.000Z</published>
+    <updated>2023-06-10T04:22:54.604Z</updated>
+    
+    
+    <summary type="html">每天的数据记录</summary>
+    
+    
+    
+    <category term="随笔" scheme="https://chrunge.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="汇总表" scheme="https://chrunge.github.io/tags/%E6%B1%87%E6%80%BB%E8%A1%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>CS Tools conclusion</title>
@@ -33,11 +52,11 @@
     
     <category term="C++" scheme="https://chrunge.github.io/tags/C/"/>
     
-    <category term="GDB" scheme="https://chrunge.github.io/tags/GDB/"/>
+    <category term="C" scheme="https://chrunge.github.io/tags/C/"/>
     
     <category term="Git" scheme="https://chrunge.github.io/tags/Git/"/>
     
-    <category term="C" scheme="https://chrunge.github.io/tags/C/"/>
+    <category term="GDB" scheme="https://chrunge.github.io/tags/GDB/"/>
     
   </entry>
   
@@ -62,25 +81,6 @@
     
     
     <category term="Blog" scheme="https://chrunge.github.io/tags/Blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Algorithm</title>
-    <link href="https://chrunge.github.io/2022/03/30/Algorithm/Algorithm/"/>
-    <id>https://chrunge.github.io/2022/03/30/Algorithm/Algorithm/</id>
-    <published>2022-03-30T00:00:00.000Z</published>
-    <updated>2023-05-21T06:05:54.427Z</updated>
-    
-    
-    <summary type="html">记录Leetcode算法题中的一些常见思路和模板</summary>
-    
-    
-    
-    <category term="Algorithm" scheme="https://chrunge.github.io/categories/Algorithm/"/>
-    
-    
-    <category term="Algorithm" scheme="https://chrunge.github.io/tags/Algorithm/"/>
     
   </entry>
   
