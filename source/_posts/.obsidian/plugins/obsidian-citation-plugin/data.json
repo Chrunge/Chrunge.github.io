@@ -1,9 +1,0 @@
-{
-  "citationExportFormat": "biblatex",
-  "literatureNoteTitleTemplate": "{{title}}",
-  "literatureNoteFolder": "Indirect reciprocity",
-  "literatureNoteContentTemplate": "---\nannotation-target: file:///{{#each entry.files}}{{#if @last}}{{this}}{{/if}}{{/each}}\n---\n\n# {{title}}\n---\n## Metadata\n* DOI: [{{DOI}}](https://doi.org/{{DOI}})\n* authors: [[{{authorString}}]]\n* containerTitle: [[{{containerTitle}}]]\n* date: [[{{year}}]]\n* Tags: {{#each entry.data.fields.keywords}}{{#if @last}}#{{this}}{{else}}#{{this}}, {{/if}}{{/each}}\n* {{keywords}}\n\n---\n## Abstract\n```Zotero-Abstract\n {{abstract}}\n```\n<p align=\"right\">Zotero Annotations</p>\n\n{{note}}\n\n---\n## OB Notes\n* 语句积累【学者名言】【精彩句子】【权威数据】\n\n* 文章属性\n- [ ] 热点  \n- [ ] 理论\n\n* 名词解释\n\n* 行文框架【观点-理论-案例】\n\n<p align=\"right\">OB Pdf Annotations</p>\n",
-  "markdownCitationTemplate": "[@{{citekey}}]",
-  "alternativeMarkdownCitationTemplate": "@{{citekey}}",
-  "citationExportPath": "Indirect reciprocity\\演化理论文献.bib"
-}

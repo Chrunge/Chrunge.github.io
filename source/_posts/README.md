@@ -17,9 +17,9 @@ categories: [随笔]
 
 ## 足迹
 
-| Name | Status | Fortnight | Today? |
+| Name | Status | Month | Today? |
 | :-: | :-: | :-: |:-:|
-| 早起 | 7 (天) | 7 | No |
+| 早起 | 8 (天) | 8 | Yes |
 | 运动 | 6 (次) | 6 | Yes |
 | 周记 | 1 (篇) | 1 | No |
 
