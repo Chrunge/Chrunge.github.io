@@ -2,20 +2,18 @@
 Thumbs.db
 db.json
 *.log
+
 node_modules/
 public/
 .deploy*/
 _multiconfig.yml
 
-
-source/_posts/.trash/
-
 *.mkv
 *.mp4
 *.avi
 *.mov
-source/_posts/.obsidian/
 
+source/_posts/.obsidian/
 source/_posts/zob-config/
 source/_posts/zob-source/
 source/_posts/zob-config/

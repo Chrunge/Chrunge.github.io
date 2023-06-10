@@ -4,7 +4,7 @@ top: true
 cover: false
 toc: true
 mathjax: true
-date: <% tp.date.now() %>
+date: 2100-01-01 00:00:00
 password:
 description: 每天的数据记录
 tags: [汇总表]

@@ -4,7 +4,7 @@ top: false
 cover: false
 toc: true
 mathjax: true
-data: 2022-06-17
+data: 2022-06-17 00:00:00
 password:
 description:
 tags:
