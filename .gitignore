@@ -14,7 +14,6 @@ _multiconfig.yml
 *.mov
 
 source/_posts/.obsidian/
-source/_posts/zob-config/
 source/_posts/zob-source/
 source/_posts/zob-config/
 themes/
