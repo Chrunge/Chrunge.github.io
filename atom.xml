@@ -36,28 +36,6 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="https://chrunge.github.io/2023/06/11/zob-source/TTC%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://chrunge.github.io/2023/06/11/zob-source/TTC%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0/</id>
-    <published>2023-06-11T02:55:58.891Z</published>
-    <updated>2023-06-11T03:34:58.522Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;生成两个偏好矩阵SU和SC、学校的容量矩阵SCN(SU为Student的偏好矩阵, SC为School的偏好矩阵； 每列表示一个学生或学校的偏好排序；学生编号1-n,学校编号(-1) - (-n)</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>GPT模板</title>
     <link href="https://chrunge.github.io/2023/06/09/%E9%9A%8F%E7%AC%94/GPT%E6%A8%A1%E6%9D%BF/"/>
     <id>https://chrunge.github.io/2023/06/09/%E9%9A%8F%E7%AC%94/GPT%E6%A8%A1%E6%9D%BF/</id>
@@ -72,6 +50,27 @@
     <summary type="html">&lt;h4 id=&quot;编程语法问题模板：&quot;&gt;&lt;a href=&quot;#编程语法问题模板：&quot; class=&quot;headerlink&quot; title=&quot;编程语法问题模板：&quot;&gt;&lt;/a&gt;编程语法问题模板：&lt;/h4&gt;&lt;p&gt;作为一名专门从事C++和计算机科学的专家，你对《A Tour of</summary>
         
       
+    
+    
+    
+    <category term="随笔" scheme="https://chrunge.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="心得" scheme="https://chrunge.github.io/tags/%E5%BF%83%E5%BE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于信息来源和信息处理</title>
+    <link href="https://chrunge.github.io/2023/05/30/%E9%9A%8F%E7%AC%94/%E5%85%B3%E4%BA%8E%E4%BF%A1%E6%81%AF%E6%9D%A5%E6%BA%90%E5%92%8C%E4%BF%A1%E6%81%AF%E5%A4%84%E7%90%86/"/>
+    <id>https://chrunge.github.io/2023/05/30/%E9%9A%8F%E7%AC%94/%E5%85%B3%E4%BA%8E%E4%BF%A1%E6%81%AF%E6%9D%A5%E6%BA%90%E5%92%8C%E4%BF%A1%E6%81%AF%E5%A4%84%E7%90%86/</id>
+    <published>2023-05-30T02:36:39.875Z</published>
+    <updated>2023-07-09T02:37:35.735Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img data-src=&quot;https://raw.githubusercontent.com/Chrunge/Pictures/master/Cover/2023-05-30.webp&quot;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;目前信息来源：微信以及公众号，QQ群，清水河畔，Bilibili，Telegram　Channel，RSS。其他可能来源：Economist， Reuter，Blog，discord，Youtube，Podcast</summary>
     
     
     
