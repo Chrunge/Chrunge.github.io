@@ -106,9 +106,9 @@ categories: [随笔]
 | [Waterloo Style: 从数据流的角度看待程序](https://theprogrammersparadox.blogspot.com/2023/04/waterloo-style.html) | 2023-06-30 | 数据流动 | 程序视角 |
 |  [What Is a Transformer Model?](https://blogs.nvidia.com/blog/2022/03/25/what-is-a-transformer-model/) | 2023-06-30 | AI | Transformer |
 | [why-is-quicksort-so-quick](http://mindhacks.cn/2008/06/13/why-is-quicksort-so-quick/) | 2023-08-20 | Algorithm | 最坏情况最优化，保证平均划分概率；</br>比较算法为二分切割；</br>基数排序切割为n种情况(n为已经排序的元素个数)</br>
-| [# The Math Ceiling: Where’s your cognitive breaking point?](https://mathwithbaddrawings.com/2015/04/08/the-math-ceiling-wheres-your-cognitive-breaking-point/)| 2021-08-12 | Learning skill | 数学基础 |
-| [# How to teach yourself hard things](https://jvns.ca/blog/2018/09/01/learning-skills-you-can-practice/) | 2023-08-24 | Learning skill | 
-
+| [The Math Ceiling: Where’s your cognitive breaking point?](https://mathwithbaddrawings.com/2015/04/08/the-math-ceiling-wheres-your-cognitive-breaking-point/)| 2021-08-12 | Learning skill | 看看别人是如何学数学的 |
+| [How to teach yourself hard things](https://jvns.ca/blog/2018/09/01/learning-skills-you-can-practice/) | 2023-08-24 | Learning skill | 有些东西学起来是真难，令人退缩且灰心丧气，于是求教下他人的经验 | 
+| [How to ask good question](https://jvns.ca/blog/good-questions/) | 2023-09-03 | Learning skill | How to teach yourself hard things中关键的一环 |
 ## 收藏博客
 
 | Name | Date | type | Note |
