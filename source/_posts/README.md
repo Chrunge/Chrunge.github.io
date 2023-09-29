@@ -59,6 +59,9 @@ categories: [随笔]
 | [天空之城](https://movie.douban.com/subject/1291583/) | 2023-06-01 | 2023-06-01 | 宫崎骏动漫的世界观令我称奇，它们满足了我对童话世界的想象，唤醒我旧的回忆，给予我新的思考 |
 | [明日酱的水手服](https://www.bilibili.com/bangumi/play/ss40530) | 2023-07-06 | 2023-07-07 | 又是一部充满爱的番剧 |
 | [吹响吧！上低音号~合奏比赛~](https://movie.douban.com/subject/35923540/) | 2023-08-05 | 2023-08-05 | 京阿尼正如其在「紫罗兰永恒花园」剧场版中描绘的邮递员一般，将幸福、爱与勇气传递给人们 |
+| [妖精森林的小不点]() | 2023-09-20 | cont. | 宁静的治愈生活 |
+
+---
 
 | Name | Start | Finish | Note |
 | :-: | :-: | :-: | :-: |
@@ -105,11 +108,11 @@ categories: [随笔]
 | [如何写递归](https://zhuanlan.zhihu.com/p/108551642?utm_source=pocket_reader) | 2021-06-30 | 递归 | 递归类型 |
 | [回避性依恋人格](https://zhuanlan.zhihu.com/p/264425224?utm_source=pocket_reader)| 2023-04-20 | 人格 | 别打开 |
 | [Waterloo Style: 从数据流的角度看待程序](https://theprogrammersparadox.blogspot.com/2023/04/waterloo-style.html) | 2023-06-30 | 数据流动 | 程序视角 |
-|  [What Is a Transformer Model?](https://blogs.nvidia.com/blog/2022/03/25/what-is-a-transformer-model/) | 2023-06-30 | AI | Transformer |
+| [What Is a Transformer Model?](https://blogs.nvidia.com/blog/2022/03/25/what-is-a-transformer-model/) | 2023-06-30 | AI | Transformer |
 | [why-is-quicksort-so-quick](http://mindhacks.cn/2008/06/13/why-is-quicksort-so-quick/) | 2023-08-20 | Algorithm | 最坏情况最优化，保证平均划分概率；</br>比较算法为二分切割；</br>基数排序切割为n种情况(n为已经排序的元素个数)</br>
 | [The Math Ceiling: Where’s your cognitive breaking point?](https://mathwithbaddrawings.com/2015/04/08/the-math-ceiling-wheres-your-cognitive-breaking-point/)| 2021-08-12 | Learning skill | 看看别人是如何学数学的 |
 | [How to teach yourself hard things](https://jvns.ca/blog/2018/09/01/learning-skills-you-can-practice/) | 2023-08-24 | Learning skill | 有些东西学起来是真难，令人退缩且灰心丧气，于是求教下他人的经验 | 
-| [How to ask good question](https://jvns.ca/blog/good-questions/) | 2023-09-03 | Learning skill | How to teach yourself hard things中关键的一环 |
+| [How to ask good question](https://jvns.ca/blog/good-questions/) | 2023-09-03 | Learning skill | The key of 《How to teach yourself hard things》 |
 ## 收藏博客
 
 | Name | Date | type | Note |
@@ -127,19 +130,21 @@ categories: [随笔]
 ## 关于个人
 
 - 首次记录于2023-08-08凌晨4点
+- 修改于2023-09-22
 
 |Category | Name | 
 |:-: | :-: |
 | 榜样 | 华盛顿 |
 | 作家 | 毛姆 |
-| 书籍 | 刀锋、百年孤独 |
-| 番剧 | 轻音少女，吹响吧!上低音号~，京阿尼的其他作品，哪咤闹海，大闹天宫，物语系列，比宇宙更远的地方，海贼王 |
-| 水果 | 葡萄、西瓜 |
-| 运动 | 爬山，卧推，游泳，羽毛球，骑行 |
-| 感兴趣的领域 | 创造性的复杂工程，如计算机科学；文学、历史、政治 |
-| 害怕的东西 | 未知的东西 |
-| 感兴趣的东西 | 未知的领域 |
-| 道德与智慧追求 | 爱与勇气，善良，知识，真诚，同情，公正，感恩，坚毅，勤劳 |
-| 待学的东西 | 一门乐器，绘画，英语日语，写一本文学，建造装修一个家的能力, 深度交流能力，领导力，帮助他人，了解世界发展方向、走向世界并让它变得更美好 |
+| 书籍 | 刀锋、百年孤独等; 历史、文学、政治 |
+| 番剧 | 轻音少女，吹响吧!上低音号~，日常，哪咤闹海，大闹天宫，物语系列，比宇宙更远的地方，海贼王，京阿尼的其他作品 |
+| 音乐 | 吹奏乐，乐队演奏，钢琴曲 |
+| 水果 | 葡萄、西瓜和其他 |
+| 运动 | 爬山(山水)，游泳(水天)，骑行(风和景) |
+| 向往的生活 | 探索和体验自然、与整个人类社会；了解新思想并实践，学习科学知识并实现 |
+| 让人害怕的东西 | overwhelmed 未知 |
+| 令人兴奋的东西 | 未知的领域 |
+| 个人追求 | 爱与勇气，善良，智慧，同理心(排序分先后); 真诚，感恩，公正，坚毅，勤劳 |
+| 待学的东西 | 学会真诚，做一手好吃的，一门乐器，绘画，英语日语，写一本书，建造和装修一个家, 深度交流的能力，领导力，帮助他人，了解世界、走入世界并让它变得更美好 |
 
 
