@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+  <!-- 背景天空渐变 -->
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a7d3f3" />
+      <stop offset="100%" stop-color="#e2f0fb" />
+    </linearGradient>
+    
+    <!-- 风的路径动画 -->
+    <path id="windPath1" d="M-100,180 C100,150 200,220 300,170 S500,140 700,190 S900,160 1100,180 S1300,230 1500,180" />
+    <path id="windPath2" d="M-100,280 C100,320 200,250 300,300 S500,350 700,290 S900,310 1100,270 S1300,290 1500,310" />
+    <path id="windPath3" d="M-100,400 C100,380 200,430 300,410 S500,370 700,400 S900,440 1100,390 S1300,370 1500,410" />
+  </defs>
+  
+  <!-- 天空背景 -->
+  <rect width="100%" height="100%" fill="url(#sky)" />
+  
+  <!-- 远处的山丘 -->
+  <path d="M0,450 Q200,380 400,430 Q600,380 800,420 Q1000,370 1200,430 L1200,600 L0,600 Z" fill="#b0d0a0" opacity="0.5" />
+  
+  <!-- 远处的树木剪影 -->
+  <g transform="translate(150, 400) scale(0.8)">
+    <path d="M0,100 Q30,30 60,100 L50,100 Q75,40 100,100 L90,100 Q110,50 130,100 L120,100 Q140,60 160,100 L140,100 L140,200 L20,200 L20,100 Z" fill="#5c8c54" opacity="0.7" />
+  </g>
+  
+  <g transform="translate(800, 380) scale(0.7)">
+    <path d="M0,100 Q30,30 60,100 L50,100 Q75,40 100,100 L90,100 Q110,50 130,100 L120,100 Q140,60 160,100 L140,100 L140,200 L20,200 L20,100 Z" fill="#5c8c54" opacity="0.6" />
+  </g>
+  
+  <!-- 草地 -->
+  <path d="M0,500 Q300,470 600,510 Q900,480 1200,500 L1200,600 L0,600 Z" fill="#8ab069" />
+  
+  <!-- 前景草丛细节 -->
+  <g id="grassDetail">
+    <!-- 多组草叶 -->
+    <g transform="translate(100, 500)">
+      <path d="M0,0 Q5,-20 10,0 M-5,0 Q0,-30 5,0 M5,0 Q15,-25 20,0" stroke="#6a994e" stroke-width="1.5" fill="none" />
+    </g>
+    
+    <g transform="translate(200, 510)">
+      <path d="M0,0 Q5,-15 10,0 M-5,0 Q0,-25 5,0 M5,0 Q15,-20 25,0" stroke="#6a994e" stroke-width="1.5" fill="none" />
+    </g>
+    
+    <g transform="translate(300, 505)">
+      <path d="M0,0 Q10,-30 20,0 M-10,0 Q5,-40 15,0 M15,0 Q25,-25 30,0" stroke="#6a994e" stroke-width="1.5" fill="none" />
+    </g>
+    
+    <g transform="translate(450, 500)">
+      <path d="M0,0 Q5,-20 10,0 M-5,0 Q0,-30 5,0 M5,0 Q15,-25 20,0" stroke="#6a994e" stroke-width="1.5" fill="none" />
+    </g>
+    
+    <g transform="translate(600, 510)">
+      <path d="M0,0 Q10,-25 20,0 M-5,0 Q5,-35 15,0 M10,0 Q20,-20 30,0" stroke="#6a994e" stroke-width="1.5" fill="none" />
+    </g>
+    
+    <g transform="translate(750, 505)">
+      <path d="M0,0 Q10,-30 20,0 M-10,0 Q5,-40 15,0 M15,0 Q25,-25 30,0" stroke="#6a994e" stroke-width="1.5" fill="none" />
+    </g>
+    
+    <g transform="translate(900, 500)">
+      <path d="M0,0 Q5,-20 10,0 M-5,0 Q0,-30 5,0 M5,0 Q15,-25 20,0" stroke="#6a994e" stroke-width="1.5" fill="none" />
+    </g>
+    
+    <g transform="translate(1050, 510)">
+      <path d="M0,0 Q10,-25 20,0 M-5,0 Q5,-35 15,0 M10,0 Q20,-20 30,0" stroke="#6a994e" stroke-width="1.5" fill="none" />
+    </g>
+  </g>
+  
+  <!-- 云朵 -->
+  <g class="cloud" transform="translate(100, 100) scale(0.8)">
+    <path d="M25,60 C-10,60 -10,20 25,20 C25,-10 75,-10 75,20 C110,-10 150,20 140,60 Z" fill="white" opacity="0.9" />
+  </g>
+  
+  <g class="cloud" transform="translate(400, 150) scale(0.6)">
+    <path d="M25,60 C-10,60 -10,20 25,20 C25,-10 75,-10 75,20 C110,-10 150,20 140,60 Z" fill="white" opacity="0.85" />
+  </g>
+  
+  <g class="cloud" transform="translate(700, 80) scale(0.9)">
+    <path d="M25,60 C-10,60 -10,20 25,20 C25,-10 75,-10 75,20 C110,-10 150,20 140,60 Z" fill="white" opacity="0.9" />
+  </g>
+  
+  <g class="cloud" transform="translate(950, 130) scale(0.7)">
+    <path d="M25,60 C-10,60 -10,20 25,20 C25,-10 75,-10 75,20 C110,-10 150,20 140,60 Z" fill="white" opacity="0.8" />
+  </g>
+  
+  <!-- 风的可视化 -->
+  <g class="wind">
+    <!-- 风线1 -->
+    <path d="M-100,180 C100,150 200,220 300,170 S500,140 700,190 S900,160 1100,180 S1300,230 1500,180" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="3" stroke-dasharray="5,10" />
+    
+    <!-- 风线2 -->
+    <path d="M-100,280 C100,320 200,250 300,300 S500,350 700,290 S900,310 1100,270 S1300,290 1500,310" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="2,15" />
+    
+    <!-- 风线3 -->
+    <path d="M-100,400 C100,380 200,430 300,410 S500,370 700,400 S900,440 1100,390 S1300,370 1500,410" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-dasharray="3,10" />
+  </g>
+  
+  <!-- 风中的花瓣或叶子 -->
+  <g class="petals">
+    <circle cx="150" cy="200" r="3" fill="#ffaabb" opacity="0.7" />
+    <circle cx="250" cy="350" r="2" fill="#ffaabb" opacity="0.7" />
+    <circle cx="400" cy="180" r="2.5" fill="#ffaabb" opacity="0.7" />
+    <circle cx="550" cy="280" r="2" fill="#ffaabb" opacity="0.7" />
+    <circle cx="680" cy="220" r="3" fill="#ffaabb" opacity="0.7" />
+    <circle cx="800" cy="350" r="2.5" fill="#ffaabb" opacity="0.7" />
+    <circle cx="950" cy="200" r="2" fill="#ffaabb" opacity="0.7" />
+    <circle cx="1100" cy="300" r="3" fill="#ffaabb" opacity="0.7" />
+  </g>
+  
+  <!-- 小鸟 -->
+  <g transform="translate(600, 250) scale(0.5)">
+    <path d="M0,0 Q15,-10 30,0 Q15,10 0,0 M30,0 Q45,-10 60,0 Q45,10 30,0" fill="none" stroke="#333" stroke-width="2" />
+  </g>
+  
+  <g transform="translate(300, 200) scale(0.4)">
+    <path d="M0,0 Q15,-10 30,0 Q15,10 0,0 M30,0 Q45,-10 60,0 Q45,10 30,0" fill="none" stroke="#333" stroke-width="2" />
+  </g>
+  
+  <g transform="translate(800, 150) scale(0.3)">
+    <path d="M0,0 Q15,-10 30,0 Q15,10 0,0 M30,0 Q45,-10 60,0 Q45,10 30,0" fill="none" stroke="#333" stroke-width="2" />
+  </g>
+  
+  <!-- 动画定义 -->
+  <style>
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    
+    @keyframes windMove {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(100px); }
+    }
+    
+    @keyframes petalsDrift {
+      0% { transform: translate(0, 0) rotate(0); }
+      100% { transform: translate(100px, 20px) rotate(360deg); }
+    }
+    
+    .cloud {
+      animation: float 10s infinite ease-in-out;
+    }
+    
+    .wind {
+      animation: windMove 15s infinite linear;
+    }
+    
+    .petals {
+      animation: petalsDrift 20s infinite linear;
+    }
+  </style>
+</svg> 
