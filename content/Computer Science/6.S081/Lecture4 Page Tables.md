@@ -1,13 +1,13 @@
 #### 地址空间
-1. ![](Attachments/Pasted%20image%2020220829093052.png)
+1. ![](Pasted%20image%2020220829093052.png)
 2. Page Table: 页表是在硬件中通过处理器和内存管理单元（Memory Management Unit）实现。
 	1. 从CPU的角度来说，一旦MMU打开了，它执行的每条指令中的地址都是虚拟内存地址。
 	2. 为了能够完成虚拟内存地址到物理内存地址的翻译，MMU会有一个表单，表单中，一边是虚拟内存地址，另一边是物理内存地址。
 	3. 通常来说，内存地址对应关系的表单也保存在内存中。所以CPU中需要有一些寄存器用来存放表单在物理内存中的地址。(RISC-V的SATP的寄存器)
-3. ![](Attachments/Pasted%20image%2020220829093447.png)
-4. 首先对于虚拟内存地址，我们将它划分为两个部分，index和offset，index用来查找page(4KB)，offset对应的是一个page中的哪个字节。![](Attachments/Pasted%20image%2020220829094009.png)
+3. ![](Pasted%20image%2020220829093447.png)
+4. 首先对于虚拟内存地址，我们将它划分为两个部分，index和offset，index用来查找page(4KB)，offset对应的是一个page中的哪个字节。![](Pasted%20image%2020220829094009.png)
 5. 在RISC-V中，物理内存地址是56bit, 其中44bit是物理page号（PPN，Physical Page Number），剩下12bit是offset完全继承自虚拟内存地址.
-6. 实际中，page table是一个多级的结构. 每个page directory都占4096Bytes, 每个page entry有64bit, 因此, 每个page directory有512个entry![](Attachments/Pasted%20image%2020220829100647.png)每个Page 
+6. 实际中，page table是一个多级的结构. 每个page directory都占4096Bytes, 每个page entry有64bit, 因此, 每个page directory有512个entry![](Pasted%20image%2020220829100647.png)每个Page 
 #### RISC-V的硬件支持
 1. MMU: 虚拟地址, 实现三级page directory的查找, 找出物理地址.
 2. Translation Lookside Buffer（页表缓存）
@@ -15,7 +15,7 @@
 
 #### Kernel Page table
 1. 左边是内核的虚拟地址空间，右边上半部分是物理内存或者说是DRAM，右边下半部分是I/O设备
-![](Attachments/Pasted%20image%2020220829104438.png)
+![](Pasted%20image%2020220829104438.png)
 2. 地址0x1000是boot ROM的物理地址，当你对主板上电，主板做的第一件事情就是运行存储在boot ROM中的代码，当boot完成之后，会跳转到地址0x80000000，操作系统需要确保那个地址有一些数据能够接着启动操作系统。
 	1. PLIC是中断控制器（Platform-Level Interrupt Controller）
 	2. CLINT（Core Local Interruptor）也是中断的一部分。所以多个设备都能产生中断，需要中断控制器来将这些中断路由到合适的处理函数。
@@ -23,16 +23,16 @@
 	4. VIRTIO disk，与磁盘进行交互。
 
 ###### 进程的虚拟地址空间
-![](Attachments/Pasted%20image%2020220829123644.png)
+![](Pasted%20image%2020220829123644.png)
 
 > 学生提问：确认一下，低于0x80000000的物理地址，不存在于DRAM中，当我们在使用这些地址的时候，指令会直接走向其他的硬件，对吗？
 > Frans教授：是的。高于0x80000000的物理地址对应DRAM芯片，但是对于例如以太网接口，也有一个特定的低于0x80000000的物理地址，我们可以对这个叫做内存映射I/O（Memory-mapped I/O）的地址执行读写指令，来完成设备的操作。
 
 #### XV6的虚拟内存代码(不太懂)
-![](Attachments/Pasted%20image%2020220829145937.png)
-![](Attachments/Pasted%20image%2020220829152229.png)
+![](Pasted%20image%2020220829145937.png)
+![](Pasted%20image%2020220829152229.png)
 	1. 这个函数首先设置了SATP寄存器，kernel_pagetable变量来自于kvminit第一行。所以这里实际上是内核告诉MMU来使用刚刚设置好的page table。执行完这条指令之后，程序计数器（Program Counter）增加了4。而之后的下一条指令被执行时，程序计数器会被内存中的page table翻译。
-![](Attachments/Pasted%20image%2020220829153019.png)
+![](Pasted%20image%2020220829153019.png)
 
 
 #### 提问

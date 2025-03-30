@@ -32,14 +32,14 @@
 	3. mkfs: 它会创建一个空的文件镜像，我们会将这个镜像存在磁盘上，这样我们就可以直接使用一个空的文件系统。
 2. 编译: 
 	1. 首先，Makefile（XV6目录下的文件）会读取一个C文件，例如proc.c；之后调用gcc编译器，生成一个文件叫做proc.s，这是RISC-V 汇编语言文件；之后再走到汇编解释器，生成proc.o，这是汇编语言的二进制格式。**Makefile会为所有内核文件做相同的操作**
-	2. Loader会收集所有的.o文件，将它们链接在一起，并生成内核文件。![](Attachments/Pasted%20image%2020220828160038.png)
-	3. Makefile还会创建kernel.asm，这里包含了内核的完整汇编语言![](Attachments/Pasted%20image%2020220828161324.png)
+	2. Loader会收集所有的.o文件，将它们链接在一起，并生成内核文件。![](Pasted%20image%2020220828160038.png)
+	3. Makefile还会创建kernel.asm，这里包含了内核的完整汇编语言![](Pasted%20image%2020220828161324.png)
 	4. 我们来看传给QEMU的几个参数：
 		1. -kernel：这里传递的是内核文件（kernel目录下的kernel文件），这是将在QEMU中运行的程序文件。
 		2. -m：这里传递的是RISC-V虚拟机将会使用的内存数量
 		3. -smp：这里传递的是虚拟机可以使用的CPU核数
 		4. -drive：传递的是虚拟机使用的磁盘驱动，这里传入的是fs.img文件
-		5. ![](Attachments/Pasted%20image%2020220828160336.png)
+		5. ![](Pasted%20image%2020220828160336.png)
 
 #### QEMU
 1. 在QEMU的主循环中，只在做一件事情：
@@ -48,6 +48,6 @@
 	3. 之后，在软件中执行相应的指令。
 
 #### XV6 启动过程
-1. 地址0x80000000是一个被QEMU认可的地址。也就是说如果你想使用QEMU，那么第一个指令地址必须是它。如果我们查看kernel.ld![](Attachments/Pasted%20image%2020220828163914.png)
-2. XV6从entry.s开始启动，这个时候没有内存分页，没有隔离性，并且运行在M-mode（machine mode）。XV6会尽可能快的跳转到kernel mode或者说是supervisor mode。![](Attachments/Pasted%20image%2020220828164033.png)
-3. userinit会创建初始进程，返回到用户空间，执行刚刚介绍的3条指令，再回到内核空间。![](Attachments/Pasted%20image%2020220828165200.png)
+1. 地址0x80000000是一个被QEMU认可的地址。也就是说如果你想使用QEMU，那么第一个指令地址必须是它。如果我们查看kernel.ld![](Pasted%20image%2020220828163914.png)
+2. XV6从entry.s开始启动，这个时候没有内存分页，没有隔离性，并且运行在M-mode（machine mode）。XV6会尽可能快的跳转到kernel mode或者说是supervisor mode。![](Pasted%20image%2020220828164033.png)
+3. userinit会创建初始进程，返回到用户空间，执行刚刚介绍的3条指令，再回到内核空间。![](Pasted%20image%2020220828165200.png)
