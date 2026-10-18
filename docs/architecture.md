@@ -2,7 +2,7 @@
 
 ![内容、构建与发布架构](architecture.svg)
 
-本站是 Jekyll 静态网站。Markdown、YAML 和图片是源文件；Ruby 整理作品目录与索引，Jekyll 输出独立网址，浏览器脚本提供阅读交互。GitHub Pages 托管 HTML、CSS 和 JavaScript。
+本站是 Jekyll 静态网站。Markdown、YAML 和图片是源文件；Ruby 整理作品目录，Jekyll 生成索引与独立网址，浏览器脚本提供阅读交互。GitHub Pages 托管 HTML、CSS 和 JavaScript。
 
 ## 源码职责
 
@@ -15,7 +15,8 @@
 | `_layouts/` | 公共框架、正文、章节、作品详情、画集和跳转页 |
 | `_includes/` | 页头、页脚、脚本入口、作品卡片、书架、画集网格、阅读工具、主题面板与评论 |
 | `_config.yml`、`_data/*.yml` | 站点、主题选项、友链及缺省标签规则 |
-| `scripts/lib/content.rb` | 统一 YAML 头部解析、按变化写入及自有生成文件清理 |
+| `scripts/lib/content.rb` | YAML 头部解析、发布判定、按变化写入及自有生成文件清理 |
+| `_plugins/discovery.rb` | 构建期归档与标签索引，使用 Jekyll 文档的实际网址和发布判定 |
 
 导航为：首页、博客、周朝史、作品、归档、标签、关于。周朝史链接独立站点；作品入口为 `/works/`。`/novels/`、`/manga/` 保留分类入口，正文和章节使用独立网址。栏目源文件位于 `pages/`，公开网址不包含这个源码目录。
 
@@ -23,17 +24,16 @@
 
 `scripts/prepare_library.rb` 读取章节的目录和文件名，确定作品 ID、章序、章节网址、上下章链接及旧文章跳转。已有 `tags` 保持原值；标签缺失或为空时按 `_data/tag_rules.yml` 的第一个前缀匹配补齐。生成的章节资料字段写回源文件，正文的缩进、换行符和作者标签保留。书架、章数、导航及旧址跳转只包含可发布章节；没有公开章节的作品不生成入口。
 
-`scripts/prepare_indexes.rb` 读取文章、章节与画集元数据，按共享规则过滤未发布及未来内容，产生归档与标签数据。
+`_plugins/discovery.rb` 在 Jekyll 构建期间读取可输出的文章、章节与画集，直接使用文档的 `url`、日期和发布判定，将归档与标签索引放入 `site.data.discovery`。索引不单独写入文件。
 
 | 生成位置 | 用途 |
 | --- | --- |
 | `_library/` | 作品详情页入口 |
 | `_data/library.json` | 作品及章节目录 |
 | `_data/library_tree.json` | 分类书架树 |
-| `_data/discovery.json` | 博客归档与全站标签 |
 | `redirects/` | `legacy_url` 对应的旧地址跳转页 |
 
-这些产物由 `.gitignore` 排除，每次构建前从内容源生成。本地可以保留以便预览，不直接编辑或提交。生成器仅清理标有自身 `generated_by` 的过时文件；未托管或无法解析的文件保留并提示，作者内容的 YAML 校验保持严格。内容相同时不重写。首次克隆后必须先运行两个准备脚本，再启动 Jekyll。
+这些产物由 `.gitignore` 排除，每次构建前从内容源生成。本地可以保留以便预览，不直接编辑或提交。生成器仅清理标有自身 `generated_by` 的过时文件；未托管或无法解析的文件保留并提示，作者内容的 YAML 校验保持严格。内容相同时不重写。首次克隆后必须先运行作品准备脚本，再启动 Jekyll。
 
 ## 样式与浏览器交互
 
@@ -64,8 +64,8 @@ Giscus 是默认关闭的独立评论服务；启用后留言保存在 GitHub Di
 工作流 `.github/workflows/jekyll-gh-pages.yml` 响应 `master` 推送、拉取请求及手动触发：
 
 1. 安装 Ruby、Python、Node 与依赖。
-2. 检查内容解析与生成器，生成书架和索引，检查 YAML、目录及脚本语法。
-3. 以 `/path-check` 构建并检查链接、图片、标题、ID、锚点与子路径。
+2. 检查内容解析与生成器，生成书架，检查 YAML、目录及脚本语法，并验证 Jekyll 索引与实际网址一致。
+3. 构建期生成归档与标签索引，以 `/path-check` 构建并检查链接、图片、标题、ID、锚点与子路径。
 4. 构建实际站点，执行相同的页面检查。
 5. 验证实际生成的文章、章节、作品详情与画集布局，再运行独立阅读测试，复用上一步产物。测试资料由本地 HTTP 服务在内存中提供，截图放在被忽略的 `tests/artifacts/`，不会进入发布站点。
 6. 推送及手动发布上传已经检查的站点产物并部署；拉取请求只验证。

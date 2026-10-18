@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1040" viewBox="0 0 1400 1040" role="img" aria-labelledby="title description">
 <title id="title">云海小鲸：内容、生成、构建与发布架构</title>
-<desc id="description">Markdown 内容与手工配置经书架和索引脚本整理，结合模板与静态资源，由 GitHub Actions 运行 Jekyll 和页面检查后部署至 GitHub Pages。浏览器保存阅读偏好，可选连接 Giscus 评论。</desc>
+<desc id="description">Markdown 内容与手工配置经书架脚本与 Jekyll 构建期索引整理，结合模板与静态资源，由 GitHub Actions 运行 Jekyll 和页面检查后部署至 GitHub Pages。浏览器保存阅读偏好，可选连接 Giscus 评论。</desc>
 <defs>
   <linearGradient id="background" x2="1" y2="1"><stop stop-color="#eff6fd"/><stop offset="1" stop-color="#f7f8fc"/></linearGradient>
   <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#467ca7"/></marker>
@@ -32,11 +32,11 @@
 
   <text x="48" y="378" class="eyebrow">02  内容整理与页面组织</text>
   <rect class="box" x="48" y="394" width="620" height="204" rx="18"/>
-  <text x="74" y="435" class="heading">Ruby 生成脚本</text>
+  <text x="74" y="435" class="heading">内容准备与构建期索引</text>
   <text x="74" y="474" class="body">prepare_library.rb → 作品、章序与旧址跳转</text>
-  <text x="74" y="508" class="body">prepare_indexes.rb → 归档与标签索引</text>
+  <text x="74" y="508" class="body">Jekyll discovery 插件 → 真实网址索引</text>
   <text x="74" y="548" class="small">构建生成（不入库）：_library/ · _data/library*.json</text>
-  <text x="74" y="576" class="small">_data/discovery.json · redirects/ · 章节网址信息</text>
+  <text x="74" y="576" class="small">redirects/ · 章节资料；索引保存在构建内存</text>
   <rect class="box" x="732" y="394" width="620" height="204" rx="18"/>
   <text x="758" y="435" class="heading">Jekyll 页面结构</text>
   <text x="758" y="477" class="body">首页 · 博客 · 周朝史 ↗ · 作品 · 归档 · 标签 · 关于</text>
@@ -50,7 +50,7 @@
   <text x="48" y="660" class="eyebrow">03  检查、发布与阅读</text>
   <rect class="box" x="48" y="681" width="620" height="202" rx="18"/>
   <text x="74" y="722" class="heading">GitHub Actions · master 推送后执行</text>
-  <text x="74" y="762" class="body">内容与脚本检查 → 生成目录和索引</text>
+  <text x="74" y="762" class="body">内容与脚本检查 → 生成目录</text>
   <text x="74" y="797" class="body">子路径校验 → 正式构建与浏览器检查</text>
   <text x="74" y="832" class="body">复用检查通过的 HTML / CSS / JS 产物部署</text>
   <text x="74" y="862" class="small">拉取请求只验证；部署前必须通过正式检查</text>

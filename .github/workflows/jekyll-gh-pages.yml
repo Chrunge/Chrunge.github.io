@@ -30,8 +30,8 @@ jobs:
         run: |
           ruby tests/content_test.rb
           ruby scripts/prepare_library.rb
-          ruby scripts/prepare_indexes.rb
           ruby scripts/check_content.rb
+          bundle exec ruby tests/discovery_check.rb
           for file in assets/js/*.js; do node --check "$file"; done
           node --check tests/reading.cjs
           node --check tests/layouts.cjs
