@@ -34,6 +34,7 @@ jobs:
           ruby scripts/check_content.rb
           for file in assets/js/*.js; do node --check "$file"; done
           node --check tests/reading.cjs
+          node --check tests/layouts.cjs
           node --check tests/fixtures/readers.cjs
       - name: Build and check project subdirectory URLs
         env:
