@@ -365,8 +365,6 @@
 
 .copy-code {
   display: block;
-  margin-left: auto;
-  margin-bottom: 8px;
   margin: 0;
   font-size: 12px;
   white-space: nowrap

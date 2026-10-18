@@ -14,7 +14,7 @@
     const details = document.createElement('details'); details.className = 'diagram-source';
     const summary = document.createElement('summary'); summary.textContent = 'Mermaid 源码';
     source.before(block); details.append(summary, source); tools.append(status, expand, retry); block.append(canvas, tools, details);
-    const chart = { text: code.textContent, block, canvas, status, retry, expand, details };
+    const chart = { text: code.textContent, canvas, status, retry, expand, details };
     expand.addEventListener('click', () => {
       const svg = canvas.querySelector('svg'); if (!svg) return;
       const clone = svg.cloneNode(true); clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');

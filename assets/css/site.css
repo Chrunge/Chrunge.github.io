@@ -255,12 +255,6 @@ h3 {
   letter-spacing: 0
 }
 
-.post-row h3 {
-  font-size: 20px;
-  margin: 5px 0 7px;
-  letter-spacing: 0
-}
-
 .work-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -899,8 +893,7 @@ input {
     width: calc(100% - 40px)
 }
   .site-header {
-    width: calc(100% - 40px);
-    flex-wrap: wrap
+    width: calc(100% - 40px)
 }
   .cover {
     height: 220px;
@@ -924,9 +917,6 @@ input {
 }
 
 @media (max-width:560px) {
-  .hero-description br {
-    display: none
-}
   .hero-art .floating-note {
     font-size: 12px
 }
@@ -955,9 +945,6 @@ input {
     font-size: 12px
 }
   .post-row h2 {
-    font-size: 18px
-}
-  .post-row h3 {
     font-size: 18px
 }
   .post-row p {
@@ -1103,7 +1090,6 @@ input {
     padding: 22px
 }
   .hero {
-    grid-template-columns: minmax(0,1fr) 140px;
     padding: 24px 0 16px;
     gap: 10px;
     display: block;
@@ -1138,9 +1124,6 @@ input {
 }
 
 @media (max-width:380px) {
-  .hero {
-    grid-template-columns: minmax(0,1fr) 100px
-}
   .brand {
     font-size: 18px
 }
