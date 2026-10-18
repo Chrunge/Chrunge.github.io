@@ -25,7 +25,13 @@ groups.sort.each do |directory, files|
   id = Digest::SHA256.hexdigest(directory)[0, 12]
   title = segments.last
   title = "#{title} · 综合笔记" if segments.length == 1 && title != '小说'
-  chapters = files.map { |file| [file, *read_document.call(file)] }
+  chapters = files.map do |file|
+    data, body = read_document.call(file)
+    original_date = data['date']
+    data['date'] = Content.chapter_date(original_date)
+    Content.write(file, data.to_yaml + "---\n" + body) if data['date'] != original_date
+    [file, data, body]
+  end
   chapters.select! { |_, data, _| Content.published?(data, **publication) }
   next if chapters.empty?
   chapters.sort_by! { |file, data, _| [data.fetch('order', 1_000_000).to_i, natural.call(File.basename(file))] }
@@ -36,8 +42,6 @@ groups.sort.each do |directory, files|
     tag_rule = tag_rules.find { |rule| relative_path.start_with?(rule.fetch('prefix')) }
     # Respect author-edited tags; directory rules only supply missing defaults.
     data['tags'] = tag_rule.fetch('tags') if tag_rule && (!data['tags'].is_a?(Array) || data['tags'].empty?)
-    data['date'] = data['date'].strftime('%Y-%m-%d %H:%M:%S %z') if data['date'].is_a?(Time)
-    data['date'] = data['date'].strftime('%Y-%m-%d') + ' 12:00:00 +0800' if data['date'].is_a?(Date)
     chapter_id = Digest::SHA256.hexdigest(File.basename(file))[0, 12]
     url = "/novels/#{id}/read/#{chapter_id}/"
     data.merge!('layout'=>'chapter', 'book_id'=>id, 'chapter_index'=>index, 'permalink'=>url)

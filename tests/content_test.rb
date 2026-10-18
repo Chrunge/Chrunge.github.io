@@ -177,6 +177,22 @@ class ContentTest < Minitest::Test
     end
   end
 
+  def test_date_only_chapters_use_the_same_normalized_time_in_catalog_and_validation
+    with_library_fixture do |dir, write_chapter, generate|
+      Content.write(File.join(dir, '_config.yml'), { 'time'=>'2026-10-18 10:00:00 +0800' }.to_yaml)
+      future = write_chapter.call('01.md', { 'date'=>Date.new(2026, 10, 18) })
+      write_chapter.call('02.md', { 'date'=>Date.new(2026, 10, 17) })
+      original_body = Content.read(future).last
+      generate.call
+      catalog = JSON.parse(File.read(File.join(dir, '_data/library.json'), encoding: 'UTF-8'))
+      assert_equal ['02.md'], catalog.values.first['chapters'].map { |chapter| chapter['title'] }
+      assert_equal '2026-10-18 12:00:00 +0800', Content.read(future).first['date']
+      assert_equal original_body, Content.read(future).last
+      out, err, status = Open3.capture3(RbConfig.ruby, 'scripts/check_content.rb', chdir: dir)
+      assert status.success?, out + err
+    end
+  end
+
   private
 
   def with_library_fixture

@@ -12,6 +12,12 @@ module Content
     [data, text[header[0].length..]]
   end
 
+  def self.chapter_date(value)
+    return value.strftime('%Y-%m-%d %H:%M:%S %z') if value.is_a?(Time)
+    return value.strftime('%Y-%m-%d') + ' 12:00:00 +0800' if value.instance_of?(Date)
+    value
+  end
+
   def self.publication_options(root = '.')
     file = File.join(root, '_config.yml')
     config = File.file?(file) ? YAML.safe_load(File.read(file, encoding: 'UTF-8'), permitted_classes: [Date, Time]) || {} : {}

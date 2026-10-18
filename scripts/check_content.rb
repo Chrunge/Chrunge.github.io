@@ -16,7 +16,8 @@ Dir.glob('{_posts,_novels,_manga}/**/*.md').each do |file|
   errors << "#{file}: unsupported toc_levels" unless data['toc_levels'].to_s.match?(/\Ah[2-6](,h[2-6])*\z/)
   date = nil
   begin
-    date = DateTime.parse(data['date'].to_s)
+    value = file.start_with?('_novels/') ? Content.chapter_date(data['date']) : data['date']
+    date = DateTime.parse(value.to_s)
   rescue ArgumentError
     errors << "#{file}: invalid date"
   end

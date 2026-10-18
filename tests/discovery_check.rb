@@ -1,6 +1,8 @@
 # Integration check: use Jekyll's actual URLs and publication decisions.
 require 'tmpdir'
 require 'fileutils'
+require 'open3'
+require 'rbconfig'
 require 'jekyll'
 require_relative '../scripts/lib/content'
 require_relative '../_plugins/discovery'
@@ -52,5 +54,21 @@ Dir.mktmpdir('discovery-check-') do |directory|
       assert actual.length == 3, 'Default output must omit all hidden and future documents'
     end
   end
+  # A date-only chapter is normalized before publication, including before noon.
+  FileUtils.mkdir_p(File.join(source, '_data'))
+  Content.write(File.join(source, '_data/tag_rules.yml'), "[]\n")
+  date_only = File.join(source, '_novels/date-only.md')
+  data = { 'title'=>'Date-only fixture', 'date'=>Date.new(2026, 10, 18), 'tags'=>['Shared'] }
+  Content.write(date_only, data.to_yaml + "---\n\n## Fixture\n")
+  options = YAML.safe_load(File.read(File.join(source, '_config.yml'), encoding: 'UTF-8'), permitted_classes: [Date, Time])
+  options['future'] = options['unpublished'] = false
+  options['time'] = '2026-10-18 10:00:00 +0800'
+  Content.write(File.join(source, '_config.yml'), options.to_yaml)
+  out, err, status = Open3.capture3(RbConfig.ruby, File.expand_path('../scripts/prepare_library.rb', __dir__), chdir: source)
+  assert status.success?, out + err
+  site = Jekyll::Site.new(Jekyll.configuration(options))
+  site.process
+  chapter = site.collections['novels'].docs.find { |document| document.data['title'] == 'Date-only fixture' }
+  assert !chapter.write?, 'Date-only chapter must remain unpublished before its normalized noon time'
 end
 puts 'PASS: Jekyll URLs, configured routes, explicit permalinks, subpaths and publication options.'
