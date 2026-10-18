@@ -126,12 +126,7 @@
 
 .chapter-search input {
   flex: 1;
-  min-width: 180px;
-  padding: 12px 16px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  color: var(--text)
+  min-width: 180px
 }
 
 .chapter-search p {

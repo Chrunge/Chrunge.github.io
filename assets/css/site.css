@@ -51,21 +51,9 @@ summary {
   -webkit-tap-highlight-color: transparent
 }
 
-a:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 5px
-}
-
-button:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 5px
-}
-
-summary:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 5px
-}
-
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
 input:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 5px
