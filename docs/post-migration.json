@@ -1,0 +1,1065 @@
+{
+  "imported": [
+    {
+      "source": "_posts\\history content\\Algorithm\\Algorithm.md",
+      "destination": "_posts/2022-03-30-Algorithm-11ff88.md",
+      "dateSource": "original",
+      "sha256": "bb009908f26b58b1cdc06ae8deb0a65e238e245923d988dec48dd4e5206f4ed0"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\15-445\\Sqlite3.md",
+      "destination": "_posts/2023-04-09-Sqlite3-0fd52e.md",
+      "dateSource": "original",
+      "sha256": "e05f46e9feac06985ca6eda5d81585cd0f51dcc45949026dd23a3905083947ff"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\6.S081\\Lecture1 Introduction.md",
+      "destination": "_posts/2026-10-17-Lecture1-Introduction-6aee42.md",
+      "dateSource": "import-date",
+      "sha256": "8a63e6b9a637510771ee66b7fa140bdab634dd09b24b29318339a996fc7100c6"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\6.S081\\Lecture10 Multiprocessors and locking.md",
+      "destination": "_posts/2026-10-17-Lecture10-Multiprocessors-and-locking-f3b856.md",
+      "dateSource": "import-date",
+      "sha256": "69d44aef34c0f775a095fe73729e5419c3a6bf79732b40615d5bb3311228d222"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\6.S081\\Lecture3 OS Organization and System Calls.md",
+      "destination": "_posts/2026-10-17-Lecture3-OS-Organization-and-System-Calls-a347f9.md",
+      "dateSource": "import-date",
+      "sha256": "86436142ed64cc89a69ffe75616c13039c9b79bb4afe706576afeeabd337baa6"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\6.S081\\Lecture4 Page Tables.md",
+      "destination": "_posts/2026-10-17-Lecture4-Page-Tables-ffac58.md",
+      "dateSource": "import-date",
+      "sha256": "0e82427062ef267bae2479f7559ce3b69a500e99f4663100b8b3d417dfbefd92"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\6.S081\\Lecture5 Calling conventions and stack frames RISC-V (TA).md",
+      "destination": "_posts/2026-10-17-Lecture5-Calling-conventions-and-stack-frames-RISC-V-TA-f15341.md",
+      "dateSource": "import-date",
+      "sha256": "cad7c536205fc4bf31c23ea549a83cf30943495eae12a3b7f6092159333f44bb"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\6.S081\\Lecture6  Isolation & system call entry+exit (Robert).md",
+      "destination": "_posts/2026-10-17-Lecture6-Isolation-system-call-entry-exit-Robert-64cfd6.md",
+      "dateSource": "import-date",
+      "sha256": "391b09e49a3b58b8f72bb0dad0373ac0989dfc5e5d2d0604c3a98731e4127b8c"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\6.S081\\Lecture8 Page fault.md",
+      "destination": "_posts/2026-10-17-Lecture8-Page-fault-3f2ccb.md",
+      "dateSource": "import-date",
+      "sha256": "1758b961eb958ff2a6d0cc771e441d2a46827d9f369e19c5e02deb9b7547fbdc"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\6.S081\\Lecture9 Interrupts.md",
+      "destination": "_posts/2026-10-17-Lecture9-Interrupts-48b32b.md",
+      "dateSource": "import-date",
+      "sha256": "c642ab0b70578717c3bf6e4296fd5312ea2aa1e3c56802f3dd7792ab29fbc4f4"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\61ABC\\61A\\CS61a笔记.md",
+      "destination": "_posts/2020-09-27-CS61a笔记-646619.md",
+      "dateSource": "original",
+      "sha256": "0f8fc1219dc90354c05eadb74028895336a9c5fc962fcfbc5eb745149c876d23"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\61ABC\\61B\\cs61B学习笔记.md",
+      "destination": "_posts/2020-10-22-cs61B学习笔记-8bb038.md",
+      "dateSource": "original",
+      "sha256": "d6dcef6d67b154d5fb9a0788351b9b54d8306576ad24ca2d6e68d87454e475a9"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\61ABC\\61C\\61C Cache.md",
+      "destination": "_posts/2021-07-12-61C-Cache-7de1a5.md",
+      "dateSource": "original",
+      "sha256": "d9e829d317c5913103aa0c023daf6e19248ed9e8b49bcab1ab6abb6cac2ffc0c"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\61ABC\\61C\\61C Number, C syntax and Floating Point.md",
+      "destination": "_posts/2021-04-06-61C-Number-C-syntax-and-Floating-Point-4f3043.md",
+      "dateSource": "original",
+      "sha256": "28d05b00f711093875c17a59a61a71130357f2e0fff6659466075b71ca50bced"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\61ABC\\61C\\61C Parallelism.md",
+      "destination": "_posts/2021-07-13-61C-Parallelism-dc0e3e.md",
+      "dateSource": "original",
+      "sha256": "0bd75835be67d14856bedc7f797a831c262ec6fa2a5d5d5f4c040dbdd845c0c7"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\61ABC\\61C\\61C Pineline.md",
+      "destination": "_posts/2021-07-12-61C-Pineline-54c923.md",
+      "dateSource": "original",
+      "sha256": "0fb814b654916a23556c47f3f811f6ae80b24f695ce6508bb1ec35e1e7f0c081"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\61ABC\\61C\\61C register-and-instruction.md",
+      "destination": "_posts/2021-04-29-61C-register-and-instruction-7e7c92.md",
+      "dateSource": "original",
+      "sha256": "dd4c8118770f25696aecaf251a3e7fbeeb6ba83b5bad98b8d44a1818db4bc6ee"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\61ABC\\61C\\61C-IO.md",
+      "destination": "_posts/2021-07-14-61C-IO-cdc8d8.md",
+      "dateSource": "original",
+      "sha256": "c32861570c06fd52580906dc5b3c17f3dd66ee15c6f0297c8009bf92534b818e"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\61ABC\\61C\\61C-Virtual-Memory.md",
+      "destination": "_posts/2021-07-12-61C-Virtual-Memory-863bd8.md",
+      "dateSource": "original",
+      "sha256": "0a0b9990b905b8659477db60ec0922cd7a5fbd56def20ee0a2214beaa033822e"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\61ABC\\61C\\C常用函数记录.md",
+      "destination": "_posts/2021-08-21-C常用函数记录-3ab095.md",
+      "dateSource": "original",
+      "sha256": "b7f18a6556a9c642981ec5a9acd0773f52ae58b5f5fa3aa9712bc11d25ea902f"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\61ABC\\61C\\Summary-of-61C.md",
+      "destination": "_posts/2021-07-24-Summary-of-61C-8c1ac5.md",
+      "dateSource": "original",
+      "sha256": "571213c871f774fd6a510a8bc4601fad62a70968e50827baa8f3e032a9fd08ff"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\61ABC\\进度记录.md",
+      "destination": "_posts/2020-10-27-进度记录-eff1d6.md",
+      "dateSource": "original",
+      "sha256": "423a7d62b76c551353a8c02ac874071821c1f251aa9319bae3850cc911f9cfc7"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\CS144\\Unit1-Internet-and-IP.md",
+      "destination": "_posts/2022-01-12-Unit1-Internet-and-IP-f93cc9.md",
+      "dateSource": "original",
+      "sha256": "aefeda0f37eff5e8b95580afb28e1ee65ad4fa94ee522ee77a88544a36a05ac8"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\CS144\\Unit2-Transport.md",
+      "destination": "_posts/2022-01-13-Unit2-Transport-f24611.md",
+      "dateSource": "original",
+      "sha256": "28479d69beae0ce6f7c240beb7bddfa9d332dde562203371ec2444f3e9cc7f47"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\CS144\\Unit3-Packet Switching.md",
+      "destination": "_posts/2022-01-13-Unit3-Packet-Switching-0f9ee4.md",
+      "dateSource": "original",
+      "sha256": "515d19659ffa627bbf53388ccf41eef49b645609034f37944d9d056bd2663a25"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\CS144\\Unit4-Congestion-Contorl.md",
+      "destination": "_posts/2022-01-12-Unit4-Congestion-Contorl-6a60c9.md",
+      "dateSource": "original",
+      "sha256": "4c20120bc0a67306ce9c8a57b542290bc085cf6b9a1d1d2bd941dc5f185aa722"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\CS144\\Unit5-Application-and-NATs.md",
+      "destination": "_posts/2022-01-12-Unit5-Application-and-NATs-7cd6e0.md",
+      "dateSource": "original",
+      "sha256": "480545fda76360b1d5ed786e62f41caf61d2a48bd3891560127c9c8eb7619fef"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\CS144\\Unit6-Routing.md",
+      "destination": "_posts/2022-01-12-Unit6-Routing-a82af8.md",
+      "dateSource": "original",
+      "sha256": "c51c1566f0a88ced099783a09051f3346157e54abe2b4b7eb04e4106d00c3343"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\CS144\\Unit7-Lower-Layer.md",
+      "destination": "_posts/2022-02-26-Unit7-Lower-Layer-7f7ace.md",
+      "dateSource": "original",
+      "sha256": "4d585742910147ade72355ded49bc2a9ea93a6531f02bdc54f0dd8815d3eafd3"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\CS144\\Unit8-Security.md",
+      "destination": "_posts/2022-02-26-Unit8-Security-0fc3c7.md",
+      "dateSource": "original",
+      "sha256": "2d6dda1658a0d22510ee0a10a54ff5c34f9db225654e54902931858c37032b85"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\CS162\\Lecture-1-What-is-an-Operating-System.md",
+      "destination": "_posts/2021-09-13-Lecture-1-What-is-an-Operating-System-66518d.md",
+      "dateSource": "original",
+      "sha256": "ccab9efd50370d9d99b819b27e23910fc0ecd3531461f9e0d735be50b21af06f"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\CS162\\lecture-10-14-Scheduling.md",
+      "destination": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "dateSource": "original",
+      "sha256": "d0b94f32b6ff9a9914a68538316dd51fe4fc874846a0bb627a83b8fb17c7cd3f"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\CS162\\Lecture-2-Four-fundamental-OS-concepts.md",
+      "destination": "_posts/2021-09-13-Lecture-2-Four-fundamental-OS-concepts-ba6d56.md",
+      "dateSource": "original",
+      "sha256": "5af5d93c5a21c4abfd62dd83cce0bdee862ccdf6972f9f2be5fb8a5492a2a6b2"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\CS162\\Lecture-3-Abstractions-I-Threads.md",
+      "destination": "_posts/2021-09-14-Lecture-3-Abstractions-I-Threads-8bc7f9.md",
+      "dateSource": "original",
+      "sha256": "57fa8257ca0aa12079cbb99ee5ad92e11faea3b50be19074cbb5b716889242af"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\CS162\\Lecture-4-Processes-and-Files-and-I-O.md",
+      "destination": "_posts/2021-09-14-Lecture-4-Processes-and-Files-and-I-O-908f82.md",
+      "dateSource": "original",
+      "sha256": "41c383a7a050b5756048578ed6dc63ea050327a2466580a3524583b953c6f10b"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\CS162\\Lecture-5-IPC-Pipes-and-sockets.md",
+      "destination": "_posts/2021-09-14-Lecture-5-IPC-Pipes-and-sockets-a1228e.md",
+      "dateSource": "original",
+      "sha256": "a9b56de75eb5f2f5a0e0da89a11b99c9d2123e074472900743b16225e019f552"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\CS162\\Lecture-6-Synchronization-I-Concurrency.md",
+      "destination": "_posts/2021-09-15-Lecture-6-Synchronization-I-Concurrency-836c87.md",
+      "dateSource": "original",
+      "sha256": "31d2574771cfb1258963fd0f46c8d2551da0d9ec7050e7e76e42e1caafccb185"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\CS162\\Lecture-7-8-Semaphore and Monitor.md",
+      "destination": "_posts/2021-09-18-Lecture-7-8-Semaphore-and-Monitor-5207cf.md",
+      "dateSource": "original",
+      "sha256": "a0ab7220ba0912dc3618c953d8d168b5dd8147f122e702a2f6d16559ceeb0be9"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\CS162\\pintos-system.md",
+      "destination": "_posts/2021-09-12-pintos-system-4af8ef.md",
+      "dateSource": "original",
+      "sha256": "1f3341e2b08d33f938683f9063ac7b92aa7f83e4af918fe54ffc39e44684ec90"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\Program Language\\C\\61C C编译与优先级.md",
+      "destination": "_posts/2021-04-14-61C-C编译与优先级-2ea3cb.md",
+      "dateSource": "original",
+      "sha256": "ed8de38513a680beed7d39d271fee95b958a9fcf85e63e8b5c47c9b498bd03c4"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\Program Language\\C\\C语言编译过程.md",
+      "destination": "_posts/2026-10-17-C语言编译过程-d1ae64.md",
+      "dateSource": "import-date",
+      "sha256": "b2d2091c6e16c51c7ef5d8749c6c47d42b0f363c7e295bf2aafe7cc57cc5067e"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\Program Language\\C++ .md",
+      "destination": "_posts/2021-11-08-C-579a6c.md",
+      "dateSource": "original",
+      "sha256": "2fac4352482a4655d976a231b9123a013f09c47a7b001115aa0c71128949654b"
+    },
+    {
+      "source": "_posts\\history content\\Computer Science\\Program Language\\Java.md",
+      "destination": "_posts/2021-11-07-Java-949363.md",
+      "dateSource": "original",
+      "sha256": "2a440814921ee1e284a0869a5ddb67aab0ae699dedaad28719a17e978c00b2d8"
+    },
+    {
+      "source": "_posts\\history content\\Economics\\中级微观经济学.md",
+      "destination": "_posts/2020-11-09-中级微观经济学-9a4493.md",
+      "dateSource": "original",
+      "sha256": "e5d75d5285636ff52f375daee4b359de2956d573a3c0c6fb9a8b255739b8f49b"
+    },
+    {
+      "source": "_posts\\history content\\SHELL简要命令手册.md",
+      "destination": "_posts/2026-10-17-SHELL简要命令手册-3c5d60.md",
+      "dateSource": "import-date",
+      "sha256": "2a976a06089d8c3ea245eeb3fc97df0a62a397122954096a73f861252024b58d"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\Cmake.md",
+      "destination": "_posts/2026-10-17-Cmake-887ab6.md",
+      "dateSource": "import-date",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\ES知识篇\\ES集群基础知识.md",
+      "destination": "_posts/2026-10-17-ES集群基础知识-1447e7.md",
+      "dateSource": "import-date",
+      "sha256": "c31e554f87621c0f1ce243e77096a65aa1029e4606dcc8f020978a26facc21d3"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\GDB.md",
+      "destination": "_posts/2021-11-08-GDB-5be332.md",
+      "dateSource": "original",
+      "sha256": "03739abf546022dfdbfc1c5aad5d0791d4ba1af978b1b32584a024c4e7cb5461"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\Git.md",
+      "destination": "_posts/2020-09-28-Git-3ecae0.md",
+      "dateSource": "original",
+      "sha256": "0cbb5021bb5dcf4d3e01464ee1bddd98b07627d67299ca2173fc963f1bab52e9"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\GIT知识篇\\Git基础知识.md",
+      "destination": "_posts/2026-10-17-Git基础知识-904331.md",
+      "dateSource": "import-date",
+      "sha256": "6b93dcfada36b24168566075e920455da70da1aaec958c1665f6241f1939513f"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\Kakfa知识篇\\Kafka基础知识.md",
+      "destination": "_posts/2026-10-17-Kafka基础知识-e1faeb.md",
+      "dateSource": "import-date",
+      "sha256": "b326e93839d6a5b9908a5347a0863b4e54520279e50db5a1fbe09f5224c60796"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\Makefile总结.md",
+      "destination": "_posts/2021-08-23-Makefile总结-807c13.md",
+      "dateSource": "original",
+      "sha256": "a0c9b5f0e20ed127ca803fe3255a418e3667c76abeee2dbc53b8f3cd6ab0b9bb"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\Obsidian\\Markdown语法.md",
+      "destination": "_posts/2026-10-17-Markdown语法-000d02.md",
+      "dateSource": "import-date",
+      "sha256": "6d6a18d294d596ac362a0a770d71aed40004d9899bf5bda13535b8045d0ab72a"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\Obsidian\\obsidian语法.md",
+      "destination": "_posts/2026-10-17-obsidian语法-7518dd.md",
+      "dateSource": "import-date",
+      "sha256": "42011f041d104b2e9900bee75e3c6123c8c1f9e7f29ddc0d765b1b1e8bcba831"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\Obsidian\\笔记功能 + 流程.md",
+      "destination": "_posts/2026-10-17-笔记功能-流程-ed21e7.md",
+      "dateSource": "import-date",
+      "sha256": "31d853be4b19c3292a7b754f489ceb1805e4432c783cfc09a2bd41423836ec5b"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\Python知识篇\\python简要语法.md",
+      "destination": "_posts/2026-10-17-python简要语法-4b55d9.md",
+      "dateSource": "import-date",
+      "sha256": "03864c4eae6a66d6ce0e4374b234d5acfe9989a8cd32621c6684a91c880bc469"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\SHELL知识篇\\grep_find_awk_sed.md",
+      "destination": "_posts/2026-10-17-grep-find-awk-sed-e33dd4.md",
+      "dateSource": "import-date",
+      "sha256": "8a9ed313522d917fe175064babac6cca59b71067fe7ae3dbde91f5aad5e753f5"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\SHELL知识篇\\Linux系统目录概要.md",
+      "destination": "_posts/2026-10-17-Linux系统目录概要-3eb1dc.md",
+      "dateSource": "import-date",
+      "sha256": "58d7f09fa5121246d251207df45460a16a610c8aba31d6ebfa71a19988b79f4f"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\SHELL知识篇\\SHELL简要命令手册.md",
+      "destination": "_posts/2026-10-17-SHELL简要命令手册-ddcb44.md",
+      "dateSource": "import-date",
+      "sha256": "80e64ff805f51c42ed166f6288279f02f38e9ab152fed4381286a42c1a29ce6f"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\SHELL知识篇\\SHELL脚本语法.md",
+      "destination": "_posts/2026-10-17-SHELL脚本语法-73f083.md",
+      "dateSource": "import-date",
+      "sha256": "2384db607a8a4dda3006fc51e1723c1443ef564186585e8eaff56deed55ef200"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\SHELL知识篇\\tcpdump_lsof_strace_iptables.md",
+      "destination": "_posts/2026-10-17-tcpdump-lsof-strace-iptables-719d3f.md",
+      "dateSource": "import-date",
+      "sha256": "4bc77cb569ab67827e5391ba4069ef360b030be5481fb6dbc8f749c45e28aa5e"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\SHELL知识篇\\正则表达式.md",
+      "destination": "_posts/2026-10-17-正则表达式-259ba2.md",
+      "dateSource": "import-date",
+      "sha256": "db12fea02a4e121ee16d195c50d0e032d94755b29d742cf67c6444d9e1ee1103"
+    },
+    {
+      "source": "_posts\\history content\\Tools\\Vim总结.md",
+      "destination": "_posts/2021-08-21-Vim总结-105ea7.md",
+      "dateSource": "original",
+      "sha256": "0666a43ab049bb4a0229fac96480755a5ea981b8f9e96c5925f8ee3ee8c30314"
+    },
+    {
+      "source": "_posts\\history content\\Tools Conclusion.md",
+      "destination": "_posts/2026-10-17-Tools-Conclusion-cc28a9.md",
+      "dateSource": "import-date",
+      "sha256": "96ba2859bb5a6c93e9ad76b59e675e581f8233761e9f994a30e70162bf61723f"
+    },
+    {
+      "source": "_posts\\history content\\随笔\\幻想日记.md",
+      "destination": "_posts/2021-07-15-幻想日记-d2b836.md",
+      "dateSource": "original",
+      "sha256": "4475fd028dedb1ca7e7583062abad0749b4c494116ff87b9ccc4e9caa5e837ca"
+    },
+    {
+      "source": "_posts\\history content\\随笔\\生活体验.md",
+      "destination": "_posts/2020-09-30-生活体验-8d47c5.md",
+      "dateSource": "original",
+      "sha256": "275d1bf6d408852b103bfb881d9cedc4078cd5f3ead1cc217b81c614af6b3bf1"
+    },
+    {
+      "source": "_posts\\history content\\随笔\\随记灵感.md",
+      "destination": "_posts/2021-01-01-随记灵感-433cff.md",
+      "dateSource": "original",
+      "sha256": "f088c6d0bbf04cd5dee6d1a2514fc0256699fea468014ae23f47dc663d28ef6e"
+    },
+    {
+      "source": "_posts\\读书笔记\\与人相处的一些思考.md",
+      "destination": "_posts/2026-10-17-与人相处的一些思考-5ab0ea.md",
+      "dateSource": "import-date",
+      "sha256": "a324a53ae92c1fae3bf1accd30e69f4a0756decc531e8f259b15b97849e1e4cd"
+    },
+    {
+      "source": "_posts\\读书笔记\\关于独乐乐不如众乐乐.md",
+      "destination": "_posts/2026-10-17-关于独乐乐不如众乐乐-933457.md",
+      "dateSource": "import-date",
+      "sha256": "cfd3faa0c31a2e9f6ba519b40946fa656659eeda892f8b2afbd040e57949ed7f"
+    },
+    {
+      "source": "_posts\\读书笔记\\关于生活追求的思索.md",
+      "destination": "_posts/2026-10-17-关于生活追求的思索-041923.md",
+      "dateSource": "import-date",
+      "sha256": "5a1b5ef59f41f56cfab082ecb5e20747d90bda124b0d67916907b120ff1ca11e"
+    },
+    {
+      "source": "_posts\\读书笔记\\关于近期的追求.md",
+      "destination": "_posts/2026-10-17-关于近期的追求-c6b398.md",
+      "dateSource": "import-date",
+      "sha256": "4d34ea5b14e059474d5f6bf7e9c7557522f8142703f0af7168c6aad278d66f99"
+    },
+    {
+      "source": "_posts\\读书笔记\\情与义.md",
+      "destination": "_posts/2026-10-17-情与义-5dd2a9.md",
+      "dateSource": "import-date",
+      "sha256": "abc1987e3b36d752754709e7a1c9795032b72b36028ad2fa4af2bbeb89bf86d3"
+    },
+    {
+      "source": "_posts\\读书笔记\\我想要啥.md",
+      "destination": "_posts/2026-10-17-我想要啥-ca9563.md",
+      "dateSource": "import-date",
+      "sha256": "01b3452262fc200c77465b30ec92a3221e11f8a4d90d8a2b8945d0029e0cda63"
+    },
+    {
+      "source": "_posts\\读书笔记\\知者不惑_仁者不忧_勇者不惧.md",
+      "destination": "_posts/2026-10-17-知者不惑-仁者不忧-勇者不惧-6e7bb5.md",
+      "dateSource": "import-date",
+      "sha256": "dc39a82e24fbdbee91efd295a71772eb7ab77bf5230d1f7c55517f0fa9ab4e00"
+    },
+    {
+      "source": "_posts\\读书笔记\\美国制宪会议人员表.md",
+      "destination": "_posts/2026-10-17-美国制宪会议人员表-0cbdf1.md",
+      "dateSource": "import-date",
+      "sha256": "b9508193ecbdb91fdd8d7d15436f81c5d8a61d8f738d80e3c03aa63063c7623c"
+    },
+    {
+      "source": "_posts\\读书笔记\\论语_道德经_孙子兵法_读后思考.md",
+      "destination": "_posts/2026-10-17-论语-道德经-孙子兵法-读后思考-f964a3.md",
+      "dateSource": "import-date",
+      "sha256": "5fe95395cb8bddcef48d672f0d9d6eb954236e3f1f232693519853b95e708240"
+    },
+    {
+      "source": "_posts\\读书笔记\\论语的中庸之道.md",
+      "destination": "_posts/2026-10-17-论语的中庸之道-f13916.md",
+      "dateSource": "import-date",
+      "sha256": "2e20dce71d8a8dab50d0dff9cb421d9101f2a28eccdb1e8350655aeb6fd99bc6"
+    }
+  ],
+  "missingImages": [
+    {
+      "file": "_posts/2021-04-06-61C-Number-C-syntax-and-Floating-Point-4f3043.md",
+      "reference": "",
+      "label": "MiniSummary"
+    },
+    {
+      "file": "_posts/2021-04-06-61C-Number-C-syntax-and-Floating-Point-4f3043.md",
+      "reference": "",
+      "label": "numberSummary"
+    },
+    {
+      "file": "_posts/2021-04-06-61C-Number-C-syntax-and-Floating-Point-4f3043.md",
+      "reference": "",
+      "label": "doublePrecision"
+    },
+    {
+      "file": "_posts/2021-07-13-61C-Parallelism-dc0e3e.md",
+      "reference": "",
+      "label": "OpenMP"
+    },
+    {
+      "file": "_posts/2021-07-13-61C-Parallelism-dc0e3e.md",
+      "reference": "",
+      "label": "AMOs"
+    },
+    {
+      "file": "_posts/2021-07-13-61C-Parallelism-dc0e3e.md",
+      "reference": "",
+      "label": "AMOs1"
+    },
+    {
+      "file": "_posts/2021-04-29-61C-register-and-instruction-7e7c92.md",
+      "reference": "",
+      "label": "LogicalOperation"
+    },
+    {
+      "file": "_posts/2021-04-29-61C-register-and-instruction-7e7c92.md",
+      "reference": "",
+      "label": "IFormatLoad"
+    },
+    {
+      "file": "_posts/2022-01-12-Unit1-Internet-and-IP-f93cc9.md",
+      "reference": "",
+      "label": "Inside Each Hop"
+    },
+    {
+      "file": "_posts/2022-01-12-Unit1-Internet-and-IP-f93cc9.md",
+      "reference": "",
+      "label": "VPN encapsulation"
+    },
+    {
+      "file": "_posts/2022-01-12-Unit1-Internet-and-IP-f93cc9.md",
+      "reference": "",
+      "label": "APR Packet Format"
+    },
+    {
+      "file": "_posts/2022-01-13-Unit2-Transport-f24611.md",
+      "reference": "",
+      "label": "Connection teardown"
+    },
+    {
+      "file": "_posts/2022-01-12-Unit4-Congestion-Contorl-6a60c9.md",
+      "reference": "zob-source/image/Simple_geometric_intuition.jpg",
+      "label": "Simple geometric intuition"
+    },
+    {
+      "file": "_posts/2022-01-12-Unit4-Congestion-Contorl-6a60c9.md",
+      "reference": "zob-source/image/TCP_Tahoe_FSM.jpg",
+      "label": "TCP Tahoe FSM"
+    },
+    {
+      "file": "_posts/2022-01-12-Unit4-Congestion-Contorl-6a60c9.md",
+      "reference": "zob-source/image/TCP_Tahoe_Timeouts.jpg",
+      "label": "TCP Tahoe Timeouts"
+    },
+    {
+      "file": "_posts/2022-01-12-Unit4-Congestion-Contorl-6a60c9.md",
+      "reference": "zob-source/image/Three_Mechanism.jpg",
+      "label": "Three Mechanism"
+    },
+    {
+      "file": "_posts/2022-01-12-Unit4-Congestion-Contorl-6a60c9.md",
+      "reference": "zob-source/image/TCP_Tahoe.jpg",
+      "label": "TCP Tahoe"
+    },
+    {
+      "file": "_posts/2022-01-12-Unit4-Congestion-Contorl-6a60c9.md",
+      "reference": "zob-source/image/TCP_Reno.jpg",
+      "label": "TCP Reno"
+    },
+    {
+      "file": "_posts/2022-01-12-Unit4-Congestion-Contorl-6a60c9.md",
+      "reference": "zob-source/image/Congestion_Window_Inflation.jpg",
+      "label": "Congestion Window Inflation"
+    },
+    {
+      "file": "_posts/2022-01-12-Unit4-Congestion-Contorl-6a60c9.md",
+      "reference": "zob-source/image/TCP_Reno_FSM.jpg",
+      "label": "TCP Reno FSM"
+    },
+    {
+      "file": "_posts/2022-01-12-Unit5-Application-and-NATs-7cd6e0.md",
+      "reference": "",
+      "label": "Torrent File"
+    },
+    {
+      "file": "_posts/2022-02-26-Unit7-Lower-Layer-7f7ace.md",
+      "reference": "",
+      "label": "QAM"
+    },
+    {
+      "file": "_posts/2022-02-26-Unit7-Lower-Layer-7f7ace.md",
+      "reference": "",
+      "label": "Bits vs Symbols"
+    },
+    {
+      "file": "_posts/2022-02-26-Unit7-Lower-Layer-7f7ace.md",
+      "reference": "",
+      "label": "Asynchronous communication"
+    },
+    {
+      "file": "_posts/2022-02-26-Unit7-Lower-Layer-7f7ace.md",
+      "reference": "",
+      "label": "Manchester encoding"
+    },
+    {
+      "file": "_posts/2022-02-26-Unit7-Lower-Layer-7f7ace.md",
+      "reference": "",
+      "label": "4b/5b encoding"
+    },
+    {
+      "file": "_posts/2022-02-26-Unit7-Lower-Layer-7f7ace.md",
+      "reference": "",
+      "label": "summary"
+    },
+    {
+      "file": "_posts/2022-02-26-Unit7-Lower-Layer-7f7ace.md",
+      "reference": "",
+      "label": "CSMA/CD packet size requirement"
+    },
+    {
+      "file": "_posts/2022-02-26-Unit7-Lower-Layer-7f7ace.md",
+      "reference": "",
+      "label": "Ethernet Frame Format"
+    },
+    {
+      "file": "_posts/2022-02-26-Unit7-Lower-Layer-7f7ace.md",
+      "reference": "",
+      "label": "Hidden Terminals"
+    },
+    {
+      "file": "_posts/2022-02-26-Unit7-Lower-Layer-7f7ace.md",
+      "reference": "",
+      "label": "Exposed Terminals"
+    },
+    {
+      "file": "_posts/2022-02-26-Unit7-Lower-Layer-7f7ace.md",
+      "reference": "",
+      "label": "Collision or Low SNR"
+    },
+    {
+      "file": "_posts/2022-02-26-Unit8-Security-0fc3c7.md",
+      "reference": "",
+      "label": "ICMP Redirect Attack"
+    },
+    {
+      "file": "_posts/2021-09-13-Lecture-1-What-is-an-Operating-System-66518d.md",
+      "reference": "",
+      "label": "第50页，And range of Timescales"
+    },
+    {
+      "file": "_posts/2021-09-13-Lecture-1-What-is-an-Operating-System-66518d.md",
+      "reference": "",
+      "label": "第74页，Infrastructure, Textbook & Readings"
+    },
+    {
+      "file": "_posts/2021-09-13-Lecture-1-What-is-an-Operating-System-66518d.md",
+      "reference": "",
+      "label": "In conclusion"
+    },
+    {
+      "file": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "reference": "Lecture10, 第19页",
+      "label": "kernel structure"
+    },
+    {
+      "file": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "reference": "",
+      "label": "Lecture 10, 42页"
+    },
+    {
+      "file": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "reference": "",
+      "label": "第51页"
+    },
+    {
+      "file": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "reference": "",
+      "label": "第55页"
+    },
+    {
+      "file": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "reference": "",
+      "label": "Lecture11, 21"
+    },
+    {
+      "file": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "reference": "",
+      "label": "Earliest Deadline First, 24"
+    },
+    {
+      "file": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "reference": "",
+      "label": "25"
+    },
+    {
+      "file": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "reference": "",
+      "label": "46"
+    },
+    {
+      "file": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "reference": "",
+      "label": "52"
+    },
+    {
+      "file": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "reference": "",
+      "label": "53"
+    },
+    {
+      "file": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "reference": "",
+      "label": "54"
+    },
+    {
+      "file": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "reference": "",
+      "label": "12-32页"
+    },
+    {
+      "file": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "reference": "",
+      "label": "47页"
+    },
+    {
+      "file": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "reference": "",
+      "label": "56"
+    },
+    {
+      "file": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "reference": "",
+      "label": "59"
+    },
+    {
+      "file": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "reference": "",
+      "label": "60"
+    },
+    {
+      "file": "_posts/2021-10-16-lecture-10-14-Scheduling-286b19.md",
+      "reference": "",
+      "label": "12-50"
+    },
+    {
+      "file": "_posts/2021-09-13-Lecture-2-Four-fundamental-OS-concepts-ba6d56.md",
+      "reference": "",
+      "label": "第45页, In conclusion"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-3-Abstractions-I-Threads-8bc7f9.md",
+      "reference": "",
+      "label": "第28页, System Call"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-3-Abstractions-I-Threads-8bc7f9.md",
+      "reference": "",
+      "label": "第30页, 线程的系统调用API"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-3-Abstractions-I-Threads-8bc7f9.md",
+      "reference": "",
+      "label": "第63页, OS library Locks: pthreads"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-4-Processes-and-Files-and-I-O-908f82.md",
+      "reference": "",
+      "label": "第39页, Process Management API"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-4-Processes-and-Files-and-I-O-908f82.md",
+      "reference": "",
+      "label": "第43页, Common POSIX Signals"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-4-Processes-and-Files-and-I-O-908f82.md",
+      "reference": "",
+      "label": "第52页, The File System Abstraction"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-4-Processes-and-Files-and-I-O-908f82.md",
+      "reference": "",
+      "label": "第54页, C High-Level File API - Streams"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-4-Processes-and-Files-and-I-O-908f82.md",
+      "reference": "",
+      "label": "第55页, C API Standard Streams - stdio.h"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-4-Processes-and-Files-and-I-O-908f82.md",
+      "reference": "",
+      "label": "第56页, C High-Level File API"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-4-Processes-and-Files-and-I-O-908f82.md",
+      "reference": "",
+      "label": "第61页, C High-Level File API: Positioning the Pointer"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-4-Processes-and-Files-and-I-O-908f82.md",
+      "reference": "",
+      "label": "第4页"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-4-Processes-and-Files-and-I-O-908f82.md",
+      "reference": "",
+      "label": "第5页, Standard Descriptors"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-4-Processes-and-Files-and-I-O-908f82.md",
+      "reference": "",
+      "label": "第6页, Low-Level File API"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-4-Processes-and-Files-and-I-O-908f82.md",
+      "reference": "",
+      "label": "第10页, Other Operations"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-5-IPC-Pipes-and-sockets-a1228e.md",
+      "reference": "",
+      "label": "第28页"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-5-IPC-Pipes-and-sockets-a1228e.md",
+      "reference": "",
+      "label": "第59页"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-5-IPC-Pipes-and-sockets-a1228e.md",
+      "reference": "",
+      "label": "第63页"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-5-IPC-Pipes-and-sockets-a1228e.md",
+      "reference": "",
+      "label": "第64页"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-5-IPC-Pipes-and-sockets-a1228e.md",
+      "reference": "",
+      "label": "第65页"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-5-IPC-Pipes-and-sockets-a1228e.md",
+      "reference": "",
+      "label": "第14页, Namesspaces for communication over IP"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-5-IPC-Pipes-and-sockets-a1228e.md",
+      "reference": "",
+      "label": "第24页, Socket with Protection and Concurrency"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-5-IPC-Pipes-and-sockets-a1228e.md",
+      "reference": "",
+      "label": "第18页, Client Protocol"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-5-IPC-Pipes-and-sockets-a1228e.md",
+      "reference": "",
+      "label": "第19页, Server Protocol"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-5-IPC-Pipes-and-sockets-a1228e.md",
+      "reference": "",
+      "label": "第25页, Server Protocol(v3)"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-5-IPC-Pipes-and-sockets-a1228e.md",
+      "reference": "",
+      "label": "第29页, Sockets with Concurrency, without Protection"
+    },
+    {
+      "file": "_posts/2021-09-14-Lecture-5-IPC-Pipes-and-sockets-a1228e.md",
+      "reference": "",
+      "label": "第79页"
+    },
+    {
+      "file": "_posts/2021-09-15-Lecture-6-Synchronization-I-Concurrency-836c87.md",
+      "reference": "",
+      "label": "第33页"
+    },
+    {
+      "file": "_posts/2021-09-15-Lecture-6-Synchronization-I-Concurrency-836c87.md",
+      "reference": "",
+      "label": "第40页"
+    },
+    {
+      "file": "_posts/2021-09-15-Lecture-6-Synchronization-I-Concurrency-836c87.md",
+      "reference": "",
+      "label": "第36页"
+    },
+    {
+      "file": "_posts/2021-09-15-Lecture-6-Synchronization-I-Concurrency-836c87.md",
+      "reference": "",
+      "label": "第53页"
+    },
+    {
+      "file": "_posts/2021-09-15-Lecture-6-Synchronization-I-Concurrency-836c87.md",
+      "reference": "",
+      "label": "第46页"
+    },
+    {
+      "file": "_posts/2021-09-15-Lecture-6-Synchronization-I-Concurrency-836c87.md",
+      "reference": "",
+      "label": "第51页"
+    },
+    {
+      "file": "_posts/2021-09-15-Lecture-6-Synchronization-I-Concurrency-836c87.md",
+      "reference": "",
+      "label": "第59页"
+    },
+    {
+      "file": "_posts/2021-09-15-Lecture-6-Synchronization-I-Concurrency-836c87.md",
+      "reference": "",
+      "label": "第60页, ThreadRoo()是什么"
+    },
+    {
+      "file": "_posts/2021-09-18-Lecture-7-8-Semaphore-and-Monitor-5207cf.md",
+      "reference": "",
+      "label": "第29页, Definitions: Synchronization, Mutual Exclusion, Critical Section"
+    },
+    {
+      "file": "_posts/2021-09-18-Lecture-7-8-Semaphore-and-Monitor-5207cf.md",
+      "reference": "",
+      "label": "第40页, 红绿灯信号"
+    },
+    {
+      "file": "_posts/2021-09-18-Lecture-7-8-Semaphore-and-Monitor-5207cf.md",
+      "reference": "",
+      "label": "第43页, Full Solution to Bounded Buffer"
+    },
+    {
+      "file": "_posts/2021-09-18-Lecture-7-8-Semaphore-and-Monitor-5207cf.md",
+      "reference": "",
+      "label": "第66页"
+    },
+    {
+      "file": "_posts/2021-09-18-Lecture-7-8-Semaphore-and-Monitor-5207cf.md",
+      "reference": "",
+      "label": "第67页"
+    },
+    {
+      "file": "_posts/2021-09-18-Lecture-7-8-Semaphore-and-Monitor-5207cf.md",
+      "reference": "",
+      "label": "第75页"
+    },
+    {
+      "file": "_posts/2021-09-18-Lecture-7-8-Semaphore-and-Monitor-5207cf.md",
+      "reference": "",
+      "label": "Examples of Read-Modify-Write Lecture-8-47"
+    },
+    {
+      "file": "_posts/2021-09-18-Lecture-7-8-Semaphore-and-Monitor-5207cf.md",
+      "reference": "",
+      "label": "Busy waiting, 49"
+    },
+    {
+      "file": "_posts/2021-09-18-Lecture-7-8-Semaphore-and-Monitor-5207cf.md",
+      "reference": "",
+      "label": "Better Implement, 51"
+    },
+    {
+      "file": "_posts/2021-09-18-Lecture-7-8-Semaphore-and-Monitor-5207cf.md",
+      "reference": "",
+      "label": "52"
+    },
+    {
+      "file": "_posts/2021-09-18-Lecture-7-8-Semaphore-and-Monitor-5207cf.md",
+      "reference": "",
+      "label": "第82页"
+    },
+    {
+      "file": "_posts/2021-09-18-Lecture-7-8-Semaphore-and-Monitor-5207cf.md",
+      "reference": "",
+      "label": "第83页"
+    },
+    {
+      "file": "_posts/2021-09-18-Lecture-7-8-Semaphore-and-Monitor-5207cf.md",
+      "reference": "",
+      "label": "8-64"
+    },
+    {
+      "file": "_posts/2021-09-18-Lecture-7-8-Semaphore-and-Monitor-5207cf.md",
+      "reference": "",
+      "label": "8-65"
+    },
+    {
+      "file": "_posts/2026-10-17-Markdown语法-000d02.md",
+      "reference": "zob-source/image/引用退格1.gif",
+      "label": "引用退格1"
+    },
+    {
+      "file": "_posts/2026-10-17-Markdown语法-000d02.md",
+      "reference": "zob-source/image/引用退格2.gif",
+      "label": "引用退格2"
+    },
+    {
+      "file": "_posts/2026-10-17-Markdown语法-000d02.md",
+      "reference": "链接地址",
+      "label": "图床|宽度数值"
+    },
+    {
+      "file": "_posts/2026-10-17-Markdown语法-000d02.md",
+      "reference": "zob-source/image/湘湖1!400.png",
+      "label": "湘湖1|400"
+    },
+    {
+      "file": "_posts/2026-10-17-obsidian语法-7518dd.md",
+      "reference": "#^reference",
+      "label": "块的引用"
+    },
+    {
+      "file": "_posts/2026-10-17-obsidian语法-7518dd.md",
+      "reference": "zob-source/image/抚子!200.png",
+      "label": "抚子|200"
+    },
+    {
+      "file": "_posts/2026-10-17-obsidian语法-7518dd.md",
+      "reference": "zob-source/image/抚子!250.jpg",
+      "label": "抚子|250"
+    }
+  ],
+  "links": [
+    {
+      "file": "_posts/2021-08-21-C常用函数记录-3ab095.md",
+      "reference": "(https://wangdoc.com/clang/lib/string.h.html#strchrstrrchr",
+      "label": "阮一峰老师的C语言教程"
+    },
+    {
+      "file": "_posts/2026-10-17-Markdown语法-000d02.md",
+      "reference": "链接地址",
+      "label": "**显示文本内容**"
+    },
+    {
+      "file": "_posts/2026-10-17-Markdown语法-000d02.md",
+      "reference": "链接地址",
+      "label": "显示文本内容"
+    },
+    {
+      "file": "_posts/2026-10-17-obsidian语法-7518dd.md",
+      "reference": "file:///D:\\ALearning\\Obsidian\\zob-source\\video\\steam.mp4",
+      "label": "steam"
+    },
+    {
+      "file": "_posts/2026-10-17-obsidian语法-7518dd.md",
+      "reference": "file:///D:\\ALearning\\Obsidian\\zob-source\\video\\steam.mp4#t=134",
+      "label": "steam_Timestamp"
+    },
+    {
+      "file": "_posts/2026-10-17-obsidian语法-7518dd.md",
+      "reference": "../../../zob-source/video/steam.mp4",
+      "label": "sound"
+    },
+    {
+      "file": "_posts/2026-10-17-obsidian语法-7518dd.md",
+      "reference": "../../../zob-source/video/steam.mp4#t=134",
+      "label": "sound_Timestamp"
+    },
+    {
+      "file": "_posts/2026-10-17-Tools-Conclusion-cc28a9.md",
+      "reference": "[http://datastructur.es/](http://datastructur.es/",
+      "label": "CS61B"
+    },
+    {
+      "file": "_posts/2026-10-17-Tools-Conclusion-cc28a9.md",
+      "reference": "ttps://docs.oracle.com/en/java/javase/17/docs/api/index.html",
+      "label": "Java 17 documentation"
+    },
+    {
+      "file": "_posts/2020-09-30-生活体验-8d47c5.md",
+      "reference": "numbbbbb.com/2016/05/03/20160503_%E5%A6%82%E4%BD%95%E8%B4%AD%E4%B9%B0%E8%8B%B1%E6%96%87%E5%8E%9F%E7%89%88%E4%B9%A6%E5%92%8C%E5%8F%B0%E7%89%88%E4%B9%A6%EF%BC%9F/",
+      "label": "英文书籍"
+    }
+  ]
+}

@@ -26,4 +26,4 @@ permalink: /about/
 
 ## 旧站笔记
 
-原有的技术笔记与随笔保存在[旧站归档](https://github.com/Chrunge/Chrunge.github.io/tree/master/legacy/quartz/content)，仍可查阅。
+原有技术笔记与随笔已整理到[博客列表]({{ '/blog/' | relative_url }})；迁移前版本保存在[旧站备份](https://github.com/Chrunge/Chrunge.github.io/tree/archive/pre-cloud-whale-20261016/content)。

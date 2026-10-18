@@ -37,7 +37,8 @@ def main():
         doc.feed(text)
         pages[path] = doc
         if path.relative_to(root).parts[0] == 'admin': continue
-        if re.search(r'\{%|\{\{', text): errors.append(f'{path}: unrendered Liquid')
+        prose = re.sub(r'<(pre|code)\b[^>]*>.*?</\1>', '', text, flags=re.S)
+        if re.search(r'\{%|\{\{', prose): errors.append(f'{path}: unrendered Liquid')
         if re.search('\u9cb8\u5c0f\u54e8|\u4e2d\u56fd\u94f6\u884c', text): errors.append(f'{path}: legacy branding')
         if doc.headings != 1: errors.append(f'{path}: expected one h1, got {doc.headings}')
         if not doc.has_title: errors.append(f'{path}: missing title')

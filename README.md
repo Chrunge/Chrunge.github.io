@@ -68,4 +68,7 @@ node --check assets/js/site.js
 
 本次导入四篇阅读笔记，正文保留，适配了网页标题层级。源目录 README 作为说明保存在 docs 中；导入文件校验记录见 docs/reading-import.json。
 
-原 Quartz 站点完整保存在 legacy/quartz，不参与新站构建；原提交历史保留，备份分支为 archive/pre-cloud-whale-20261016。
+旧笔记已导入 _posts，旧框架已从主分支移除；原提交历史保留，备份分支为 archive/pre-cloud-whale-20261016。
+
+
+日常写作与提交统一使用 `D:/Projects/jingxiaoshao-jekyll-site`。完整操作步骤见 [使用说明书](docs/使用说明书.md)。
