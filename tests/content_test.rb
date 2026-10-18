@@ -109,6 +109,24 @@ class ContentTest < Minitest::Test
     end
   end
 
+  def test_pruning_preserves_unmanaged_html_and_invalid_metadata
+    with_library_fixture do |dir, write_chapter, generate|
+      write_chapter.call('01.md')
+      generate.call
+      custom = {
+        File.join(dir, 'redirects/author.html')=>"<h1>Author page</h1>\n",
+        File.join(dir, '_library/invalid.md')=>"---\ntitle: [broken\n---\n正文。\n",
+        File.join(dir, '_library/list.md')=>"---\n- author\n---\n正文。\n"
+      }
+      custom.each { |file, text| File.binwrite(file, text) }
+      warning = generate.call
+      custom.each { |file, text| assert_equal text.b, File.binread(file) }
+      assert_includes warning, 'Preserved unmanaged file'
+      assert_raises(RuntimeError) { Content.read(File.join(dir, 'redirects/author.html')) }
+      assert_raises(Psych::SyntaxError) { Content.read(File.join(dir, '_library/invalid.md')) }
+    end
+  end
+
   private
 
   def with_library_fixture

@@ -22,7 +22,16 @@ module Content
     Dir.glob(pattern, base: directory).each do |name|
       file = File.join(directory, name)
       next if expected.include?(File.expand_path(file))
-      data, = read(file)
+      begin
+        data, = read(file)
+      rescue RuntimeError, Psych::Exception => error
+        warn "Preserved unmanaged file #{file}: #{error.message.lines.first.strip}"
+        next
+      end
+      unless data.is_a?(Hash)
+        warn "Preserved unmanaged file #{file}: YAML metadata is not a mapping"
+        next
+      end
       File.delete(file) if data['generated_by'] == 'prepare_library'
     end
   end
