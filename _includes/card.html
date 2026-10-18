@@ -1,0 +1,4 @@
+<a class="work-card" href="{{ include.item.url | relative_url }}">
+  <div class="cover {% if include.kind == '小说' %}novel-cover{% endif %}"><span class="cover-label">{{ include.kind }}</span><img src="{{ include.item.cover | default: '/assets/images/mascot/mascot_main.png' | relative_url }}" alt="{{ include.item.title | escape }}" width="560" height="420" loading="lazy"></div>
+  <div class="work-info"><span class="eyebrow">{{ include.item.status | escape }}</span><h3>{{ include.item.title | escape }}</h3><p>{{ include.item.synopsis | escape }}</p><span class="text-link">{% if include.kind == '小说' %}开始阅读{% else %}翻开画集{% endif %} <span aria-hidden="true">↗</span></span></div>
+</a>

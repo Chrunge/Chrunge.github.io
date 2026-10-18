@@ -1,0 +1,7 @@
+---
+layout: default
+title: 作品
+permalink: /works/
+description: 云海小鲸的画集与故事。
+---
+<header class="page-heading"><p class="eyebrow">THE BOOKSHELF</p><h1>故事在这里，慢慢展开。</h1><p>一册画集，一段还在生长的故事。</p></header><div class="work-grid">{% for item in site.manga %}{% include card.html item=item kind='画集' %}{% endfor %}{% for item in site.novels %}{% include card.html item=item kind='小说' %}{% endfor %}</div>

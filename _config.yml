@@ -1,0 +1,59 @@
+title: 云海小鲸
+tagline: 在云海里，慢慢读一个故事。
+description: 记录日常灵感、创作故事与技术笔记的一座小岛。
+author:
+  name: 云海小鲸
+  avatar: /assets/images/mascot/mascot_main.png
+url: "https://chrunge.github.io"
+baseurl: ""
+lang: zh-CN
+timezone: Asia/Shanghai
+permalink: /blog/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+collections:
+  manga:
+    output: true
+    permalink: /manga/:name/
+  novels:
+    output: true
+    permalink: /novels/:name/
+defaults:
+  - scope: {path: "", type: posts}
+    values: {layout: post}
+  - scope: {path: "", type: manga}
+    values: {layout: manga}
+  - scope: {path: "", type: novels}
+    values: {layout: novel}
+comments:
+  enabled: false
+  repo: ""
+  repo_id: ""
+  category: General
+  category_id: ""
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+exclude:
+  - README.md
+  - docs
+  - scripts
+  - tests
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - legacy
+  - vendor
+  - .preview
+  - .preview-config.yml
+  - _site_check
+  - .deploy.yml
+
+# Keep the RSS feed compact for book-length notes.
+feed:
+  excerpt_only: true

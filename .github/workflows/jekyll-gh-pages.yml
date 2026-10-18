@@ -1,0 +1,69 @@
+name: Build and deploy Cloud Whale
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: read
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check scripts
+        run: |
+          node --check assets/js/site.js
+          node --check assets/js/theme-init.js
+      - name: Build and check project subdirectory URLs
+        env:
+          JEKYLL_ENV: production
+        run: |
+          bundle exec jekyll build --baseurl /path-check --destination _site_check
+          python scripts/check_site.py _site_check --baseurl /path-check
+          rm -r _site_check
+      - name: Configure Pages
+        if: github.event_name != 'pull_request'
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build publishable site
+        if: github.event_name != 'pull_request'
+        env:
+          JEKYLL_ENV: production
+          SITE_ORIGIN: ${{ steps.pages.outputs.origin }}
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: |
+          python -c 'import json, os; open(".deploy.yml", "w").write("url: " + json.dumps(os.environ["SITE_ORIGIN"]) + "\n")'
+          bundle exec jekyll build --config _config.yml,.deploy.yml --baseurl "$BASE_PATH"
+          python scripts/check_site.py _site --baseurl "$BASE_PATH"
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

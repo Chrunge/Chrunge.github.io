@@ -1,0 +1,4 @@
+---
+layout: default
+---
+<article class="reading-page"><a class="back-link" href="{{ '/blog/' | relative_url }}">← 返回博客</a><header class="article-heading"><p class="eyebrow">{{ page.category | escape }} · {{ page.date | date: '%Y.%m.%d' }}</p><h1>{{ page.title | escape }}</h1>{% if page.description %}<p>{{ page.description | escape }}</p>{% endif %}</header>{% include reader-tools.html %}<div class="prose reader-content" id="reading-content">{% include content.html %}</div><nav class="article-nav" aria-label="相邻文章">{% if page.previous %}<a href="{{ page.previous.url | relative_url }}">← {{ page.previous.title | escape }}</a>{% endif %}{% if page.next %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title | escape }} →</a>{% endif %}</nav>{% include giscus.html %}</article>

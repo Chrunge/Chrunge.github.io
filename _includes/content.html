@@ -1,0 +1,3 @@
+{% capture asset_src %}src="{{ '/assets/' | relative_url }}{% endcapture %}
+{% capture asset_href %}href="{{ '/assets/' | relative_url }}{% endcapture %}
+{{ content | replace: 'src="/assets/', asset_src | replace: 'href="/assets/', asset_href }}

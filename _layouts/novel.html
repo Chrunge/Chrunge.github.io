@@ -1,0 +1,4 @@
+---
+layout: default
+---
+<article class="reading-page"><a class="back-link" href="{{ '/works/' | relative_url }}">← 返回作品</a><header class="article-heading"><p class="eyebrow">{{ page.status | escape }} · {{ page.author | default: site.author.name | escape }}</p><h1>{{ page.title | escape }}</h1><p>{{ page.synopsis | escape }}</p></header>{% include reader-tools.html %}<div class="prose reader-content novel-text" id="reading-content">{% include content.html %}</div>{% include giscus.html %}</article>

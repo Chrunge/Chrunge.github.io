@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="blue">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  {% seo %}
+  {% feed_meta %}
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <script src="{{ '/assets/js/theme-init.js' | relative_url }}"></script>
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/themes.css' | relative_url }}">
+  <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  {% include header.html %}
+  <main id="main" class="site-main" tabindex="-1">{{ content }}</main>
+  <footer class="site-footer"><a class="brand-small" href="{{ '/' | relative_url }}">云海小鲸</a><span>在自己的节奏里，慢慢生长。</span><a href="{{ '/feed.xml' | relative_url }}">RSS 订阅 ↗</a></footer>
+  <button class="focus-exit" type="button" hidden>退出沉浸 <kbd>Esc</kbd></button>
+  <p id="status" class="sr-only" role="status" aria-live="polite"></p>
+</body>
+</html>
