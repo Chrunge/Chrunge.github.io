@@ -3,13 +3,13 @@ require_relative 'lib/content'
 require 'json'
 require 'digest'
 
+publication = Content.publication_options
 entries = []
 %w[_posts _novels _manga].each do |collection|
   Dir.glob("#{collection}/**/*.md").sort.each do |file|
     data, = Content.read(file)
-    next if data['published'] == false
+    next unless Content.published?(data, **publication)
     date = DateTime.parse(data.fetch('date').to_s)
-    next if collection == '_posts' && date > DateTime.now
     slug = File.basename(file, '.md').sub(/\A\d{4}-\d{2}-\d{2}-/, '')
     prefix = {'_posts'=>'blog', '_novels'=>'novels', '_manga'=>'manga'}.fetch(collection)
     entries << {'title'=>data.fetch('title'), 'url'=>data['permalink'] || "/#{prefix}/#{slug}/",

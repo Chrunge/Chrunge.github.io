@@ -127,6 +127,56 @@ class ContentTest < Minitest::Test
     end
   end
 
+  def test_publication_policy_matches_default_and_explicit_preview_options
+    now = DateTime.parse('2026-10-18T12:00:00+08:00')
+    assert Content.published?({ 'date'=>'2026-10-18T12:00:00+08:00' }, now: now)
+    refute Content.published?({ 'date'=>'2026-10-19T12:00:00+08:00' }, now: now)
+    refute Content.published?({ 'published'=>false }, now: now)
+    assert Content.published?({ 'published'=>false }, now: now, unpublished: true)
+    assert Content.published?({ 'date'=>'2026-10-19T12:00:00+08:00' }, now: now, future: true)
+  end
+
+  def test_hidden_and_future_chapters_leave_no_catalog_or_redirect_and_empty_books_disappear
+    with_library_fixture do |dir, write_chapter, generate|
+      visible = write_chapter.call('01.md', { 'legacy_url'=>'/blog/visible/' })
+      hidden = write_chapter.call('02.md', { 'published'=>false, 'legacy_url'=>'/blog/hidden/' })
+      future = write_chapter.call('03.md', { 'date'=>'2999-01-01 12:00:00 +0800', 'legacy_url'=>'/blog/future/' })
+      last = write_chapter.call('04.md')
+      hidden_bytes, future_bytes = File.binread(hidden), File.binread(future)
+      generate.call
+      catalog = JSON.parse(File.read(File.join(dir, '_data/library.json'), encoding: 'UTF-8'))
+      assert_equal ['01.md', '04.md'], catalog.values.first['chapters'].map { |chapter| chapter['title'] }
+      assert_equal 1, Dir.glob('*.html', base: File.join(dir, 'redirects')).length
+      assert_equal hidden_bytes, File.binread(hidden)
+      assert_equal future_bytes, File.binread(future)
+      [visible, last].each do |file|
+        data, body = Content.read(file)
+        data['published'] = false
+        Content.write(file, data.to_yaml + "---\n" + body)
+      end
+      generate.call
+      assert_equal({}, JSON.parse(File.read(File.join(dir, '_data/library.json'), encoding: 'UTF-8')))
+      assert_empty Dir.glob('*.md', base: File.join(dir, '_library'))
+      assert_empty Dir.glob('*.html', base: File.join(dir, 'redirects'))
+      out, err, status = Open3.capture3(RbConfig.ruby, 'scripts/check_content.rb', chdir: dir)
+      assert status.success?, out + err
+    end
+  end
+
+  def test_catalog_validation_checks_identity_as_well_as_count
+    with_library_fixture do |dir, write_chapter, generate|
+      write_chapter.call('01.md')
+      generate.call
+      file = File.join(dir, '_data/library.json')
+      catalog = JSON.parse(File.read(file, encoding: 'UTF-8'))
+      catalog.values.first['chapters'].first['url'] = '/wrong-chapter/'
+      Content.write(file, JSON.generate(catalog))
+      out, err, status = Open3.capture3(RbConfig.ruby, 'scripts/check_content.rb', chdir: dir)
+      refute status.success?, out + err
+      assert_includes err, 'does not match public source chapter URLs'
+    end
+  end
+
   private
 
   def with_library_fixture

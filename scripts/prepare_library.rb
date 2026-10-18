@@ -8,6 +8,7 @@ root = File.directory?('_novels') ? '.' : File.expand_path('..', __dir__)
 tag_rules = YAML.safe_load(File.read(File.join(root, '_data', 'tag_rules.yml'), encoding:'UTF-8'))
 read_document = Content.method(:read)
 natural = ->(name) { name.downcase.gsub(/\d+/) { |n| n.rjust(12, '0') } }
+publication = Content.publication_options(root)
 novels_root = File.join(root, '_novels')
 groups = Dir.glob(File.join(novels_root, '**', '*.md')).group_by do |file|
   parent = File.dirname(file)
@@ -25,6 +26,8 @@ groups.sort.each do |directory, files|
   title = segments.last
   title = "#{title} · 综合笔记" if segments.length == 1 && title != '小说'
   chapters = files.map { |file| [file, *read_document.call(file)] }
+  chapters.select! { |_, data, _| Content.published?(data, **publication) }
+  next if chapters.empty?
   chapters.sort_by! { |file, data, _| [data.fetch('order', 1_000_000).to_i, natural.call(File.basename(file))] }
   book = {'id'=>id, 'title'=>title, 'category'=>segments.first, 'directory'=>directory,
           'url'=>"/novels/#{id}/", 'description'=>"#{directory.gsub('/', ' / ')}，共 #{chapters.length} 章。按章节阅读，慢慢整理知识。", 'chapters'=>[]}
