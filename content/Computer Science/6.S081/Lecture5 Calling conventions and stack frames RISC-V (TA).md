@@ -11,12 +11,12 @@
 > TA：从最初的代码可以看出，这里的程序完全是汇编代码实现的，所以自然也没有关联的C程序。如果我将断点设置在C代码中，在命中断点之后输入layout split或者layout source，就可以看到相应的C代码了。对于gdb，也可以使用apropos指令查看帮助。
 
 #### RISC-V寄存器
-![](Attachments/Pasted%20image%2020220829162219.png)
+![](Pasted%20image%2020220829162219.png)
 1. Caller Saved寄存器在Caller调用Callee时, Callee不会保存该寄存器的值, 所有需要Caller在事先保存.
 2. Callee Saved寄存器在函数调用的时候会保存, 需要被Callee保存.
 
 #### Stack
-![](Attachments/Pasted%20image%2020220829162017.png)
+![](Pasted%20image%2020220829162017.png)
 1. 但是有关Stack Frame有两件事情是确定的：
 	- Return address总是会出现在Stack Frame的第一位
 	- 指向前一个Stack Frame的指针(fp)也会出现在栈中的固定位置

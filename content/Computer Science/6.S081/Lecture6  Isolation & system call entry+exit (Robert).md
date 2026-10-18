@@ -21,8 +21,8 @@
 
 
 #### Trap执行力流程
-1. ![](Attachments/Pasted%20image%2020220829194120.png)
-2. ![](Attachments/Pasted%20image%2020220829200130.png)
+1. ![](Pasted%20image%2020220829194120.png)
+2. ![](Pasted%20image%2020220829200130.png)
 3. ecall并不会切换page table，这是ecall指令的一个非常重要的特点。所以这意味着，trap处理代码必须存在于每一个user page table中。而这个trampoline page，是由内核小心的映射到每一个user page table中，以使得当我们仍然在使用user page table时，内核在一个地方能够执行trap机制的最开始的一些指令。
 	1. ecall将代码从user mode改到supervisor mode
 	2. ecall将程序计数器的值保存在了SEPC寄存器

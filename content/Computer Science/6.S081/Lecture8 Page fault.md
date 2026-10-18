@@ -1,13 +1,13 @@
 #### Lay page allocation
 1. page fault发生时，需要的信息
 	1. 出错的虚拟地址，或者是触发page fault的源，将出错的地址存放在STVAL寄存器中。
-	2. 出错的原因![](Attachments/Pasted%20image%2020220830103724.png)
+	2. 出错的原因![](Pasted%20image%2020220830103724.png)
 	3. 第三个信息是触发page fault的指令的地址
 
 #### Zero fill on demand
-![](Attachments/Pasted%20image%2020220830110128.png)
+![](Pasted%20image%2020220830110128.png)
 #### Copy On Write Fork
-![](Attachments/Pasted%20image%2020220830112425.png)
+![](Pasted%20image%2020220830112425.png)
 >学生提问：我们如何发现父进程写了这部分内存地址？是与子进程相同的方法吗？
 >Frans教授：是的，因为子进程的地址空间来自于父进程的地址空间的拷贝。如果我们使用了特定的虚拟地址，因为地址空间是相同的，不论是父进程还是子进程，都会有相同的处理方式。
 
@@ -29,7 +29,7 @@ Frans教授：对于memory mapped files，你将一个文件映射到内存中�
 
 #### Memory Map Files
 从文件描述符对应的文件的偏移量的位置开始，映射长度为len的内容到虚拟内存地址VA，同时我们需要加上一些保护，比如只读或者读写。
-![](Attachments/Pasted%20image%2020220830112812.png)
+![](Pasted%20image%2020220830112812.png)
 假设文件内容是读写并且内核实现mmap的方式是eager方式（不过大部分系统都不会这么做），内核会从文件的offset位置开始，将数据拷贝到内存，设置好PTE指向物理内存的位置。
 当完成操作之后，会有一个对应的unmap系统调用，参数是虚拟地址（VA），长度（len）。来表明应用程序已经完成了对文件的操作，在unmap时间点，我们需要将dirty block写回到文件中。我们可以很容易的找到哪些block是dirty的，因为它们在PTE中的dirty bit为1。
 当然，在任何聪明的内存管理机制中，所有的这些都是以lazy的方式实现。你不会立即将文件内容拷贝到内存中，而是先记录一下这个PTE属于这个文件描述符。相应的信息通常在VMA结构体中保存，VMA全称是Virtual Memory Area。
