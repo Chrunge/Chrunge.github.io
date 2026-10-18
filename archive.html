@@ -1,0 +1,9 @@
+---
+layout: default
+title: 文章归档
+permalink: /archive/
+description: 按年份回看阅读笔记、日常随笔与创作记录。
+---
+<header class="page-heading"><p class="eyebrow">ARCHIVE</p><h1>沿着时间，翻一翻。</h1><p>共 {{ site.data.discovery.post_count }} 篇文章，按发表时间归档。</p></header>
+<p class="catalog-note">专业知识按课程和专题收在<a href="{{ '/novels/' | relative_url }}">书架</a>中，也可以通过<a href="{{ '/tags/' | relative_url }}">标签</a>寻找。</p>
+{% for year in site.data.discovery.years %}<section class="archive-year" aria-labelledby="year-{{ year.year }}"><div class="archive-heading"><h2 id="year-{{ year.year }}">{{ year.year }}</h2><span>{{ year.entries.size }} 篇</span></div><ol class="archive-list">{% for entry in year.entries %}<li class="archive-row"><time datetime="{{ entry.date }}">{{ entry.day }}</time><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a><span class="tag">{{ entry.category | escape }}</span></li>{% endfor %}</ol></section>{% endfor %}

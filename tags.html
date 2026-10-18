@@ -1,0 +1,9 @@
+---
+layout: default
+title: 标签
+permalink: /tags/
+description: 通过标签查找博客文章、专业知识章节与画集。
+---
+<header class="page-heading"><p class="eyebrow">TAGS</p><h1>从一个词，找到一段文字。</h1><p>{{ site.data.discovery.tags.size }} 个标签，串起文章、专题章节与画集。</p></header>
+<nav class="tag-cloud" aria-label="选择标签">{% for tag in site.data.discovery.tags %}<a class="tag" href="#{{ tag.id }}">{{ tag.name | escape }} <span>{{ tag.entries.size }}</span></a>{% endfor %}</nav>
+{% for tag in site.data.discovery.tags %}<section class="tag-section" aria-labelledby="{{ tag.id }}"><h2 id="{{ tag.id }}">{{ tag.name | escape }}</h2><ul>{% for entry in tag.entries %}<li><a href="{{ entry.url | relative_url }}"><span>{{ entry.title | escape }}</span><small>{{ entry.kind }} · {{ entry.year }}</small></a></li>{% endfor %}</ul></section>{% endfor %}

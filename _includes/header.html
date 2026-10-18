@@ -1,9 +1,12 @@
 <header class="site-header">
-  <a class="brand" href="{{ '/' | relative_url }}" aria-label="云海小鲸首页"><img src="{{ '/assets/images/mascot/mascot_main.png' | relative_url }}" width="48" height="40" alt=""><span>云海小鲸</span></a>
+  <a class="brand" href="{{ '/' | relative_url }}" aria-label="云海小鲸首页"><img src="{{ '/assets/images/mascot/cloud-whale.svg' | relative_url }}" width="48" height="40" alt=""><span>云海小鲸</span></a>
   <nav aria-label="主导航">
     <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>首页</a>
     <a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog/' %}aria-current="page"{% endif %}>博客</a>
-    <a href="{{ '/works/' | relative_url }}" {% if page.url contains '/works/' or page.collection == 'manga' or page.collection == 'novels' %}aria-current="page"{% endif %}>作品</a>
+    <a href="{{ '/novels/' | relative_url }}" {% if page.url contains '/novels/' or page.url == '/works/' %}aria-current="page"{% endif %}>小说</a>
+    <a href="{{ '/manga/' | relative_url }}" {% if page.url contains '/manga/' %}aria-current="page"{% endif %}>漫画</a>
+    <a href="{{ '/archive/' | relative_url }}" {% if page.url == '/archive/' %}aria-current="page"{% endif %}>归档</a>
+    <a href="{{ '/tags/' | relative_url }}" {% if page.url == '/tags/' %}aria-current="page"{% endif %}>标签</a>
     <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>关于</a>
   </nav>
   <div class="header-tools js-only">

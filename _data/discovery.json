@@ -1,0 +1,2636 @@
+{
+  "post_count": 19,
+  "years": [
+    {
+      "year": "2026",
+      "entries": [
+        {
+          "title": "《道德经》——与老子的对话录",
+          "url": "/blog/reading-laozi-dialogues/",
+          "date": "2026-10-16T12:00:00+08:00",
+          "day": "10.16",
+          "year": "2026",
+          "category": "阅读笔记",
+          "tags": [
+            "阅读笔记",
+            "道德经"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "杏坛春风与函谷玄览：孔老庄论道对话录",
+          "url": "/blog/reading-confucius-laozi-collected/",
+          "date": "2026-10-16T12:00:00+08:00",
+          "day": "10.16",
+          "year": "2026",
+          "category": "阅读笔记",
+          "tags": [
+            "阅读笔记",
+            "儒道共参"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "《夫子之道》—— 与孔子的对话录",
+          "url": "/blog/reading-confucius-dialogues/",
+          "date": "2026-10-16T12:00:00+08:00",
+          "day": "10.16",
+          "year": "2026",
+          "category": "阅读笔记",
+          "tags": [
+            "阅读笔记",
+            "论语"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "给小岛搭一间轻盈的屋子",
+          "url": "/blog/jekyll-github-pages-architecture/",
+          "date": "2026-10-15T10:00:00+08:00",
+          "day": "10.15",
+          "year": "2026",
+          "category": "技术笔记",
+          "tags": [
+            "Jekyll",
+            "博客",
+            "技术笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "一只小鲸，九种心情",
+          "url": "/blog/cloud-whale-character-design/",
+          "date": "2026-10-12T16:30:00+08:00",
+          "day": "10.12",
+          "year": "2026",
+          "category": "创作笔记",
+          "tags": [
+            "角色设计",
+            "配色",
+            "创作笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "把阅读的时间，还给故事",
+          "url": "/blog/manga-novel-reader-design/",
+          "date": "2026-10-08T20:15:00+08:00",
+          "day": "10.08",
+          "year": "2026",
+          "category": "创作随笔",
+          "tags": [
+            "阅读",
+            "设计",
+            "创作随笔"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "我想要怎样的生活",
+          "url": "/blog/我想要啥-ca9563/",
+          "date": "2026-09-03T23:02:35+08:00",
+          "day": "09.03",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "《论语》《道德经》《孙子兵法》读后思考",
+          "url": "/blog/论语-道德经-孙子兵法-读后思考-f964a3/",
+          "date": "2026-07-16T08:51:33+08:00",
+          "day": "07.16",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "与人相处：理解、边界与关系",
+          "url": "/blog/与人相处的一些思考-5ab0ea/",
+          "date": "2026-05-20T22:26:18+08:00",
+          "day": "05.20",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "《论语》中的中庸之道",
+          "url": "/blog/论语的中庸之道-f13916/",
+          "date": "2026-05-17T13:07:33+08:00",
+          "day": "05.17",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "情与义：从仁恕到责任",
+          "url": "/blog/情与义-5dd2a9/",
+          "date": "2026-05-17T11:22:41+08:00",
+          "day": "05.17",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "知者不惑，仁者不忧，勇者不惧",
+          "url": "/blog/知者不惑-仁者不忧-勇者不惧-6e7bb5/",
+          "date": "2026-05-17T10:31:38+08:00",
+          "day": "05.17",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "近期的追求：生活方向与行动",
+          "url": "/blog/关于近期的追求-c6b398/",
+          "date": "2026-05-14T12:00:08+08:00",
+          "day": "05.14",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "独乐与众乐：快乐如何分享",
+          "url": "/blog/关于独乐乐不如众乐乐-933457/",
+          "date": "2026-05-10T23:11:59+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "关于生活目标与价值的思索",
+          "url": "/blog/关于生活追求的思索-041923/",
+          "date": "2026-05-10T23:02:38+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "美国制宪会议：代表与背景梳理",
+          "url": "/blog/美国制宪会议人员表-0cbdf1/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "year": "2021",
+      "entries": [
+        {
+          "title": "梦境与幻想",
+          "url": "/blog/幻想日记-d2b836/",
+          "date": "2021-07-15T12:00:00+08:00",
+          "day": "07.15",
+          "year": "2021",
+          "category": "读书笔记",
+          "tags": [
+            "Dream",
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "随记灵感",
+          "url": "/blog/随记灵感-433cff/",
+          "date": "2021-01-01T12:00:00+08:00",
+          "day": "01.01",
+          "year": "2021",
+          "category": "读书笔记",
+          "tags": [
+            "Daily_Note",
+            "读书笔记"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "year": "2020",
+      "entries": [
+        {
+          "title": "学习心得",
+          "url": "/blog/生活体验-8d47c5/",
+          "date": "2020-09-30T23:02:49+08:00",
+          "day": "09.30",
+          "year": "2020",
+          "category": "读书笔记",
+          "tags": [
+            "Study",
+            "读书笔记"
+          ],
+          "kind": "文章"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": "tag-cd47017abc82",
+      "name": "15-445",
+      "entries": [
+        {
+          "title": "SQL 与 SQLite：数据库查询笔记",
+          "url": "/novels/0b1bad55a738/read/54a3c50c79db/",
+          "date": "2023-04-09T12:00:00+08:00",
+          "day": "04.09",
+          "year": "2023",
+          "category": "Computer Science / 15-445",
+          "tags": [
+            "C++",
+            "Sqlite",
+            "15-445"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-ff8e628b4135",
+      "name": "6.S081",
+      "entries": [
+        {
+          "title": "多处理器与锁：并发访问的协调",
+          "url": "/novels/b145608faa58/read/ea19306bb465/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Science / 6.S081",
+          "tags": [
+            "6.S081"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "进程隔离与系统调用的进入和返回",
+          "url": "/novels/b145608faa58/read/c033fbc22bfd/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Science / 6.S081",
+          "tags": [
+            "6.S081"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "操作系统导论：目标、内核与系统调用",
+          "url": "/novels/b145608faa58/read/9a664caef334/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Science / 6.S081",
+          "tags": [
+            "6.S081"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "页表：地址转换与内存映射",
+          "url": "/novels/b145608faa58/read/97c3fe7cd4fa/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Science / 6.S081",
+          "tags": [
+            "6.S081"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "RISC-V 调用约定与栈帧",
+          "url": "/novels/b145608faa58/read/96d45a552049/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Science / 6.S081",
+          "tags": [
+            "6.S081"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "操作系统组织：隔离与系统调用",
+          "url": "/novels/b145608faa58/read/60b7be50bf1d/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Science / 6.S081",
+          "tags": [
+            "6.S081"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "中断、设备与 PLIC",
+          "url": "/novels/b145608faa58/read/17395818bbe3/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Science / 6.S081",
+          "tags": [
+            "6.S081"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "缺页异常与按需分配",
+          "url": "/novels/b145608faa58/read/14cc429aa714/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Science / 6.S081",
+          "tags": [
+            "6.S081"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-87777e32a387",
+      "name": "61A",
+      "entries": [
+        {
+          "title": "CS61A：程序设计与计算抽象",
+          "url": "/novels/1fb779328511/read/1919eb667f31/",
+          "date": "2020-09-27T18:44:16+08:00",
+          "day": "09.27",
+          "year": "2020",
+          "category": "Computer Science / 61ABC / 61A",
+          "tags": [
+            "Python",
+            "Scheme",
+            "SICP",
+            "CS61A",
+            "61A"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-33594065b1f6",
+      "name": "61ABC",
+      "entries": [
+        {
+          "title": "计算机课程学习进度记录",
+          "url": "/novels/2bc8505ad7c0/read/61e4120e44aa/",
+          "date": "2020-10-27T10:32:07+08:00",
+          "day": "10.27",
+          "year": "2020",
+          "category": "Computer Science / 61ABC",
+          "tags": [
+            "61ABC"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-85b38dd7b88a",
+      "name": "61B",
+      "entries": [
+        {
+          "title": "CS61B：数据结构学习笔记",
+          "url": "/novels/3e246bd35959/read/0a1602e3932c/",
+          "date": "2020-10-22T18:24:22+08:00",
+          "day": "10.22",
+          "year": "2020",
+          "category": "Computer Science / 61ABC / 61B",
+          "tags": [
+            "CS61B",
+            "Java",
+            "Data_Structure",
+            "Algorithm",
+            "61B"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-68be44a44c1b",
+      "name": "61C",
+      "entries": [
+        {
+          "title": "C 标准库常用函数笔记",
+          "url": "/novels/18995fb7b459/read/2ca1a8345ece/",
+          "date": "2021-08-21T16:03:35+08:00",
+          "day": "08.21",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "C",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "CS61C 计算机组成知识总结",
+          "url": "/novels/18995fb7b459/read/198c470a63a7/",
+          "date": "2021-07-24T20:47:02+08:00",
+          "day": "07.24",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "计算机输入输出系统",
+          "url": "/novels/18995fb7b459/read/c6298e17f272/",
+          "date": "2021-07-14T15:07:56+08:00",
+          "day": "07.14",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Input",
+            "Output",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "并行计算与同步机制",
+          "url": "/novels/18995fb7b459/read/4dc53f95a72a/",
+          "date": "2021-07-13T11:52:02+08:00",
+          "day": "07.13",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Parallelism",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "虚拟内存与地址转换",
+          "url": "/novels/18995fb7b459/read/8d35fe6a2ef1/",
+          "date": "2021-07-12T15:59:45+08:00",
+          "day": "07.12",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Virtual_Memory",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "处理器流水线与冒险",
+          "url": "/novels/18995fb7b459/read/6bf4860d0ce6/",
+          "date": "2021-07-12T13:39:32+08:00",
+          "day": "07.12",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Pineline",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "缓存：局部性与访问性能",
+          "url": "/novels/18995fb7b459/read/7b885e4ee37a/",
+          "date": "2021-07-12T13:38:13+08:00",
+          "day": "07.12",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Cache",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "寄存器与机器指令",
+          "url": "/novels/18995fb7b459/read/8f5278b03324/",
+          "date": "2021-04-29T17:16:50+08:00",
+          "day": "04.29",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Register",
+            "Instruction",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "数值表示、C 语法与浮点数",
+          "url": "/novels/18995fb7b459/read/a2a21e5ea6c1/",
+          "date": "2021-04-06T20:59:58+08:00",
+          "day": "04.06",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "C",
+            "Assembly",
+            "Computer_Architecture",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-d704d8af25be",
+      "name": "Algorithm",
+      "entries": [
+        {
+          "title": "算法与数据结构学习笔记",
+          "url": "/novels/707bb9528e4d/read/2246967dad9f/",
+          "date": "2022-03-30T12:00:00+08:00",
+          "day": "03.30",
+          "year": "2022",
+          "category": "Computer Science / Algorithm",
+          "tags": [
+            "Algorithm"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "CS61B：数据结构学习笔记",
+          "url": "/novels/3e246bd35959/read/0a1602e3932c/",
+          "date": "2020-10-22T18:24:22+08:00",
+          "day": "10.22",
+          "year": "2020",
+          "category": "Computer Science / 61ABC / 61B",
+          "tags": [
+            "CS61B",
+            "Java",
+            "Data_Structure",
+            "Algorithm",
+            "61B"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-44e7d4b24846",
+      "name": "Assembly",
+      "entries": [
+        {
+          "title": "数值表示、C 语法与浮点数",
+          "url": "/novels/18995fb7b459/read/a2a21e5ea6c1/",
+          "date": "2021-04-06T20:59:58+08:00",
+          "day": "04.06",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "C",
+            "Assembly",
+            "Computer_Architecture",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-6b23c0d5f35d",
+      "name": "C",
+      "entries": [
+        {
+          "title": "C 程序的编译过程与内存布局",
+          "url": "/novels/9e1221b5ba9d/read/eee850d6fa9a/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Tools / Program Language / C",
+          "tags": [
+            "C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "C 标准库常用函数笔记",
+          "url": "/novels/18995fb7b459/read/2ca1a8345ece/",
+          "date": "2021-08-21T16:03:35+08:00",
+          "day": "08.21",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "C",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "C 编译、类型转换与运算符优先级",
+          "url": "/novels/9e1221b5ba9d/read/946ce9d3c334/",
+          "date": "2021-04-14T08:33:48+08:00",
+          "day": "04.14",
+          "year": "2021",
+          "category": "Computer Tools / Program Language / C",
+          "tags": [
+            "C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "数值表示、C 语法与浮点数",
+          "url": "/novels/18995fb7b459/read/a2a21e5ea6c1/",
+          "date": "2021-04-06T20:59:58+08:00",
+          "day": "04.06",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "C",
+            "Assembly",
+            "Computer_Architecture",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-f1deb75fa21d",
+      "name": "C++",
+      "entries": [
+        {
+          "title": "SQL 与 SQLite：数据库查询笔记",
+          "url": "/novels/0b1bad55a738/read/54a3c50c79db/",
+          "date": "2023-04-09T12:00:00+08:00",
+          "day": "04.09",
+          "year": "2023",
+          "category": "Computer Science / 15-445",
+          "tags": [
+            "C++",
+            "Sqlite",
+            "15-445"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-b9c7cb099d11",
+      "name": "CS144",
+      "entries": [
+        {
+          "title": "链路层与底层网络",
+          "url": "/novels/621b16c7185e/read/eeb333c3425b/",
+          "date": "2022-02-26T16:25:35+08:00",
+          "day": "02.26",
+          "year": "2022",
+          "category": "Computer Science / CS144",
+          "tags": [
+            "CS144",
+            "Lower_layer"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "网络安全基础",
+          "url": "/novels/621b16c7185e/read/7931f93a83d3/",
+          "date": "2022-02-26T16:25:35+08:00",
+          "day": "02.26",
+          "year": "2022",
+          "category": "Computer Science / CS144",
+          "tags": [
+            "Security",
+            "CS144"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "分组交换：数据如何穿过网络",
+          "url": "/novels/621b16c7185e/read/90ffcad2bbc4/",
+          "date": "2022-01-13T12:37:48+08:00",
+          "day": "01.13",
+          "year": "2022",
+          "category": "Computer Science / CS144",
+          "tags": [
+            "CS144",
+            "UDP",
+            "TCP"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "传输层：端到端通信",
+          "url": "/novels/621b16c7185e/read/1476b0b3e744/",
+          "date": "2022-01-13T12:37:48+08:00",
+          "day": "01.13",
+          "year": "2022",
+          "category": "Computer Science / CS144",
+          "tags": [
+            "CS144",
+            "Transport"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "应用层与网络地址转换",
+          "url": "/novels/621b16c7185e/read/a57551b9e071/",
+          "date": "2022-01-12T13:03:42+08:00",
+          "day": "01.12",
+          "year": "2022",
+          "category": "Computer Science / CS144",
+          "tags": [
+            "CS144",
+            "NATs"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "互联网与 IP：网络基础",
+          "url": "/novels/621b16c7185e/read/5dc6b952ab06/",
+          "date": "2022-01-12T13:03:42+08:00",
+          "day": "01.12",
+          "year": "2022",
+          "category": "Computer Science / CS144",
+          "tags": [
+            "CS144",
+            "IP"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "路由：选择数据的转发路径",
+          "url": "/novels/621b16c7185e/read/463687ee0e21/",
+          "date": "2022-01-12T13:03:42+08:00",
+          "day": "01.12",
+          "year": "2022",
+          "category": "Computer Science / CS144",
+          "tags": [
+            "Routing",
+            "CS144"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "拥塞控制：TCP 的发送节奏",
+          "url": "/novels/621b16c7185e/read/2cc38f2a75af/",
+          "date": "2022-01-12T13:03:42+08:00",
+          "day": "01.12",
+          "year": "2022",
+          "category": "Computer Science / CS144",
+          "tags": [
+            "CS144",
+            "Congestion_Control"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-b333e457062a",
+      "name": "CS162",
+      "entries": [
+        {
+          "title": "操作系统调度：策略与权衡",
+          "url": "/novels/bda2fee7908f/read/23835f1b7ee4/",
+          "date": "2021-10-16T12:27:44+08:00",
+          "day": "10.16",
+          "year": "2021",
+          "category": "Computer Science / CS162",
+          "tags": [
+            "CS162"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "信号量与管程：同步机制",
+          "url": "/novels/bda2fee7908f/read/ef971efb3b9e/",
+          "date": "2021-09-18T12:54:45+08:00",
+          "day": "09.18",
+          "year": "2021",
+          "category": "Computer Science / CS162",
+          "tags": [
+            "CS162"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "并发与同步基础",
+          "url": "/novels/bda2fee7908f/read/50f5695a3947/",
+          "date": "2021-09-15T09:35:31+08:00",
+          "day": "09.15",
+          "year": "2021",
+          "category": "Computer Science / CS162",
+          "tags": [
+            "CS162"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "进程间通信：管道与套接字",
+          "url": "/novels/bda2fee7908f/read/29290b7c1a10/",
+          "date": "2021-09-14T15:40:53+08:00",
+          "day": "09.14",
+          "year": "2021",
+          "category": "Computer Science / CS162",
+          "tags": [
+            "CS162"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "进程、文件与输入输出",
+          "url": "/novels/bda2fee7908f/read/56f4fdfc1602/",
+          "date": "2021-09-14T14:28:54+08:00",
+          "day": "09.14",
+          "year": "2021",
+          "category": "Computer Science / CS162",
+          "tags": [
+            "CS162"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "线程：执行流与并发抽象",
+          "url": "/novels/bda2fee7908f/read/482bf42a56e3/",
+          "date": "2021-09-14T12:25:42+08:00",
+          "day": "09.14",
+          "year": "2021",
+          "category": "Computer Science / CS162",
+          "tags": [
+            "CS162"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "操作系统的四个基本概念",
+          "url": "/novels/bda2fee7908f/read/6623743b8bd2/",
+          "date": "2021-09-13T10:18:43+08:00",
+          "day": "09.13",
+          "year": "2021",
+          "category": "Computer Science / CS162",
+          "tags": [
+            "CS162"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "操作系统是什么：抽象与资源管理",
+          "url": "/novels/bda2fee7908f/read/6dd443c4fc7d/",
+          "date": "2021-09-13T09:10:30+08:00",
+          "day": "09.13",
+          "year": "2021",
+          "category": "Computer Science / CS162",
+          "tags": [
+            "CS162"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "Pintos 系统实验笔记",
+          "url": "/novels/bda2fee7908f/read/30b9a38a6851/",
+          "date": "2021-09-12T09:34:41+08:00",
+          "day": "09.12",
+          "year": "2021",
+          "category": "Computer Science / CS162",
+          "tags": [
+            "Pintos",
+            "CS162"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-9b611a055f8f",
+      "name": "CS61A",
+      "entries": [
+        {
+          "title": "CS61A：程序设计与计算抽象",
+          "url": "/novels/1fb779328511/read/1919eb667f31/",
+          "date": "2020-09-27T18:44:16+08:00",
+          "day": "09.27",
+          "year": "2020",
+          "category": "Computer Science / 61ABC / 61A",
+          "tags": [
+            "Python",
+            "Scheme",
+            "SICP",
+            "CS61A",
+            "61A"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-b29d485949ce",
+      "name": "CS61B",
+      "entries": [
+        {
+          "title": "CS61B：数据结构学习笔记",
+          "url": "/novels/3e246bd35959/read/0a1602e3932c/",
+          "date": "2020-10-22T18:24:22+08:00",
+          "day": "10.22",
+          "year": "2020",
+          "category": "Computer Science / 61ABC / 61B",
+          "tags": [
+            "CS61B",
+            "Java",
+            "Data_Structure",
+            "Algorithm",
+            "61B"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-f6601eef5ebe",
+      "name": "CS61C",
+      "entries": [
+        {
+          "title": "C 标准库常用函数笔记",
+          "url": "/novels/18995fb7b459/read/2ca1a8345ece/",
+          "date": "2021-08-21T16:03:35+08:00",
+          "day": "08.21",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "C",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "CS61C 计算机组成知识总结",
+          "url": "/novels/18995fb7b459/read/198c470a63a7/",
+          "date": "2021-07-24T20:47:02+08:00",
+          "day": "07.24",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "计算机输入输出系统",
+          "url": "/novels/18995fb7b459/read/c6298e17f272/",
+          "date": "2021-07-14T15:07:56+08:00",
+          "day": "07.14",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Input",
+            "Output",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "并行计算与同步机制",
+          "url": "/novels/18995fb7b459/read/4dc53f95a72a/",
+          "date": "2021-07-13T11:52:02+08:00",
+          "day": "07.13",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Parallelism",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "虚拟内存与地址转换",
+          "url": "/novels/18995fb7b459/read/8d35fe6a2ef1/",
+          "date": "2021-07-12T15:59:45+08:00",
+          "day": "07.12",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Virtual_Memory",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "处理器流水线与冒险",
+          "url": "/novels/18995fb7b459/read/6bf4860d0ce6/",
+          "date": "2021-07-12T13:39:32+08:00",
+          "day": "07.12",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Pineline",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "缓存：局部性与访问性能",
+          "url": "/novels/18995fb7b459/read/7b885e4ee37a/",
+          "date": "2021-07-12T13:38:13+08:00",
+          "day": "07.12",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Cache",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "寄存器与机器指令",
+          "url": "/novels/18995fb7b459/read/8f5278b03324/",
+          "date": "2021-04-29T17:16:50+08:00",
+          "day": "04.29",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Register",
+            "Instruction",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "数值表示、C 语法与浮点数",
+          "url": "/novels/18995fb7b459/read/a2a21e5ea6c1/",
+          "date": "2021-04-06T20:59:58+08:00",
+          "day": "04.06",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "C",
+            "Assembly",
+            "Computer_Architecture",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-a76ce82a9749",
+      "name": "Cache",
+      "entries": [
+        {
+          "title": "缓存：局部性与访问性能",
+          "url": "/novels/18995fb7b459/read/7b885e4ee37a/",
+          "date": "2021-07-12T13:38:13+08:00",
+          "day": "07.12",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Cache",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-eae004435f55",
+      "name": "Computer Tools",
+      "entries": [
+        {
+          "title": "Shell 常用命令与运维速查",
+          "url": "/novels/eae004435f55/read/cc7d4fc5fbbf/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Tools",
+          "tags": [
+            "Computer Tools"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "计算机学习工具与资料索引",
+          "url": "/novels/eae004435f55/read/3d38c61db3e4/",
+          "date": "2025-03-30T22:19:04+08:00",
+          "day": "03.30",
+          "year": "2025",
+          "category": "Computer Tools",
+          "tags": [
+            "Computer Tools"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "CMake 项目构建笔记",
+          "url": "/novels/eae004435f55/read/2621ea59579b/",
+          "date": "2025-03-30T17:57:40+08:00",
+          "day": "03.30",
+          "year": "2025",
+          "category": "Computer Tools",
+          "tags": [
+            "Computer Tools"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "GDB 调试：断点、运行与变量检查",
+          "url": "/novels/eae004435f55/read/759cd307c458/",
+          "date": "2021-11-08T20:36:28+08:00",
+          "day": "11.08",
+          "year": "2021",
+          "category": "Computer Tools",
+          "tags": [
+            "GDB",
+            "Computer Tools"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "Makefile：规则、依赖与构建",
+          "url": "/novels/eae004435f55/read/91f142b8fe60/",
+          "date": "2021-08-23T22:51:43+08:00",
+          "day": "08.23",
+          "year": "2021",
+          "category": "Computer Tools",
+          "tags": [
+            "Makefile",
+            "Computer Tools"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "Vim 编辑操作与常用命令",
+          "url": "/novels/eae004435f55/read/79e3b4eb180a/",
+          "date": "2021-08-21T12:21:23+08:00",
+          "day": "08.21",
+          "year": "2021",
+          "category": "Computer Tools",
+          "tags": [
+            "Vim",
+            "Computer Tools"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "Git 版本管理：从提交到分支协作",
+          "url": "/novels/eae004435f55/read/d423862140bd/",
+          "date": "2020-09-28T18:44:16+08:00",
+          "day": "09.28",
+          "year": "2020",
+          "category": "Computer Tools",
+          "tags": [
+            "Git",
+            "Computer Tools"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-9a4accae79f1",
+      "name": "Computer_Architecture",
+      "entries": [
+        {
+          "title": "数值表示、C 语法与浮点数",
+          "url": "/novels/18995fb7b459/read/a2a21e5ea6c1/",
+          "date": "2021-04-06T20:59:58+08:00",
+          "day": "04.06",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "C",
+            "Assembly",
+            "Computer_Architecture",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-a5906aa6bf49",
+      "name": "Congestion_Control",
+      "entries": [
+        {
+          "title": "拥塞控制：TCP 的发送节奏",
+          "url": "/novels/621b16c7185e/read/2cc38f2a75af/",
+          "date": "2022-01-12T13:03:42+08:00",
+          "day": "01.12",
+          "year": "2022",
+          "category": "Computer Science / CS144",
+          "tags": [
+            "CS144",
+            "Congestion_Control"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-6c0aa81a4c19",
+      "name": "Daily_Note",
+      "entries": [
+        {
+          "title": "随记灵感",
+          "url": "/blog/随记灵感-433cff/",
+          "date": "2021-01-01T12:00:00+08:00",
+          "day": "01.01",
+          "year": "2021",
+          "category": "读书笔记",
+          "tags": [
+            "Daily_Note",
+            "读书笔记"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "id": "tag-e73f05985329",
+      "name": "Data_Structure",
+      "entries": [
+        {
+          "title": "CS61B：数据结构学习笔记",
+          "url": "/novels/3e246bd35959/read/0a1602e3932c/",
+          "date": "2020-10-22T18:24:22+08:00",
+          "day": "10.22",
+          "year": "2020",
+          "category": "Computer Science / 61ABC / 61B",
+          "tags": [
+            "CS61B",
+            "Java",
+            "Data_Structure",
+            "Algorithm",
+            "61B"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-c6d5ed757b66",
+      "name": "Dream",
+      "entries": [
+        {
+          "title": "梦境与幻想",
+          "url": "/blog/幻想日记-d2b836/",
+          "date": "2021-07-15T12:00:00+08:00",
+          "day": "07.15",
+          "year": "2021",
+          "category": "读书笔记",
+          "tags": [
+            "Dream",
+            "读书笔记"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "id": "tag-2b9579ff4643",
+      "name": "ES知识篇",
+      "entries": [
+        {
+          "title": "Elasticsearch 集群基础",
+          "url": "/novels/eed18a366c4d/read/f074e53ee70b/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Tools / ES知识篇",
+          "tags": [
+            "ES知识篇"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-5926c704d5b3",
+      "name": "Economics",
+      "entries": [
+        {
+          "title": "中级微观经济学学习笔记",
+          "url": "/novels/5926c704d5b3/read/ad18d9b79151/",
+          "date": "2020-11-09T20:01:16+08:00",
+          "day": "11.09",
+          "year": "2020",
+          "category": "Economics",
+          "tags": [
+            "Microeconomics",
+            "Economics"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-9137e61efabe",
+      "name": "GDB",
+      "entries": [
+        {
+          "title": "GDB 调试：断点、运行与变量检查",
+          "url": "/novels/eae004435f55/read/759cd307c458/",
+          "date": "2021-11-08T20:36:28+08:00",
+          "day": "11.08",
+          "year": "2021",
+          "category": "Computer Tools",
+          "tags": [
+            "GDB",
+            "Computer Tools"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-44a4f0d627e6",
+      "name": "GIT知识篇",
+      "entries": [
+        {
+          "title": "Git 基础：版本、分支与协作",
+          "url": "/novels/3756f002626a/read/5555ad7391e4/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Tools / GIT知识篇",
+          "tags": [
+            "GIT知识篇"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-b949c922b6ef",
+      "name": "Git",
+      "entries": [
+        {
+          "title": "Git 版本管理：从提交到分支协作",
+          "url": "/novels/eae004435f55/read/d423862140bd/",
+          "date": "2020-09-28T18:44:16+08:00",
+          "day": "09.28",
+          "year": "2020",
+          "category": "Computer Tools",
+          "tags": [
+            "Git",
+            "Computer Tools"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-bf5505174a73",
+      "name": "IP",
+      "entries": [
+        {
+          "title": "互联网与 IP：网络基础",
+          "url": "/novels/621b16c7185e/read/5dc6b952ab06/",
+          "date": "2022-01-12T13:03:42+08:00",
+          "day": "01.12",
+          "year": "2022",
+          "category": "Computer Science / CS144",
+          "tags": [
+            "CS144",
+            "IP"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-36ecb4f86691",
+      "name": "Input",
+      "entries": [
+        {
+          "title": "计算机输入输出系统",
+          "url": "/novels/18995fb7b459/read/c6298e17f272/",
+          "date": "2021-07-14T15:07:56+08:00",
+          "day": "07.14",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Input",
+            "Output",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-112f3ccb1b36",
+      "name": "Instruction",
+      "entries": [
+        {
+          "title": "寄存器与机器指令",
+          "url": "/novels/18995fb7b459/read/8f5278b03324/",
+          "date": "2021-04-29T17:16:50+08:00",
+          "day": "04.29",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Register",
+            "Instruction",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-c1ba60ce1358",
+      "name": "Java",
+      "entries": [
+        {
+          "title": "Java 语言学习笔记",
+          "url": "/novels/fa158f48cfff/read/72711925318f/",
+          "date": "2021-11-07T12:48:53+08:00",
+          "day": "11.07",
+          "year": "2021",
+          "category": "Computer Tools / Program Language",
+          "tags": [
+            "Java",
+            "Program Language"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "CS61B：数据结构学习笔记",
+          "url": "/novels/3e246bd35959/read/0a1602e3932c/",
+          "date": "2020-10-22T18:24:22+08:00",
+          "day": "10.22",
+          "year": "2020",
+          "category": "Computer Science / 61ABC / 61B",
+          "tags": [
+            "CS61B",
+            "Java",
+            "Data_Structure",
+            "Algorithm",
+            "61B"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-a327ee463fa7",
+      "name": "Jekyll",
+      "entries": [
+        {
+          "title": "给小岛搭一间轻盈的屋子",
+          "url": "/blog/jekyll-github-pages-architecture/",
+          "date": "2026-10-15T10:00:00+08:00",
+          "day": "10.15",
+          "year": "2026",
+          "category": "技术笔记",
+          "tags": [
+            "Jekyll",
+            "博客",
+            "技术笔记"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "id": "tag-24847e762935",
+      "name": "Kakfa知识篇",
+      "entries": [
+        {
+          "title": "Kafka：消息、分区与消费机制",
+          "url": "/novels/884266fcc931/read/a706e2cb4d74/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Tools / Kakfa知识篇",
+          "tags": [
+            "Kakfa知识篇"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-83ba0ecb9152",
+      "name": "Lower_layer",
+      "entries": [
+        {
+          "title": "链路层与底层网络",
+          "url": "/novels/621b16c7185e/read/eeb333c3425b/",
+          "date": "2022-02-26T16:25:35+08:00",
+          "day": "02.26",
+          "year": "2022",
+          "category": "Computer Science / CS144",
+          "tags": [
+            "CS144",
+            "Lower_layer"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-76ed074a9305",
+      "name": "Makefile",
+      "entries": [
+        {
+          "title": "Makefile：规则、依赖与构建",
+          "url": "/novels/eae004435f55/read/91f142b8fe60/",
+          "date": "2021-08-23T22:51:43+08:00",
+          "day": "08.23",
+          "year": "2021",
+          "category": "Computer Tools",
+          "tags": [
+            "Makefile",
+            "Computer Tools"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-0e52f6b9d025",
+      "name": "Markdown",
+      "entries": [
+        {
+          "title": "Markdown 排版语法与示例",
+          "url": "/novels/104d4705b3a5/read/3a7ba4e33273/",
+          "date": "2025-03-30T17:57:40+08:00",
+          "day": "03.30",
+          "year": "2025",
+          "category": "Computer Tools / Obsidian",
+          "tags": [
+            "Markdown",
+            "Obsidian"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-4752970d115a",
+      "name": "Microeconomics",
+      "entries": [
+        {
+          "title": "中级微观经济学学习笔记",
+          "url": "/novels/5926c704d5b3/read/ad18d9b79151/",
+          "date": "2020-11-09T20:01:16+08:00",
+          "day": "11.09",
+          "year": "2020",
+          "category": "Economics",
+          "tags": [
+            "Microeconomics",
+            "Economics"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-48c145232382",
+      "name": "NATs",
+      "entries": [
+        {
+          "title": "应用层与网络地址转换",
+          "url": "/novels/621b16c7185e/read/a57551b9e071/",
+          "date": "2022-01-12T13:03:42+08:00",
+          "day": "01.12",
+          "year": "2022",
+          "category": "Computer Science / CS144",
+          "tags": [
+            "CS144",
+            "NATs"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-9db22d416e29",
+      "name": "Obsidian",
+      "entries": [
+        {
+          "title": "Obsidian：链接、引用与笔记组织",
+          "url": "/novels/104d4705b3a5/read/e551cde0ad06/",
+          "date": "2025-03-30T17:57:40+08:00",
+          "day": "03.30",
+          "year": "2025",
+          "category": "Computer Tools / Obsidian",
+          "tags": [
+            "Obsidian"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "Obsidian 笔记功能与整理流程",
+          "url": "/novels/104d4705b3a5/read/934e2dcff81f/",
+          "date": "2025-03-30T17:57:40+08:00",
+          "day": "03.30",
+          "year": "2025",
+          "category": "Computer Tools / Obsidian",
+          "tags": [
+            "Obsidian"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "Markdown 排版语法与示例",
+          "url": "/novels/104d4705b3a5/read/3a7ba4e33273/",
+          "date": "2025-03-30T17:57:40+08:00",
+          "day": "03.30",
+          "year": "2025",
+          "category": "Computer Tools / Obsidian",
+          "tags": [
+            "Markdown",
+            "Obsidian"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-b2439bcb8dee",
+      "name": "Output",
+      "entries": [
+        {
+          "title": "计算机输入输出系统",
+          "url": "/novels/18995fb7b459/read/c6298e17f272/",
+          "date": "2021-07-14T15:07:56+08:00",
+          "day": "07.14",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Input",
+            "Output",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-69585fb8aa14",
+      "name": "Parallelism",
+      "entries": [
+        {
+          "title": "并行计算与同步机制",
+          "url": "/novels/18995fb7b459/read/4dc53f95a72a/",
+          "date": "2021-07-13T11:52:02+08:00",
+          "day": "07.13",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Parallelism",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-04038568dc11",
+      "name": "Pineline",
+      "entries": [
+        {
+          "title": "处理器流水线与冒险",
+          "url": "/novels/18995fb7b459/read/6bf4860d0ce6/",
+          "date": "2021-07-12T13:39:32+08:00",
+          "day": "07.12",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Pineline",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-32445c8a9b4d",
+      "name": "Pintos",
+      "entries": [
+        {
+          "title": "Pintos 系统实验笔记",
+          "url": "/novels/bda2fee7908f/read/30b9a38a6851/",
+          "date": "2021-09-12T09:34:41+08:00",
+          "day": "09.12",
+          "year": "2021",
+          "category": "Computer Science / CS162",
+          "tags": [
+            "Pintos",
+            "CS162"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-cfcbd1a3ff2e",
+      "name": "Program Language",
+      "entries": [
+        {
+          "title": "C++ 语言学习笔记",
+          "url": "/novels/fa158f48cfff/read/22574e3bba26/",
+          "date": "2021-11-08T20:36:28+08:00",
+          "day": "11.08",
+          "year": "2021",
+          "category": "Computer Tools / Program Language",
+          "tags": [
+            "Program Language"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "Java 语言学习笔记",
+          "url": "/novels/fa158f48cfff/read/72711925318f/",
+          "date": "2021-11-07T12:48:53+08:00",
+          "day": "11.07",
+          "year": "2021",
+          "category": "Computer Tools / Program Language",
+          "tags": [
+            "Java",
+            "Program Language"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-18885f27b5af",
+      "name": "Python",
+      "entries": [
+        {
+          "title": "CS61A：程序设计与计算抽象",
+          "url": "/novels/1fb779328511/read/1919eb667f31/",
+          "date": "2020-09-27T18:44:16+08:00",
+          "day": "09.27",
+          "year": "2020",
+          "category": "Computer Science / 61ABC / 61A",
+          "tags": [
+            "Python",
+            "Scheme",
+            "SICP",
+            "CS61A",
+            "61A"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-f321f48b946b",
+      "name": "Python知识篇",
+      "entries": [
+        {
+          "title": "Python 常用语法速查",
+          "url": "/novels/4647045ad944/read/d6b1cf6ec733/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Tools / Python知识篇",
+          "tags": [
+            "Python知识篇"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-bb7234ec1245",
+      "name": "Register",
+      "entries": [
+        {
+          "title": "寄存器与机器指令",
+          "url": "/novels/18995fb7b459/read/8f5278b03324/",
+          "date": "2021-04-29T17:16:50+08:00",
+          "day": "04.29",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Register",
+            "Instruction",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-bcba696f3eb1",
+      "name": "Routing",
+      "entries": [
+        {
+          "title": "路由：选择数据的转发路径",
+          "url": "/novels/621b16c7185e/read/463687ee0e21/",
+          "date": "2022-01-12T13:03:42+08:00",
+          "day": "01.12",
+          "year": "2022",
+          "category": "Computer Science / CS144",
+          "tags": [
+            "Routing",
+            "CS144"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-e58e91d782c9",
+      "name": "SHELL知识篇",
+      "entries": [
+        {
+          "title": "Shell 脚本：变量、判断与循环",
+          "url": "/novels/77e569e07506/read/0599f2aeb737/",
+          "date": "2026-05-10T11:03:24+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Tools / SHELL知识篇",
+          "tags": [
+            "SHELL知识篇"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "Linux 排障：抓包、文件、系统调用与防火墙",
+          "url": "/novels/77e569e07506/read/e38d883d4754/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Tools / SHELL知识篇",
+          "tags": [
+            "SHELL知识篇"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "Shell 常用命令与运维速查",
+          "url": "/novels/77e569e07506/read/cc7d4fc5fbbf/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Tools / SHELL知识篇",
+          "tags": [
+            "SHELL知识篇"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "正则表达式：语法速查与运维实例",
+          "url": "/novels/77e569e07506/read/88f0c697bdd7/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Tools / SHELL知识篇",
+          "tags": [
+            "SHELL知识篇"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "文本处理四件套：grep、find、awk 与 sed",
+          "url": "/novels/77e569e07506/read/8581cb0e9867/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Tools / SHELL知识篇",
+          "tags": [
+            "SHELL知识篇"
+          ],
+          "kind": "章节"
+        },
+        {
+          "title": "Linux 系统目录与文件组织",
+          "url": "/novels/77e569e07506/read/313dfa0f8c82/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "Computer Tools / SHELL知识篇",
+          "tags": [
+            "SHELL知识篇"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-87794d2095b6",
+      "name": "SICP",
+      "entries": [
+        {
+          "title": "CS61A：程序设计与计算抽象",
+          "url": "/novels/1fb779328511/read/1919eb667f31/",
+          "date": "2020-09-27T18:44:16+08:00",
+          "day": "09.27",
+          "year": "2020",
+          "category": "Computer Science / 61ABC / 61A",
+          "tags": [
+            "Python",
+            "Scheme",
+            "SICP",
+            "CS61A",
+            "61A"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-dca65687b97a",
+      "name": "Scheme",
+      "entries": [
+        {
+          "title": "CS61A：程序设计与计算抽象",
+          "url": "/novels/1fb779328511/read/1919eb667f31/",
+          "date": "2020-09-27T18:44:16+08:00",
+          "day": "09.27",
+          "year": "2020",
+          "category": "Computer Science / 61ABC / 61A",
+          "tags": [
+            "Python",
+            "Scheme",
+            "SICP",
+            "CS61A",
+            "61A"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-8f6fb4eb7f42",
+      "name": "Security",
+      "entries": [
+        {
+          "title": "网络安全基础",
+          "url": "/novels/621b16c7185e/read/7931f93a83d3/",
+          "date": "2022-02-26T16:25:35+08:00",
+          "day": "02.26",
+          "year": "2022",
+          "category": "Computer Science / CS144",
+          "tags": [
+            "Security",
+            "CS144"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-3a2885d3d2b8",
+      "name": "Sqlite",
+      "entries": [
+        {
+          "title": "SQL 与 SQLite：数据库查询笔记",
+          "url": "/novels/0b1bad55a738/read/54a3c50c79db/",
+          "date": "2023-04-09T12:00:00+08:00",
+          "day": "04.09",
+          "year": "2023",
+          "category": "Computer Science / 15-445",
+          "tags": [
+            "C++",
+            "Sqlite",
+            "15-445"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-3ff5620b0294",
+      "name": "Study",
+      "entries": [
+        {
+          "title": "学习心得",
+          "url": "/blog/生活体验-8d47c5/",
+          "date": "2020-09-30T23:02:49+08:00",
+          "day": "09.30",
+          "year": "2020",
+          "category": "读书笔记",
+          "tags": [
+            "Study",
+            "读书笔记"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "id": "tag-2e9430507b92",
+      "name": "TCP",
+      "entries": [
+        {
+          "title": "分组交换：数据如何穿过网络",
+          "url": "/novels/621b16c7185e/read/90ffcad2bbc4/",
+          "date": "2022-01-13T12:37:48+08:00",
+          "day": "01.13",
+          "year": "2022",
+          "category": "Computer Science / CS144",
+          "tags": [
+            "CS144",
+            "UDP",
+            "TCP"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-aaead4abf5d0",
+      "name": "Transport",
+      "entries": [
+        {
+          "title": "传输层：端到端通信",
+          "url": "/novels/621b16c7185e/read/1476b0b3e744/",
+          "date": "2022-01-13T12:37:48+08:00",
+          "day": "01.13",
+          "year": "2022",
+          "category": "Computer Science / CS144",
+          "tags": [
+            "CS144",
+            "Transport"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-dc4030f9688d",
+      "name": "UDP",
+      "entries": [
+        {
+          "title": "分组交换：数据如何穿过网络",
+          "url": "/novels/621b16c7185e/read/90ffcad2bbc4/",
+          "date": "2022-01-13T12:37:48+08:00",
+          "day": "01.13",
+          "year": "2022",
+          "category": "Computer Science / CS144",
+          "tags": [
+            "CS144",
+            "UDP",
+            "TCP"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-c71ba099f440",
+      "name": "Vim",
+      "entries": [
+        {
+          "title": "Vim 编辑操作与常用命令",
+          "url": "/novels/eae004435f55/read/79e3b4eb180a/",
+          "date": "2021-08-21T12:21:23+08:00",
+          "day": "08.21",
+          "year": "2021",
+          "category": "Computer Tools",
+          "tags": [
+            "Vim",
+            "Computer Tools"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-a700bb470fae",
+      "name": "Virtual_Memory",
+      "entries": [
+        {
+          "title": "虚拟内存与地址转换",
+          "url": "/novels/18995fb7b459/read/8d35fe6a2ef1/",
+          "date": "2021-07-12T15:59:45+08:00",
+          "day": "07.12",
+          "year": "2021",
+          "category": "Computer Science / 61ABC / 61C",
+          "tags": [
+            "Virtual_Memory",
+            "CS61C",
+            "61C"
+          ],
+          "kind": "章节"
+        }
+      ]
+    },
+    {
+      "id": "tag-ef926bba454d",
+      "name": "云海小鲸",
+      "entries": [
+        {
+          "title": "小鲸的云朵图鉴",
+          "url": "/manga/cloud-guardian-daily/",
+          "date": "2026-10-15T12:00:00+08:00",
+          "day": "10.15",
+          "year": "2026",
+          "category": "画集",
+          "tags": [
+            "画集",
+            "云海小鲸"
+          ],
+          "kind": "画集"
+        }
+      ]
+    },
+    {
+      "id": "tag-b50288a3414d",
+      "name": "儒道共参",
+      "entries": [
+        {
+          "title": "杏坛春风与函谷玄览：孔老庄论道对话录",
+          "url": "/blog/reading-confucius-laozi-collected/",
+          "date": "2026-10-16T12:00:00+08:00",
+          "day": "10.16",
+          "year": "2026",
+          "category": "阅读笔记",
+          "tags": [
+            "阅读笔记",
+            "儒道共参"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "id": "tag-b3393e6af35c",
+      "name": "创作笔记",
+      "entries": [
+        {
+          "title": "一只小鲸，九种心情",
+          "url": "/blog/cloud-whale-character-design/",
+          "date": "2026-10-12T16:30:00+08:00",
+          "day": "10.12",
+          "year": "2026",
+          "category": "创作笔记",
+          "tags": [
+            "角色设计",
+            "配色",
+            "创作笔记"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "id": "tag-caef97084b63",
+      "name": "创作随笔",
+      "entries": [
+        {
+          "title": "把阅读的时间，还给故事",
+          "url": "/blog/manga-novel-reader-design/",
+          "date": "2026-10-08T20:15:00+08:00",
+          "day": "10.08",
+          "year": "2026",
+          "category": "创作随笔",
+          "tags": [
+            "阅读",
+            "设计",
+            "创作随笔"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "id": "tag-7855e5e9727e",
+      "name": "博客",
+      "entries": [
+        {
+          "title": "给小岛搭一间轻盈的屋子",
+          "url": "/blog/jekyll-github-pages-architecture/",
+          "date": "2026-10-15T10:00:00+08:00",
+          "day": "10.15",
+          "year": "2026",
+          "category": "技术笔记",
+          "tags": [
+            "Jekyll",
+            "博客",
+            "技术笔记"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "id": "tag-ee349f74b790",
+      "name": "技术笔记",
+      "entries": [
+        {
+          "title": "给小岛搭一间轻盈的屋子",
+          "url": "/blog/jekyll-github-pages-architecture/",
+          "date": "2026-10-15T10:00:00+08:00",
+          "day": "10.15",
+          "year": "2026",
+          "category": "技术笔记",
+          "tags": [
+            "Jekyll",
+            "博客",
+            "技术笔记"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "id": "tag-c8a87f47a3f0",
+      "name": "画集",
+      "entries": [
+        {
+          "title": "小鲸的云朵图鉴",
+          "url": "/manga/cloud-guardian-daily/",
+          "date": "2026-10-15T12:00:00+08:00",
+          "day": "10.15",
+          "year": "2026",
+          "category": "画集",
+          "tags": [
+            "画集",
+            "云海小鲸"
+          ],
+          "kind": "画集"
+        }
+      ]
+    },
+    {
+      "id": "tag-0d70f731767e",
+      "name": "角色设计",
+      "entries": [
+        {
+          "title": "一只小鲸，九种心情",
+          "url": "/blog/cloud-whale-character-design/",
+          "date": "2026-10-12T16:30:00+08:00",
+          "day": "10.12",
+          "year": "2026",
+          "category": "创作笔记",
+          "tags": [
+            "角色设计",
+            "配色",
+            "创作笔记"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "id": "tag-230194445e2a",
+      "name": "论语",
+      "entries": [
+        {
+          "title": "《夫子之道》—— 与孔子的对话录",
+          "url": "/blog/reading-confucius-dialogues/",
+          "date": "2026-10-16T12:00:00+08:00",
+          "day": "10.16",
+          "year": "2026",
+          "category": "阅读笔记",
+          "tags": [
+            "阅读笔记",
+            "论语"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "id": "tag-56c255e19858",
+      "name": "设计",
+      "entries": [
+        {
+          "title": "把阅读的时间，还给故事",
+          "url": "/blog/manga-novel-reader-design/",
+          "date": "2026-10-08T20:15:00+08:00",
+          "day": "10.08",
+          "year": "2026",
+          "category": "创作随笔",
+          "tags": [
+            "阅读",
+            "设计",
+            "创作随笔"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "id": "tag-4096223849bf",
+      "name": "读书笔记",
+      "entries": [
+        {
+          "title": "我想要怎样的生活",
+          "url": "/blog/我想要啥-ca9563/",
+          "date": "2026-09-03T23:02:35+08:00",
+          "day": "09.03",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "《论语》《道德经》《孙子兵法》读后思考",
+          "url": "/blog/论语-道德经-孙子兵法-读后思考-f964a3/",
+          "date": "2026-07-16T08:51:33+08:00",
+          "day": "07.16",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "与人相处：理解、边界与关系",
+          "url": "/blog/与人相处的一些思考-5ab0ea/",
+          "date": "2026-05-20T22:26:18+08:00",
+          "day": "05.20",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "《论语》中的中庸之道",
+          "url": "/blog/论语的中庸之道-f13916/",
+          "date": "2026-05-17T13:07:33+08:00",
+          "day": "05.17",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "情与义：从仁恕到责任",
+          "url": "/blog/情与义-5dd2a9/",
+          "date": "2026-05-17T11:22:41+08:00",
+          "day": "05.17",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "知者不惑，仁者不忧，勇者不惧",
+          "url": "/blog/知者不惑-仁者不忧-勇者不惧-6e7bb5/",
+          "date": "2026-05-17T10:31:38+08:00",
+          "day": "05.17",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "近期的追求：生活方向与行动",
+          "url": "/blog/关于近期的追求-c6b398/",
+          "date": "2026-05-14T12:00:08+08:00",
+          "day": "05.14",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "独乐与众乐：快乐如何分享",
+          "url": "/blog/关于独乐乐不如众乐乐-933457/",
+          "date": "2026-05-10T23:11:59+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "关于生活目标与价值的思索",
+          "url": "/blog/关于生活追求的思索-041923/",
+          "date": "2026-05-10T23:02:38+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "美国制宪会议：代表与背景梳理",
+          "url": "/blog/美国制宪会议人员表-0cbdf1/",
+          "date": "2026-05-10T09:50:16+08:00",
+          "day": "05.10",
+          "year": "2026",
+          "category": "读书笔记",
+          "tags": [
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "梦境与幻想",
+          "url": "/blog/幻想日记-d2b836/",
+          "date": "2021-07-15T12:00:00+08:00",
+          "day": "07.15",
+          "year": "2021",
+          "category": "读书笔记",
+          "tags": [
+            "Dream",
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "随记灵感",
+          "url": "/blog/随记灵感-433cff/",
+          "date": "2021-01-01T12:00:00+08:00",
+          "day": "01.01",
+          "year": "2021",
+          "category": "读书笔记",
+          "tags": [
+            "Daily_Note",
+            "读书笔记"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "学习心得",
+          "url": "/blog/生活体验-8d47c5/",
+          "date": "2020-09-30T23:02:49+08:00",
+          "day": "09.30",
+          "year": "2020",
+          "category": "读书笔记",
+          "tags": [
+            "Study",
+            "读书笔记"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "id": "tag-559c550ded2a",
+      "name": "道德经",
+      "entries": [
+        {
+          "title": "《道德经》——与老子的对话录",
+          "url": "/blog/reading-laozi-dialogues/",
+          "date": "2026-10-16T12:00:00+08:00",
+          "day": "10.16",
+          "year": "2026",
+          "category": "阅读笔记",
+          "tags": [
+            "阅读笔记",
+            "道德经"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "id": "tag-2ae75e168123",
+      "name": "配色",
+      "entries": [
+        {
+          "title": "一只小鲸，九种心情",
+          "url": "/blog/cloud-whale-character-design/",
+          "date": "2026-10-12T16:30:00+08:00",
+          "day": "10.12",
+          "year": "2026",
+          "category": "创作笔记",
+          "tags": [
+            "角色设计",
+            "配色",
+            "创作笔记"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "id": "tag-ce9b12499c47",
+      "name": "阅读",
+      "entries": [
+        {
+          "title": "把阅读的时间，还给故事",
+          "url": "/blog/manga-novel-reader-design/",
+          "date": "2026-10-08T20:15:00+08:00",
+          "day": "10.08",
+          "year": "2026",
+          "category": "创作随笔",
+          "tags": [
+            "阅读",
+            "设计",
+            "创作随笔"
+          ],
+          "kind": "文章"
+        }
+      ]
+    },
+    {
+      "id": "tag-82d9d8d2f3eb",
+      "name": "阅读笔记",
+      "entries": [
+        {
+          "title": "《道德经》——与老子的对话录",
+          "url": "/blog/reading-laozi-dialogues/",
+          "date": "2026-10-16T12:00:00+08:00",
+          "day": "10.16",
+          "year": "2026",
+          "category": "阅读笔记",
+          "tags": [
+            "阅读笔记",
+            "道德经"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "杏坛春风与函谷玄览：孔老庄论道对话录",
+          "url": "/blog/reading-confucius-laozi-collected/",
+          "date": "2026-10-16T12:00:00+08:00",
+          "day": "10.16",
+          "year": "2026",
+          "category": "阅读笔记",
+          "tags": [
+            "阅读笔记",
+            "儒道共参"
+          ],
+          "kind": "文章"
+        },
+        {
+          "title": "《夫子之道》—— 与孔子的对话录",
+          "url": "/blog/reading-confucius-dialogues/",
+          "date": "2026-10-16T12:00:00+08:00",
+          "day": "10.16",
+          "year": "2026",
+          "category": "阅读笔记",
+          "tags": [
+            "阅读笔记",
+            "论语"
+          ],
+          "kind": "文章"
+        }
+      ]
+    }
+  ]
+}

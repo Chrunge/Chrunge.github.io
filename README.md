@@ -19,6 +19,7 @@
 ```sh
 bundle install
 ruby scripts/prepare_library.rb
+ruby scripts/prepare_indexes.rb
 bundle exec jekyll serve --host 127.0.0.1
 ```
 

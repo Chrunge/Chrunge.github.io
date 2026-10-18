@@ -1,0 +1,8 @@
+---
+layout: default
+title: 漫画与画集
+permalink: /manga/
+description: 收藏漫画、角色画集与不同颜色的小鲸。
+---
+<header class="page-heading"><p class="eyebrow">MANGA & SKETCHES</p><h1>漫画与画集</h1><p>翻开一页，遇见一点温柔的想象。</p></header>
+<div class="work-grid">{% for item in site.manga %}{% include card.html item=item kind='画集' %}{% endfor %}</div>

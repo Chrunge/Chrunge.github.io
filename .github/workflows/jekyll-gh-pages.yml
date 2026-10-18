@@ -29,6 +29,7 @@ jobs:
       - name: Check scripts
         run: |
           ruby scripts/prepare_library.rb
+          ruby scripts/prepare_indexes.rb
           ruby scripts/check_content.rb
           node --check assets/js/site.js
           node --check assets/js/theme-init.js
