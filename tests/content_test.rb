@@ -95,6 +95,20 @@ class ContentTest < Minitest::Test
     end
   end
 
+  def test_generation_keeps_first_indented_block_and_body_bytes
+    ["    puts :whale\n\n末段。\n", "\r\n    puts :whale\r\n\r\n末段。\r\n", "\n\n## Heading\n\n末段。\n"].each do |body|
+      with_library_fixture do |dir, write_chapter, generate|
+        file = write_chapter.call('01.md', {}, body)
+        assert_equal body, Content.read(file).last
+        generate.call
+        assert_equal body, Content.read(file).last
+        first = File.binread(file)
+        generate.call
+        assert_equal first, File.binread(file)
+      end
+    end
+  end
+
   private
 
   def with_library_fixture

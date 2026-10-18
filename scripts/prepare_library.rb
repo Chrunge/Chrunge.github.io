@@ -38,7 +38,7 @@ groups.sort.each do |directory, files|
     chapter_id = Digest::SHA256.hexdigest(File.basename(file))[0, 12]
     url = "/novels/#{id}/read/#{chapter_id}/"
     data.merge!('layout'=>'chapter', 'book_id'=>id, 'chapter_index'=>index, 'permalink'=>url)
-    Content.write(file, data.to_yaml + "---\n\n" + body.lstrip)
+    Content.write(file, data.to_yaml + "---\n" + body)
     book['chapters'] << {'title'=>data['title'], 'url'=>url, 'index'=>index+1, 'description'=>data['description']}
     if data['legacy_url']
       redirect = {'layout'=>'redirect','title'=>data['title'],'permalink'=>data['legacy_url'],'target_url'=>url,'sitemap'=>false,'generated_by'=>'prepare_library'}

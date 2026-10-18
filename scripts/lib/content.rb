@@ -5,7 +5,7 @@ module Content
   REQUIRED_FIELDS = %w[title date category tags description excerpt original_filename toc_levels].freeze
 
   def self.read(file)
-    text = File.read(file, encoding: 'UTF-8')
+    text = File.read(file, mode: 'rb', encoding: 'UTF-8')
     header = text.match(/\A---\r?\n(.*?)\r?\n---\r?\n?/m)
     raise "#{file}: missing YAML header" unless header
     data = YAML.safe_load(header[1], permitted_classes: [Date, Time], aliases: false) || {}
@@ -13,8 +13,8 @@ module Content
   end
 
   def self.write(file, text)
-    return if File.file?(file) && File.read(file, encoding: 'UTF-8') == text
-    File.write(file, text, encoding: 'UTF-8')
+    return if File.file?(file) && File.read(file, mode: 'rb', encoding: 'UTF-8') == text
+    File.write(file, text, mode: 'wb', encoding: 'UTF-8')
   end
 
   def self.prune_generated(directory, pattern, expected)
