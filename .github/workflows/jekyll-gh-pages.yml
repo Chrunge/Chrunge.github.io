@@ -31,8 +31,8 @@ jobs:
           ruby scripts/prepare_library.rb
           ruby scripts/prepare_indexes.rb
           ruby scripts/check_content.rb
-          node --check assets/js/site.js
-          node --check assets/js/theme-init.js
+          for file in assets/js/*.js; do node --check "$file"; done
+          node --check tests/reading.cjs
       - name: Build and check project subdirectory URLs
         env:
           JEKYLL_ENV: production
@@ -40,6 +40,15 @@ jobs:
           bundle exec jekyll build --baseurl /path-check --destination _site_check
           python scripts/check_site.py _site_check --baseurl /path-check
           rm -r _site_check
+      - name: Check reading interactions in Chromium
+        env:
+          JEKYLL_ENV: production
+        run: |
+          npm ci --prefix tests --ignore-scripts --no-audit --no-fund
+          node tests/node_modules/playwright/cli.js install --with-deps chromium
+          bundle exec jekyll build --baseurl "" --destination _site_reader
+          node tests/reading.cjs _site_reader
+          rm -r _site_reader
       - name: Configure Pages
         if: github.event_name != 'pull_request'
         id: pages

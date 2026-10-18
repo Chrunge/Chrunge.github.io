@@ -1,0 +1,8 @@
+<section class="continue-reading" id="continue-reading" aria-labelledby="continue-heading" hidden>
+  <div><p class="eyebrow" id="continue-heading">正在阅读</p><a id="continue-title" class="continue-title"></a><p class="muted" id="continue-detail"></p></div>
+  <div class="continue-actions"><progress id="continue-progress" max="100" value="0" aria-label="上次阅读进度"></progress><a id="continue-link" class="text-link">继续阅读 →</a><button id="forget-reading" type="button" class="quiet-button">清除记录</button></div>
+</section>
+<template id="reading-catalog">
+  {% for post in site.posts %}<a href="{{ post.url | relative_url }}" data-title="{{ post.title | escape }}"></a>{% endfor %}
+  {% for chapter in site.novels %}<a href="{{ chapter.url | relative_url }}" data-title="{{ chapter.title | escape }}" data-book-title="{{ site.data.library[chapter.book_id].title | escape }}"></a>{% endfor %}
+</template>

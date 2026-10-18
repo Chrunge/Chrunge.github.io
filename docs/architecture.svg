@@ -41,7 +41,7 @@
   <text x="758" y="435" class="heading">Jekyll 页面结构</text>
   <text x="758" y="477" class="body">首页 · 博客 · 小说 · 漫画 · 归档 · 标签 · 关于</text>
   <text x="758" y="513" class="body">作品详情 → 章节目录 → 独立章节阅读</text>
-  <text x="758" y="549" class="body">公共导航、阅读工具、主题与响应式样式</text>
+  <text x="758" y="549" class="body">公共页头／页脚 · 阅读模块 · 主题与卡片样式</text>
   <text x="758" y="579" class="small">模板与生成数据共同决定页面，内容源仍为 Markdown</text>
   <path class="flow" d="M668 496H732"/>
   <path class="flow" d="M358 598V681"/>
@@ -61,10 +61,10 @@
   <text x="756" y="849" class="small">不需要常驻应用服务器</text>
   <rect class="box" x="1076" y="681" width="276" height="202" rx="18"/>
   <text x="1100" y="725" class="heading">读者浏览器</text>
-  <text x="1100" y="766" class="body">阅读与搜索</text>
-  <text x="1100" y="800" class="body">主题、沉浸与字号</text>
+  <text x="1100" y="766" class="body">阅读 · 图表 · 图片缩放</text>
+  <text x="1100" y="800" class="body">主题 · 目录 · 快捷键</text>
   <text x="1100" y="837" class="small">localStorage 保存偏好</text>
-  <text x="1100" y="863" class="small">与章节、正文阅读进度</text>
+  <text x="1100" y="863" class="small">章节进度与首页续读</text>
   <path class="flow" d="M668 781H732"/>
   <path class="flow" d="M1012 781H1076"/>
   <path class="flow" d="M1214 883V923" stroke-dasharray="6 6"/>

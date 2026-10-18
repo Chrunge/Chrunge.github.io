@@ -53,6 +53,7 @@ exclude:
   - package-lock.json
   - vendor
   - .preview
+  - _site_reader
   - _site_check
   - .deploy.yml
 

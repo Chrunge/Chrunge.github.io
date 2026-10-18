@@ -9,6 +9,7 @@ vendor/
 node_modules/
 .DS_Store
 _site_check/
+_site_reader/
 .deploy.yml
 
 # Local source images; optimized WebP gallery pages are published instead.
