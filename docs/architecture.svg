@@ -36,7 +36,7 @@
   <text x="74" y="474" class="body">prepare_library.rb → 作品、章序与旧址跳转</text>
   <text x="74" y="508" class="body">Jekyll discovery 插件 → 真实网址索引</text>
   <text x="74" y="548" class="small">构建生成（不入库）：_library/ · _data/library*.json</text>
-  <text x="74" y="576" class="small">redirects/ · 章节资料；索引保存在构建内存</text>
+  <text x="74" y="576" class="small">redirects/；章节资料写回源码，索引在内存</text>
   <rect class="box" x="732" y="394" width="620" height="204" rx="18"/>
   <text x="758" y="435" class="heading">Jekyll 页面结构</text>
   <text x="758" y="477" class="body">首页 · 博客 · 周朝史 ↗ · 作品 · 归档 · 标签 · 关于</text>

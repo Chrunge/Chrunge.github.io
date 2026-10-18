@@ -89,6 +89,7 @@ class ContentTest < Minitest::Test
       catalog = JSON.parse(File.read(File.join(dir, '_data/library.json'), encoding: 'UTF-8'))
       assert_equal ['10.md', '01.md', '02.md'], catalog.values.first['chapters'].map { |chapter| chapter['title'] }
       generated = Dir.glob(File.join(dir, '{_novels,_data,_library,redirects}/**/*')).select { |file| File.file?(file) }
+      refute_empty generated
       before = generated.to_h { |file| [file, File.binread(file)] }
       generate.call
       assert_equal before, generated.to_h { |file| [file, File.binread(file)] }
