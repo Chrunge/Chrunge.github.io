@@ -7,7 +7,7 @@
 - 本地源码：使用自己的克隆目录；文档以 `D:\Projects\personal-blog` 为示例
 - [使用说明书](docs/使用说明书.md)：写作、图片、手动提交、预览与排错
 - [架构说明](docs/architecture.md) · [架构图](docs/architecture.svg)：源码、生成数据与发布流程
-- [维护历史](docs/维护历史.md)：迁移、改版、问题排查与清理记录
+- [维护历史](docs/HISTORY.md)：迁移、改版、问题排查与清理记录
 - [素材致谢与授权](THIRD_PARTY_NOTICES.md)
 
 导航：首页、博客、[周朝史](https://chrunge.github.io/Zhou-Dynasty-Timeline/)、[作品](https://chrunge.github.io/works/)、归档、标签、关于。作品收录小说、专题笔记与漫画。
