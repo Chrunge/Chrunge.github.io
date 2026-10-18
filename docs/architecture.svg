@@ -1,9 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="700" viewBox="0 0 1100 700" role="img" aria-labelledby="title desc">
-<title id="title">云海小鲸 · 内容与发布架构</title><desc id="desc">作者维护内容，由 GitHub Actions 运行 Jekyll 与链接检查，发布静态网站至 GitHub Pages，浏览器负责阅读偏好，可选连接 Giscus。</desc>
-<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#eef6fd"/><stop offset="1" stop-color="#f6f1fb"/></linearGradient><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#7495b0"/></marker></defs>
-<rect width="1100" height="700" rx="28" fill="url(#bg)"/>
-<g font-family="Microsoft YaHei, sans-serif" fill="#263e52"><text x="55" y="70" font-size="29" font-weight="bold">云海小鲸 · 简单而清晰的架构</text><text x="55" y="103" font-size="15" fill="#637b8d">内容写在文件里，发布交给自动构建，阅读保持轻盈。</text>
-<g fill="#fff" stroke="#cbdce8" stroke-width="1.5"><rect x="55" y="150" width="270" height="110" rx="18"/><rect x="55" y="290" width="270" height="110" rx="18"/><rect x="55" y="430" width="270" height="110" rx="18"/><rect x="410" y="230" width="270" height="220" rx="22"/><rect x="765" y="155" width="280" height="120" rx="18"/><rect x="765" y="340" width="280" height="120" rx="18"/><rect x="765" y="535" width="280" height="105" rx="18"/></g>
-<g stroke="#7495b0" stroke-width="2" fill="none" marker-end="url(#arrow)"><path d="M325 205H365V290H410"/><path d="M325 345H410"/><path d="M325 485H365V400H410"/><path d="M680 310H725V215H765"/><path d="M905 275V340"/><path d="M905 460V535" stroke-dasharray="6 6"/></g>
-<g font-size="20" font-weight="bold"><text x="80" y="190">文章与作品</text><text x="80" y="330">模板与配置</text><text x="80" y="470">样式与素材</text><text x="440" y="276">GitHub Actions</text><text x="795" y="198">GitHub Pages</text><text x="795" y="383">读者浏览器</text><text x="795" y="575">Giscus 评论 · 可选</text></g>
-<g font-size="14" fill="#637b8d"><text x="80" y="222">Markdown / 文章 / 画集 / 小说</text><text x="80" y="362">布局 / 公共组件 / 主题选项</text><text x="80" y="502">本地 CSS / JavaScript / 图片</text><text x="440" y="318">Jekyll 生成页面</text><text x="440" y="351">检查链接、图片与子目录路径</text><text x="440" y="391">输出 HTML / RSS / Sitemap</text><text x="795" y="233">托管静态网站与独立内容网址</text><text x="795" y="418">主题 / 沉浸 / 字号 / 阅读进度</text><text x="795" y="607">GitHub Discussions 保存留言</text><text x="55" y="615">作者编辑 → 提交到仓库 → 自动检查 → 发布</text><text x="55" y="646">前台不保存管理密钥；阅读偏好仅存于当前浏览器。</text></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1040" viewBox="0 0 1400 1040" role="img" aria-labelledby="title description">
+<title id="title">云海小鲸：内容、生成、构建与发布架构</title>
+<desc id="description">Markdown 内容与手工配置经书架和索引脚本整理，结合模板与静态资源，由 GitHub Actions 运行 Jekyll 和页面检查后部署至 GitHub Pages。浏览器保存阅读偏好，可选连接 Giscus 评论。</desc>
+<defs>
+  <linearGradient id="background" x2="1" y2="1"><stop stop-color="#eff6fd"/><stop offset="1" stop-color="#f7f8fc"/></linearGradient>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#467ca7"/></marker>
+  <style>.heading{font-size:24px;font-weight:700;fill:#203449}.body{font-size:18px;fill:#435c71}.small{font-size:16px;fill:#526a7e}.eyebrow{font-size:14px;font-weight:700;letter-spacing:1px;fill:#2169b5}.box{fill:#fff;stroke:#cbdde9;stroke-width:1.5}.flow{fill:none;stroke:#467ca7;stroke-width:2.2;marker-end:url(#arrow)}</style>
+</defs>
+<rect width="1400" height="1040" rx="28" fill="url(#background)"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+  <text x="48" y="62" font-size="34" font-weight="700" fill="#203449">云海小鲸 · 网站架构</text>
+  <text x="48" y="100" class="body">内容写在文件里，目录自动整理，构建检查后发布。</text>
+  <text x="48" y="143" class="eyebrow">01  作者维护的源文件</text>
+  <rect class="box" x="48" y="162" width="420" height="166" rx="18"/>
+  <text x="74" y="203" class="heading">文章、章节与画集</text>
+  <text x="74" y="239" class="body">_posts/ · 博客文章</text>
+  <text x="74" y="271" class="body">_novels/分类/作品/ · 独立章节</text>
+  <text x="74" y="303" class="body">_manga/ · 画集与图片顺序</text>
+  <rect class="box" x="492" y="162" width="390" height="166" rx="18"/>
+  <text x="518" y="203" class="heading">站点配置</text>
+  <text x="518" y="243" class="body">_config.yml · 站点与集合</text>
+  <text x="518" y="277" class="body">_data/themes.yml · 主题选项</text>
+  <text x="518" y="307" class="body">_data/links.yml · 友链</text>
+  <rect class="box" x="906" y="162" width="446" height="166" rx="18"/>
+  <text x="932" y="203" class="heading">模板与静态资源</text>
+  <text x="932" y="243" class="body">_layouts/ · _includes/</text>
+  <text x="932" y="277" class="body">assets/css/ · assets/js/</text>
+  <text x="932" y="307" class="body">assets/images/ · 图片与透明 SVG</text>
+  <path class="flow" d="M258 328V394"/>
+  <path class="flow" d="M687 328V358H558V394"/>
+  <path class="flow" d="M1129 328V394"/>
+
+  <text x="48" y="378" class="eyebrow">02  内容整理与页面组织</text>
+  <rect class="box" x="48" y="394" width="620" height="204" rx="18"/>
+  <text x="74" y="435" class="heading">Ruby 生成脚本</text>
+  <text x="74" y="474" class="body">prepare_library.rb → 作品、章序与旧址跳转</text>
+  <text x="74" y="508" class="body">prepare_indexes.rb → 归档与标签索引</text>
+  <text x="74" y="548" class="small">生成：_library/ · _data/library*.json</text>
+  <text x="74" y="576" class="small">_data/discovery.json · redirects/ · 章节网址信息</text>
+  <rect class="box" x="732" y="394" width="620" height="204" rx="18"/>
+  <text x="758" y="435" class="heading">Jekyll 页面结构</text>
+  <text x="758" y="477" class="body">首页 · 博客 · 小说 · 漫画 · 归档 · 标签 · 关于</text>
+  <text x="758" y="513" class="body">作品详情 → 章节目录 → 独立章节阅读</text>
+  <text x="758" y="549" class="body">公共导航、阅读工具、主题与响应式样式</text>
+  <text x="758" y="579" class="small">模板与生成数据共同决定页面，内容源仍为 Markdown</text>
+  <path class="flow" d="M668 496H732"/>
+  <path class="flow" d="M358 598V681"/>
+  <path class="flow" d="M1042 598V638H606V681"/>
+
+  <text x="48" y="660" class="eyebrow">03  检查、发布与阅读</text>
+  <rect class="box" x="48" y="681" width="620" height="202" rx="18"/>
+  <text x="74" y="722" class="heading">GitHub Actions · master 推送后执行</text>
+  <text x="74" y="762" class="body">生成目录与索引 → YAML / 脚本检查</text>
+  <text x="74" y="797" class="body">Jekyll 构建 → 链接、图片、锚点与子路径检查</text>
+  <text x="74" y="832" class="body">正式构建并上传 HTML / CSS / JS / RSS / Sitemap</text>
+  <text x="74" y="862" class="small">拉取请求只验证；部署前必须通过正式检查</text>
+  <rect class="box" x="732" y="681" width="280" height="202" rx="18"/>
+  <text x="756" y="725" class="heading">GitHub Pages</text>
+  <text x="756" y="770" class="body">托管静态页面</text>
+  <text x="756" y="806" class="body">chrunge.github.io</text>
+  <text x="756" y="849" class="small">不需要常驻应用服务器</text>
+  <rect class="box" x="1076" y="681" width="276" height="202" rx="18"/>
+  <text x="1100" y="725" class="heading">读者浏览器</text>
+  <text x="1100" y="766" class="body">阅读与搜索</text>
+  <text x="1100" y="800" class="body">主题、沉浸与字号</text>
+  <text x="1100" y="837" class="small">localStorage 保存偏好</text>
+  <text x="1100" y="863" class="small">与章节、正文阅读进度</text>
+  <path class="flow" d="M668 781H732"/>
+  <path class="flow" d="M1012 781H1076"/>
+  <path class="flow" d="M1214 883V923" stroke-dasharray="6 6"/>
+  <rect class="box" x="1076" y="923" width="276" height="78" rx="16"/>
+  <text x="1100" y="954" font-size="18" font-weight="700" fill="#203449">Giscus · 可选，默认关闭</text>
+  <text x="1100" y="983" class="small">留言存于 GitHub Discussions</text>
+  <text x="48" y="944" class="body">日常编辑：Markdown + 图片 → Commit → Push → 自动发布</text>
+  <text x="48" y="979" class="small">生成数据可重建；本地 _site/、vendor/、.bundle/ 不提交。站点不维护数据库或登录后台。</text>
+</g>
+</svg>

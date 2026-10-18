@@ -1,40 +1,30 @@
 - id: red
   name: 赤色
   label: 暖阳珊瑚
-  avatar: /assets/images/mascot/avatar_01_red.jpg
 - id: orange
   name: 橙色
   label: 橘子汽水
-  avatar: /assets/images/mascot/avatar_02_orange.jpg
 - id: yellow
   name: 黄色
   label: 柠檬微光
-  avatar: /assets/images/mascot/avatar_03_yellow.jpg
 - id: green
   name: 绿色
   label: 薄荷森林
-  avatar: /assets/images/mascot/avatar_04_green.jpg
 - id: cyan
   name: 青色
   label: 浅湾海风
-  avatar: /assets/images/mascot/avatar_05_cyan.jpg
 - id: blue
   name: 蓝色
   label: 云海晴空
-  avatar: /assets/images/mascot/avatar_06_blue.jpg
 - id: purple
   name: 紫色
   label: 极光晚霞
-  avatar: /assets/images/mascot/avatar_07_purple.jpg
 - id: rainbow
   name: 彩色
   label: 幻彩云朵
-  avatar: /assets/images/mascot/avatar_08_rainbow.jpg
 - id: white
   name: 白色
   label: 纯净初雪
-  avatar: /assets/images/mascot/avatar_09_white.jpg
 - id: night
   name: 夜间
   label: 深海夜读
-  avatar: /assets/images/mascot/avatar_06_blue.jpg

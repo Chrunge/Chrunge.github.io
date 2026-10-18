@@ -36,7 +36,6 @@ def main():
         text = path.read_text(encoding='utf-8')
         doc.feed(text)
         pages[path] = doc
-        if path.relative_to(root).parts[0] == 'admin': continue
         prose = re.sub(r'<(pre|code)\b[^>]*>.*?</\1>', '', text, flags=re.S)
         if re.search(r'\{%|\{\{', prose): errors.append(f'{path}: unrendered Liquid')
         if re.search('\u9cb8\u5c0f\u54e8|\u4e2d\u56fd\u94f6\u884c', text): errors.append(f'{path}: legacy branding')

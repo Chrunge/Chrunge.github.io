@@ -14,7 +14,7 @@
       <summary aria-label="选择主题颜色">◐ <span>主题</span></summary>
       <div class="theme-panel"><p>给今天换一种颜色</p><div class="theme-options">
       {% for theme in site.data.themes %}
-        <button type="button" class="theme-option" data-theme-value="{{ theme.id }}" data-avatar="{{ theme.avatar | relative_url }}" aria-pressed="false"><i class="swatch" data-theme="{{ theme.id }}" aria-hidden="true"></i><span>{{ theme.name }}</span></button>
+        <button type="button" class="theme-option" data-theme-value="{{ theme.id }}" aria-pressed="false"><i class="swatch" data-theme="{{ theme.id }}" aria-hidden="true"></i><span>{{ theme.name }}</span></button>
       {% endfor %}
       </div><small>选择会保存在当前浏览器</small></div>
     </details>

@@ -29,7 +29,7 @@ defaults:
   - scope: {path: "", type: manga}
     values: {layout: manga}
   - scope: {path: "", type: novels}
-    values: {layout: novel}
+    values: {layout: chapter}
 comments:
   enabled: false
   repo: ""
@@ -50,12 +50,8 @@ exclude:
   - node_modules
   - package.json
   - package-lock.json
-  - legacy
-  - content
-  - quartz
   - vendor
   - .preview
-  - .preview-config.yml
   - _site_check
   - .deploy.yml
 
