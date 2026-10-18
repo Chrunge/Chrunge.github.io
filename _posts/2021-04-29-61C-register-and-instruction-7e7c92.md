@@ -65,6 +65,7 @@ excerpt: Computer Architecture - register and instruction：技术笔记整理�
     nop = addi x0, x0, x0
     ```
 
+
 Notes:
     1. Memory address are in bytes, word addresses are 4 bytes apart and **litte-endian** convention.
     2. ![PrincipleOfLocality](https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/Instruction/PricipleOfLocality.png)
@@ -170,6 +171,7 @@ them
         jal ra, FuncName
       ```
 
+
    ![JrFormat](https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/InstructionFormat/JrFormat.png)
 
       ``` Assembly
@@ -184,6 +186,7 @@ them
         auipc x1, <hi20bits>
         jalr x0, x1, <lo12bits>
       ```
+
 
 7. **Summary**
    ![SummaryFormat](https://raw.githubusercontent.com/Chrunge/Pictures/master/CS61C/InstructionFormat/SummaryFormat.png)

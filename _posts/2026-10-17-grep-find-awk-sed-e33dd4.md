@@ -35,23 +35,31 @@ excerpt: grep_find_awk_sed：技术笔记整理。
 #### 3. 运维实战场景
 
 *   **场景 1：在配置文件目录里，找谁配了 "192.168.1.1"**
+
     ```bash
     grep -r "192.168.1.1" /etc/nginx/
     ```
+
 *   **场景 2：查日志，排除 "info" 和 "debug"，且忽略大小写，只看报错**
+
     ```bash
     # 使用 -E 配合 | 表示“或”，同时排除 info 和 debug
     grep -E -v -i "info|debug" app.log
     ```
+
 *   **场景 3：统计有多少个 IP 访问了网站 (提取 + 排序 + 计数)**
+
     ```bash
     # -o 只输出匹配到的IP正则部分
     grep -o -E "([0-9]{1,3}\.){3}[0-9]{1,3}" access.log | sort | uniq -c | sort -nr | head
     ```
+
 *   **场景 4：找 java 进程 (排除 grep 本身)**
+
     ```bash
     ps -ef | grep java | grep -v grep
     ```
+
 
 ---
 
@@ -80,10 +88,13 @@ excerpt: grep_find_awk_sed：技术笔记整理。
 #### 3. 运维实战场景
 
 *   **场景 1：找出 `/var/log` 下大于 1G 的大文件**
+
     ```bash
     find /var/log -type f -size +1G
     ```
+
 *   **场景 2：自动清理 30 天前的备份文件 (配合 rm)**
+
     ```bash
     # 方法 A (find原生):
     find /data/backup -name "*.sql" -mtime +30 -delete
@@ -91,15 +102,20 @@ excerpt: grep_find_awk_sed：技术笔记整理。
     # 方法 B (推荐，看着安全点):
     find /data/backup -name "*.sql" -mtime +30 | xargs rm -f
     ```
+
 *   **场景 3：找出最近 24 小时内被修改过的配置文件**
+
     ```bash
     # 比如怀疑谁改了配置导致故障
     find /etc -name "*.conf" -mtime -1
     ```
+
 *   **场景 4：批量修改文件权限 (把所有 sh 脚本加执行权限)**
+
     ```bash
     find /app/scripts -name "*.sh" -type f -exec chmod +x {} \;
     ```
+
 
 ---
 
@@ -149,6 +165,7 @@ excerpt: grep_find_awk_sed：技术笔记整理。
 awk [选项] '条件 {动作}' 文件
 ```
 
+
 | 常用选项 | 功能 | 场景 |
 | :--- | :--- | :--- |
 | **`-F`** | **指定分隔符** | 默认是空格。处理 `/etc/passwd` 这种用 `:` 分割的文件时必用。 |
@@ -158,26 +175,33 @@ awk [选项] '条件 {动作}' 文件
 
 *   **场景 1：打印特定列 (最常用)**
     > `df -h` 输出乱？只看磁盘剩余空间。
+
     ```bash
     # 打印第1列(设备名)和第4列(剩余空间)
     df -h | awk '{print $1, $4}'
     ```
 
+
 *   **场景 2：指定分隔符提取数据**
     > 提取系统所有用户名 (在 `/etc/passwd` 第1列，用 `:` 分割)。
+
     ```bash
     awk -F ":" '{print $1}' /etc/passwd
     ```
 
+
 *   **场景 3：条件筛选 (像 SQL 一样查询)**
     > 找出 CPU 占用 (`$3`) 大于 50% 的进程。
+
     ```bash
     ps -aux | awk '$3 > 50 {print $2, $3, $11}'
     # 逻辑：如果第三列大于50，打印 PID, CPU, 进程名
     ```
 
+
 *   **场景 4：取倒数某一列**
     > 日志最后一段通常是状态码或响应时间。
+
     ```bash
     # 打印日志的最后一列
     tail access.log | awk '{print $NF}'
@@ -185,12 +209,15 @@ awk [选项] '条件 {动作}' 文件
     tail access.log | awk '{print $(NF-1)}'
     ```
 
+
 *   **场景 5：统计与求和 (进阶)**
     > 统计 Nginx 日志中所有请求的总字节数 (假设字节数在第 10 列)。
+
     ```bash
     # BEGIN:开始前做啥; END:结束后做啥
     awk '{sum += $10} END {print sum}' access.log
     ```
+
 
 ---
 
@@ -204,6 +231,7 @@ awk [选项] '条件 {动作}' 文件
 ```bash
 sed [选项] '[地址]命令' 文件
 ```
+
 
 | 常用命令 | 功能 | 助记 |
 | :--- | :--- | :--- |
@@ -221,13 +249,16 @@ sed [选项] '[地址]命令' 文件
 
 *   **场景 1：文本替换 (配置文件修改)**
     > 把 `config.php` 里的 `debug = true` 改成 `debug = false`。
+
     ```bash
     # s/旧/新/g (g表示全局替换，否则只替每行第一个)
     sed -i 's/debug = true/debug = false/g' config.php
     ```
 
+
 *   **场景 2：删除特定行**
     > 删掉文件里的空行，或删掉包含 "error" 的行。
+
     ```bash
     # 删除空行 (^$ 代表空行正则)
     sed -i '/^$/d' file.txt
@@ -236,25 +267,32 @@ sed [选项] '[地址]命令' 文件
     sed -i '/error/d' file.txt
     ```
 
+
 *   **场景 3：打印文件的第 10 到 20 行**
     > 文件太大，cat 会刷屏，head/tail 算起来麻烦。
+
     ```bash
     sed -n '10,20p' big_log.txt
     ```
 
+
 *   **场景 4：在特定行前后插入内容**
     > 在配置文件的第 5 行后面加上一行 `port=8080`。
+
     ```bash
     sed -i '5a port=8080' config.conf
     ```
 
+
 *   **场景 5：高级替换 (使用变量)**
     > 在 Shell 脚本里，把变量 `$PORT` 的值写入配置文件。
+
     ```bash
     # 注意：必须用双引号 ""，单引号里变量不生效！
     PORT=9090
     sed -i "s/8080/$PORT/g" server.xml
     ```
+
 
 ---
 
@@ -278,27 +316,35 @@ sed [选项] '[地址]命令' 文件
 
 **场景 1：统计访问量最高的 IP (Web日志分析)**
 > 逻辑：打印IP列 -> 排序 -> 去重并统计次数 -> 按次数倒序 -> 取前10
+
 ```bash
 awk '{print $1}' access.log | sort | uniq -c | sort -nr | head -n 10
 ```
 
+
 **场景 2：批量杀掉特定进程**
 > 逻辑：列出进程 -> 过滤名字 -> 排除grep自己 -> 取进程ID -> 传参给kill
+
 ```bash
 ps -ef | grep "nginx" | grep -v "grep" | awk '{print $2}' | xargs kill -9
 ```
 
+
 **场景 3：查看并清理空行**
 > 逻辑：正则匹配空行并删除
+
 ```bash
 sed -i '/^$/d' filename.txt
 ```
 
+
 **场景 4：查找最近报错的上下文**
 > 逻辑：找到 Error，并把它的后 10 行也打出来，方便排查原因
+
 ```bash
 grep -A 10 "Exception" catalina.out
 ```
+
 
 
 ---

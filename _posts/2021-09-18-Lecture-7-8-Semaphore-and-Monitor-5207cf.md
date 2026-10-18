@@ -56,6 +56,7 @@ excerpt: "Synchronization I and II: Concurrency, Lock Implementation：技术笔
       1. Mutual Exclusion(initial value = 1)
       2. Scheduling Constraints(initial value = 0)
          1. 比如用于实现pthread_join(),
+
             ```N
             Initial value of semaphore = 0
             # 主线程
@@ -67,6 +68,7 @@ excerpt: "Synchronization I and II: Concurrency, Lock Implementation：技术笔
                 semaV(&mysem)
             }
             ```
+
     3. （配图待补：第43页, Full Solution to Bounded Buffer）
 
 ## How to implement lock by interrupt/atomic operations

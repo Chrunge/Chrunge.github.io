@@ -79,10 +79,12 @@ excerpt: Kafka基础知识：技术笔记整理。
 **💻 运维实战举例：**
 
 1.  **快速筛查坏掉的分区（巡检脚本必用）：**
+
     ```bash
     # 如果没有任何输出，才是健康的
     bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --under-replicated-partitions
     ```
+
 
 ---
 
@@ -100,6 +102,7 @@ excerpt: Kafka基础知识：技术笔记整理。
 
 1.  **生成迁移计划（把 topic-A 的数据迁移到 Broker 4,5）：**
     *   运维通常需要先写一个 `topics-to-move.json`，然后：
+
     ```bash
     bin/kafka-reassign-partitions.sh --bootstrap-server localhost:9092 \
     --topics-to-move-json-file topics-to-move.json \
@@ -107,19 +110,24 @@ excerpt: Kafka基础知识：技术笔记整理。
     --generate
     ```
 
+
 2.  **验证迁移是否完成（Verify）：**
     *   在执行迁移过程中，必须不断运行此命令监控进度，防止带宽打爆。
+
     ```bash
     bin/kafka-reassign-partitions.sh --bootstrap-server localhost:9092 \
     --reassignment-json-file expand-cluster-reassignment.json \
     --verify
     ```
 
+
 3.  **平衡 Leader（重启机器后必做）：**
+
     ```bash
     bin/kafka-leader-election.sh --bootstrap-server localhost:9092 \
     --election-type PREFERRED --all-topic-partitions
     ```
+
 
 ---
 
@@ -136,18 +144,22 @@ excerpt: Kafka基础知识：技术笔记整理。
 **💻 运维实战举例：**
 
 1.  **紧急限流（限制某个 User 每秒只能写 1MB）：**
+
     ```bash
     bin/kafka-configs.sh --bootstrap-server localhost:9092 \
     --alter --add-config 'producer_byte_rate=1048576' \
     --entity-type users --entity-name bad_user_app
     ```
 
+
 2.  **强制 Topic 高可靠（配合 acks=all）：**
+
     ```bash
     bin/kafka-configs.sh --bootstrap-server localhost:9092 \
     --alter --add-config 'min.insync.replicas=2' \
     --entity-type topics --entity-name important_payment_topic
     ```
+
 
 ---
 
@@ -163,15 +175,19 @@ excerpt: Kafka基础知识：技术笔记整理。
 **💻 运维实战举例：**
 
 1.  **检查索引文件是否损坏：**
+
     ```bash
     # --index-sanity-check 会检查索引是否匹配，不匹配则报错
     bin/kafka-dump-log.sh --files /data/kafka-logs/topic-0/00000.index --index-sanity-check
     ```
 
+
 2.  **查看 Log 内部的具体 Payload（仅用于 Debug）：**
+
     ```bash
     bin/kafka-dump-log.sh --files /data/kafka-logs/topic-0/00000.log --print-data-log
     ```
+
 
 ---
 
@@ -216,25 +232,31 @@ excerpt: Kafka基础知识：技术笔记整理。
 
 1.  **创建一个标准的生产 Topic**
     *   3 个分区，2 个副本（保证高可用）。
+
     ```bash
     bin/kafka-topics.sh --bootstrap-server localhost:9092 \
     --create --topic my-topic-01 \
     --partitions 3 --replication-factor 2
     ```
 
+
 2.  **查看 Topic 健康状况（排查问题必用）**
     *   重点观察输出中的 `ISR` 列表。如果 `Replicas` 有 3 个，但 `ISR` 只有 1 个，说明有 2 个副本掉线了。
+
     ```bash
     bin/kafka-topics.sh --bootstrap-server localhost:9092 \
     --describe --topic my-topic-01
     ```
 
+
 3.  **扩容分区**
     *   当吞吐量不够时，增加分区以提高并行度。
+
     ```bash
     bin/kafka-topics.sh --bootstrap-server localhost:9092 \
     --alter --topic my-topic-01 --partitions 5
     ```
+
 
 ---
 
@@ -253,13 +275,16 @@ excerpt: Kafka基础知识：技术笔记整理。
 
 1.  **查看消费积压 (Lag)**
     *   **关注列**：`LAG`。如果 LAG 数值持续很大且不下降，说明该 Group 消费出问题了。
+
     ```bash
     bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 \
     --describe --group my-consumer-group
     ```
 
+
 2.  **回溯消费（重置到最早）**
     *   **注意**：执行此命令前，**必须先停止**对应的消费者程序。
+
     ```bash
     bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 \
     --group my-consumer-group \
@@ -267,14 +292,17 @@ excerpt: Kafka基础知识：技术笔记整理。
     --reset-offsets --to-earliest --execute
     ```
 
+
 3.  **回溯到指定时间点**
     *   例如：应用在上午 10:00 发布后出现 Bug，修复后想重新消费 10:00 之后的数据。
+
     ```bash
     bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 \
     --group my-consumer-group \
     --topic my-topic-01 \
     --reset-offsets --to-datetime 2023-10-27T10:00:00.000 --execute
     ```
+
 
 ---
 
@@ -292,19 +320,23 @@ excerpt: Kafka基础知识：技术笔记整理。
 
 1.  **临时调整消息保留时间**
     *   默认通常是 7 天。如果磁盘紧张，可临时改为 12 小时（单位毫秒）。
+
     ```bash
     bin/kafka-configs.sh --bootstrap-server localhost:9092 \
     --entity-type topics --entity-name my-topic-01 \
     --alter --add-config retention.ms=43200000
     ```
 
+
 2.  **修改最大消息大小**
     *   如果报错 "Record too large"，需调整此参数（默认 1MB）。
+
     ```bash
     bin/kafka-configs.sh --bootstrap-server localhost:9092 \
     --entity-type topics --entity-name my-topic-01 \
     --alter --add-config max.message.bytes=10485760
     ```
+
 
 ---
 
@@ -322,19 +354,23 @@ excerpt: Kafka基础知识：技术笔记整理。
 1.  **从头开始查看消息（验证数据存在性）**
     *   `--from-beginning`：从第一条消息开始读。如果不加，只读启动命令后新发的消息。
     *   `--max-messages 10`：读 10 条就退出（防止刷屏）。
+
     ```bash
     bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 \
     --topic my-topic-01 \
     --from-beginning --max-messages 10
     ```
 
+
 2.  **测试发送消息**
+
     ```bash
     bin/kafka-console-producer.sh --bootstrap-server localhost:9092 \
     --topic my-topic-01
     > Hello Kafka
     > This is a test
     ```
+
 
 ---
 
@@ -352,18 +388,22 @@ excerpt: Kafka基础知识：技术笔记整理。
 
 1.  **基准压测（测试集群写入能力）**
     *   向 `test-topic` 发送 10万条消息，每条 1KB，查看每秒吞吐量。
+
     ```bash
     bin/kafka-producer-perf-test.sh --topic test-topic \
     --num-records 100000 --record-size 1024 --throughput -1 \
     --producer-props bootstrap.servers=localhost:9092 acks=1
     ```
 
+
 2.  **查看 Log 文件详情（Debug）**
     *   不显示内容，只显示 Offset 和 Position，用于验证文件是否损坏。
+
     ```bash
     bin/kafka-dump-log.sh --files /tmp/kafka-logs/my-topic-01-0/00000000000000000000.log \
     --print-data-log
     ```
+
 
 ### 💡 运维小贴士
 

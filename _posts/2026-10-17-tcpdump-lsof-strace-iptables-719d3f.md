@@ -38,6 +38,7 @@ excerpt: tcpdump_lsof_strace_iptables：技术笔记整理。
 20:17:45.325605 IP 10.0.0.1.56432 > 10.0.0.2.80: Flags [S], seq 123456789, win 29200, length 0
 ```
 
+
 *   **20:17:45.325605**: 精确到微秒的时间戳。
 *   **IP**: 协议类型。
 *   **10.0.0.1.56432 > 10.0.0.2.80**: 源 IP.端口 `>` 目的 IP.端口。
@@ -56,6 +57,7 @@ excerpt: tcpdump_lsof_strace_iptables：技术笔记整理。
 
 ##### 场景一：基础连通性与应用层数据 (HTTP/SQL)
 **目标**：查看本机与数据库的交互内容，或者 HTTP 报错信息。
+
 ```bash
 # -A: 以文本显示内容 (方便看 SQL 或 HTTP 报文)
 # -s 0: 防止截断，抓取完整包
@@ -66,9 +68,11 @@ tcpdump -i eth0 -nn -A -s 0 port 3306
 tcpdump -i eth0 -nn -A -s 0 'src 192.168.1.5 and dst port 80' | grep "GET"
 ```
 
+
 ##### 场景二：生产环境抓包并轮转 (防磁盘打爆)
 **目标**：线上故障偶发，需要长时间抓包，但不能把磁盘写满。
 **难点**：如何自动轮转文件？
+
 ```bash
 # -C 100: 每个文件上限 100MB
 # -W 10: 最多保留 10 个文件 (循环覆盖)
@@ -76,8 +80,10 @@ tcpdump -i eth0 -nn -A -s 0 'src 192.168.1.5 and dst port 80' | grep "GET"
 tcpdump -i eth0 -nn -s 0 -C 100 -W 10 -w /tmp/capture.pcap port 80
 ```
 
+
 ##### 场景三：排查 TCP 连接问题 (三次握手/四次挥手)
 **目标**：客户端报 "Connection timed out" 或 "Connection refused"。
+
 ```bash
 # 只看 TCP 协议，且只看 TCP 标志位（排除数据传输包）
 tcpdump -i eth0 -nn tcp port 80
@@ -87,12 +93,15 @@ tcpdump -i eth0 -nn tcp port 80
 tcpdump -i eth0 -nn 'tcp[13] & 2 != 0' and port 80
 ```
 
+
 ##### 场景四：排除 SSH 自身流量 (防死循环)
 **目标**：远程 SSH 连在服务器上抓包，如果不排除 22 端口，屏幕会疯狂刷新自己的 SSH 数据包。
+
 ```bash
 # 逻辑非操作：not port 22
 tcpdump -i eth0 -nn not port 22
 ```
+
 
 ---
 
@@ -175,6 +184,7 @@ nginx   1345 root    2w   REG  253,1     4096   999999 /var/log/nginx/error.log
 nginx   1345 root    4u  IPv4  23456      0t0      TCP *:80 (LISTEN)
 ```
 
+
 *   **`FD` (File Descriptor 文件描述符)**：
     *   **`cwd`**: Current Working Directory (当前工作目录)。
     *   **`txt`**: Text (程序代码段，即二进制程序本身)。
@@ -189,6 +199,7 @@ nginx   1345 root    4u  IPv4  23456      0t0      TCP *:80 (LISTEN)
 
 *   **场景 1：端口冲突 (Address already in use)**
     > 启动 Nginx 报错 "Port 80 is used"，必须找出谁占了坑。
+
     ```bash
     # -n: 不解析主机名 (快)
     # -P: 直接显示端口号
@@ -196,8 +207,10 @@ nginx   1345 root    4u  IPv4  23456      0t0      TCP *:80 (LISTEN)
     # 结果：COMMAND PID ... -> 杀掉对应的 PID 即可
     ```
 
+
 *   **场景 2：磁盘满了，找不到大文件 (幽灵文件)**
     > `df -h` 报警 100%，但 `du -sh /` 只有 50%。通常是日志文件被 `rm` 了，但进程（如 Java/Nginx）还抓着句柄没释放。
+
     ```bash
     # 查找标记为 (deleted) 的文件
     lsof | grep deleted
@@ -208,13 +221,16 @@ nginx   1345 root    4u  IPv4  23456      0t0      TCP *:80 (LISTEN)
     # 解决：重启该进程 (kill -HUP 1234 或 systemctl restart xxx)
     ```
 
+
 *   **场景 3：卸载磁盘失败 (Target is busy)**
     > 执行 `umount /mnt/data` 失败，因为有进程正在使用该目录下的文件。
+
     ```bash
     # 找出在这个目录下打开文件的所有进程
     lsof +D /mnt/data
     # 确认无误后 kill 掉相关进程再卸载
     ```
+
 
 ---
 ---
@@ -238,6 +254,7 @@ nginx   1345 root    4u  IPv4  23456      0t0      TCP *:80 (LISTEN)
 ```bash
 strace [选项] [命令 或 -p PID]
 ```
+
 
 | 选项 | 全称/记忆法 | 详细说明 | 运维场景 |
 | :--- | :--- | :--- | :--- |
@@ -266,6 +283,7 @@ strace [选项] [命令 或 -p PID]
 
 *   **场景 1：进程起不来，日志也没报错**
     > 启动 Nginx 瞬间退出，没有任何 logs。
+
     ```bash
     # 直接用 strace 启动程序
     strace -tt -f ./nginx
@@ -275,8 +293,10 @@ strace [选项] [命令 或 -p PID]
     # 破案：权限不足，读不到配置文件。
     ```
 
+
 *   **场景 2：进程 CPU 100%，想知道它在瞎忙什么**
     > `top` 发现 PID 8888 满载，日志正常。
+
     ```bash
     # -c 统计模式，运行 5 秒后 Ctrl+C
     strace -p 8888 -c
@@ -288,8 +308,10 @@ strace [选项] [命令 或 -p PID]
     # 破案：99% 时间花在 futex 锁上，这是代码逻辑死锁，甩锅给开发。
     ```
 
+
 *   **场景 3：应用连接数据库卡住 (Hang)**
     > Python 脚本一直不动，不知道卡在哪一步。
+
     ```bash
     # -T 显示耗时，-e 只看网络相关
     strace -p 1234 -tt -T -e trace=network
@@ -299,6 +321,7 @@ strace [选项] [命令 或 -p PID]
     # (一直没返回，或者 60秒后返回 ETIMEDOUT)
     # 破案：连接 192.168.1.5:3306 网络不通。
     ```
+
 
 ---
 
@@ -365,6 +388,7 @@ strace [选项] [命令 或 -p PID]
 
 ##### 场景一：安全初始化 (防锁死必做)
 在配置 DROP 策略前，必须先允许**SSH**和**已建立的连接**。
+
 ```bash
 # 1. 允许本机回环 (Localhost)，否则本地服务报错
 iptables -A INPUT -i lo -j ACCEPT
@@ -377,27 +401,34 @@ iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 ```
 
+
 ##### 场景二：封禁恶意 IP (黑名单)
 发现 `192.168.1.100` 在攻击，需要立即切断。
 *   **注意**：必须用 `-I` (Insert) 插到第一行。如果用 `-A` 放在最后，而前面有一条 `ACCEPT all`，那封禁就无效了。
+
 ```bash
 # -I INPUT 1: 插入到 INPUT 链的第 1 行
 iptables -I INPUT 1 -s 192.168.1.100 -j DROP
 ```
 
+
 ##### 场景三：开放业务端口
 开放 Web (80) 和 HTTPS (443)。
+
 ```bash
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 ```
 
+
 ##### 场景四：最后兜底 (默认策略设为 DROP)
 **⚠ 警告**：只有在场景一配置无误后，才能执行这一步！
+
 ```bash
 iptables -P INPUT DROP
 # 此时，除了上面允许的包，其他所有流量都会被丢弃。
 ```
+
 
 ---
 
@@ -424,6 +455,7 @@ iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT --to-destination 10.0.
 # MASQUERADE: 动态伪装 (如果本机 IP 是动态的用这个，静态 IP 用 -j SNAT --to-source 本机IP)
 iptables -t nat -A POSTROUTING -j MASQUERADE
 ```
+
 
 ---
 

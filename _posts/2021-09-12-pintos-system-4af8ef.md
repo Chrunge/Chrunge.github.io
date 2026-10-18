@@ -127,6 +127,7 @@ excerpt: Pintos教学系统的文档注释
    1. In the starter code, 定义了一个进程的PID为主线程的TID
    2. 相关函数:`bool is_main_thread(struct thread* t, struct process* p)` and `pid_t get_pid(struct process* p)`  
 4. The Process Struct
+
    ```
    /* The process control block for a given process. Since
    there can be multiple threads per process, we need a separate
@@ -140,6 +141,7 @@ excerpt: Pintos教学系统的文档注释
    struct thread* main_thread; /* Pointer to main thread */
    };
    ```
+
 
 ## Synchronization Primitives
 
@@ -227,6 +229,7 @@ across the barrier or assume that a variable's value is unmodified across the ba
       the pointer, in order to satisfy the C typ e system.)
       ```
 
+
 3. 官方文档
 
     ```N
@@ -250,6 +253,7 @@ across the barrier or assume that a variable's value is unmodified across the ba
    #define list_entry(LIST_ELEM, STRUCT MEMBER)                                                      \
    ((STRUCT*)((uint8_t*)&(LIST_ELEM)->next - offsetof(STRUCT, MEMBER.next)))
     ```
+
 
 ## Debug
 
