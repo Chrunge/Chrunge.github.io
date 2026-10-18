@@ -40,7 +40,8 @@ groups.sort.each do |directory, files|
   chapters.each_with_index do |(file, data, body), index|
     relative_path = file.delete_prefix(novels_root + '/')
     tag_rule = tag_rules.find { |rule| relative_path.start_with?(rule.fetch('prefix')) }
-    data['tags'] = tag_rule.fetch('tags') if tag_rule
+    # Respect author-edited tags; directory rules only supply missing defaults.
+    data['tags'] = tag_rule.fetch('tags') if tag_rule && (!data['tags'].is_a?(Array) || data['tags'].empty?)
     data['date'] = data['date'].strftime('%Y-%m-%d %H:%M:%S %z') if data['date'].is_a?(Time)
     data['date'] = data['date'].strftime('%Y-%m-%d') + ' 12:00:00 +0800' if data['date'].is_a?(Date)
     chapter_id = Digest::SHA256.hexdigest(File.basename(file))[0, 12]

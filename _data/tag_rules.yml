@@ -1,5 +1,5 @@
-# First matching directory/file prefix wins. Course tags are retained; other
-# computing notes use a small set of subject categories instead of keywords.
+# Defaults for missing tags: first matching directory/file prefix wins.
+# Existing author-edited tags are preserved during every build.
 - prefix: Computer Science/15-445/
   tags: [15-445]
 - prefix: Computer Science/6.S081/

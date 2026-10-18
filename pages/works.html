@@ -1,0 +1,10 @@
+---
+layout: default
+title: 作品
+permalink: /works/
+description: 小说、课程专题、工具笔记与漫画画集，选一册开始阅读。
+---
+<header class="page-heading"><p class="eyebrow">STORIES & NOTEBOOKS</p><h1>作品书架</h1><p>小说、专题笔记与漫画，都在这里慢慢读。</p></header>
+<nav class="tag-cloud" aria-label="作品分类"><a class="tag" href="#books">小说与专题</a><a class="tag" href="#manga">漫画与画集</a></nav>
+<section class="section" id="books" aria-labelledby="books-heading"><div class="section-heading"><h2 id="books-heading">小说与专题</h2></div><div class="library-tree" aria-label="分类书架">{% for folder in site.data.library_tree %}{% include library-folder.html folder=folder %}{% endfor %}</div></section>
+<section class="section" id="manga" aria-labelledby="manga-heading"><div class="section-heading"><h2 id="manga-heading">漫画与画集</h2></div><div class="work-grid">{% for item in site.manga %}{% include card.html item=item kind='画集' %}{% endfor %}</div></section>

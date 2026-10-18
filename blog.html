@@ -1,9 +1,0 @@
----
-layout: default
-title: 博客
-permalink: /blog/
-description: 日常灵感、创作记录与技术笔记。
----
-<header class="page-heading"><p class="eyebrow">JOURNAL</p><h1>一些记录，一点灵感。</h1><p>把值得留下的瞬间，慢慢写下来。</p></header>
-<div class="search-tools js-only"><label for="search">搜索文章</label><input id="search" type="search" placeholder="输入标题、分类或关键词" autocomplete="off"><p id="search-count" class="muted" role="status"></p></div>
-<div class="post-list" id="post-list">{% for post in site.posts %}{% capture search_text %}{{ post.title }} {{ post.category }} {{ post.tags | join: ' ' }} {{ post.description }}{% endcapture %}<a class="post-row" data-search="{{ search_text | strip | escape }}" href="{{ post.url | relative_url }}"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m.%d' }}<small>{{ post.date | date: '%Y' }}</small></time><div><span class="eyebrow">{{ post.category | escape }}</span><h2>{{ post.title | escape }}</h2><p>{{ post.description | escape }}</p></div><span class="row-arrow" aria-hidden="true">↗</span></a>{% endfor %}</div><p id="search-empty" class="empty-state" hidden>没有找到相关文章，试试其他关键词。</p>

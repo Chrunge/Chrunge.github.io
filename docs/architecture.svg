@@ -39,10 +39,10 @@
   <text x="74" y="576" class="small">_data/discovery.json · redirects/ · 章节网址信息</text>
   <rect class="box" x="732" y="394" width="620" height="204" rx="18"/>
   <text x="758" y="435" class="heading">Jekyll 页面结构</text>
-  <text x="758" y="477" class="body">首页 · 博客 · 小说 · 漫画 · 归档 · 标签 · 关于</text>
+  <text x="758" y="477" class="body">首页 · 博客 · 周朝史 ↗ · 作品 · 归档 · 标签 · 关于</text>
   <text x="758" y="513" class="body">作品详情 → 章节目录 → 独立章节阅读</text>
   <text x="758" y="549" class="body">公共页头／页脚 · 阅读模块 · 主题与卡片样式</text>
-  <text x="758" y="579" class="small">模板与生成数据共同决定页面，内容源仍为 Markdown</text>
+  <text x="758" y="579" class="small">index.html + pages/ 栏目入口，permalink 固定公开网址</text>
   <path class="flow" d="M668 496H732"/>
   <path class="flow" d="M358 598V681"/>
   <path class="flow" d="M1042 598V638H606V681"/>

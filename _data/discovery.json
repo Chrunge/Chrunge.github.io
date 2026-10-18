@@ -1,32 +1,18 @@
 {
-  "post_count": 16,
+  "post_count": 15,
   "years": [
     {
       "year": "2026",
       "entries": [
         {
-          "title": "《道德经》——与老子的对话录",
+          "title": "《道德经》——与老庄的对话录",
           "url": "/blog/reading-laozi-dialogues/",
           "date": "2026-10-16T12:00:00+08:00",
           "day": "10.16",
           "year": "2026",
           "category": "阅读笔记",
           "tags": [
-            "阅读笔记",
-            "道德经"
-          ],
-          "kind": "文章"
-        },
-        {
-          "title": "杏坛春风与函谷玄览：孔老庄论道对话录",
-          "url": "/blog/reading-confucius-laozi-collected/",
-          "date": "2026-10-16T12:00:00+08:00",
-          "day": "10.16",
-          "year": "2026",
-          "category": "阅读笔记",
-          "tags": [
-            "阅读笔记",
-            "儒道共参"
+            "道家"
           ],
           "kind": "文章"
         },
@@ -38,8 +24,7 @@
           "year": "2026",
           "category": "阅读笔记",
           "tags": [
-            "阅读笔记",
-            "论语"
+            "儒家"
           ],
           "kind": "文章"
         },
@@ -176,7 +161,6 @@
           "year": "2021",
           "category": "读书笔记",
           "tags": [
-            "Dream",
             "读书笔记"
           ],
           "kind": "文章"
@@ -189,7 +173,6 @@
           "year": "2021",
           "category": "读书笔记",
           "tags": [
-            "Daily_Note",
             "读书笔记"
           ],
           "kind": "文章"
@@ -207,7 +190,6 @@
           "year": "2020",
           "category": "读书笔记",
           "tags": [
-            "Study",
             "读书笔记"
           ],
           "kind": "文章"
@@ -722,95 +704,18 @@
       ]
     },
     {
-      "id": "tag-6c0aa81a4c19",
-      "name": "Daily_Note",
+      "id": "tag-c51146217b61",
+      "name": "儒家",
       "entries": [
         {
-          "title": "随记灵感",
-          "url": "/blog/随记灵感-433cff/",
-          "date": "2021-01-01T12:00:00+08:00",
-          "day": "01.01",
-          "year": "2021",
-          "category": "读书笔记",
-          "tags": [
-            "Daily_Note",
-            "读书笔记"
-          ],
-          "kind": "文章"
-        }
-      ]
-    },
-    {
-      "id": "tag-c6d5ed757b66",
-      "name": "Dream",
-      "entries": [
-        {
-          "title": "梦境与幻想",
-          "url": "/blog/幻想日记-d2b836/",
-          "date": "2021-07-15T12:00:00+08:00",
-          "day": "07.15",
-          "year": "2021",
-          "category": "读书笔记",
-          "tags": [
-            "Dream",
-            "读书笔记"
-          ],
-          "kind": "文章"
-        }
-      ]
-    },
-    {
-      "id": "tag-3ff5620b0294",
-      "name": "Study",
-      "entries": [
-        {
-          "title": "学习心得",
-          "url": "/blog/生活体验-8d47c5/",
-          "date": "2020-09-30T23:02:49+08:00",
-          "day": "09.30",
-          "year": "2020",
-          "category": "读书笔记",
-          "tags": [
-            "Study",
-            "读书笔记"
-          ],
-          "kind": "文章"
-        }
-      ]
-    },
-    {
-      "id": "tag-ef926bba454d",
-      "name": "云海小鲸",
-      "entries": [
-        {
-          "title": "小鲸的云朵图鉴",
-          "url": "/manga/cloud-guardian-daily/",
-          "date": "2026-10-15T12:00:00+08:00",
-          "day": "10.15",
-          "year": "2026",
-          "category": "画集",
-          "tags": [
-            "画集",
-            "云海小鲸"
-          ],
-          "kind": "画集"
-        }
-      ]
-    },
-    {
-      "id": "tag-b50288a3414d",
-      "name": "儒道共参",
-      "entries": [
-        {
-          "title": "杏坛春风与函谷玄览：孔老庄论道对话录",
-          "url": "/blog/reading-confucius-laozi-collected/",
+          "title": "《夫子之道》—— 与孔子的对话录",
+          "url": "/blog/reading-confucius-dialogues/",
           "date": "2026-10-16T12:00:00+08:00",
           "day": "10.16",
           "year": "2026",
           "category": "阅读笔记",
           "tags": [
-            "阅读笔记",
-            "儒道共参"
+            "儒家"
           ],
           "kind": "文章"
         }
@@ -1031,6 +936,18 @@
           "kind": "章节"
         },
         {
+          "title": "计算机课程学习进度记录",
+          "url": "/novels/2bc8505ad7c0/read/61e4120e44aa/",
+          "date": "2020-10-27T10:32:07+08:00",
+          "day": "10.27",
+          "year": "2020",
+          "category": "Computer Science / 61ABC",
+          "tags": [
+            "工具篇"
+          ],
+          "kind": "章节"
+        },
+        {
           "title": "Git 版本管理：从提交到分支协作",
           "url": "/novels/eae004435f55/read/d423862140bd/",
           "date": "2020-09-28T18:44:16+08:00",
@@ -1041,25 +958,6 @@
             "工具篇"
           ],
           "kind": "章节"
-        }
-      ]
-    },
-    {
-      "id": "tag-c8a87f47a3f0",
-      "name": "画集",
-      "entries": [
-        {
-          "title": "小鲸的云朵图鉴",
-          "url": "/manga/cloud-guardian-daily/",
-          "date": "2026-10-15T12:00:00+08:00",
-          "day": "10.15",
-          "year": "2026",
-          "category": "画集",
-          "tags": [
-            "画集",
-            "云海小鲸"
-          ],
-          "kind": "画集"
         }
       ]
     },
@@ -1187,25 +1085,6 @@
             "角色画集"
           ],
           "kind": "画集"
-        }
-      ]
-    },
-    {
-      "id": "tag-230194445e2a",
-      "name": "论语",
-      "entries": [
-        {
-          "title": "《夫子之道》—— 与孔子的对话录",
-          "url": "/blog/reading-confucius-dialogues/",
-          "date": "2026-10-16T12:00:00+08:00",
-          "day": "10.16",
-          "year": "2026",
-          "category": "阅读笔记",
-          "tags": [
-            "阅读笔记",
-            "论语"
-          ],
-          "kind": "文章"
         }
       ]
     },
@@ -1341,7 +1220,6 @@
           "year": "2021",
           "category": "读书笔记",
           "tags": [
-            "Dream",
             "读书笔记"
           ],
           "kind": "文章"
@@ -1354,7 +1232,6 @@
           "year": "2021",
           "category": "读书笔记",
           "tags": [
-            "Daily_Note",
             "读书笔记"
           ],
           "kind": "文章"
@@ -1367,7 +1244,6 @@
           "year": "2020",
           "category": "读书笔记",
           "tags": [
-            "Study",
             "读书笔记"
           ],
           "kind": "文章"
@@ -1375,82 +1251,18 @@
       ]
     },
     {
-      "id": "tag-0a80a62d0ed5",
-      "name": "课程笔记",
+      "id": "tag-d1e21b634cf0",
+      "name": "道家",
       "entries": [
         {
-          "title": "计算机课程学习进度记录",
-          "url": "/novels/2bc8505ad7c0/read/61e4120e44aa/",
-          "date": "2020-10-27T10:32:07+08:00",
-          "day": "10.27",
-          "year": "2020",
-          "category": "Computer Science / 61ABC",
-          "tags": [
-            "课程笔记"
-          ],
-          "kind": "章节"
-        }
-      ]
-    },
-    {
-      "id": "tag-559c550ded2a",
-      "name": "道德经",
-      "entries": [
-        {
-          "title": "《道德经》——与老子的对话录",
+          "title": "《道德经》——与老庄的对话录",
           "url": "/blog/reading-laozi-dialogues/",
           "date": "2026-10-16T12:00:00+08:00",
           "day": "10.16",
           "year": "2026",
           "category": "阅读笔记",
           "tags": [
-            "阅读笔记",
-            "道德经"
-          ],
-          "kind": "文章"
-        }
-      ]
-    },
-    {
-      "id": "tag-82d9d8d2f3eb",
-      "name": "阅读笔记",
-      "entries": [
-        {
-          "title": "《道德经》——与老子的对话录",
-          "url": "/blog/reading-laozi-dialogues/",
-          "date": "2026-10-16T12:00:00+08:00",
-          "day": "10.16",
-          "year": "2026",
-          "category": "阅读笔记",
-          "tags": [
-            "阅读笔记",
-            "道德经"
-          ],
-          "kind": "文章"
-        },
-        {
-          "title": "杏坛春风与函谷玄览：孔老庄论道对话录",
-          "url": "/blog/reading-confucius-laozi-collected/",
-          "date": "2026-10-16T12:00:00+08:00",
-          "day": "10.16",
-          "year": "2026",
-          "category": "阅读笔记",
-          "tags": [
-            "阅读笔记",
-            "儒道共参"
-          ],
-          "kind": "文章"
-        },
-        {
-          "title": "《夫子之道》—— 与孔子的对话录",
-          "url": "/blog/reading-confucius-dialogues/",
-          "date": "2026-10-16T12:00:00+08:00",
-          "day": "10.16",
-          "year": "2026",
-          "category": "阅读笔记",
-          "tags": [
-            "阅读笔记",
-            "论语"
+            "道家"
           ],
           "kind": "文章"
         }

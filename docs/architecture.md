@@ -9,11 +9,11 @@
 | 来源 | 职责 | 网站入口 |
 | --- | --- | --- |
 | `_posts/` | 博客文章、随笔、阅读笔记 | 首页最近文章、博客、归档 |
-| `_novels/分类/作品名/*.md` | 小说或知识专题，每个文件是一章 | 小说／专题书架、作品详情、章节阅读 |
+| `_novels/分类/作品名/*.md` | 小说或知识专题，每个文件是一章 | 作品入口、作品详情、章节阅读 |
 | `_manga/`、`assets/images/` | 漫画资料及按顺序展示的图片 | 漫画、画集阅读 |
 | `_config.yml`、`_data/themes.yml`、`_data/links.yml`、`_data/tag_rules.yml` | 站点参数、主题选项、友链与标签分类规则 | 公共布局及关于页 |
 
-`scripts/prepare_library.rb` 根据 `_novels` 的目录和文件生成作品、章序和导航，并按 `_data/tag_rules.yml` 收拢计算机标签，更新：
+`scripts/prepare_library.rb` 根据 `_novels` 的目录和文件生成作品、章序和导航，保留作者手动标签，仅在标签缺失时按 `_data/tag_rules.yml` 补充分类，更新：
 
 - `_library/`：作品详情页入口。
 - `_data/library.json`、`_data/library_tree.json`：作品、章节与目录树。
@@ -28,11 +28,15 @@
 
 | 层 | 位置 | 作用 |
 | --- | --- | --- |
-| 栏目入口 | `index.html`、`blog.html`、`novels.html`、`manga.html`、`archive.html`、`tags.html`、`about.md` | 七个导航栏目；`works.html` 保留旧书架入口 |
+| 栏目入口 | 首页 `index.html`；其他入口 `pages/{blog,novels,manga,archive,tags,works}.html`、`pages/about.md` | 作品页统一展示小说、专题与漫画；`novels`、`manga` 保留独立栏目网址 |
 | 页面模板 | `_layouts/` | 公共框架、文章、作品详情、章节、画集、跳转页 |
 | 公共组件 | `_includes/` | 公共页头与页脚、脚本入口、主题面板、卡片、目录树、续读卡片与阅读工具 |
 | 样式 | `assets/css/site.css`、`themes.css`、`library.css`、`refresh.css`、`reader.css` | 基础阅读排版、主题变量、章节书架、紧凑首屏、卡片描边与阅读增强 |
 | 交互 | `assets/js/` | 按主题、阅读、图表、图片放大、画集及跳转拆分 |
+
+主导航依次为：首页、博客、周朝史、作品、归档、标签、关于。「周朝史」直接链接独立站点 https://chrunge.github.io/Zhou-Dynasty-Timeline/ ，「作品」进入 `/works/`，并在章节及画集详情页保持选中状态。
+
+`pages/` 是源码分组目录。各栏目已有显式 `permalink`，Jekyll 仍输出 `/blog/`、`/novels/`、`/manga/`、`/archive/`、`/tags/`、`/about/`、`/works/`，无需更改导航或读者书签。首页和404页保留在根目录；集合、布局、组件、配置和依赖文件维持约定位置，构建命令继续从仓库根目录执行。新增栏目须明确配置 `permalink`，避免源码分组进入公开网址。
 
 页面内容、目录链接和章节导航均由静态 HTML 提供。JavaScript 增强主题切换、搜索、沉浸、字号、代码复制与阅读记录；`localStorage` 保存当前浏览器的偏好和进度。首页品牌插图为透明 SVG。
 

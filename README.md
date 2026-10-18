@@ -16,8 +16,17 @@
 | 小说、课程、工具手册 | `_novels/分类/作品名/`：一份 Markdown 是一章 |
 | 漫画、画集 | `_manga/`：`pages` 按阅读顺序列出图片 |
 | 图片 | `assets/images/` |
+| 栏目入口（作品、博客、归档、标签、关于等） | `pages/` |
 
 `_library/`、`_data/library*.json`、`_data/discovery.json` 和 `redirects/` 由脚本生成，不作为写作入口。
+
+主导航：首页、博客、[周朝史](https://chrunge.github.io/Zhou-Dynasty-Timeline/)、[作品](https://chrunge.github.io/works/)、归档、标签、关于。作品统一收录小说、专题和漫画。
+
+## 根目录与栏目入口
+
+博客、作品、小说书架、漫画、归档、标签和关于的7个入口文件集中放在 `pages/`。首页 `index.html`、错误页 `404.html`、`_config.yml`、`Gemfile` 和项目说明保留在根目录。`_posts/`、`_novels/`、`_manga/`、`_layouts/`、`_includes/`、`_data/` 继续使用 Jekyll 的约定位置。
+
+栏目网址由文件头部的 `permalink` 固定，例如 `pages/about.md` 仍发布到 `/about/`。新增栏目放在 `pages/` 并显式设置 `permalink`；导航继续使用网站网址，不要改成 `/pages/...` 的源码路径。
 
 ## 发布
 
