@@ -15,7 +15,7 @@
 .book-hero p{color:var(--muted);margin-bottom:24px}
 .book-hero .button{margin:0 12px 16px 0}
 .book-hero .muted{font-size:13px;margin-bottom:0}
-.text-cover{min-height:280px;background:var(--gradient);border:1px solid var(--line);border-left:8px solid var(--accent);border-radius:5px 18px 18px 5px;padding:30px 24px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;color:#25394b;box-shadow:0 16px 35px #172d4110}
+.text-cover{min-height:280px;background:var(--gradient);border:1px solid var(--line);border-left:8px solid var(--accent);border-radius:5px 18px 18px 5px;padding:30px 24px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;color:var(--text);box-shadow:0 16px 35px #172d4110}
 .text-cover strong{font-size:26px;line-height:1.55;overflow-wrap:anywhere}
 .text-cover span,.text-cover small{font-size:12px;letter-spacing:.08em}
 .shelf-intro .text-cover{min-height:230px;border-radius:18px 18px 0 0;box-shadow:none}
