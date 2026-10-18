@@ -40,6 +40,10 @@ export default (() => {
       <head>
         <title>{title}</title>
         <meta charSet="utf-8" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+        
         {cfg.theme.cdnCaching && cfg.theme.fontOrigin === "googleFonts" && (
           <>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -85,6 +89,9 @@ export default (() => {
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+        
+        <meta name="theme-color" content="#d4e4f7" />
+        <meta name="keywords" content="宫崎骏风格,Quartz,知识库,笔记" />
 
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
