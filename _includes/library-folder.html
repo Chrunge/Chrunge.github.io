@@ -1,0 +1,7 @@
+<details class="library-folder" {% if include.top %}open{% endif %}>
+  <summary>{{ include.folder.name | escape }}</summary>
+  <div class="folder-content">
+    {% for book in include.folder.books %}<a class="book-entry" href="{{ book.url | relative_url }}"><span><strong>{{ book.title | escape }}</strong><small>{{ book.directory | replace: '/', ' / ' | escape }}</small></span><span>{{ book.chapters.size }} 章 →</span></a>{% endfor %}
+    {% for child in include.folder.children %}{% include library-folder.html folder=child %}{% endfor %}
+  </div>
+</details>

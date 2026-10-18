@@ -1,0 +1,576 @@
+{
+  "0b1bad55a738": {
+    "id": "0b1bad55a738",
+    "title": "15-445",
+    "category": "Computer Science",
+    "directory": "Computer Science/15-445",
+    "url": "/novels/0b1bad55a738/",
+    "description": "Computer Science / 15-445，共 1 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "SQL 与 SQLite：数据库查询笔记",
+        "url": "/novels/0b1bad55a738/read/54a3c50c79db/",
+        "index": 1,
+        "description": "CMU15-445数据库的学习笔记"
+      }
+    ]
+  },
+  "b145608faa58": {
+    "id": "b145608faa58",
+    "title": "6.S081",
+    "category": "Computer Science",
+    "directory": "Computer Science/6.S081",
+    "url": "/novels/b145608faa58/",
+    "description": "Computer Science / 6.S081，共 8 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "操作系统导论：目标、内核与系统调用",
+        "url": "/novels/b145608faa58/read/9a664caef334/",
+        "index": 1,
+        "description": "操作系统导论：目标、内核与系统调用。整理Lecture 1等要点。"
+      },
+      {
+        "title": "操作系统组织：隔离与系统调用",
+        "url": "/novels/b145608faa58/read/60b7be50bf1d/",
+        "index": 2,
+        "description": "操作系统组织：隔离与系统调用。整理相关概念、使用方法与学习体会。"
+      },
+      {
+        "title": "页表：地址转换与内存映射",
+        "url": "/novels/b145608faa58/read/97c3fe7cd4fa/",
+        "index": 3,
+        "description": "页表：地址转换与内存映射。整理相关概念、使用方法与学习体会。"
+      },
+      {
+        "title": "RISC-V 调用约定与栈帧",
+        "url": "/novels/b145608faa58/read/96d45a552049/",
+        "index": 4,
+        "description": "RISC-V 调用约定与栈帧。整理相关概念、使用方法与学习体会。"
+      },
+      {
+        "title": "进程隔离与系统调用的进入和返回",
+        "url": "/novels/b145608faa58/read/c033fbc22bfd/",
+        "index": 5,
+        "description": "进程隔离与系统调用的进入和返回。整理相关概念、使用方法与学习体会。"
+      },
+      {
+        "title": "缺页异常与按需分配",
+        "url": "/novels/b145608faa58/read/14cc429aa714/",
+        "index": 6,
+        "description": "缺页异常与按需分配。整理相关概念、使用方法与学习体会。"
+      },
+      {
+        "title": "中断、设备与 PLIC",
+        "url": "/novels/b145608faa58/read/17395818bbe3/",
+        "index": 7,
+        "description": "中断、设备与 PLIC。整理相关概念、使用方法与学习体会。"
+      },
+      {
+        "title": "多处理器与锁：并发访问的协调",
+        "url": "/novels/b145608faa58/read/ea19306bb465/",
+        "index": 8,
+        "description": "多处理器与锁：并发访问的协调。整理相关概念、使用方法与学习体会。"
+      }
+    ]
+  },
+  "2bc8505ad7c0": {
+    "id": "2bc8505ad7c0",
+    "title": "61ABC",
+    "category": "Computer Science",
+    "directory": "Computer Science/61ABC",
+    "url": "/novels/2bc8505ad7c0/",
+    "description": "Computer Science / 61ABC，共 1 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "计算机课程学习进度记录",
+        "url": "/novels/2bc8505ad7c0/read/61e4120e44aa/",
+        "index": 1,
+        "description": "计算机课程学习进度记录。整理15-445进度、162进度、61C进度等要点。"
+      }
+    ]
+  },
+  "1fb779328511": {
+    "id": "1fb779328511",
+    "title": "61A",
+    "category": "Computer Science",
+    "directory": "Computer Science/61ABC/61A",
+    "url": "/novels/1fb779328511/",
+    "description": "Computer Science / 61ABC / 61A，共 1 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "CS61A：程序设计与计算抽象",
+        "url": "/novels/1fb779328511/read/1919eb667f31/",
+        "index": 1,
+        "description": "CS61A：程序设计与计算抽象。整理Lecture 1: Intro、这门课是什么?、Lecture 2: Functions等要点。"
+      }
+    ]
+  },
+  "3e246bd35959": {
+    "id": "3e246bd35959",
+    "title": "61B",
+    "category": "Computer Science",
+    "directory": "Computer Science/61ABC/61B",
+    "url": "/novels/3e246bd35959/",
+    "description": "Computer Science / 61ABC / 61B，共 1 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "CS61B：数据结构学习笔记",
+        "url": "/novels/3e246bd35959/read/0a1602e3932c/",
+        "index": 1,
+        "description": "CS61B：数据结构学习笔记。整理24 Compression, Complexity and N = NP ?、23 Compare Sort、22 Radix Sort等要点。"
+      }
+    ]
+  },
+  "18995fb7b459": {
+    "id": "18995fb7b459",
+    "title": "61C",
+    "category": "Computer Science",
+    "directory": "Computer Science/61ABC/61C",
+    "url": "/novels/18995fb7b459/",
+    "description": "Computer Science / 61ABC / 61C，共 9 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "缓存：局部性与访问性能",
+        "url": "/novels/18995fb7b459/read/7b885e4ee37a/",
+        "index": 1,
+        "description": "缓存：局部性与访问性能。整理Why、What、How等要点。"
+      },
+      {
+        "title": "数值表示、C 语法与浮点数",
+        "url": "/novels/18995fb7b459/read/a2a21e5ea6c1/",
+        "index": 2,
+        "description": "数值表示、C 语法与浮点数。整理Lec01: 6 Great Ideas in Computer Architecture、Lec02: Number Representation、Lecture03: Introduction into the C prog"
+      },
+      {
+        "title": "并行计算与同步机制",
+        "url": "/novels/18995fb7b459/read/4dc53f95a72a/",
+        "index": 3,
+        "description": "并行计算与同步机制。整理Parallelism SIMD、Why、What等要点。"
+      },
+      {
+        "title": "处理器流水线与冒险",
+        "url": "/novels/18995fb7b459/read/6bf4860d0ce6/",
+        "index": 4,
+        "description": "处理器流水线与冒险。整理Pipeline、Why、What等要点。"
+      },
+      {
+        "title": "寄存器与机器指令",
+        "url": "/novels/18995fb7b459/read/8f5278b03324/",
+        "index": 5,
+        "description": "寄存器与机器指令。整理Lecture7-10: RISC-V Assembly language、RISC-V instruction set、RISC-V Function Call等要点。"
+      },
+      {
+        "title": "计算机输入输出系统",
+        "url": "/novels/18995fb7b459/read/c6298e17f272/",
+        "index": 6,
+        "description": "计算机输入输出系统。整理Why、How等要点。"
+      },
+      {
+        "title": "虚拟内存与地址转换",
+        "url": "/novels/18995fb7b459/read/8d35fe6a2ef1/",
+        "index": 7,
+        "description": "虚拟内存与地址转换。整理Operating System、Why、What等要点。"
+      },
+      {
+        "title": "C 标准库常用函数笔记",
+        "url": "/novels/18995fb7b459/read/2ca1a8345ece/",
+        "index": 8,
+        "description": "C 标准库常用函数笔记。整理C函数库函数、C语言注意事项、字符串函数库等要点。"
+      },
+      {
+        "title": "CS61C 计算机组成知识总结",
+        "url": "/novels/18995fb7b459/read/198c470a63a7/",
+        "index": 9,
+        "description": "CS61C 计算机组成知识总结。整理Part I: 6 Great Ideas、Part II: Number Representation and C language、Number Representation等要点。"
+      }
+    ]
+  },
+  "707bb9528e4d": {
+    "id": "707bb9528e4d",
+    "title": "Algorithm",
+    "category": "Computer Science",
+    "directory": "Computer Science/Algorithm",
+    "url": "/novels/707bb9528e4d/",
+    "description": "Computer Science / Algorithm，共 1 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "算法与数据结构学习笔记",
+        "url": "/novels/707bb9528e4d/read/2246967dad9f/",
+        "index": 1,
+        "description": "记录算法题中的一些常见思路和模板"
+      }
+    ]
+  },
+  "621b16c7185e": {
+    "id": "621b16c7185e",
+    "title": "CS144",
+    "category": "Computer Science",
+    "directory": "Computer Science/CS144",
+    "url": "/novels/621b16c7185e/",
+    "description": "Computer Science / CS144，共 8 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "互联网与 IP：网络基础",
+        "url": "/novels/621b16c7185e/read/5dc6b952ab06/",
+        "index": 1,
+        "description": "互联网与 IP：网络基础。整理Unit 1: Internet and IP、1.0 internet and ip book start、1.1 application等要点。"
+      },
+      {
+        "title": "传输层：端到端通信",
+        "url": "/novels/621b16c7185e/read/1476b0b3e744/",
+        "index": 2,
+        "description": "传输层：端到端通信。整理2.0 transport-intro、2.1 tcp-service-model、2.2 udp-service-model等要点。"
+      },
+      {
+        "title": "分组交换：数据如何穿过网络",
+        "url": "/novels/621b16c7185e/read/90ffcad2bbc4/",
+        "index": 3,
+        "description": "分组交换：数据如何穿过网络。整理3.1 history of networks、3.2 what is a packet switch、3.3 end-to-end delay等要点。"
+      },
+      {
+        "title": "拥塞控制：TCP 的发送节奏",
+        "url": "/novels/621b16c7185e/read/2cc38f2a75af/",
+        "index": 4,
+        "description": "拥塞控制：TCP 的发送节奏。整理Basic Ideas、AIMD、TCP congestion control I等要点。"
+      },
+      {
+        "title": "应用层与网络地址转换",
+        "url": "/novels/621b16c7185e/read/a57551b9e071/",
+        "index": 5,
+        "description": "应用层与网络地址转换。整理HTTP,Hypertext Transfer Protocol、BitTorrent、Network Address translator(NAT)等要点。"
+      },
+      {
+        "title": "路由：选择数据的转发路径",
+        "url": "/novels/621b16c7185e/read/463687ee0e21/",
+        "index": 6,
+        "description": "路由：选择数据的转发路径。整理Bellman Ford algorithm(Distance Vector Protocol)、Dijkstra's shortest path first algorithm(Link State Protocol)、Rout"
+      },
+      {
+        "title": "链路层与底层网络",
+        "url": "/novels/621b16c7185e/read/eeb333c3425b/",
+        "index": 7,
+        "description": "链路层与底层网络。整理Capacity and Modulation、Bit Errors and Coding、clocks and clock recovery等要点。"
+      },
+      {
+        "title": "网络安全基础",
+        "url": "/novels/621b16c7185e/read/7931f93a83d3/",
+        "index": 8,
+        "description": "网络安全基础。整理Common types of attack at Layer 3、Security Principles、Certificates等要点。"
+      }
+    ]
+  },
+  "bda2fee7908f": {
+    "id": "bda2fee7908f",
+    "title": "CS162",
+    "category": "Computer Science",
+    "directory": "Computer Science/CS162",
+    "url": "/novels/bda2fee7908f/",
+    "description": "Computer Science / CS162，共 9 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "操作系统是什么：抽象与资源管理",
+        "url": "/novels/bda2fee7908f/read/6dd443c4fc7d/",
+        "index": 1,
+        "description": "操作系统是什么：抽象与资源管理。整理What is an OS、虚拟机：通过软件模拟出一个抽象的机器、大纲等要点。"
+      },
+      {
+        "title": "操作系统的四个基本概念",
+        "url": "/novels/bda2fee7908f/read/6623743b8bd2/",
+        "index": 2,
+        "description": "操作系统的四个基本概念。整理Four Fundamental OS Concepts等要点。"
+      },
+      {
+        "title": "线程：执行流与并发抽象",
+        "url": "/novels/bda2fee7908f/read/482bf42a56e3/",
+        "index": 3,
+        "description": "线程：执行流与并发抽象。整理Thread等要点。"
+      },
+      {
+        "title": "进程、文件与输入输出",
+        "url": "/novels/bda2fee7908f/read/56f4fdfc1602/",
+        "index": 4,
+        "description": "进程、文件与输入输出。整理进程、The File Abstraction等要点。"
+      },
+      {
+        "title": "进程间通信：管道与套接字",
+        "url": "/novels/bda2fee7908f/read/29290b7c1a10/",
+        "index": 5,
+        "description": "进程间通信：管道与套接字。整理Process State for File Descriptors、Some pitfalls with OS abstraction、IPC(Interprocess communication) and Sockets等要点"
+      },
+      {
+        "title": "并发与同步基础",
+        "url": "/novels/bda2fee7908f/read/50f5695a3947/",
+        "index": 6,
+        "description": "并发与同步基础。整理PCB and Schedular等要点。"
+      },
+      {
+        "title": "信号量与管程：同步机制",
+        "url": "/novels/bda2fee7908f/read/ef971efb3b9e/",
+        "index": 7,
+        "description": "信号量与管程：同步机制。整理Locks、Producer-Consumer with a Bounded Buffer、Semaphores等要点。"
+      },
+      {
+        "title": "操作系统调度：策略与权衡",
+        "url": "/novels/bda2fee7908f/read/23835f1b7ee4/",
+        "index": 8,
+        "description": "操作系统调度：策略与权衡。整理Scheduling I: Concepts and Classic Policies等要点。"
+      },
+      {
+        "title": "Pintos 系统实验笔记",
+        "url": "/novels/bda2fee7908f/read/30b9a38a6851/",
+        "index": 9,
+        "description": "Pintos 系统实验笔记。整理Pintos系统简介、虚拟内存layout、切换线程等要点。"
+      }
+    ]
+  },
+  "eae004435f55": {
+    "id": "eae004435f55",
+    "title": "Computer Tools · 综合笔记",
+    "category": "Computer Tools",
+    "directory": "Computer Tools",
+    "url": "/novels/eae004435f55/",
+    "description": "Computer Tools，共 7 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "CMake 项目构建笔记",
+        "url": "/novels/eae004435f55/read/2621ea59579b/",
+        "index": 1,
+        "description": "CMake 项目构建笔记。记录阅读理解、要点与个人思考。"
+      },
+      {
+        "title": "GDB 调试：断点、运行与变量检查",
+        "url": "/novels/eae004435f55/read/759cd307c458/",
+        "index": 2,
+        "description": "GDB 调试：断点、运行与变量检查。内容包括Pintos GDB、GDB小技巧、不确定性Bug调试：使用reversible调试、其他参考资料。"
+      },
+      {
+        "title": "Git 版本管理：从提交到分支协作",
+        "url": "/novels/eae004435f55/read/d423862140bd/",
+        "index": 3,
+        "description": "Git学习笔记"
+      },
+      {
+        "title": "Makefile：规则、依赖与构建",
+        "url": "/novels/eae004435f55/read/91f142b8fe60/",
+        "index": 4,
+        "description": "Makefile：规则、依赖与构建。整理Makefile等要点。"
+      },
+      {
+        "title": "Shell 常用命令与运维速查",
+        "url": "/novels/eae004435f55/read/cc7d4fc5fbbf/",
+        "index": 5,
+        "description": "Shell 常用命令与运维速查。整理📝 Linux 运维核心指令笔记、1. 文件查看与监控、2. 文本处理三剑客与数据清洗 (核心能力)等要点。"
+      },
+      {
+        "title": "计算机学习工具与资料索引",
+        "url": "/novels/eae004435f55/read/3d38c61db3e4/",
+        "index": 6,
+        "description": "计算机学习工具与资料索引。内容包括工具参考汇总、C、C++、Java。"
+      },
+      {
+        "title": "Vim 编辑操作与常用命令",
+        "url": "/novels/eae004435f55/read/79e3b4eb180a/",
+        "index": 7,
+        "description": "Vim 编辑操作与常用命令。整理文本操作、文件操作:等要点。"
+      }
+    ]
+  },
+  "eed18a366c4d": {
+    "id": "eed18a366c4d",
+    "title": "ES知识篇",
+    "category": "Computer Tools",
+    "directory": "Computer Tools/ES知识篇",
+    "url": "/novels/eed18a366c4d/",
+    "description": "Computer Tools / ES知识篇，共 1 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "Elasticsearch 集群基础",
+        "url": "/novels/eed18a366c4d/read/f074e53ee70b/",
+        "index": 1,
+        "description": "Elasticsearch 集群基础。整理ES核心概念、一、 逻辑数据模型 (Logical Model)、二、 物理集群架构 (Physical Architecture)等要点。"
+      }
+    ]
+  },
+  "3756f002626a": {
+    "id": "3756f002626a",
+    "title": "GIT知识篇",
+    "category": "Computer Tools",
+    "directory": "Computer Tools/GIT知识篇",
+    "url": "/novels/3756f002626a/",
+    "description": "Computer Tools / GIT知识篇，共 1 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "Git 基础：版本、分支与协作",
+        "url": "/novels/3756f002626a/read/5555ad7391e4/",
+        "index": 1,
+        "description": "Git 基础：版本、分支与协作。整理九、 Git 命令速查表 (版本控制与时光机)等要点。"
+      }
+    ]
+  },
+  "884266fcc931": {
+    "id": "884266fcc931",
+    "title": "Kakfa知识篇",
+    "category": "Computer Tools",
+    "directory": "Computer Tools/Kakfa知识篇",
+    "url": "/novels/884266fcc931/",
+    "description": "Computer Tools / Kakfa知识篇，共 1 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "Kafka：消息、分区与消费机制",
+        "url": "/novels/884266fcc931/read/a706e2cb4d74/",
+        "index": 1,
+        "description": "Kafka：消息、分区与消费机制。整理一、Kafka基础知识、1. 物理架构与集群组件、2. 数据模型与存储逻辑等要点。"
+      }
+    ]
+  },
+  "104d4705b3a5": {
+    "id": "104d4705b3a5",
+    "title": "Obsidian",
+    "category": "Computer Tools",
+    "directory": "Computer Tools/Obsidian",
+    "url": "/novels/104d4705b3a5/",
+    "description": "Computer Tools / Obsidian，共 3 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "Markdown 排版语法与示例",
+        "url": "/novels/104d4705b3a5/read/3a7ba4e33273/",
+        "index": 1,
+        "description": "Markdown 排版语法与示例。整理Markdown 语法、1. 标题&目录、1.1 标题等要点。"
+      },
+      {
+        "title": "Obsidian：链接、引用与笔记组织",
+        "url": "/novels/104d4705b3a5/read/e551cde0ad06/",
+        "index": 2,
+        "description": "Obsidian：链接、引用与笔记组织。整理标题一等要点。"
+      },
+      {
+        "title": "Obsidian 笔记功能与整理流程",
+        "url": "/novels/104d4705b3a5/read/934e2dcff81f/",
+        "index": 3,
+        "description": "Obsidian 笔记功能与整理流程。整理相关概念、使用方法与学习体会。"
+      }
+    ]
+  },
+  "fa158f48cfff": {
+    "id": "fa158f48cfff",
+    "title": "Program Language",
+    "category": "Computer Tools",
+    "directory": "Computer Tools/Program Language",
+    "url": "/novels/fa158f48cfff/",
+    "description": "Computer Tools / Program Language，共 2 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "C++ 语言学习笔记",
+        "url": "/novels/fa158f48cfff/read/22574e3bba26/",
+        "index": 1,
+        "description": "different syntax in C++ compared to C"
+      },
+      {
+        "title": "Java 语言学习笔记",
+        "url": "/novels/fa158f48cfff/read/72711925318f/",
+        "index": 2,
+        "description": "Java Notes"
+      }
+    ]
+  },
+  "9e1221b5ba9d": {
+    "id": "9e1221b5ba9d",
+    "title": "C",
+    "category": "Computer Tools",
+    "directory": "Computer Tools/Program Language/C",
+    "url": "/novels/9e1221b5ba9d/",
+    "description": "Computer Tools / Program Language / C，共 2 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "C 编译、类型转换与运算符优先级",
+        "url": "/novels/9e1221b5ba9d/read/946ce9d3c334/",
+        "index": 1,
+        "description": "C 编译、类型转换与运算符优先级。整理其他等要点。"
+      },
+      {
+        "title": "C 程序的编译过程与内存布局",
+        "url": "/novels/9e1221b5ba9d/read/eee850d6fa9a/",
+        "index": 2,
+        "description": "C 程序的编译过程与内存布局。整理相关概念、使用方法与学习体会。"
+      }
+    ]
+  },
+  "4647045ad944": {
+    "id": "4647045ad944",
+    "title": "Python知识篇",
+    "category": "Computer Tools",
+    "directory": "Computer Tools/Python知识篇",
+    "url": "/novels/4647045ad944/",
+    "description": "Computer Tools / Python知识篇，共 1 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "Python 常用语法速查",
+        "url": "/novels/4647045ad944/read/d6b1cf6ec733/",
+        "index": 1,
+        "description": "Python 常用语法速查。整理1. 数据结构、1. 字符串 (String)、2. 列表 (List)等要点。"
+      }
+    ]
+  },
+  "77e569e07506": {
+    "id": "77e569e07506",
+    "title": "SHELL知识篇",
+    "category": "Computer Tools",
+    "directory": "Computer Tools/SHELL知识篇",
+    "url": "/novels/77e569e07506/",
+    "description": "Computer Tools / SHELL知识篇，共 6 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "文本处理四件套：grep、find、awk 与 sed",
+        "url": "/novels/77e569e07506/read/8581cb0e9867/",
+        "index": 1,
+        "description": "文本处理四件套：grep、find、awk 与 sed。整理一、 grep 命令速查表 (搜索文件内容)、二、 find 命令速查表 (搜索文件位置)、三、 附录：简单的正则表达式 (grep 必备)等要点。"
+      },
+      {
+        "title": "Linux 系统目录与文件组织",
+        "url": "/novels/77e569e07506/read/313dfa0f8c82/",
+        "index": 2,
+        "description": "Linux 系统目录与文件组织。整理二、Linux 系统核心目录速查表、总结：运维各目录“潜规则”等要点。"
+      },
+      {
+        "title": "Shell 常用命令与运维速查",
+        "url": "/novels/77e569e07506/read/cc7d4fc5fbbf/",
+        "index": 3,
+        "description": "Shell 常用命令与运维速查。整理📝 Linux 运维核心指令笔记、1. 文件查看与监控、2. 文本处理三剑客与数据清洗等要点。"
+      },
+      {
+        "title": "Shell 脚本：变量、判断与循环",
+        "url": "/novels/77e569e07506/read/0599f2aeb737/",
+        "index": 4,
+        "description": "Shell 脚本：变量、判断与循环。整理Shell 脚本编程速查手册、十、 运维黄金脚本实战模板、⚠️ 写脚本的避坑指南 (血泪经验)等要点。"
+      },
+      {
+        "title": "Linux 排障：抓包、文件、系统调用与防火墙",
+        "url": "/novels/77e569e07506/read/e38d883d4754/",
+        "index": 5,
+        "description": "Linux 排障：抓包、文件、系统调用与防火墙。整理五、 tcpdump 命令速查表 (网络抓包核武器)、六、 lsof 命令速查表 (列出打开的文件)、七、 strace 命令速查表 (系统调用追踪)等要点。"
+      },
+      {
+        "title": "正则表达式：语法速查与运维实例",
+        "url": "/novels/77e569e07506/read/88f0c697bdd7/",
+        "index": 6,
+        "description": "正则表达式：语法速查与运维实例。整理正则表达式速查表 (Regex Cheat Sheet)、💡 运维实战：常用正则组合 (直接背诵)、⚠️ 正则的“坑”与避坑指南等要点。"
+      }
+    ]
+  },
+  "5926c704d5b3": {
+    "id": "5926c704d5b3",
+    "title": "Economics · 综合笔记",
+    "category": "Economics",
+    "directory": "Economics",
+    "url": "/novels/5926c704d5b3/",
+    "description": "Economics，共 1 章。按章节阅读，慢慢整理知识。",
+    "chapters": [
+      {
+        "title": "中级微观经济学学习笔记",
+        "url": "/novels/5926c704d5b3/read/ad18d9b79151/",
+        "index": 1,
+        "description": "中级微观经济学学习笔记。整理第0讲、开篇、消费者行为理论等要点。"
+      }
+    ]
+  }
+}

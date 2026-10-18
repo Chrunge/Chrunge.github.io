@@ -1,10 +1,18 @@
 ---
-title: 一只小鲸，九种心情
-date: 2026-10-12 16:30:00 +0800
-category: 创作笔记
-tags: [角色设计, 配色]
-description: 从一朵云开始，想象小鲸的不同模样。
+title: "一只小鲸，九种心情"
+date: "2026-10-12 16:30:00 +0800"
+category: "创作笔记"
+tags:
+  - "角色设计"
+  - "配色"
+  - "创作笔记"
+description: "从一朵云开始，想象小鲸的不同模样。"
+excerpt: "从一朵云开始，想象小鲸的不同模样。"
+original_filename: "2026-10-12-cloud-whale-character-design.md"
+toc_levels: "h2,h3"
+date_source: "original"
 ---
+
 最初的想法很简单：如果云朵可以在海里游泳，它会是什么样子？
 
 于是有了这只圆滚滚的小鲸。它有蓬松的背、柔软的肚皮，还有一条总是轻轻扬起的尾巴。

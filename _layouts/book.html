@@ -1,0 +1,17 @@
+---
+layout: default
+---
+{% assign book = site.data.library[page.book_id] %}
+<article class="book-detail" data-book-id="{{ book.id }}">
+  <a class="back-link" href="{{ '/works/' | relative_url }}">← 返回作品书架</a>
+  <header class="book-hero">
+    <div class="text-cover" aria-hidden="true"><span>{{ book.category | escape }}</span><strong>{{ book.title | escape }}</strong><small>{{ book.chapters.size }} CHAPTERS</small></div>
+    <div><p class="eyebrow">{{ book.directory | replace: '/', ' / ' | escape }}</p><h1>{{ book.title | escape }}</h1><p>{{ book.description | escape }}</p><a class="button primary" href="{{ book.chapters.first.url | relative_url }}">开始阅读 →</a><a class="button book-resume" hidden>继续阅读</a><p class="muted">阅读记录保存在当前浏览器。</p></div>
+  </header>
+  <section class="chapter-section" aria-labelledby="chapter-heading">
+    <div class="section-heading"><h2 id="chapter-heading">章节目录</h2><span>{{ book.chapters.size }} 章</span></div>
+    <div class="chapter-search js-only"><label for="chapter-search">搜索章节</label><input id="chapter-search" type="search" placeholder="输入章节名或关键词"><p id="chapter-count" role="status"></p></div>
+    <ol class="chapter-list">{% for chapter in book.chapters %}<li data-chapter-title="{{ chapter.title | escape }}"><a href="{{ chapter.url | relative_url }}"><span class="chapter-number">{{ forloop.index }}</span><span>{{ chapter.title | escape }}</span><span aria-hidden="true">→</span></a></li>{% endfor %}</ol>
+    <p id="chapter-empty" hidden>没有找到章节，试试其他关键词。</p>
+  </section>
+</article>

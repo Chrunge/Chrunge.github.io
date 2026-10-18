@@ -1,10 +1,18 @@
 ---
-title: 给小岛搭一间轻盈的屋子
-date: 2026-10-15 10:00:00 +0800
-category: 技术笔记
-tags: [Jekyll, 博客]
-description: 用简单的结构，安放文章、画作和故事。
+title: "给小岛搭一间轻盈的屋子"
+date: "2026-10-15 10:00:00 +0800"
+category: "技术笔记"
+tags:
+  - "Jekyll"
+  - "博客"
+  - "技术笔记"
+description: "用简单的结构，安放文章、画作和故事。"
+excerpt: "用简单的结构，安放文章、画作和故事。"
+original_filename: "2026-10-15-jekyll-github-pages-architecture.md"
+toc_levels: "h2,h3"
+date_source: "original"
 ---
+
 一个个人博客，最重要的事情是让写作变得轻松。
 
 我希望这里没有太多喧闹的按钮。打开页面就能找到最近的文字，点开作品就能安静地读下去。

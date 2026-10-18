@@ -1,0 +1,17 @@
+---
+layout: default
+---
+{% assign book = site.data.library[page.book_id] %}
+{% assign previous_index = page.chapter_index | minus: 1 %}
+{% assign next_index = page.chapter_index | plus: 1 %}
+<article class="reading-page" data-book-id="{{ book.id }}" data-chapter-url="{{ page.url | relative_url }}">
+  <a class="back-link" href="{{ book.url | relative_url }}">← {{ book.title | escape }} · 目录</a>
+  <header class="article-heading"><p class="eyebrow">{{ book.directory | replace: '/', ' / ' | escape }} · 第 {{ next_index }} / {{ book.chapters.size }} 章</p><h1>{{ page.title | escape }}</h1><p>{{ page.description | escape }}</p></header>
+  {% include reader-tools.html %}
+  <div class="prose reader-content novel-text" id="reading-content" data-toc-levels="{{ page.toc_levels | default: 'h2,h3' | escape }}">{% include content.html %}</div>
+  <nav class="chapter-navigation" aria-label="章节导航">
+    {% if page.chapter_index > 0 %}<a href="{{ book.chapters[previous_index].url | relative_url }}">← 上一章：{{ book.chapters[previous_index].title | escape }}</a>{% else %}<span>已经是第一章</span>{% endif %}
+    <a href="{{ book.url | relative_url }}">章节目录</a>
+    {% if next_index < book.chapters.size %}<a href="{{ book.chapters[next_index].url | relative_url }}">下一章：{{ book.chapters[next_index].title | escape }} →</a>{% else %}<span>已读到最后一章</span>{% endif %}
+  </nav>
+</article>

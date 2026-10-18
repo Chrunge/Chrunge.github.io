@@ -18,6 +18,7 @@
 
 ```sh
 bundle install
+ruby scripts/prepare_library.rb
 bundle exec jekyll serve --host 127.0.0.1
 ```
 
@@ -47,7 +48,7 @@ node --check assets/js/site.js
 
 - 文章：`_posts/YYYY-MM-DD-slug.md`；标题、日期、分类、`description`（短摘要）、`tags` 放在 YAML 头部，下面是 Markdown 正文。
 - 画集：`_manga/*.md`；`cover` 为封面，`pages` 按阅读顺序列出图片路径。
-- 小说：`_novels/*.md`；使用二级标题划分章节，页面自动生成目录。
+- 分章节作品：`_novels/分类/作品名/*.md`；每个文件是一章，目录决定分类与所属作品。运行 `ruby scripts/prepare_library.rb` 更新书架和章序。
 - 友链：`_data/links.yml`；填写实际地址后在关于页面显示。
 - 配色：`_data/themes.yml` 管理选项名称，`assets/css/themes.css` 管理颜色；`assets/css/site.css` 管理排版。
 - 文章内图片建议写成 `![描述]({{ '/assets/images/uploads/example.png' | relative_url }})`。CMS 的 `/assets/` 图片也由内容模板补齐项目子路径。
@@ -71,4 +72,4 @@ node --check assets/js/site.js
 旧笔记已导入 _posts，旧框架已从主分支移除；原提交历史保留，备份分支为 archive/pre-cloud-whale-20261016。
 
 
-日常写作与提交统一使用 `D:/Projects/jingxiaoshao-jekyll-site`。完整操作步骤见 [使用说明书](docs/使用说明书.md)。
+日常写作与提交统一使用 `D:/Projects/个人Blog`。完整操作步骤见 [使用说明书](docs/使用说明书.md)。

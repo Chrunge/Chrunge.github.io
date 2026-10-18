@@ -14,6 +14,9 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 collections:
+  library:
+    output: true
+    permalink: /novels/:name/
   manga:
     output: true
     permalink: /manga/:name/
@@ -48,6 +51,8 @@ exclude:
   - package.json
   - package-lock.json
   - legacy
+  - content
+  - quartz
   - vendor
   - .preview
   - .preview-config.yml

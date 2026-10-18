@@ -1,10 +1,18 @@
 ---
-title: 把阅读的时间，还给故事
-date: 2026-10-08 20:15:00 +0800
-category: 创作随笔
-tags: [阅读, 设计]
-description: 少一点打扰，多一点舒服的留白。
+title: "把阅读的时间，还给故事"
+date: "2026-10-08 20:15:00 +0800"
+category: "创作随笔"
+tags:
+  - "阅读"
+  - "设计"
+  - "创作随笔"
+description: "少一点打扰，多一点舒服的留白。"
+excerpt: "少一点打扰，多一点舒服的留白。"
+original_filename: "2026-10-08-manga-novel-reader-design.md"
+toc_levels: "h2,h3"
+date_source: "original"
 ---
+
 打开一篇文章时，我希望先看到文字，而不是一整排需要做选择的按钮。
 
 ## 少一点，就安静一点
