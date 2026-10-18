@@ -2,8 +2,7 @@
   'use strict';
   const $ = (s) => document.querySelector(s);
   const all = (s) => [...document.querySelectorAll(s)];
-  const read = (key) => { try { return localStorage.getItem(key); } catch (_) { return null; } };
-  const save = (key, value) => { try { localStorage.setItem(key, String(value)); } catch (_) { /* Private mode: this visit still works. */ } };
+  const { save } = window.CloudWhale.storage;
   const announce = (message) => { $('#status').textContent = message; };
   const syncComments = () => {
     const frame = $('iframe.giscus-frame');

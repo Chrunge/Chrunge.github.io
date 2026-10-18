@@ -28,11 +28,13 @@ jobs:
           node-version: '22'
       - name: Check scripts
         run: |
+          ruby tests/content_test.rb
           ruby scripts/prepare_library.rb
           ruby scripts/prepare_indexes.rb
           ruby scripts/check_content.rb
           for file in assets/js/*.js; do node --check "$file"; done
           node --check tests/reading.cjs
+          node --check tests/fixtures/readers.cjs
       - name: Build and check project subdirectory URLs
         env:
           JEKYLL_ENV: production
@@ -40,29 +42,28 @@ jobs:
           bundle exec jekyll build --baseurl /path-check --destination _site_check
           python scripts/check_site.py _site_check --baseurl /path-check
           rm -r _site_check
-      - name: Check reading interactions in Chromium
-        env:
-          JEKYLL_ENV: production
-        run: |
-          npm ci --prefix tests --ignore-scripts --no-audit --no-fund
-          node tests/node_modules/playwright/cli.js install --with-deps chromium
-          bundle exec jekyll build --baseurl "" --destination _site_reader
-          node tests/reading.cjs _site_reader
-          rm -r _site_reader
       - name: Configure Pages
         if: github.event_name != 'pull_request'
         id: pages
         uses: actions/configure-pages@v5
-      - name: Build publishable site
-        if: github.event_name != 'pull_request'
+      - name: Build site
         env:
           JEKYLL_ENV: production
           SITE_ORIGIN: ${{ steps.pages.outputs.origin }}
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
         run: |
-          python -c 'import json, os; open(".deploy.yml", "w").write("url: " + json.dumps(os.environ["SITE_ORIGIN"]) + "\n")'
-          bundle exec jekyll build --config _config.yml,.deploy.yml --baseurl "$BASE_PATH"
+          if [ -n "$SITE_ORIGIN" ]; then
+            python -c 'import json, os; open(".deploy.yml", "w").write("url: " + json.dumps(os.environ["SITE_ORIGIN"]) + "\n")'
+            bundle exec jekyll build --config _config.yml,.deploy.yml --baseurl "$BASE_PATH"
+          else
+            bundle exec jekyll build --baseurl ""
+          fi
           python scripts/check_site.py _site --baseurl "$BASE_PATH"
+      - name: Check reading interactions in Chromium
+        run: |
+          npm ci --prefix tests --ignore-scripts --no-audit --no-fund
+          node tests/node_modules/playwright/cli.js install --with-deps chromium
+          node tests/reading.cjs _site
       - uses: actions/upload-pages-artifact@v3
         if: github.event_name != 'pull_request'
   deploy:

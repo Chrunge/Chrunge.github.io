@@ -1,16 +1,12 @@
 # Build discovery pages from real content, keeping chapter lists off the blog feed.
-require 'yaml'
-require 'date'
+require_relative 'lib/content'
 require 'json'
 require 'digest'
 
 entries = []
 %w[_posts _novels _manga].each do |collection|
   Dir.glob("#{collection}/**/*.md").sort.each do |file|
-    text = File.read(file, encoding:'UTF-8')
-    header = text.match(/\A---\r?\n(.*?)\r?\n---/m)
-    raise "Missing metadata: #{file}" unless header
-    data = YAML.safe_load(header[1], permitted_classes:[Date, Time], aliases:false) || {}
+    data, = Content.read(file)
     next if data['published'] == false
     date = DateTime.parse(data.fetch('date').to_s)
     next if collection == '_posts' && date > DateTime.now
@@ -29,5 +25,5 @@ tags = entries.flat_map { |entry| entry['tags'] }.uniq.sort.map do |name|
   {'id'=>'tag-' + Digest::SHA256.hexdigest(name)[0,12], 'name'=>name,
    'entries'=>entries.select { |entry| entry['tags'].include?(name) }}
 end
-File.write('_data/discovery.json',JSON.pretty_generate({'post_count'=>posts.length,'years'=>years,'tags'=>tags}),encoding:'UTF-8')
+Content.write('_data/discovery.json',JSON.pretty_generate({'post_count'=>posts.length,'years'=>years,'tags'=>tags}))
 puts "Prepared #{years.length} archive years and #{tags.length} tags for #{entries.length} content documents."

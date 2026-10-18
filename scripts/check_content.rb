@@ -1,17 +1,15 @@
-require 'yaml'
-require 'date'
+require_relative 'lib/content'
 require 'json'
-required = %w[title date category tags description excerpt original_filename toc_levels]
+required = Content::REQUIRED_FIELDS
 errors, urls = [], []
 count = 0
 Dir.glob('{_posts,_novels,_manga}/**/*.md').each do |file|
-  text = File.read(file, encoding:'UTF-8')
-  header = text.match(/\A---\r?\n(.*?)\r?\n---/m)
-  unless header
-    errors << "#{file}: missing YAML header"
+  begin
+    data, = Content.read(file)
+  rescue StandardError => error
+    errors << error.message
     next
   end
-  data = YAML.safe_load(header[1], permitted_classes:[Date, Time], aliases:false)
   required.each { |key| errors << "#{file}: missing #{key}" if data[key].nil? || data[key].to_s.strip.empty? }
   errors << "#{file}: tags must be a nonempty list" unless data['tags'].is_a?(Array) && !data['tags'].empty?
   errors << "#{file}: unsupported toc_levels" unless data['toc_levels'].to_s.match?(/\Ah[2-6](,h[2-6])*\z/)

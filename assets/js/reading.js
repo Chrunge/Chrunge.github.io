@@ -1,8 +1,7 @@
 (() => {
   'use strict';
   const $ = s => document.querySelector(s);
-  const read = key => { try { return localStorage.getItem(key); } catch (_) { return null; } };
-  const save = (key, value) => { try { localStorage.setItem(key, String(value)); } catch (_) {} };
+  const { storage: { read, save }, shortcutAllowed } = window.CloudWhale;
   const latestKey = 'cloud-whale-latest-reading';
   const content = $('#reading-content');
   if (content) {
@@ -70,8 +69,7 @@
     const persist = () => {
       if (!touched || pendingResume) return;
       const progress = fraction(); save(key, progress);
-      const chapter = $('[data-chapter-url]');
-      save(latestKey, JSON.stringify({ version: 1, url: location.pathname, title: $('h1').textContent.trim(), bookId: chapter?.dataset.bookId || '', bookTitle: chapter?.dataset.bookTitle || '', progress, updatedAt: Date.now() }));
+      save(latestKey, JSON.stringify({ version: 1, url: location.pathname, progress }));
     };
     if (previous > .02 && previous < .98) {
       resume.hidden = false;
@@ -87,12 +85,18 @@
         const images = [...content.querySelectorAll('img')];
         images.forEach(image => { image.loading = 'eager'; });
         const assets = Promise.allSettled(images.map(image => image.decode?.()));
+        let diagramsReady, deadline;
         const diagrams = new Promise(resolve => {
           if (!content.querySelector('code.language-mermaid, .language-mermaid code')) return resolve();
-          document.addEventListener('whale:diagrams-ready', resolve, { once: true });
-          setTimeout(resolve, 10000);
+          diagramsReady = resolve;
+          document.addEventListener('whale:diagrams-ready', diagramsReady, { once: true });
         });
-        Promise.race([Promise.allSettled([document.fonts.ready, assets, diagrams]), new Promise(resolve => setTimeout(resolve, 10000))]).then(() => { if (pendingResume) restore(); });
+        const timeout = new Promise(resolve => { deadline = setTimeout(resolve, 10000); });
+        Promise.race([Promise.allSettled([document.fonts.ready, assets, diagrams]), timeout]).then(() => {
+          clearTimeout(deadline);
+          if (diagramsReady) document.removeEventListener('whale:diagrams-ready', diagramsReady);
+          if (pendingResume) restore();
+        });
       }
     }
     const markIntent = () => { touched = true; pendingResume = false; };
@@ -108,8 +112,7 @@
     update();
     // Sideways keys are reserved for chapter navigation outside editable controls and dialogs.
     document.addEventListener('keydown', event => {
-      if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.isComposing || event.repeat) return;
-      if (event.target.closest('input,textarea,select,summary,[contenteditable]:not([contenteditable="false"]),pre,dialog') || $('dialog[open]')) return;
+      if (!shortcutAllowed(event, ',pre')) return;
       const direction = event.key === 'ArrowLeft' ? 'prev' : event.key === 'ArrowRight' ? 'next' : null;
       const link = direction && $('.chapter-navigation a[rel="' + direction + '"]');
       if (link) { event.preventDefault(); persist(); location.assign(link.href); }

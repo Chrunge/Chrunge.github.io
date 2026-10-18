@@ -1,30 +1,20 @@
 - id: red
   name: 赤色
-  label: 暖阳珊瑚
 - id: orange
   name: 橙色
-  label: 橘子汽水
 - id: yellow
   name: 黄色
-  label: 柠檬微光
 - id: green
   name: 绿色
-  label: 薄荷森林
 - id: cyan
   name: 青色
-  label: 浅湾海风
 - id: blue
   name: 蓝色
-  label: 云海晴空
 - id: purple
   name: 紫色
-  label: 极光晚霞
 - id: rainbow
   name: 彩色
-  label: 幻彩云朵
 - id: white
   name: 白色
-  label: 纯净初雪
 - id: night
   name: 夜间
-  label: 深海夜读

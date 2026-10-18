@@ -9,8 +9,15 @@ vendor/
 node_modules/
 .DS_Store
 _site_check/
-_site_reader/
 .deploy.yml
 
 # Local source images; optimized WebP gallery pages are published instead.
 /assets/images/AI娘/_originals/
+
+# Rebuilt by the content preparation scripts; keep local previews, not source copies.
+/_library/
+/redirects/
+/_data/library.json
+/_data/library_tree.json
+/_data/discovery.json
+/tests/artifacts/

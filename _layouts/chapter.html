@@ -4,7 +4,7 @@ layout: default
 {% assign book = site.data.library[page.book_id] %}
 {% assign previous_index = page.chapter_index | minus: 1 %}
 {% assign next_index = page.chapter_index | plus: 1 %}
-<article class="reading-page" data-book-id="{{ book.id }}" data-chapter-url="{{ page.url | relative_url }}" data-book-title="{{ book.title | escape }}">
+<article class="reading-page" data-book-id="{{ book.id }}" data-chapter-url="{{ page.url | relative_url }}">
   <a class="back-link" href="{{ book.url | relative_url }}">← {{ book.title | escape }} · 目录</a>
   <header class="article-heading"><p class="eyebrow">{{ book.directory | replace: '/', ' / ' | escape }} · 第 {{ next_index }} / {{ book.chapters.size }} 章</p><h1>{{ page.title | escape }}</h1><p>{{ page.description | escape }}</p></header>
   {% include reader-tools.html %}

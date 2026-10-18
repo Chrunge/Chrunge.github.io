@@ -20,7 +20,7 @@
   <text x="518" y="203" class="heading">站点配置</text>
   <text x="518" y="243" class="body">_config.yml · 站点与集合</text>
   <text x="518" y="277" class="body">_data/themes.yml · 主题选项</text>
-  <text x="518" y="307" class="body">_data/links.yml · 友链</text>
+  <text x="518" y="307" class="body">links.yml · 友链 / tag_rules.yml · 标签</text>
   <rect class="box" x="906" y="162" width="446" height="166" rx="18"/>
   <text x="932" y="203" class="heading">模板与静态资源</text>
   <text x="932" y="243" class="body">_layouts/ · _includes/</text>
@@ -35,7 +35,7 @@
   <text x="74" y="435" class="heading">Ruby 生成脚本</text>
   <text x="74" y="474" class="body">prepare_library.rb → 作品、章序与旧址跳转</text>
   <text x="74" y="508" class="body">prepare_indexes.rb → 归档与标签索引</text>
-  <text x="74" y="548" class="small">生成：_library/ · _data/library*.json</text>
+  <text x="74" y="548" class="small">构建生成（不入库）：_library/ · _data/library*.json</text>
   <text x="74" y="576" class="small">_data/discovery.json · redirects/ · 章节网址信息</text>
   <rect class="box" x="732" y="394" width="620" height="204" rx="18"/>
   <text x="758" y="435" class="heading">Jekyll 页面结构</text>
@@ -50,9 +50,9 @@
   <text x="48" y="660" class="eyebrow">03  检查、发布与阅读</text>
   <rect class="box" x="48" y="681" width="620" height="202" rx="18"/>
   <text x="74" y="722" class="heading">GitHub Actions · master 推送后执行</text>
-  <text x="74" y="762" class="body">生成目录与索引 → YAML / 脚本检查</text>
-  <text x="74" y="797" class="body">Jekyll 构建 → 链接、图片、锚点与子路径检查</text>
-  <text x="74" y="832" class="body">正式构建并上传 HTML / CSS / JS / RSS / Sitemap</text>
+  <text x="74" y="762" class="body">内容与脚本检查 → 生成目录和索引</text>
+  <text x="74" y="797" class="body">子路径校验 → 正式构建与浏览器检查</text>
+  <text x="74" y="832" class="body">复用检查通过的 HTML / CSS / JS 产物部署</text>
   <text x="74" y="862" class="small">拉取请求只验证；部署前必须通过正式检查</text>
   <rect class="box" x="732" y="681" width="280" height="202" rx="18"/>
   <text x="756" y="725" class="heading">GitHub Pages</text>
@@ -72,6 +72,6 @@
   <text x="1100" y="954" font-size="18" font-weight="700" fill="#203449">Giscus · 可选，默认关闭</text>
   <text x="1100" y="983" class="small">留言存于 GitHub Discussions</text>
   <text x="48" y="944" class="body">日常编辑：Markdown + 图片 → Commit → Push → 自动发布</text>
-  <text x="48" y="979" class="small">生成数据可重建；本地 _site/、vendor/、.bundle/ 不提交。站点不维护数据库或登录后台。</text>
+  <text x="48" y="979" class="small">索引、书架入口与跳转页由源文件生成，不入库；站点不维护数据库或登录后台。</text>
 </g>
 </svg>

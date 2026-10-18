@@ -2,6 +2,7 @@
   'use strict';
   const gallery = document.querySelector('#gallery'); if (!gallery) return;
   const $ = s => document.querySelector(s);
+  const { shortcutAllowed } = window.CloudWhale;
   const figures = [...gallery.querySelectorAll('figure')];
   if (!figures.length) return;
   let index = 0, single = false;
@@ -23,8 +24,7 @@
   $('#gallery-prev').addEventListener('click', () => change(-1));
   $('#gallery-next').addEventListener('click', () => change(1));
   document.addEventListener('keydown', event => {
-    if (!single || event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.isComposing || event.repeat) return;
-    if (event.target.closest('input,textarea,select,summary,[contenteditable]:not([contenteditable="false"]),dialog') || $('dialog[open]')) return;
+    if (!single || !shortcutAllowed(event)) return;
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { event.preventDefault(); change(event.key === 'ArrowLeft' ? -1 : 1); }
   });
   render();

@@ -6,4 +6,4 @@ description: 按目录收藏故事、课程笔记和工具手册，从一章开�
 ---
 <header class="page-heading"><p class="eyebrow">NOVELS & NOTEBOOKS</p><h1>小说与专题书架</h1><p>故事与知识，都可以一章一章地读。</p></header>
 <p class="catalog-note">课程笔记与工具手册沿用原有目录分类。展开一个专题，查看目录并继续阅读。</p>
-<section class="library-tree" aria-label="分类书架">{% for folder in site.data.library_tree %}{% include library-folder.html folder=folder %}{% endfor %}</section>
+{% include bookshelf.html %}

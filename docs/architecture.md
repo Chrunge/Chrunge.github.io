@@ -1,74 +1,75 @@
 # 云海小鲸架构
 
-![云海小鲸内容、构建与发布架构](architecture.svg)
+![内容、构建与发布架构](architecture.svg)
 
-本站以 Markdown 为内容源，由 Ruby 脚本整理目录与索引，再由 Jekyll 渲染为静态网站。GitHub Actions 负责检查和发布；阅读偏好保存在浏览器中。
+本站是 Jekyll 静态网站。Markdown、YAML 和图片是源文件；Ruby 整理作品目录与索引，Jekyll 输出独立网址，浏览器脚本提供阅读交互。GitHub Pages 托管 HTML、CSS 和 JavaScript。
 
-## 内容与生成数据
+## 源码职责
 
-| 来源 | 职责 | 网站入口 |
-| --- | --- | --- |
-| `_posts/` | 博客文章、随笔、阅读笔记 | 首页最近文章、博客、归档 |
-| `_novels/分类/作品名/*.md` | 小说或知识专题，每个文件是一章 | 作品入口、作品详情、章节阅读 |
-| `_manga/`、`assets/images/` | 漫画资料及按顺序展示的图片 | 漫画、画集阅读 |
-| `_config.yml`、`_data/themes.yml`、`_data/links.yml`、`_data/tag_rules.yml` | 站点参数、主题选项、友链与标签分类规则 | 公共布局及关于页 |
+| 位置 | 职责 |
+| --- | --- |
+| `_posts/` | 博客文章、随笔、阅读笔记 |
+| `_novels/分类/作品/*.md` | 按目录组织作品，每份 Markdown 是一章 |
+| `_manga/`、`assets/images/` | 漫画资料、图片顺序与素材 |
+| `index.html`、`pages/` | 首页与栏目入口，公开网址由 `permalink` 指定 |
+| `_layouts/` | 公共框架、正文、章节、作品详情、画集和跳转页 |
+| `_includes/` | 页头、页脚、脚本入口、作品卡片、书架、画集网格、阅读工具、主题面板与评论 |
+| `_config.yml`、`_data/*.yml` | 站点、主题选项、友链及缺省标签规则 |
+| `scripts/lib/content.rb` | 统一 YAML 头部解析、按变化写入及自有生成文件清理 |
 
-`scripts/prepare_library.rb` 根据 `_novels` 的目录和文件生成作品、章序和导航，保留作者手动标签，仅在标签缺失时按 `_data/tag_rules.yml` 补充分类，更新：
+导航为：首页、博客、周朝史、作品、归档、标签、关于。周朝史链接独立站点；作品入口为 `/works/`。`/novels/`、`/manga/` 保留分类入口，正文和章节使用独立网址。栏目源文件位于 `pages/`，公开网址不包含这个源码目录。
 
-- `_library/`：作品详情页入口。
-- `_data/library.json`、`_data/library_tree.json`：作品、章节与目录树。
-- 章节头部的 `layout`、`book_id`、`chapter_index`、`permalink`。
-- `redirects/`：已有 `legacy_url` 对应的旧文章地址跳转页。
+## 内容准备与生成产物
 
-`scripts/prepare_indexes.rb` 在章节网址生成后，读取文章、章节和画集资料，生成 `_data/discovery.json`。归档仅列博客文章；标签索引覆盖三类内容。
+`scripts/prepare_library.rb` 读取章节的目录和文件名，确定作品 ID、章序、章节网址、上下章链接及旧文章跳转。已有 `tags` 保持原值；标签缺失或为空时按 `_data/tag_rules.yml` 的第一个前缀匹配补齐。生成的章节资料字段写回源文件，正文与作者标签保留。
 
-以上输出可重新生成，不是独立内容源。它们保留在仓库中，发布前仍会重新生成。章节文件名与作品目录影响网址，应保持稳定。
+`scripts/prepare_indexes.rb` 读取文章、章节与画集元数据，过滤未发布内容，并过滤日期在未来的博客文章，产生归档与标签数据。
 
-## 页面与浏览器交互
+| 生成位置 | 用途 |
+| --- | --- |
+| `_library/` | 作品详情页入口 |
+| `_data/library.json` | 作品及章节目录 |
+| `_data/library_tree.json` | 分类书架树 |
+| `_data/discovery.json` | 博客归档与全站标签 |
+| `redirects/` | `legacy_url` 对应的旧地址跳转页 |
 
-| 层 | 位置 | 作用 |
-| --- | --- | --- |
-| 栏目入口 | 首页 `index.html`；其他入口 `pages/{blog,novels,manga,archive,tags,works}.html`、`pages/about.md` | 作品页统一展示小说、专题与漫画；`novels`、`manga` 保留独立栏目网址 |
-| 页面模板 | `_layouts/` | 公共框架、文章、作品详情、章节、画集、跳转页 |
-| 公共组件 | `_includes/` | 公共页头与页脚、脚本入口、主题面板、卡片、目录树、续读卡片与阅读工具 |
-| 样式 | `assets/css/site.css`、`themes.css`、`library.css`、`refresh.css`、`reader.css` | 基础阅读排版、主题变量、章节书架、紧凑首屏、卡片描边与阅读增强 |
-| 交互 | `assets/js/` | 按主题、阅读、图表、图片放大、画集及跳转拆分 |
+这些产物由 `.gitignore` 排除，每次构建前从内容源生成。本地可以保留以便预览，不直接编辑或提交。生成器仅清理标有自身 `generated_by` 的过时文件；内容相同时不重写。首次克隆后必须先运行两个准备脚本，再启动 Jekyll。
 
-主导航依次为：首页、博客、周朝史、作品、归档、标签、关于。「周朝史」直接链接独立站点 https://chrunge.github.io/Zhou-Dynasty-Timeline/ ，「作品」进入 `/works/`，并在章节及画集详情页保持选中状态。
+## 样式与浏览器交互
 
-`pages/` 是源码分组目录。各栏目已有显式 `permalink`，Jekyll 仍输出 `/blog/`、`/novels/`、`/manga/`、`/archive/`、`/tags/`、`/about/`、`/works/`，无需更改导航或读者书签。首页和404页保留在根目录；集合、布局、组件、配置和依赖文件维持约定位置，构建命令继续从仓库根目录执行。新增栏目须明确配置 `permalink`，避免源码分组进入公开网址。
+| 文件 | 职责 |
+| --- | --- |
+| `assets/css/site.css` | 全站布局、导航、首页、卡片与续读入口 |
+| `assets/css/themes.css` | 日间与夜间主题变量 |
+| `assets/css/library.css` | 分类树、作品详情与章节导航 |
+| `assets/css/reader.css` | 正文、目录、图表、画集及图片查看器 |
+| `assets/js/site-init.js` | 样式前恢复主题，共享浏览器存储与快捷键判断 |
+| `assets/js/site.js` | 主题面板、搜索、沉浸、图片失败重试及评论主题同步 |
+| `assets/js/reading.js` | 字号、代码复制、目录、章节快捷键、阅读进度及续读 |
+| `assets/js/gallery.js` | 连续／逐页切换、方向键与相邻图片预加载 |
+| `assets/js/lightbox.js` | 原生 dialog 图片放大、缩放、拖动、焦点和滚动恢复 |
+| `assets/js/diagrams.js` | Mermaid 识别、SVG 渲染、夜间重绘、失败兜底与放大入口 |
+| `assets/js/redirect.js` | 旧网址跳转并保留章节锚点 |
 
-页面内容、目录链接和章节导航均由静态 HTML 提供。JavaScript 增强主题切换、搜索、沉浸、字号、代码复制与阅读记录；`localStorage` 保存当前浏览器的偏好和进度。首页品牌插图为透明 SVG。
+主题选项由 `_data/themes.yml` 提供，布局传给初始化脚本。`_includes/scripts.html` 按页面类型加载交互模块。模块通过 `whale:theme`、`whale:layout`、`whale:zoom`、`whale:diagrams-ready` 事件衔接。
 
-### 交互模块边界
+Markdown 和代码高亮由构建期 Kramdown GFM／Rouge 完成。仅含 Mermaid 代码块的页面从 jsDelivr 加载固定版本 11.12.0，严格模式渲染并移除图表链接；失败时保留源码与重试入口。
 
-- `theme-init.js`：样式加载前恢复主题，避免主题闪烁。
-- `site.js`：主题面板、搜索、沉浸、图片失败重试；通过 `whale:theme`、`whale:layout` 事件通知其他模块。
-- `reading.js`：字号、代码角标与复制、正文及桌面目录、章节快捷键、正文进度和首页续读。首页用构建时生成的内容目录校验续读网址，已删除内容不会继续展示。
-- `gallery.js`：连续／逐页切换、方向键、当前与相邻图片预加载，仅在画集页加载。
-- `lightbox.js`：原生 `dialog` 图片查看器，负责缩放、拖动、焦点与底层滚动恢复；响应图表的 `whale:zoom` 事件。
-- `diagrams.js`：识别 Mermaid 代码块，仅在存在图表时加载固定版本 Mermaid 11.12.0（jsDelivr）；严格模式渲染 SVG，并移除图表链接。主题变化会重绘；失败保留可复制的源码并允许重试。`whale:diagrams-ready` 事件让续读等待排版稳定。
+阅读记录保存在当前浏览器。按网址保存正文进度，按作品保存最后章节，最近阅读摘要只存 `version`、`url`、`progress`。首页使用构建目录校验地址并取得标题，显示一张续读卡片；清除记录保留主题和字号。自动恢复使用一个等待期限，等待字体、图片和图表就绪或超时。宽屏显示侧目录，手机和沉浸模式使用文内折叠目录。
 
-`_includes/scripts.html` 管理页面需要的脚本，公共框架只负责组合页头、正文插槽、页脚。Markdown 仍由构建期 Kramdown/Rouge 渲染；没有新增浏览器 Markdown 解析器或 Hash 路由。
+Giscus 是默认关闭的独立评论服务；启用后留言保存在 GitHub Discussions。本站没有应用服务器、数据库或登录后台。
 
-阅读记录仅存于当前浏览器，保留按网址进度与最后章节，并新增最近一次阅读摘要；首页只展示一项。清除记录会删除阅读进度及最后章节，保留主题、字号。桌面侧目录只在足够宽的屏幕显示，手机与沉浸模式使用文内折叠目录。
+## 构建、检查与部署
 
-Giscus 评论是独立可选服务，默认关闭。启用后留言存于 GitHub Discussions；站点本身不维护数据库或登录后台。
+工作流 `.github/workflows/jekyll-gh-pages.yml` 响应 `master` 推送、拉取请求及手动触发：
 
-## 构建与发布
+1. 安装 Ruby、Python、Node 与依赖。
+2. 检查内容解析与生成器，生成书架和索引，检查 YAML、目录及脚本语法。
+3. 以 `/path-check` 构建并检查链接、图片、标题、ID、锚点与子路径。
+4. 构建实际站点，执行相同的页面检查。
+5. 运行独立阅读测试，复用上一步产物。测试资料由本地 HTTP 服务在内存中提供，截图放在被忽略的 `tests/artifacts/`，不会进入发布站点。
+6. 推送及手动发布上传已经检查的站点产物并部署；拉取请求只验证。
 
-`.github/workflows/jekyll-gh-pages.yml` 在 `master` 推送、针对 `master` 的拉取请求及手动触发时执行：
+正常发布共两次 Jekyll 构建：子路径校验与实际站点。浏览器测试使用本地安装的固定版本 Mermaid，避免依赖 CDN 可用性；真实内容链接由 `check_site.py` 检查，阅读交互不依赖某篇文章标题或某个画集页数。
 
-1. 安装 Ruby、Python、Node 与项目依赖。
-2. 运行书架及归档／标签生成脚本。
-3. `check_content.rb` 检查公共 YAML 字段、日期、章目录完整性及网址唯一性；Node 检查全部交互脚本语法。
-4. Jekyll 使用 `/path-check` 模拟子路径构建，`check_site.py` 检查链接、图片、主标题、重复 ID、锚点和路径前缀。
-5. 独立构建测试站点，运行 Playwright 检查图表、弹窗、续读、键盘与失败兜底；测试使用本地安装的固定版本 Mermaid，不依赖 CDN 可用性。
-6. 非拉取请求构建读取 GitHub Pages 地址，生成正式页面并再次检查。
-7. 上传站点产物并部署到 GitHub Pages。
-
-拉取请求只做构建验证，不部署。仓库 Pages 的来源应设置为 GitHub Actions。
-
-本地预览使用相同生成脚本和 Jekyll；`_site/` 是构建产物，`vendor/` 与 `.bundle/` 是可重新安装的本地依赖、配置或缓存，均不提交。操作步骤见[使用说明书](使用说明书.md)。
-
-浏览器检查：`npm ci --prefix tests`，`node tests/node_modules/playwright/cli.js install chromium`，构建后执行 `node tests/reading.cjs _site`。这些依赖只用于开发检查，发布站点不包含 Node、测试文件或测试依赖。
+具体操作见[使用说明书](使用说明书.md)。所有维护过程记录在[维护历史](维护历史.md)。

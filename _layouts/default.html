@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN" data-theme="blue">
+<html lang="zh-CN" data-theme="blue" data-theme-choices="{{ site.data.themes | map: 'id' | join: ',' }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,11 +7,10 @@
   {% seo %}
   {% feed_meta %}
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
-  <script src="{{ '/assets/js/theme-init.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/site-init.js' | relative_url }}"></script>
   <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/themes.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/library.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/refresh.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/reader.css' | relative_url }}">
   {% include scripts.html %}
 </head>
