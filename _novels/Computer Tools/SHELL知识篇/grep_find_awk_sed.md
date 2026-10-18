@@ -3,7 +3,7 @@ title: 文本处理四件套：grep、find、awk 与 sed
 date: '2026-05-10 09:50:16.000000000 +08:00'
 category: Computer Tools / SHELL知识篇
 tags:
-- SHELL知识篇
+- 工具篇
 description: 文本处理四件套：grep、find、awk 与 sed。整理一、 grep 命令速查表 (搜索文件内容)、二、 find 命令速查表 (搜索文件位置)、三、
   附录：简单的正则表达式 (grep 必备)等要点。
 excerpt: 文本处理四件套：grep、find、awk 与 sed。整理一、 grep 命令速查表 (搜索文件内容)、二、 find 命令速查表 (搜索文件位置)、三、

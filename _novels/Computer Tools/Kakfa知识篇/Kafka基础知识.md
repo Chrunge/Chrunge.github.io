@@ -3,7 +3,7 @@ title: Kafka：消息、分区与消费机制
 date: '2026-05-10 09:50:16.000000000 +08:00'
 category: Computer Tools / Kakfa知识篇
 tags:
-- Kakfa知识篇
+- 原理篇
 description: Kafka：消息、分区与消费机制。整理一、Kafka基础知识、1. 物理架构与集群组件、2. 数据模型与存储逻辑等要点。
 excerpt: Kafka：消息、分区与消费机制。整理一、Kafka基础知识、1. 物理架构与集群组件、2. 数据模型与存储逻辑等要点。
 original_filename: Kafka基础知识.md

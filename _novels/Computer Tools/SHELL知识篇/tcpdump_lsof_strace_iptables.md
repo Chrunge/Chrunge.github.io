@@ -3,7 +3,7 @@ title: Linux 排障：抓包、文件、系统调用与防火墙
 date: '2026-05-10 09:50:16.000000000 +08:00'
 category: Computer Tools / SHELL知识篇
 tags:
-- SHELL知识篇
+- 工具篇
 description: Linux 排障：抓包、文件、系统调用与防火墙。整理五、 tcpdump 命令速查表 (网络抓包核武器)、六、 lsof 命令速查表 (列出打开的文件)、七、
   strace 命令速查表 (系统调用追踪)等要点。
 excerpt: Linux 排障：抓包、文件、系统调用与防火墙。整理五、 tcpdump 命令速查表 (网络抓包核武器)、六、 lsof 命令速查表 (列出打开的文件)、七、

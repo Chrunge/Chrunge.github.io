@@ -4,7 +4,6 @@ date: '2022-01-12 13:03:42.000000000 +08:00'
 category: Computer Science / CS144
 tags:
 - CS144
-- Congestion_Control
 description: 拥塞控制：TCP 的发送节奏。整理Basic Ideas、AIMD、TCP congestion control I等要点。
 excerpt: 拥塞控制：TCP 的发送节奏。整理Basic Ideas、AIMD、TCP congestion control I等要点。
 original_filename: Unit4-Congestion-Contorl.md

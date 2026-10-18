@@ -3,8 +3,7 @@ title: GDB 调试：断点、运行与变量检查
 date: '2021-11-08 20:36:28.000000000 +08:00'
 category: Computer Tools
 tags:
-- GDB
-- Computer Tools
+- 工具篇
 description: GDB 调试：断点、运行与变量检查。内容包括Pintos GDB、GDB小技巧、不确定性Bug调试：使用reversible调试、其他参考资料。
 excerpt: GDB 调试：断点、运行与变量检查。内容包括Pintos GDB、GDB小技巧、不确定性Bug调试：使用reversible调试、其他参考资料。
 original_filename: GDB.md

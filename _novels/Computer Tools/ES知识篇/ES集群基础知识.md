@@ -3,7 +3,7 @@ title: Elasticsearch 集群基础
 date: '2026-05-10 09:50:16.000000000 +08:00'
 category: Computer Tools / ES知识篇
 tags:
-- ES知识篇
+- 原理篇
 description: Elasticsearch 集群基础。整理ES核心概念、一、 逻辑数据模型 (Logical Model)、二、 物理集群架构 (Physical
   Architecture)等要点。
 excerpt: Elasticsearch 集群基础。整理ES核心概念、一、 逻辑数据模型 (Logical Model)、二、 物理集群架构 (Physical

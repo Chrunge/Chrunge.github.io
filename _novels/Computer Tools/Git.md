@@ -3,8 +3,7 @@ title: Git 版本管理：从提交到分支协作
 date: '2020-09-28 18:44:16.000000000 +08:00'
 category: Computer Tools
 tags:
-- Git
-- Computer Tools
+- 工具篇
 description: Git学习笔记
 excerpt: Git学习笔记
 original_filename: Git.md

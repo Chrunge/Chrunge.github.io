@@ -11,9 +11,9 @@
 | `_posts/` | 博客文章、随笔、阅读笔记 | 首页最近文章、博客、归档 |
 | `_novels/分类/作品名/*.md` | 小说或知识专题，每个文件是一章 | 小说／专题书架、作品详情、章节阅读 |
 | `_manga/`、`assets/images/` | 漫画资料及按顺序展示的图片 | 漫画、画集阅读 |
-| `_config.yml`、`_data/themes.yml`、`_data/links.yml` | 站点参数、主题选项、友链 | 公共布局及关于页 |
+| `_config.yml`、`_data/themes.yml`、`_data/links.yml`、`_data/tag_rules.yml` | 站点参数、主题选项、友链与标签分类规则 | 公共布局及关于页 |
 
-`scripts/prepare_library.rb` 根据 `_novels` 的目录和文件生成作品、章序和导航，更新：
+`scripts/prepare_library.rb` 根据 `_novels` 的目录和文件生成作品、章序和导航，并按 `_data/tag_rules.yml` 收拢计算机标签，更新：
 
 - `_library/`：作品详情页入口。
 - `_data/library.json`、`_data/library_tree.json`：作品、章节与目录树。

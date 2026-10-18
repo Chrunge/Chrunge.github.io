@@ -3,7 +3,6 @@ title: Pintos 系统实验笔记
 date: '2021-09-12 09:34:41.000000000 +08:00'
 category: Computer Science / CS162
 tags:
-- Pintos
 - CS162
 description: Pintos 系统实验笔记。整理Pintos系统简介、虚拟内存layout、切换线程等要点。
 excerpt: Pintos 系统实验笔记。整理Pintos系统简介、虚拟内存layout、切换线程等要点。

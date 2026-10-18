@@ -3,8 +3,6 @@ title: SQL 与 SQLite：数据库查询笔记
 date: '2023-04-09 12:00:00.000000000 +08:00'
 category: Computer Science / 15-445
 tags:
-- C++
-- Sqlite
 - 15-445
 description: CMU15-445数据库的学习笔记
 excerpt: CMU15-445数据库的学习笔记

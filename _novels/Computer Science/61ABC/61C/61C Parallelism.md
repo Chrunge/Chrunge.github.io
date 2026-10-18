@@ -3,9 +3,7 @@ title: 并行计算与同步机制
 date: '2021-07-13 11:52:02.000000000 +08:00'
 category: Computer Science / 61ABC / 61C
 tags:
-- Parallelism
 - CS61C
-- 61C
 description: 并行计算与同步机制。整理Parallelism SIMD、Why、What等要点。
 excerpt: 并行计算与同步机制。整理Parallelism SIMD、Why、What等要点。
 original_filename: 61C Parallelism.md

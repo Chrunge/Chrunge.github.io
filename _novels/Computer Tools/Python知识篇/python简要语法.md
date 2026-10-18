@@ -3,7 +3,7 @@ title: Python 常用语法速查
 date: '2026-05-10 09:50:16.000000000 +08:00'
 category: Computer Tools / Python知识篇
 tags:
-- Python知识篇
+- 编程语法篇
 description: Python 常用语法速查。整理1. 数据结构、1. 字符串 (String)、2. 列表 (List)等要点。
 excerpt: Python 常用语法速查。整理1. 数据结构、1. 字符串 (String)、2. 列表 (List)等要点。
 original_filename: python简要语法.md

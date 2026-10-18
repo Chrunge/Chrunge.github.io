@@ -3,7 +3,7 @@ title: C++ 语言学习笔记
 date: '2021-11-08 20:36:28.000000000 +08:00'
 category: Computer Tools / Program Language
 tags:
-- Program Language
+- 编程语法篇
 description: different syntax in C++ compared to C
 excerpt: different syntax in C++ compared to C
 original_filename: C++ .md

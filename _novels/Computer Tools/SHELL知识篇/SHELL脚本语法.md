@@ -3,7 +3,7 @@ title: Shell 脚本：变量、判断与循环
 date: '2026-05-10 11:03:24.000000000 +08:00'
 category: Computer Tools / SHELL知识篇
 tags:
-- SHELL知识篇
+- 编程语法篇
 description: Shell 脚本：变量、判断与循环。整理Shell 脚本编程速查手册、十、 运维黄金脚本实战模板、⚠️ 写脚本的避坑指南 (血泪经验)等要点。
 excerpt: Shell 脚本：变量、判断与循环。整理Shell 脚本编程速查手册、十、 运维黄金脚本实战模板、⚠️ 写脚本的避坑指南 (血泪经验)等要点。
 original_filename: SHELL脚本语法.md

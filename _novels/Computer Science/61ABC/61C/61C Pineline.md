@@ -3,9 +3,7 @@ title: 处理器流水线与冒险
 date: '2021-07-12 13:39:32.000000000 +08:00'
 category: Computer Science / 61ABC / 61C
 tags:
-- Pineline
 - CS61C
-- 61C
 description: 处理器流水线与冒险。整理Pipeline、Why、What等要点。
 excerpt: 处理器流水线与冒险。整理Pipeline、Why、What等要点。
 original_filename: 61C Pineline.md

@@ -4,7 +4,6 @@ date: '2022-01-12 13:03:42.000000000 +08:00'
 category: Computer Science / CS144
 tags:
 - CS144
-- NATs
 description: 应用层与网络地址转换。整理HTTP,Hypertext Transfer Protocol、BitTorrent、Network Address
   translator(NAT)等要点。
 excerpt: 应用层与网络地址转换。整理HTTP,Hypertext Transfer Protocol、BitTorrent、Network Address

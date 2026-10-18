@@ -3,9 +3,7 @@ title: C 标准库常用函数笔记
 date: '2021-08-21 16:03:35.000000000 +08:00'
 category: Computer Science / 61ABC / 61C
 tags:
-- C
 - CS61C
-- 61C
 description: C 标准库常用函数笔记。整理C函数库函数、C语言注意事项、字符串函数库等要点。
 excerpt: C 标准库常用函数笔记。整理C函数库函数、C语言注意事项、字符串函数库等要点。
 original_filename: C常用函数记录.md

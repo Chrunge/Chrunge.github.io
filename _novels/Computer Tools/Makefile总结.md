@@ -3,8 +3,7 @@ title: Makefile：规则、依赖与构建
 date: '2021-08-23 22:51:43.000000000 +08:00'
 category: Computer Tools
 tags:
-- Makefile
-- Computer Tools
+- 工具篇
 description: Makefile：规则、依赖与构建。整理Makefile等要点。
 excerpt: Makefile：规则、依赖与构建。整理Makefile等要点。
 original_filename: Makefile总结.md

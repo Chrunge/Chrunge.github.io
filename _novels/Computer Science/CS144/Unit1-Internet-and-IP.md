@@ -4,7 +4,6 @@ date: '2022-01-12 13:03:42.000000000 +08:00'
 category: Computer Science / CS144
 tags:
 - CS144
-- IP
 description: '互联网与 IP：网络基础。整理Unit 1: Internet and IP、1.0 internet and ip book start、1.1
   application等要点。'
 excerpt: '互联网与 IP：网络基础。整理Unit 1: Internet and IP、1.0 internet and ip book start、1.1

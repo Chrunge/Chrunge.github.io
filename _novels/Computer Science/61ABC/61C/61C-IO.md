@@ -3,10 +3,7 @@ title: 计算机输入输出系统
 date: '2021-07-14 15:07:56.000000000 +08:00'
 category: Computer Science / 61ABC / 61C
 tags:
-- Input
-- Output
 - CS61C
-- 61C
 description: 计算机输入输出系统。整理Why、How等要点。
 excerpt: 计算机输入输出系统。整理Why、How等要点。
 original_filename: 61C-IO.md

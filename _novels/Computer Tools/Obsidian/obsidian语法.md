@@ -3,7 +3,7 @@ title: Obsidian：链接、引用与笔记组织
 date: '2025-03-30 17:57:40.000000000 +08:00'
 category: Computer Tools / Obsidian
 tags:
-- Obsidian
+- 工具篇
 description: Obsidian：链接、引用与笔记组织。整理标题一等要点。
 excerpt: Obsidian：链接、引用与笔记组织。整理标题一等要点。
 original_filename: obsidian语法.md

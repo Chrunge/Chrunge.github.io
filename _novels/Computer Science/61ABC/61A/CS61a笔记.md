@@ -3,11 +3,7 @@ title: CS61A：程序设计与计算抽象
 date: '2020-09-27 18:44:16.000000000 +08:00'
 category: Computer Science / 61ABC / 61A
 tags:
-- Python
-- Scheme
-- SICP
 - CS61A
-- 61A
 description: 'CS61A：程序设计与计算抽象。整理Lecture 1: Intro、这门课是什么?、Lecture 2: Functions等要点。'
 excerpt: 'CS61A：程序设计与计算抽象。整理Lecture 1: Intro、这门课是什么?、Lecture 2: Functions等要点。'
 original_filename: CS61a笔记.md

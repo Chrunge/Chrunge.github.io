@@ -3,7 +3,7 @@ title: C 程序的编译过程与内存布局
 date: '2026-05-10 09:50:16.000000000 +08:00'
 category: Computer Tools / Program Language / C
 tags:
-- C
+- 原理篇
 description: C 程序的编译过程与内存布局。整理相关概念、使用方法与学习体会。
 excerpt: C 程序的编译过程与内存布局。整理相关概念、使用方法与学习体会。
 original_filename: C语言编译过程.md

@@ -4,7 +4,6 @@ date: '2022-02-26 16:25:35.000000000 +08:00'
 category: Computer Science / CS144
 tags:
 - CS144
-- Lower_layer
 description: 链路层与底层网络。整理Capacity and Modulation、Bit Errors and Coding、clocks and clock
   recovery等要点。
 excerpt: 链路层与底层网络。整理Capacity and Modulation、Bit Errors and Coding、clocks and clock

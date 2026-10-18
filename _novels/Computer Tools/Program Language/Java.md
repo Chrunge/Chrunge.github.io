@@ -3,8 +3,7 @@ title: Java 语言学习笔记
 date: '2021-11-07 12:48:53.000000000 +08:00'
 category: Computer Tools / Program Language
 tags:
-- Java
-- Program Language
+- 编程语法篇
 description: Java Notes
 excerpt: Java Notes
 original_filename: Java.md

@@ -3,7 +3,6 @@ title: 路由：选择数据的转发路径
 date: '2022-01-12 13:03:42.000000000 +08:00'
 category: Computer Science / CS144
 tags:
-- Routing
 - CS144
 description: 路由：选择数据的转发路径。整理Bellman Ford algorithm(Distance Vector Protocol)、Dijkstra's
   shortest path first algorithm(Link State Protocol)、Rout

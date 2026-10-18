@@ -4,7 +4,6 @@ date: '2022-01-13 12:37:48.000000000 +08:00'
 category: Computer Science / CS144
 tags:
 - CS144
-- Transport
 description: 传输层：端到端通信。整理2.0 transport-intro、2.1 tcp-service-model、2.2 udp-service-model等要点。
 excerpt: 传输层：端到端通信。整理2.0 transport-intro、2.1 tcp-service-model、2.2 udp-service-model等要点。
 original_filename: Unit2-Transport.md

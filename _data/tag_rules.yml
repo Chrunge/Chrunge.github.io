@@ -1,0 +1,42 @@
+# First matching directory/file prefix wins. Course tags are retained; other
+# computing notes use a small set of subject categories instead of keywords.
+- prefix: Computer Science/15-445/
+  tags: [15-445]
+- prefix: Computer Science/6.S081/
+  tags: [6.S081]
+- prefix: Computer Science/61ABC/61A/
+  tags: [CS61A]
+- prefix: Computer Science/61ABC/61B/
+  tags: [CS61B]
+- prefix: Computer Science/61ABC/61C/
+  tags: [CS61C]
+- prefix: Computer Science/61ABC/
+  tags: [课程笔记]
+- prefix: Computer Science/CS144/
+  tags: [CS144]
+- prefix: Computer Science/CS162/
+  tags: [CS162]
+- prefix: Computer Science/
+  tags: [原理篇]
+- prefix: Computer Tools/Program Language/C/C语言编译过程.md
+  tags: [原理篇]
+- prefix: Computer Tools/SHELL知识篇/Linux系统目录概要.md
+  tags: [原理篇]
+- prefix: Computer Tools/ES知识篇/
+  tags: [原理篇]
+- prefix: Computer Tools/Kakfa知识篇/
+  tags: [原理篇]
+- prefix: Computer Tools/Program Language/
+  tags: [编程语法篇]
+- prefix: Computer Tools/Python知识篇/
+  tags: [编程语法篇]
+- prefix: Computer Tools/SHELL知识篇/SHELL脚本语法.md
+  tags: [编程语法篇]
+- prefix: Computer Tools/SHELL知识篇/正则表达式.md
+  tags: [编程语法篇]
+- prefix: Computer Tools/Obsidian/Markdown语法.md
+  tags: [编程语法篇]
+- prefix: Computer Tools/
+  tags: [工具篇]
+- prefix: Economics/
+  tags: [经济学]

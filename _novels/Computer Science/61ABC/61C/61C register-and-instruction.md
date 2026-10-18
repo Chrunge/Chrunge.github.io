@@ -3,10 +3,7 @@ title: 寄存器与机器指令
 date: '2021-04-29 17:16:50.000000000 +08:00'
 category: Computer Science / 61ABC / 61C
 tags:
-- Register
-- Instruction
 - CS61C
-- 61C
 description: '寄存器与机器指令。整理Lecture7-10: RISC-V Assembly language、RISC-V instruction
   set、RISC-V Function Call等要点。'
 excerpt: '寄存器与机器指令。整理Lecture7-10: RISC-V Assembly language、RISC-V instruction set、RISC-V

@@ -3,7 +3,7 @@ title: Git 基础：版本、分支与协作
 date: '2026-05-10 09:50:16.000000000 +08:00'
 category: Computer Tools / GIT知识篇
 tags:
-- GIT知识篇
+- 工具篇
 description: Git 基础：版本、分支与协作。整理九、 Git 命令速查表 (版本控制与时光机)等要点。
 excerpt: Git 基础：版本、分支与协作。整理九、 Git 命令速查表 (版本控制与时光机)等要点。
 original_filename: Git基础知识.md

@@ -3,11 +3,7 @@ title: 数值表示、C 语法与浮点数
 date: '2021-04-06 20:59:58.000000000 +08:00'
 category: Computer Science / 61ABC / 61C
 tags:
-- C
-- Assembly
-- Computer_Architecture
 - CS61C
-- 61C
 description: '数值表示、C 语法与浮点数。整理Lec01: 6 Great Ideas in Computer Architecture、Lec02:
   Number Representation、Lecture03: Introduction into the C prog'
 excerpt: '数值表示、C 语法与浮点数。整理Lec01: 6 Great Ideas in Computer Architecture、Lec02: Number

@@ -5,5 +5,5 @@ permalink: /works/
 description: 按目录收藏课程笔记、工具手册与画集，选一册开始阅读。
 ---
 <header class="page-heading"><p class="eyebrow">THE BOOKSHELF</p><h1>选一册，慢慢读。</h1><p>课程、工具与阅读专题，按原有目录收藏。</p></header>
-<section class="library-tree" aria-label="分类书架">{% for folder in site.data.library_tree %}{% include library-folder.html folder=folder top=true %}{% endfor %}</section>
+<section class="library-tree" aria-label="分类书架">{% for folder in site.data.library_tree %}{% include library-folder.html folder=folder %}{% endfor %}</section>
 <section class="section"><div class="section-heading"><h2>漫画与画集</h2></div><div class="work-grid">{% for item in site.manga %}{% include card.html item=item kind='画集' %}{% endfor %}</div></section>

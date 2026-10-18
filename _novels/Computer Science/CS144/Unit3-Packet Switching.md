@@ -4,8 +4,6 @@ date: '2022-01-13 12:37:48.000000000 +08:00'
 category: Computer Science / CS144
 tags:
 - CS144
-- UDP
-- TCP
 description: 分组交换：数据如何穿过网络。整理3.1 history of networks、3.2 what is a packet switch、3.3
   end-to-end delay等要点。
 excerpt: 分组交换：数据如何穿过网络。整理3.1 history of networks、3.2 what is a packet switch、3.3 end-to-end

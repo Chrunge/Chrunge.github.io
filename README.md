@@ -44,3 +44,6 @@ python scripts/check_site.py _site
 ```
 
 不要直接双击源目录的 `index.html`。它包含模板语法，需要先由 Jekyll 构建。
+
+
+第三方角色素材的署名、来源与授权范围见 [素材致谢与授权](THIRD_PARTY_NOTICES.md)。

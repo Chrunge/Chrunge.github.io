@@ -3,7 +3,7 @@ title: 算法与数据结构学习笔记
 date: '2022-03-30 12:00:00.000000000 +08:00'
 category: Computer Science / Algorithm
 tags:
-- Algorithm
+- 原理篇
 description: 记录算法题中的一些常见思路和模板
 excerpt: 记录算法题中的一些常见思路和模板
 original_filename: Algorithm.md

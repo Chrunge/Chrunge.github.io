@@ -42,6 +42,7 @@ plugins:
   - jekyll-sitemap
 exclude:
   - README.md
+  - THIRD_PARTY_NOTICES.md
   - docs
   - scripts
   - tests

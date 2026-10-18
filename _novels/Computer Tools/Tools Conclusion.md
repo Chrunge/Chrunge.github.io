@@ -3,7 +3,7 @@ title: 计算机学习工具与资料索引
 date: '2025-03-30 22:19:04.000000000 +08:00'
 category: Computer Tools
 tags:
-- Computer Tools
+- 工具篇
 description: 计算机学习工具与资料索引。内容包括工具参考汇总、C、C++、Java。
 excerpt: 计算机学习工具与资料索引。内容包括工具参考汇总、C、C++、Java。
 original_filename: Tools Conclusion.md

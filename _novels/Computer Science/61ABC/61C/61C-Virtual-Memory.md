@@ -3,9 +3,7 @@ title: 虚拟内存与地址转换
 date: '2021-07-12 15:59:45.000000000 +08:00'
 category: Computer Science / 61ABC / 61C
 tags:
-- Virtual_Memory
 - CS61C
-- 61C
 description: 虚拟内存与地址转换。整理Operating System、Why、What等要点。
 excerpt: 虚拟内存与地址转换。整理Operating System、Why、What等要点。
 original_filename: 61C-Virtual-Memory.md

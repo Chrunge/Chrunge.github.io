@@ -3,7 +3,7 @@ title: Shell 常用命令与运维速查
 date: '2026-05-10 09:50:16.000000000 +08:00'
 category: Computer Tools / SHELL知识篇
 tags:
-- SHELL知识篇
+- 工具篇
 description: "Shell 常用命令与运维速查。整理\U0001F4DD Linux 运维核心指令笔记、1. 文件查看与监控、2. 文本处理三剑客与数据清洗等要点。"
 excerpt: "Shell 常用命令与运维速查。整理\U0001F4DD Linux 运维核心指令笔记、1. 文件查看与监控、2. 文本处理三剑客与数据清洗等要点。"
 original_filename: SHELL简要命令手册.md

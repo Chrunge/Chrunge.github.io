@@ -3,7 +3,7 @@ title: Linux 系统目录与文件组织
 date: '2026-05-10 09:50:16.000000000 +08:00'
 category: Computer Tools / SHELL知识篇
 tags:
-- SHELL知识篇
+- 原理篇
 description: Linux 系统目录与文件组织。整理二、Linux 系统核心目录速查表、总结：运维各目录“潜规则”等要点。
 excerpt: Linux 系统目录与文件组织。整理二、Linux 系统核心目录速查表、总结：运维各目录“潜规则”等要点。
 original_filename: Linux系统目录概要.md

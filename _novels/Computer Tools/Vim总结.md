@@ -3,8 +3,7 @@ title: Vim 编辑操作与常用命令
 date: '2021-08-21 12:21:23.000000000 +08:00'
 category: Computer Tools
 tags:
-- Vim
-- Computer Tools
+- 工具篇
 description: Vim 编辑操作与常用命令。整理文本操作、文件操作:等要点。
 excerpt: Vim 编辑操作与常用命令。整理文本操作、文件操作:等要点。
 original_filename: Vim总结.md

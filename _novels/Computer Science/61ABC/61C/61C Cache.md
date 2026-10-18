@@ -3,9 +3,7 @@ title: 缓存：局部性与访问性能
 date: '2021-07-12 13:38:13.000000000 +08:00'
 category: Computer Science / 61ABC / 61C
 tags:
-- Cache
 - CS61C
-- 61C
 description: 缓存：局部性与访问性能。整理Why、What、How等要点。
 excerpt: 缓存：局部性与访问性能。整理Why、What、How等要点。
 original_filename: 61C Cache.md

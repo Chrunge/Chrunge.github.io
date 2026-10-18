@@ -3,8 +3,7 @@ title: Markdown 排版语法与示例
 date: '2025-03-30 17:57:40.000000000 +08:00'
 category: Computer Tools / Obsidian
 tags:
-- Markdown
-- Obsidian
+- 编程语法篇
 description: Markdown 排版语法与示例。整理Markdown 语法、1. 标题&目录、1.1 标题等要点。
 excerpt: Markdown 排版语法与示例。整理Markdown 语法、1. 标题&目录、1.1 标题等要点。
 original_filename: Markdown语法.md

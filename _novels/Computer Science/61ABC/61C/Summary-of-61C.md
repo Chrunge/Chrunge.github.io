@@ -4,7 +4,6 @@ date: '2021-07-24 20:47:02.000000000 +08:00'
 category: Computer Science / 61ABC / 61C
 tags:
 - CS61C
-- 61C
 description: 'CS61C 计算机组成知识总结。整理Part I: 6 Great Ideas、Part II: Number Representation
   and C language、Number Representation等要点。'
 excerpt: 'CS61C 计算机组成知识总结。整理Part I: 6 Great Ideas、Part II: Number Representation and

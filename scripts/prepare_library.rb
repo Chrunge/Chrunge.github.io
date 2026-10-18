@@ -6,6 +6,7 @@ require 'digest'
 require 'fileutils'
 
 root = File.directory?('_novels') ? '.' : File.expand_path('..', __dir__)
+tag_rules = YAML.safe_load(File.read(File.join(root, '_data', 'tag_rules.yml'), encoding:'UTF-8'))
 read_document = lambda do |file|
   text = File.read(file, encoding: 'UTF-8')
   match = text.match(/\A---\r?\n(.*?)\r?\n---\r?\n?/m)
@@ -37,6 +38,9 @@ groups.sort.each do |directory, files|
   book = {'id'=>id, 'title'=>title, 'category'=>segments.first, 'directory'=>directory,
           'url'=>"/novels/#{id}/", 'description'=>"#{directory.gsub('/', ' / ')}，共 #{chapters.length} 章。按章节阅读，慢慢整理知识。", 'chapters'=>[]}
   chapters.each_with_index do |(file, data, body), index|
+    relative_path = file.delete_prefix(novels_root + '/')
+    tag_rule = tag_rules.find { |rule| relative_path.start_with?(rule.fetch('prefix')) }
+    data['tags'] = tag_rule.fetch('tags') if tag_rule
     data['date'] = data['date'].strftime('%Y-%m-%d %H:%M:%S %z') if data['date'].is_a?(Time)
     data['date'] = data['date'].strftime('%Y-%m-%d') + ' 12:00:00 +0800' if data['date'].is_a?(Date)
     chapter_id = Digest::SHA256.hexdigest(File.basename(file))[0, 12]

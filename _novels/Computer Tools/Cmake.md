@@ -3,7 +3,7 @@ title: CMake 项目构建笔记
 date: '2025-03-30 17:57:40.000000000 +08:00'
 category: Computer Tools
 tags:
-- Computer Tools
+- 工具篇
 description: CMake 项目构建笔记。记录阅读理解、要点与个人思考。
 excerpt: CMake 项目构建笔记。记录阅读理解、要点与个人思考。
 original_filename: Cmake.md
