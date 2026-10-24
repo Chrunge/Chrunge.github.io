@@ -12,6 +12,7 @@
 | `_novels/分类/作品/*.md` | 按目录组织作品，每份 Markdown 是一章 |
 | `_manga/`、`assets/images/` | 漫画资料、图片顺序与素材 |
 | `index.html`、`pages/` | 首页与栏目入口，公开网址由 `permalink` 指定 |
+| `pages/timeline-legacy/` | 十一专题旧时间线地址的兼容入口，使用固定新目标并保留查询和分享Hash |
 | `_layouts/` | 公共框架、正文、章节、作品详情、画集和跳转页 |
 | `_includes/` | 页头、页脚、脚本入口、作品卡片、书架、画集网格、阅读工具、主题面板与评论 |
 | `_config.yml`、`_data/*.yml` | 站点、主题选项、友链及缺省标签规则 |
