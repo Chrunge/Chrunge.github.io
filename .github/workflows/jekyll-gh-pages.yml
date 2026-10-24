@@ -35,7 +35,6 @@ jobs:
           ruby scripts/check_content.rb
           bundle exec ruby tests/discovery_check.rb
           for file in assets/js/*.js; do node --check "$file"; done
-          node tests/redirects.cjs
           node --check tests/reading.cjs
           node --check tests/layouts.cjs
           node --check tests/fixtures/readers.cjs

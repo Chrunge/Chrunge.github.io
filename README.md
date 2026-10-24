@@ -10,7 +10,7 @@
 - [维护历史](docs/HISTORY.md)：迁移、改版、问题排查与清理记录
 - [素材致谢与授权](THIRD_PARTY_NOTICES.md)
 
-导航：首页、博客、[中国朝代时间线](https://chrunge.github.io/Chinese-Dynasty-Timeline/)、[作品](https://chrunge.github.io/works/)、归档、标签、关于。作品收录小说、专题笔记与漫画。
+导航：首页、博客、[朝代历史线](https://chrunge.github.io/Chinese-Dynasty-Timeline/)、[作品](https://chrunge.github.io/works/)、归档、标签、关于。作品收录小说、专题笔记与漫画。
 
 日常更新只需编辑 Markdown 和图片，提交并推送。Pages 来源使用 **GitHub Actions**；发布前的内容生成、检查和部署由工作流完成。
 
